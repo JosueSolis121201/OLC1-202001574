@@ -1,15 +1,85 @@
 package analizadores;
 import java_cup.runtime.Symbol;
 
-%{
-        declaractiones java, funcitones, metodos,
-}%
+
 
 //definicion de terminales
 terminal id;
 terminal coma;
 terminal prInicio;
 terminal prFin;
+
+terminal prNumero;
+terminal prCadena;
+terminal prBoolean;
+terminal prCaracter;
+
+terminal mas;
+terminal menos;
+terminal multiplicacion;
+terminal divicion;
+terminal potencia;
+terminal mod;
+terminal parentesis_A;
+terminal parentesis_B;
+
+terminal mayor;
+terminal menor;
+terminal mayor_o_igual;
+terminal menor_o_igual;
+terminal es_igual;
+terminal es_diferente;
+
+terminal or;
+terminal and;
+terminal not;
+
+terminal prIngresar;
+terminal prComo;
+terminal prCon_valor;
+
+terminal nombre_variable;
+
+terminal asignacion;
+terminal punto_coma;
+
+terminal si;
+terminal fin_si;
+terminal de_lo_contrario;
+terminal o_si;
+
+terminal segun;
+terminal hacer;
+terminal entonces;
+terminal fin_segun;
+terminal interrogacion_A;
+terminal interrogacion_B;
+
+terminal para;
+terminal hasta;
+terminal fin_para;
+
+terminal mientras;
+terminal fin_mientras;
+
+terminal repetir;
+terminal hasta_que;
+
+terminal funcion;
+terminal fin_funcion;
+terminal con_parametros;
+terminal igual;
+
+
+terminal retornar;
+
+terminal metodo;
+terminal fin_metodo;
+
+terminal ejecutar;
+terminal imprimir;
+terminal imprimir_nl;
+
 
 //definicion de no terminales
 non terminal INICIO, E;
@@ -19,7 +89,10 @@ non terminal INICIO, E;
 //gramaticas
 start with INICIO;
 
-INICIO::= prInicio E prFin;
+INICIO::= prInicio E prFin prNumero prCadena prBoolean prCaracter mas menos multiplicacion divicion potencia mod parentesis_A parentesis_B mayor menor mayor_o_igual menor_o_igual es_igual
+es_diferente or and not prIngresar prComo prCon_valor nombre_variable nombre_variable nombre_variable asignacion punto_coma si fin_si de_lo_contrario o_si segun hacer  
+ interrogacion_A interrogacion_B entonces fin_segun para hasta fin_para mientras fin_mientras repetir hasta_que funcion fin_funcion con_parametros igual retornar metodo
+fin_metodo ejecutar imprimir imprimir_nl ;
 
 
 E::= E coma id   
