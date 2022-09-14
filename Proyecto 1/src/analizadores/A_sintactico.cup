@@ -1,101 +1,144 @@
 package analizadores;
 import java_cup.runtime.Symbol;
+import Instrucciones.*;
 
 
 
-//definicion de terminales
-terminal id;
-terminal coma;
-terminal prInicio;
-terminal prFin;
+//definicion de terminalesterminal 
+terminal String id;
+terminal String coma;
+terminal String prInicio;
+terminal String prFin;
 
-terminal prNumero;
-terminal prCadena;
-terminal prBoolean;
-terminal prCaracter;
-
-terminal mas;
-terminal menos;
-terminal multiplicacion;
-terminal divicion;
-terminal potencia;
-terminal mod;
-terminal parentesis_A;
-terminal parentesis_B;
-
-terminal mayor;
-terminal menor;
-terminal mayor_o_igual;
-terminal menor_o_igual;
-terminal es_igual;
-terminal es_diferente;
-
-terminal or;
-terminal and;
-terminal not;
-
-terminal prIngresar;
-terminal prComo;
-terminal prCon_valor;
-
-terminal nombre_variable;
-
-terminal asignacion;
-terminal punto_coma;
-
-terminal si;
-terminal fin_si;
-terminal de_lo_contrario;
-terminal o_si;
-
-terminal segun;
-terminal hacer;
-terminal entonces;
-terminal fin_segun;
-terminal interrogacion_A;
-terminal interrogacion_B;
-
-terminal para;
-terminal hasta;
-terminal fin_para;
-
-terminal mientras;
-terminal fin_mientras;
-
-terminal repetir;
-terminal hasta_que;
-
-terminal funcion;
-terminal fin_funcion;
-terminal con_parametros;
-terminal igual;
+terminal String prNumero;
+terminal String prCadena;
+terminal String prBoolean;
+terminal String prCaracter;
 
 
-terminal retornar;
+terminal String menos;
+terminal String multiplicacion;
+terminal String divicion;
+terminal String potencia;
+terminal String mod;
+terminal String parentesis_A;
+terminal String parentesis_B;
 
-terminal metodo;
-terminal fin_metodo;
+terminal String mayor;
+terminal String menor;
+terminal String mayor_o_igual;
+terminal String menor_o_igual;
+terminal String es_igual;
+terminal String es_diferente;
 
-terminal ejecutar;
-terminal imprimir;
-terminal imprimir_nl;
+terminal String or;
+terminal String and;
+terminal String not;
+
+terminal String prIngresar;
+terminal String prComo;
+terminal String prCon_valor;
+
+terminal String nombre_variable;
+
+terminal String asignacion;
+terminal String punto_coma;
+
+terminal String si;
+terminal String fin_si;
+terminal String de_lo_contrario;
+terminal String o_si;
+
+terminal String segun;
+terminal String hacer;
+terminal String entonces;
+terminal String fin_segun;
+terminal String interrogacion_A;
+terminal String interrogacion_B;
+
+terminal String para;
+terminal String hasta;
+terminal String fin_para;
+
+terminal String mientras;
+terminal String fin_mientras;
+
+terminal String repetir;
+terminal String hasta_que;
+
+terminal String funcion;
+terminal String fin_funcion;
+terminal String con_parametros;
+terminal String igual;
+
+
+terminal String retornar;
+
+terminal String metodo;
+terminal String fin_metodo;
+
+terminal String ejecutar;
+terminal String imprimir;
+terminal String imprimir_nl;
+
+terminal String mas;
+terminal String num;
 
 
 //definicion de no terminales
-non terminal INICIO, E;
+non terminal Instruccion S0;
+non terminal Instruccion INITIAL;
+non terminal Instruccion VALORES;
+non terminal Instruccion ESTRUCTURA;
+non terminal Instruccion OPERACION;
+non terminal Instruccion DECLARACION;
+non terminal Instruccion TIPO_DE_DATO;
+non terminal Instruccion EXPRESION;
 
 
 
 //gramaticas
-start with INICIO;
-
-INICIO::= prInicio E prFin prNumero prCadena prBoolean prCaracter mas menos multiplicacion divicion potencia mod parentesis_A parentesis_B mayor menor mayor_o_igual menor_o_igual es_igual
-es_diferente or and not prIngresar prComo prCon_valor nombre_variable nombre_variable nombre_variable asignacion punto_coma si fin_si de_lo_contrario o_si segun hacer  
- interrogacion_A interrogacion_B entonces fin_segun para hasta fin_para mientras fin_mientras repetir hasta_que funcion fin_funcion con_parametros igual retornar metodo
-fin_metodo ejecutar imprimir imprimir_nl ;
-
-
-E::= E coma id   
-    | id  
+start with S0
 ;
+
+S0::= INITIAL:a{: System.out.println(a.generarPython()); :}
+;
+
+INITIAL::= ESTRUCTURA:a{: System.out.println(a.generarPython()); :}
+;
+
+ESTRUCTURA::= DECLARACION:a  {: System.out.println(a.generarPython()); :}
+;
+
+DECLARACION::= prIngresar   
+;
+
+TIPO_DE_DATO::= prNumero
+    | prCadena
+    | prBoolean
+    | prCaracter
+;
+
+EXPRESION::= OPERACION
+;
+
+
+
+
+OPERACION::=  OPERACION:a mas:b VALORES:c  {: RESULT = new OperacionBinaria(a,c,b);  :}
+    | OPERACION:a menos:b VALORES:c  {: RESULT = new OperacionBinaria(a,c,b); :}
+    | OPERACION:a divicion:b VALORES:c  {: RESULT = new OperacionBinaria(a,c,b); :}
+    | OPERACION:a potencia:b VALORES:c  {: RESULT = new OperacionBinaria(a,c,b); :}
+    | OPERACION:a mod:b VALORES:c  {: RESULT = new OperacionBinaria(a,c,b); :}
+    | VALORES:a {: RESULT = a; :}
+;
+
+VALORES::= num:a{: RESULT = new Valor(a); :}
+
+;
+
+
+
+
+
 
