@@ -21,6 +21,7 @@ import java_cup.runtime.*;
 %unicode
 
 num = ([0-9]+)
+String =  [\"]([^\"])*[\"]
 letra  = [a-zA-Z]
 interrogacion_A  = [\¿]
 interrogacion_B  = [?]
@@ -29,8 +30,22 @@ id     = {letra}+
 comentario_una_linea =  (\/\/[^\n]*\n)
 comentario_multilinea =  (\/\*[^*\/]*\*\/)
 nombre_variable = (_[a-zA-Z0-9]*_)
+double = (\-?)(\d+\.\d+)
+char = (\')[^\']{1}(\')
+
 
 %%
+<YYINITIAL>"numero"   {
+                    return new Symbol(Simbolos.prNumero, yycolumn, yyline, yytext());
+                  }
+
+<YYINITIAL>"verdadero"   {
+                    return new Symbol(Simbolos.Verdadero, yycolumn, yyline, yytext());
+                  }
+<YYINITIAL>"falso"   {
+                    return new Symbol(Simbolos.Falso, yycolumn, yyline, yytext());
+                  }
+
 <YYINITIAL>"numero"   {
                     return new Symbol(Simbolos.prNumero, yycolumn, yyline, yytext());
                   }
@@ -254,6 +269,14 @@ nombre_variable = (_[a-zA-Z0-9]*_)
                     return new Symbol(Simbolos.num, yycolumn, yyline, yytext()); 
                     }
 
+<YYINITIAL>{String}  {
+                    return new Symbol(Simbolos.String, yycolumn, yyline, yytext()); 
+                    }
+
+<YYINITIAL>{double}  {
+                    return new Symbol(Simbolos.Double, yycolumn, yyline, yytext()); 
+                    }
+
 
 
 <YYINITIAL>","   {
@@ -270,6 +293,10 @@ nombre_variable = (_[a-zA-Z0-9]*_)
 
 <YYINITIAL>{id}  {
                     return new Symbol(Simbolos.id, yycolumn, yyline, yytext()); 
+                    }
+
+<YYINITIAL>{char}  {
+                    return new Symbol(Simbolos.Char, yycolumn, yyline, yytext()); 
                     }
 
 {comentario_una_linea}  { /* ignore */ }

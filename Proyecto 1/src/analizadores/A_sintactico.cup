@@ -83,6 +83,12 @@ terminal String imprimir_nl;
 
 terminal String mas;
 terminal String num;
+terminal String String;
+terminal String Double;
+
+terminal String Verdadero;
+terminal String Falso;
+terminal String Char;
 
 
 //definicion de no terminales
@@ -95,46 +101,65 @@ non terminal Instruccion DECLARACION;
 non terminal Instruccion TIPO_DE_DATO;
 non terminal Instruccion EXPRESION;
 
+non terminal NOMBRE_VARIABLES;
+non terminal OPERADORES;
+
+
 
 
 //gramaticas
 start with S0
 ;
 
-S0::= INITIAL:a{: System.out.println(a.generarPython()); :}
+S0::= INITIAL:a{: :}
 ;
 
-INITIAL::= ESTRUCTURA:a{: System.out.println(a.generarPython()); :}
+INITIAL::=  INITIAL ESTRUCTURA
+    | ESTRUCTURA
 ;
 
-ESTRUCTURA::= DECLARACION:a  {: System.out.println(a.generarPython()); :}
+ESTRUCTURA::= DECLARACION:a  {:  :}
 ;
 
-DECLARACION::= prIngresar   
+DECLARACION::= prIngresar:a NOMBRE_VARIABLES:b prComo:c TIPO_DE_DATO:d prCon_valor:e EXPRESION:f punto_coma:g   {: System.out.println(a+b+c+d+e+f+g);  :}   
 ;
 
-TIPO_DE_DATO::= prNumero
-    | prCadena
-    | prBoolean
-    | prCaracter
+TIPO_DE_DATO::= prNumero {:System.out.println("numero");:}
+    | prCadena {:System.out.println("cadena");:}
+    | prBoolean {:System.out.println("prBoolean");:}
+    | prCaracter  {:System.out.println("prCaracter");:}
 ;
 
-EXPRESION::= OPERACION
+EXPRESION::= OPERACION 
+    | String:a {:System.out.println(a);:}
+    | Double {:System.out.println("Double");:}
+    | Verdadero {:System.out.println("Verdadero");:}
+    | Falso  {:System.out.println("Falso");:}
+    | Char:a  {:System.out.println(a);:}
+;
+
+NOMBRE_VARIABLES::= NOMBRE_VARIABLES coma nombre_variable   
+    | nombre_variable :a {:System.out.println(a);:}
+    |  
 ;
 
 
 
 
-OPERACION::=  OPERACION:a mas:b VALORES:c  {: RESULT = new OperacionBinaria(a,c,b);  :}
-    | OPERACION:a menos:b VALORES:c  {: RESULT = new OperacionBinaria(a,c,b); :}
-    | OPERACION:a divicion:b VALORES:c  {: RESULT = new OperacionBinaria(a,c,b); :}
-    | OPERACION:a potencia:b VALORES:c  {: RESULT = new OperacionBinaria(a,c,b); :}
-    | OPERACION:a mod:b VALORES:c  {: RESULT = new OperacionBinaria(a,c,b); :}
-    | VALORES:a {: RESULT = a; :}
+
+OPERACION::=  OPERACION OPERADORES VALORES  
+    | VALORES
 ;
 
-VALORES::= num:a{: RESULT = new Valor(a); :}
+OPERADORES ::= mas
+    | menos
+    | divicion
+    | potencia
+    | mod
+;
 
+VALORES::= num:a{:System.out.println(a);:}
+    | parentesis_A OPERACION parentesis_B
 ;
 
 

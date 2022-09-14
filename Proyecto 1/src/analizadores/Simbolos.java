@@ -12,6 +12,7 @@ public class Simbolos {
   public static final int prIngresar = 26;
   public static final int parentesis_A = 15;
   public static final int mayor_o_igual = 19;
+  public static final int Double = 62;
   public static final int imprimir = 57;
   public static final int con_parametros = 51;
   public static final int mod = 14;
@@ -32,6 +33,7 @@ public class Simbolos {
   public static final int es_igual = 21;
   public static final int menor_o_igual = 20;
   public static final int fin_si = 33;
+  public static final int Falso = 64;
   public static final int menos = 10;
   public static final int menor = 18;
   public static final int fin_mientras = 46;
@@ -47,6 +49,7 @@ public class Simbolos {
   public static final int prBoolean = 8;
   public static final int metodo = 54;
   public static final int or = 23;
+  public static final int Char = 65;
   public static final int prFin = 5;
   public static final int funcion = 49;
   public static final int prCaracter = 9;
@@ -59,11 +62,13 @@ public class Simbolos {
   public static final int segun = 36;
   public static final int prCon_valor = 28;
   public static final int hacer = 37;
+  public static final int String = 61;
   public static final int de_lo_contrario = 34;
   public static final int and = 24;
   public static final int not = 25;
   public static final int prInicio = 4;
   public static final int retornar = 53;
+  public static final int Verdadero = 63;
   public static final int num = 60;
   public static final int o_si = 35;
   public static final int asignacion = 30;
@@ -130,7 +135,12 @@ public class Simbolos {
   "imprimir",
   "imprimir_nl",
   "mas",
-  "num"
+  "num",
+  "String",
+  "Double",
+  "Verdadero",
+  "Falso",
+  "Char"
   };
 }
 
