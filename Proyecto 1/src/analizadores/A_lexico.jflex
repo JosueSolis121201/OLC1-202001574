@@ -30,7 +30,7 @@ id     = {letra}+
 comentario_una_linea =  (\/\/[^\n]*\n)
 comentario_multilinea =  (\/\*[^*\/]*\*\/)
 nombre_variable = (_[a-zA-Z0-9]*_)
-double = (\-?)(\d+\.\d+)
+double = (\d+\.\d+)
 char = (\')[^\']{1}(\')
 
 
@@ -91,6 +91,13 @@ char = (\')[^\']{1}(\')
                     return new Symbol(Simbolos.parentesis_B, yycolumn, yyline, yytext());
                   }
 
+<YYINITIAL>"["   {
+                    return new Symbol(Simbolos.corchete_A, yycolumn, yyline, yytext());
+                  }
+<YYINITIAL>"]"   {
+                    return new Symbol(Simbolos.corchete_B, yycolumn, yyline, yytext());
+                  }
+
 
 
 <YYINITIAL>"mayor"   {
@@ -139,6 +146,24 @@ char = (\')[^\']{1}(\')
 
 <YYINITIAL>"con_valor"   {
                     return new Symbol(Simbolos.prCon_valor, yycolumn, yyline, yytext());
+                  }
+
+<YYINITIAL>"con"   {
+                    return new Symbol(Simbolos.con, yycolumn, yyline, yytext());
+                  }
+
+<YYINITIAL>"incremental"   {
+                    return new Symbol(Simbolos.incremental, yycolumn, yyline, yytext());
+                  }
+
+<YYINITIAL>"or"   {
+                    return new Symbol(Simbolos.or, yycolumn, yyline, yytext());
+                  }
+<YYINITIAL>"and"   {
+                    return new Symbol(Simbolos.and, yycolumn, yyline, yytext());
+                  }
+<YYINITIAL>"not"   {
+                    return new Symbol(Simbolos.not, yycolumn, yyline, yytext());
                   }
 
 

@@ -1,1 +1,1 @@
-ingresar _operaciones1Basica_      como numero con_valor (+);
+(_base_ Numero, _exponenete_ Numero)

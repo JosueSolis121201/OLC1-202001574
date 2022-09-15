@@ -90,6 +90,11 @@ terminal String Verdadero;
 terminal String Falso;
 terminal String Char;
 
+terminal String corchete_A;
+terminal String corchete_B;
+
+terminal String con;
+terminal String incremental;
 
 //definicion de no terminales
 non terminal Instruccion S0;
@@ -103,6 +108,30 @@ non terminal Instruccion EXPRESION;
 
 non terminal NOMBRE_VARIABLES;
 non terminal OPERADORES;
+non terminal NUMERICO;
+non terminal UNARIO;
+non terminal ASIGNACION;
+non terminal IF;
+non terminal IMPRESION;
+non terminal ELSE;
+non terminal ELSE_IF;
+
+non terminal SWITCH;
+non terminal SWITCH_CASE;
+non terminal SWITCH_ELSE;
+
+non terminal CICLO_PARA;
+non terminal CICLO_PARA_DEFINIDO;
+non terminal SUB_CICLO_PARA_DEFINIDO;
+
+non terminal CICLO_MIENTRAS;
+non terminal CICLO_MIENTRAS_DEFINIDO;
+
+non terminal CICLO_REPETIR;
+non terminal CICLO_REPETIR_DEFINIDO;
+
+
+non terminal RETORNO;
 
 
 
@@ -118,10 +147,79 @@ INITIAL::=  INITIAL ESTRUCTURA
     | ESTRUCTURA
 ;
 
-ESTRUCTURA::= DECLARACION:a  {:  :}
+ESTRUCTURA::= DECLARACION punto_coma
+    | ASIGNACION punto_coma
+    | IF
+    | IMPRESION punto_coma
+    | SWITCH
+    | CICLO_PARA
+    | CICLO_MIENTRAS
+    | CICLO_REPETIR
+    | RETORNO punto_coma
+   
+;
+    
+RETORNO::= retornar EXPRESION      
+
 ;
 
-DECLARACION::= prIngresar:a NOMBRE_VARIABLES:b prComo:c TIPO_DE_DATO:d prCon_valor:e EXPRESION:f punto_coma:g   {: System.out.println(a+b+c+d+e+f+g);  :}   
+IMPRESION::= imprimir EXPRESION      
+    | imprimir_nl EXPRESION 
+;
+
+IF::= si EXPRESION entonces ESTRUCTURA ELSE_IF ELSE fin_si     
+;
+
+ELSE_IF::= ELSE_IF o_si EXPRESION entonces ESTRUCTURA  
+    | 
+;
+
+ELSE::= de_lo_contrario ESTRUCTURA
+    | 
+;
+
+SWITCH::= segun EXPRESION hacer SWITCH_CASE SWITCH_ELSE fin_segun      
+;
+
+SWITCH_CASE::= SWITCH_CASE interrogacion_A EXPRESION interrogacion_B entonces ESTRUCTURA 
+    |
+;
+
+SWITCH_ELSE::= de_lo_contrario entonces ESTRUCTURA
+    |
+;
+
+CICLO_PARA::= para EXPRESION asignacion EXPRESION hasta EXPRESION  CICLO_PARA_DEFINIDO fin_para     
+;
+
+CICLO_PARA_DEFINIDO::=hacer SUB_CICLO_PARA_DEFINIDO
+    | con incremental EXPRESION hacer SUB_CICLO_PARA_DEFINIDO
+;
+
+SUB_CICLO_PARA_DEFINIDO::=SUB_CICLO_PARA_DEFINIDO  ESTRUCTURA
+    | 
+;
+
+CICLO_MIENTRAS::= mientras EXPRESION hacer CICLO_MIENTRAS_DEFINIDO fin_mientras     
+;
+
+CICLO_MIENTRAS_DEFINIDO::= CICLO_MIENTRAS_DEFINIDO  ESTRUCTURA
+    | 
+;
+
+CICLO_REPETIR::= repetir CICLO_REPETIR_DEFINIDO hasta_que EXPRESION     
+;
+
+CICLO_REPETIR_DEFINIDO::= CICLO_REPETIR_DEFINIDO  ESTRUCTURA
+    | 
+;
+
+
+
+ASIGNACION::= NOMBRE_VARIABLES asignacion:a EXPRESION   {: System.out.println(a);  :}   
+;
+
+DECLARACION::= prIngresar:a NOMBRE_VARIABLES:b prComo:c TIPO_DE_DATO:d prCon_valor:e EXPRESION:f  {: System.out.println(a+b+c+d+e+f);  :}   
 ;
 
 TIPO_DE_DATO::= prNumero {:System.out.println("numero");:}
@@ -132,11 +230,22 @@ TIPO_DE_DATO::= prNumero {:System.out.println("numero");:}
 
 EXPRESION::= OPERACION 
     | String:a {:System.out.println(a);:}
-    | Double {:System.out.println("Double");:}
     | Verdadero {:System.out.println("Verdadero");:}
     | Falso  {:System.out.println("Falso");:}
     | Char:a  {:System.out.println(a);:}
+    | UNARIO
+
 ;
+    
+UNARIO::=  mas NUMERICO {:System.out.println("UN_MAS");:}    
+    | menos NUMERICO   {:System.out.println("UN_MENOS");:}  
+;
+
+NUMERICO::=  num   
+    | Double     
+;
+
+
 
 NOMBRE_VARIABLES::= NOMBRE_VARIABLES coma nombre_variable   
     | nombre_variable :a {:System.out.println(a);:}
@@ -156,10 +265,22 @@ OPERADORES ::= mas
     | divicion
     | potencia
     | mod
+    | multiplicacion
+    | mayor
+    | menor
+    | mayor_o_igual
+    | menor_o_igual
+    | es_igual
+    | es_diferente
 ;
+
+
 
 VALORES::= num:a{:System.out.println(a);:}
     | parentesis_A OPERACION parentesis_B
+    | corchete_A OPERACION corchete_B
+    | nombre_variable
+    | Double
 ;
 
 

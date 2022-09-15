@@ -16,6 +16,7 @@ public class Simbolos {
   public static final int imprimir = 57;
   public static final int con_parametros = 51;
   public static final int mod = 14;
+  public static final int con = 68;
   public static final int hasta = 43;
   public static final int es_diferente = 22;
   public static final int hasta_que = 48;
@@ -23,6 +24,8 @@ public class Simbolos {
   public static final int igual = 52;
   public static final int entonces = 38;
   public static final int multiplicacion = 11;
+  public static final int corchete_B = 67;
+  public static final int corchete_A = 66;
   public static final int fin_funcion = 50;
   public static final int repetir = 47;
   public static final int fin_metodo = 55;
@@ -49,6 +52,7 @@ public class Simbolos {
   public static final int prBoolean = 8;
   public static final int metodo = 54;
   public static final int or = 23;
+  public static final int incremental = 69;
   public static final int Char = 65;
   public static final int prFin = 5;
   public static final int funcion = 49;
@@ -140,7 +144,11 @@ public class Simbolos {
   "Double",
   "Verdadero",
   "Falso",
-  "Char"
+  "Char",
+  "corchete_A",
+  "corchete_B",
+  "con",
+  "incremental"
   };
 }
 
