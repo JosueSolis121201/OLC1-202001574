@@ -98,7 +98,7 @@ terminal String incremental;
 
 //definicion de no terminales
 non terminal Instruccion S0;
-non terminal Instruccion INITIAL;
+non terminal Instruccion INSTRUCCIONES;
 non terminal Instruccion VALORES;
 non terminal Instruccion ESTRUCTURA;
 non terminal Instruccion OPERACION;
@@ -130,20 +130,25 @@ non terminal CICLO_MIENTRAS_DEFINIDO;
 non terminal CICLO_REPETIR;
 non terminal CICLO_REPETIR_DEFINIDO;
 
+non terminal LISTA;
+
 
 non terminal RETORNO;
 
-
+non terminal METODOS;
+non terminal SUB_METODOS;
+non terminal SUB2_METODOS;
 
 
 //gramaticas
 start with S0
 ;
 
-S0::= INITIAL:a{: :}
+S0::= INSTRUCCIONES:a{: :}
+    | METODOS
 ;
 
-INITIAL::=  INITIAL ESTRUCTURA
+INSTRUCCIONES::=  INSTRUCCIONES ESTRUCTURA
     | ESTRUCTURA
 ;
 
@@ -156,7 +161,6 @@ ESTRUCTURA::= DECLARACION punto_coma
     | CICLO_MIENTRAS
     | CICLO_REPETIR
     | RETORNO punto_coma
-   
 ;
     
 RETORNO::= retornar EXPRESION      
@@ -214,6 +218,18 @@ CICLO_REPETIR_DEFINIDO::= CICLO_REPETIR_DEFINIDO  ESTRUCTURA
     | 
 ;
 
+METODOS::= metodo nombre_variable con_parametros parentesis_A SUB2_METODOS  parentesis_B INSTRUCCIONES fin_metodo      
+;
+
+
+
+SUB2_METODOS::= SUB_METODOS
+    |
+;
+
+SUB_METODOS::= SUB_METODOS coma nombre_variable TIPO_DE_DATO
+    | nombre_variable TIPO_DE_DATO
+;
 
 
 ASIGNACION::= NOMBRE_VARIABLES asignacion:a EXPRESION   {: System.out.println(a);  :}   
