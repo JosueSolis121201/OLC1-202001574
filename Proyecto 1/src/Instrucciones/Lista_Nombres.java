@@ -5,26 +5,27 @@
  */
 package Instrucciones;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author josue
  */
-public class OperacionBinaria implements Instruccion{
-    Instruccion izquierdo;
-    Instruccion derecho;
-    String operador;
-    
-    public OperacionBinaria(Instruccion izquierdo,Instruccion derecho,String operador){
-        this.izquierdo = izquierdo;
-        this.derecho = derecho;
-        this.operador = operador;
+public class Lista_Nombres implements Instruccion{
+    ArrayList<String> lista;
+    public Lista_Nombres(String nombre){
+        this.lista = new ArrayList();
+        lista.add(nombre);
     }
     
-    
+    public void agregarNombre(String nombre){
+        lista.add(nombre);
+    }
+        
+
     @Override
     public String generarPython() {
-        String retorno = this.izquierdo.generarPython() + this.operador + this.derecho.generarPython();
-        return retorno;
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -39,7 +40,11 @@ public class OperacionBinaria implements Instruccion{
 
     @Override
     public String imprimir() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String retorno = " ";
+        for (int i=0;i<lista.size();i++) {
+            retorno = retorno + lista.get(i);
+    }
+        return retorno;
     }
     
 }

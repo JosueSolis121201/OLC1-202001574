@@ -16,4 +16,7 @@ public interface Instruccion {
     public String generarGo();
     
     public String graficar();
+    
+    public String imprimir();
+
 }

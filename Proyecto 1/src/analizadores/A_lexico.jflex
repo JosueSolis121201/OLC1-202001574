@@ -29,7 +29,7 @@ igual  = [\=]
 id     = {letra}+
 comentario_una_linea =  (\/\/[^\n]*\n)
 comentario_multilinea =  (\/\*[^*\/]*\*\/)
-nombre_variable = (_[a-zA-Z0-9]*_)
+nombre_variable = (_[a-zA-Z0-9_]*_)
 double = (\d+\.\d+)
 char = (\')[^\']{1}(\')
 

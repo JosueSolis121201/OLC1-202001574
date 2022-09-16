@@ -1,9 +1,6 @@
-metodo _potenciaManual_ con_parametros (_base_ Numero, _exponenete_ Numero)
-	ingresar _i_ como Numero con_valor 0;
-	ingresar _acumulado_ como Numero con_valor 0;
-	para _i_->0 hasta _exponente_-1 hacer
-		_acumulado_ -> _acumulado_ + _acumulado_;
-	fin_para	
-	imprimir _acumulado_;
-	imprimir_nl " Esta es la potencia Manual";	
-fin_metodo
+inicio
+
+ingresaR _v1_, _v2_, _v3_ cOmo CadenA con_vAlor "esta es una cadena";
+
+fin
+ 

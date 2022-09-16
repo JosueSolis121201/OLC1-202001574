@@ -3,28 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Instrucciones;
+package Instrucciones ;
+
+import java.util.ArrayList;
 
 /**
  *
  * @author josue
  */
-public class OperacionBinaria implements Instruccion{
-    Instruccion izquierdo;
-    Instruccion derecho;
-    String operador;
+public class Estructura implements Instruccion {
+    ArrayList<Instruccion> lista;
     
-    public OperacionBinaria(Instruccion izquierdo,Instruccion derecho,String operador){
-        this.izquierdo = izquierdo;
-        this.derecho = derecho;
-        this.operador = operador;
+    public Estructura(Instruccion nombre){
+        this.lista = new ArrayList();
+        lista.add(nombre);
     }
     
-    
+    public void agregarNombre(Instruccion nombre){
+        lista.add(nombre);
+    }
+
     @Override
     public String generarPython() {
-        String retorno = this.izquierdo.generarPython() + this.operador + this.derecho.generarPython();
-        return retorno;
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -39,7 +40,11 @@ public class OperacionBinaria implements Instruccion{
 
     @Override
     public String imprimir() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String retorno = " ";
+        for (int i=0;i<lista.size();i++) {
+            retorno = retorno + lista.get(i);
+    }
+        return retorno;
     }
     
 }

@@ -2,7 +2,19 @@ package analizadores;
 import java_cup.runtime.Symbol;
 import Instrucciones.*;
 
+//PARSER 
+parser code
+{://Codigo visible
+    
+    public void syntax_error(Symbol s){
+        System.out.println("Error R de sintaxis: "+ s.value +" Linea "+(s.left+1)+" columna "+(s.right+1) );
+    }
 
+    public void unrecovered_syntax_error(Symbol s) throws java.lang.Exception{ 
+        System.out.println("Error NR de sintaxis: "+ s.value +" Linea "+(s.left+1)+" columna "+(s.right+1) );
+    }
+
+:}
 
 //definicion de terminalesterminal 
 terminal String id;
@@ -97,6 +109,8 @@ terminal String con;
 terminal String incremental;
 
 //definicion de no terminales
+non terminal String OPERADORES;
+
 non terminal Instruccion S0;
 non terminal Instruccion INSTRUCCIONES;
 non terminal Instruccion VALORES;
@@ -106,53 +120,75 @@ non terminal Instruccion DECLARACION;
 non terminal Instruccion TIPO_DE_DATO;
 non terminal Instruccion EXPRESION;
 
-non terminal NOMBRE_VARIABLES;
-non terminal OPERADORES;
-non terminal NUMERICO;
-non terminal UNARIO;
-non terminal ASIGNACION;
-non terminal IF;
-non terminal IMPRESION;
-non terminal ELSE;
-non terminal ELSE_IF;
+non terminal Instruccion NOMBRE_VARIABLES;
 
-non terminal SWITCH;
-non terminal SWITCH_CASE;
-non terminal SWITCH_ELSE;
+non terminal Instruccion NUMERICO;
+non terminal Instruccion UNARIO;
+non terminal Instruccion ASIGNACION;
+non terminal Instruccion IF;
+non terminal Instruccion IMPRESION;
+non terminal Instruccion ELSE;
+non terminal Instruccion ELSE_IF;
 
-non terminal CICLO_PARA;
-non terminal CICLO_PARA_DEFINIDO;
-non terminal SUB_CICLO_PARA_DEFINIDO;
+non terminal Instruccion SWITCH;
+non terminal Instruccion SWITCH_CASE;
+non terminal Instruccion SWITCH_ELSE;
 
-non terminal CICLO_MIENTRAS;
-non terminal CICLO_MIENTRAS_DEFINIDO;
+non terminal Instruccion CICLO_PARA;
+non terminal Instruccion CICLO_PARA_DEFINIDO;
+non terminal Instruccion SUB_CICLO_PARA_DEFINIDO;
 
-non terminal CICLO_REPETIR;
-non terminal CICLO_REPETIR_DEFINIDO;
+non terminal Instruccion CICLO_MIENTRAS;
+non terminal Instruccion CICLO_MIENTRAS_DEFINIDO;
 
-non terminal LISTA;
+non terminal Instruccion CICLO_REPETIR;
+non terminal Instruccion CICLO_REPETIR_DEFINIDO;
+
+non terminal Instruccion LISTA;
 
 
-non terminal RETORNO;
+non terminal Instruccion RETORNO;
 
-non terminal METODOS;
-non terminal SUB_METODOS;
-non terminal SUB2_METODOS;
+non terminal Instruccion METODOS;
+non terminal Instruccion SUB_METODOS;
+non terminal Instruccion SUB2_METODOS;
+non terminal Instruccion SUB3_METODOS;
+
+
+non terminal Instruccion FUNCION;
+non terminal Instruccion SUB_FUNCION;
+non terminal Instruccion SUB2_FUNCION;
+non terminal Instruccion SUB3_FUNCION;
+
+non terminal Instruccion LLAMADA;
+non terminal Instruccion SUB_LLAMADA;
+non terminal Instruccion SUB2_LLAMADA;
+non terminal Instruccion SUB3_LLAMADA;
+
+non terminal Instruccion S1;
+
+
 
 
 //gramaticas
 start with S0
 ;
 
-S0::= INSTRUCCIONES:a{: :}
+S0::= prInicio S1 prFin
+;
+
+S1::= INSTRUCCIONES
     | METODOS
+    | FUNCION
+    | LLAMADA
+
 ;
 
-INSTRUCCIONES::=  INSTRUCCIONES ESTRUCTURA
-    | ESTRUCTURA
+INSTRUCCIONES::=  INSTRUCCIONES:a ESTRUCTURA:b {: ((Estructura)a).agregarNombre(b); RESULT=a;:} 
+    | ESTRUCTURA:a {:RESULT=new Estructura(a);:} 
 ;
 
-ESTRUCTURA::= DECLARACION punto_coma
+ESTRUCTURA::= DECLARACION:a punto_coma {:System.out.println(a.imprimir());:} 
     | ASIGNACION punto_coma
     | IF
     | IMPRESION punto_coma
@@ -171,25 +207,25 @@ IMPRESION::= imprimir EXPRESION
     | imprimir_nl EXPRESION 
 ;
 
-IF::= si EXPRESION entonces ESTRUCTURA ELSE_IF ELSE fin_si     
+IF::= si EXPRESION entonces INSTRUCCIONES ELSE_IF ELSE fin_si     
 ;
 
-ELSE_IF::= ELSE_IF o_si EXPRESION entonces ESTRUCTURA  
+ELSE_IF::= ELSE_IF o_si EXPRESION entonces INSTRUCCIONES  
     | 
 ;
 
-ELSE::= de_lo_contrario ESTRUCTURA
+ELSE::= de_lo_contrario INSTRUCCIONES
     | 
 ;
 
 SWITCH::= segun EXPRESION hacer SWITCH_CASE SWITCH_ELSE fin_segun      
 ;
 
-SWITCH_CASE::= SWITCH_CASE interrogacion_A EXPRESION interrogacion_B entonces ESTRUCTURA 
+SWITCH_CASE::= SWITCH_CASE interrogacion_A EXPRESION interrogacion_B entonces INSTRUCCIONES 
     |
 ;
 
-SWITCH_ELSE::= de_lo_contrario entonces ESTRUCTURA
+SWITCH_ELSE::= de_lo_contrario entonces INSTRUCCIONES
     |
 ;
 
@@ -218,10 +254,12 @@ CICLO_REPETIR_DEFINIDO::= CICLO_REPETIR_DEFINIDO  ESTRUCTURA
     | 
 ;
 
-METODOS::= metodo nombre_variable con_parametros parentesis_A SUB2_METODOS  parentesis_B INSTRUCCIONES fin_metodo      
+METODOS::= metodo nombre_variable SUB3_METODOS  INSTRUCCIONES fin_metodo      
 ;
 
-
+SUB3_METODOS::= con_parametros parentesis_A SUB2_METODOS  parentesis_B
+    |
+;
 
 SUB2_METODOS::= SUB_METODOS
     |
@@ -232,71 +270,120 @@ SUB_METODOS::= SUB_METODOS coma nombre_variable TIPO_DE_DATO
 ;
 
 
-ASIGNACION::= NOMBRE_VARIABLES asignacion:a EXPRESION   {: System.out.println(a);  :}   
+
+
+
+
+
+FUNCION::= funcion nombre_variable TIPO_DE_DATO SUB3_FUNCION  INSTRUCCIONES fin_funcion      
 ;
 
-DECLARACION::= prIngresar:a NOMBRE_VARIABLES:b prComo:c TIPO_DE_DATO:d prCon_valor:e EXPRESION:f  {: System.out.println(a+b+c+d+e+f);  :}   
+SUB3_FUNCION::= con_parametros parentesis_A SUB2_FUNCION  parentesis_B
+    |
 ;
 
-TIPO_DE_DATO::= prNumero {:System.out.println("numero");:}
-    | prCadena {:System.out.println("cadena");:}
-    | prBoolean {:System.out.println("prBoolean");:}
-    | prCaracter  {:System.out.println("prCaracter");:}
+SUB2_FUNCION::= SUB_FUNCION
+    |
 ;
 
-EXPRESION::= OPERACION 
-    | String:a {:System.out.println(a);:}
-    | Verdadero {:System.out.println("Verdadero");:}
-    | Falso  {:System.out.println("Falso");:}
-    | Char:a  {:System.out.println(a);:}
-    | UNARIO
+SUB_FUNCION::= SUB_FUNCION coma nombre_variable TIPO_DE_DATO
+    | nombre_variable TIPO_DE_DATO
+;
+
+
+
+
+
+
+
+LLAMADA::= ejecutar nombre_variable  SUB3_LLAMADA  punto_coma     
+;
+
+SUB3_LLAMADA::=  parentesis_A SUB2_LLAMADA  parentesis_B
+    |
+;
+
+SUB2_LLAMADA::= SUB_LLAMADA
+    |
+;
+
+SUB_LLAMADA::= SUB_LLAMADA coma nombre_variable TIPO_DE_DATO
+    | nombre_variable TIPO_DE_DATO
+;
+
+
+
+ASIGNACION::= NOMBRE_VARIABLES asignacion:a EXPRESION    
+;
+
+DECLARACION::= prIngresar:p NOMBRE_VARIABLES:a prComo:o TIPO_DE_DATO:b prCon_valor:i  EXPRESION:c    {:RESULT=new Declaracion(a,b,c);:} 
+;
+
+TIPO_DE_DATO::= prNumero:a {:RESULT=new Valor(a);:}  
+    | prCadena:a {:RESULT=new Valor(a);:}  
+    | prBoolean:a {:RESULT=new Valor(a);:}  
+    | prCaracter:a {:RESULT=new Valor(a);:}   
+;
+
+EXPRESION::= OPERACION:a {:RESULT= a;:}  
+    | String:a {:RESULT=new Valor(a);:} 
+    | Verdadero:a {:RESULT=new Valor(a);:} 
+    | Falso:a {:RESULT=new Valor(a);:}  
+    | Char:a {:RESULT=new Valor(a);:}  
+    | UNARIO:a {:RESULT=a;:}
+    | not:a {:RESULT=new Valor(a);:}
+
 
 ;
     
-UNARIO::=  mas NUMERICO {:System.out.println("UN_MAS");:}    
-    | menos NUMERICO   {:System.out.println("UN_MENOS");:}  
+UNARIO::=  mas:a NUMERICO:b {:RESULT=new Unario(a,b);:}     
+    | menos:a NUMERICO:b {:RESULT=new Unario(a,b);:}    
 ;
 
-NUMERICO::=  num   
-    | Double     
-;
-
-
-
-NOMBRE_VARIABLES::= NOMBRE_VARIABLES coma nombre_variable   
-    | nombre_variable :a {:System.out.println(a);:}
-    |  
+NUMERICO::=  num:a {:RESULT=new Valor(a);:}  
+    | Double:a {:RESULT=new Valor(a);:}    
 ;
 
 
 
-
-
-OPERACION::=  OPERACION OPERADORES VALORES  
-    | VALORES
-;
-
-OPERADORES ::= mas
-    | menos
-    | divicion
-    | potencia
-    | mod
-    | multiplicacion
-    | mayor
-    | menor
-    | mayor_o_igual
-    | menor_o_igual
-    | es_igual
-    | es_diferente
+NOMBRE_VARIABLES::= NOMBRE_VARIABLES:a coma nombre_variable:b {: ((Lista_Nombres)a).agregarNombre(b); RESULT=a;:}   
+    | nombre_variable:a {:RESULT=new Lista_Nombres(a);:} 
 ;
 
 
 
-VALORES::= num:a{:System.out.println(a);:}
-    | parentesis_A OPERACION parentesis_B
+
+
+OPERACION::=  OPERACION:a OPERADORES:b VALORES:c {:RESULT=new OperacionBinaria(a,c,b);:}
+    | VALORES:a {:RESULT=a;:}
+;
+
+OPERADORES ::= mas:a {:RESULT=a;:}
+    | menos:a {:RESULT=a;:}
+    | divicion:a {:RESULT=a;:}
+    | potencia:a {:RESULT=a;:}
+    | mod:a {:RESULT=a;:}
+    | multiplicacion:a {:RESULT=a;:}
+    | mayor:a {:RESULT=a;:}
+    | menor:a {:RESULT=a;:}
+    | mayor_o_igual:a {:RESULT=a;:}
+    | menor_o_igual:a {:RESULT=a;:}
+    | es_igual:a {:RESULT=a;:}
+    | es_diferente:a {:RESULT=a;:}
+    | or:a {:RESULT=a;:}
+    | and:a {:RESULT=a;:}
+    | not:a {:RESULT=a;:}
+    
+;
+
+
+
+VALORES::= num:a {:RESULT=new Valor(a);:}
+    | parentesis_A OPERACION:a parentesis_B {:RESULT=a;:}
     | corchete_A OPERACION corchete_B
-    | nombre_variable
-    | Double
+    | nombre_variable:a {:RESULT=new Valor(a);:}
+    | Double:a {:RESULT=new Valor(a);:}
+    
 ;
 
 

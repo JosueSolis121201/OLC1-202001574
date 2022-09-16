@@ -9,22 +9,22 @@ package Instrucciones;
  *
  * @author josue
  */
-public class OperacionBinaria implements Instruccion{
-    Instruccion izquierdo;
-    Instruccion derecho;
-    String operador;
+public class Declaracion implements Instruccion {
+    Instruccion dato;
+    Instruccion tipo;
+    Instruccion expresion;
     
-    public OperacionBinaria(Instruccion izquierdo,Instruccion derecho,String operador){
-        this.izquierdo = izquierdo;
-        this.derecho = derecho;
-        this.operador = operador;
+    public Declaracion(Instruccion dato,Instruccion tipo,Instruccion expresion){
+        this.dato = dato;
+        this.tipo = tipo;
+        this.expresion = expresion;
     }
     
     
+
     @Override
     public String generarPython() {
-        String retorno = this.izquierdo.generarPython() + this.operador + this.derecho.generarPython();
-        return retorno;
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -39,7 +39,7 @@ public class OperacionBinaria implements Instruccion{
 
     @Override
     public String imprimir() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String retorno = this.dato.imprimir() + this.tipo.imprimir() + this.expresion.imprimir ();
+        return retorno;
     }
-    
 }
