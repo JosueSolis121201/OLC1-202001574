@@ -23,7 +23,7 @@ public class Asignacion extends Instruccion{
     @Override
     public String generarPython(int nivel) {
         String retorno = this.crearTabuladores(nivel);
-            retorno  = retorno + this.nombre.generarPython(nivel + 1)+"="+this.tipo.generarPython(nivel + 1);
+            retorno  = retorno + this.nombre.generarPython(nivel)+"="+this.tipo.generarPython(nivel);
        return retorno;
     }
 

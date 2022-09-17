@@ -23,7 +23,7 @@ public class Para_F extends Instruccion{
     @Override
     public String generarPython(int nivel) {
        String retorno = this.crearTabuladores(nivel);
-            retorno  = retorno+this.tipo.generarPython(nivel + 1)+"\n";
+            retorno  = retorno+this.tipo.generarPython(nivel)+"\n";
       
        return retorno;
     }

@@ -25,7 +25,7 @@ public class Impresion extends Instruccion{
     @Override
     public String generarPython(int nivel) {
         String retorno = this.crearTabuladores(nivel);
-        retorno  =retorno +  "print("+this.dato.generarPython(nivel + 1)+")";
+        retorno  =retorno +  "print("+this.dato.generarPython(nivel)+")";
        return retorno;
     }
 

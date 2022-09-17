@@ -21,7 +21,7 @@ public class Unario extends Instruccion{
     @Override
     public String generarPython(int nivel) {
        String retorno = this.crearTabuladores(nivel);
-            retorno  =retorno+ this.operador +this.dato.generarPython(nivel+1) +"\n";
+            retorno  =retorno+ this.operador +this.dato.generarPython(nivel) +"\n";
        return retorno;
     }
 
