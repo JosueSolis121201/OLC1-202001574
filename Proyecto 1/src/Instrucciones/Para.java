@@ -35,7 +35,10 @@ public class Para extends Instruccion{
 
     @Override
     public String generarGo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        String retorno = "";
+        retorno  = retorno+"for "+this.expresion.generarGo()+"; "+this.expresion1.generarGo()+"; " +this.expresion2.generarGo()+"{ \n"+this.para_f.generarGo()+"\n }";
+        return retorno;
     }
 
     @Override

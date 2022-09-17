@@ -36,7 +36,12 @@ public class IF extends Instruccion{
 
     @Override
     public String generarGo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         String retorno = "";
+        retorno  = retorno +"if "+this.expresion.generarGo()+this.cuerpo.generarGo()+this.else_if.generarGo();
+      if (this.else_f != null){
+      retorno=retorno + this.else_f.generarGo();
+      }
+       return retorno;
     }
 
     @Override

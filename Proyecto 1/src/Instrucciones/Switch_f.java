@@ -27,7 +27,9 @@ public class Switch_f extends Instruccion  {
 
     @Override
     public String generarGo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String retorno = " ";
+        retorno  = retorno +"default "+": \n "+this.cuerpo.generarGo();
+        return retorno;
     }
 
     @Override

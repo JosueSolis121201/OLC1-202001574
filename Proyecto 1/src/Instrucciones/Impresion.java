@@ -31,7 +31,9 @@ public class Impresion extends Instruccion{
 
     @Override
     public String generarGo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String retorno = "";
+        retorno  =retorno +  "fmt.Print( "+this.dato.generarGo()+")";
+       return retorno;
     }
 
     @Override

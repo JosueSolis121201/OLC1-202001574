@@ -32,7 +32,11 @@ public class Lista_Switch extends Instruccion {
 
     @Override
     public String generarGo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String retorno = "";
+        for(Instruccion inst : this.lista){
+            retorno  = retorno  + inst.generarGo();
+        }
+       return retorno;
     }
 
     @Override

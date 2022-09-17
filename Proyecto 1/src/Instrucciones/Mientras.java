@@ -34,7 +34,12 @@ public class Mientras extends Instruccion{
 
     @Override
     public String generarGo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String retorno = "";
+        retorno  = retorno +"for true { \n if !("+ this.nombre.generarGo()+"){ \n  break \n }";
+        if(this.tipo.generarGo() != null){
+        retorno = retorno + this.tipo.generarGo()+"\n } "; 
+      }
+        return retorno;
     }
 
     @Override

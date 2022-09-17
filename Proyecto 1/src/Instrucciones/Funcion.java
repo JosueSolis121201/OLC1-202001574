@@ -31,7 +31,9 @@ public class Funcion extends Instruccion{
 
     @Override
     public String generarGo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       String retorno = "";
+        retorno  = retorno + "func  "+this.nombre+" ("+this.dato.generarGo()+"){ "+"\n" +this.cuerpo.generarGo()+"} \n";
+        return retorno;
     }
 
     @Override

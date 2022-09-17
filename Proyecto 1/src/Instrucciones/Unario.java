@@ -27,7 +27,9 @@ public class Unario extends Instruccion{
 
     @Override
     public String generarGo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String retorno = "";
+            retorno  =retorno+ this.operador +this.dato.generarGo() +"\n";
+       return retorno;
     }
 
     @Override

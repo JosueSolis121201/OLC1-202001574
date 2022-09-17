@@ -29,7 +29,9 @@ public class Asignacion extends Instruccion{
 
     @Override
     public String generarGo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String retorno = "";
+            retorno  = retorno + this.nombre.generarGo()+"="+this.tipo.generarGo();
+       return retorno;
     }
 
     @Override

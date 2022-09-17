@@ -42,7 +42,22 @@ public class Lista_Variables extends Instruccion {
 
     @Override
     public String generarGo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String retorno = "";
+        int numero =0;
+        for(Instruccion inst : this.lista){
+            String coma = "";
+            if(this.lista.size() > 1 ){
+                coma = ",";
+                numero=numero+1;
+                if (this.lista.size()==numero){
+                    coma = "";
+                }
+            }
+            
+            
+            retorno  = retorno+inst.generarGo() + coma;
+        }
+       return retorno;
     }
 
     @Override

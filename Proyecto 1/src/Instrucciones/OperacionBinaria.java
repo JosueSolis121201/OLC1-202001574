@@ -25,7 +25,7 @@ public class OperacionBinaria extends Instruccion{
     @Override
     public String generarPython(int nivel) {
         String retorno ="";
-        String data_operador ="";
+        String data_operador = "";
         switch (this.operador) {
     case "mayor":
              data_operador =  ">";
@@ -55,7 +55,42 @@ public class OperacionBinaria extends Instruccion{
 
     @Override
     public String generarGo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String retorno ="";
+        String data_operador ="";
+        switch (this.operador) {
+    case "mayor":
+             data_operador =  ">";
+             break;
+    case "menor":
+             data_operador =  "<";
+             break;
+    case "mayor_o_igual":
+             data_operador = ">=";
+             break;
+    case "menor_o_igual":
+             data_operador = "<=";
+             break;
+    case "es_igual":
+             data_operador = "==";
+             break;
+    case "es_diferente":
+             data_operador = "!=";
+             break;
+    case "or":
+             data_operador = "||";
+             break;
+    case "and":
+             data_operador = "&&";
+             break;
+    case "not":
+             data_operador = "!";
+             break;
+    default:
+             data_operador = this.operador;
+             break;
+        }
+        retorno = retorno + this.izquierdo.generarGo() + data_operador + this.derecho.generarGo() ;
+        return retorno;
     }
 
     @Override

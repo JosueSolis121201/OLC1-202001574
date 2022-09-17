@@ -29,7 +29,9 @@ public class Repetir extends Instruccion{
 
     @Override
     public String generarGo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String retorno = "";
+        retorno =retorno+ "for true{ \n "+this.nombre.generarGo()+"\n"+"If("+this.tipo.generarGo()+"){ \n break \n } \n }";
+        return retorno;
     }
 
     @Override

@@ -23,13 +23,15 @@ public class Else extends Instruccion{
     @Override
     public String generarPython(int nivel) {
         String retorno = this.crearTabuladores(nivel);
-        retorno  = retorno +"Else "+": \n "+this.tipo.generarPython(nivel);
+        retorno  = retorno +"else "+": \n "+this.tipo.generarPython(nivel);
         return retorno;
     }
 
     @Override
     public String generarGo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String retorno ="";
+        retorno  = retorno +"else "+"{ \n "+this.tipo.generarGo()+"\n }";
+        return retorno;
     }
 
     @Override

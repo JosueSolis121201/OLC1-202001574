@@ -35,7 +35,11 @@ public class Lista_Nombres extends Instruccion{
 
     @Override
     public String generarGo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         String retorno = "";
+        for(String inst : this.lista){
+            retorno  = retorno + inst;
+        }
+       return retorno;
     }
 
     @Override

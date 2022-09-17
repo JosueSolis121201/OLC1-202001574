@@ -35,7 +35,12 @@ public class Switch extends Instruccion{
 
     @Override
     public String generarGo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String retorno = "";
+        retorno  = retorno + "switch "+this.expresion.generarGo()+"{ \n "+this.Switch_case.generarGo();
+        if (this.Switch_f != null){
+      retorno=retorno + this.Switch_f.generarGo();
+        }
+        return retorno;
     }
 
     @Override
