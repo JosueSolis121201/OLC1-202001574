@@ -5,6 +5,9 @@
  */
 package Instrucciones;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author josue
@@ -39,7 +42,8 @@ public class OperacionBinaria implements Instruccion{
 
     @Override
     public String imprimir() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String retorno = this.izquierdo.imprimir()+ this.operador + this.derecho.imprimir();
+        return retorno;
     }
     
 }

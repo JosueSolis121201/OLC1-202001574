@@ -4,24 +4,25 @@
  * and open the template in the editor.
  */
 package Instrucciones;
-
+    
 import java.util.ArrayList;
+
 
 /**
  *
  * @author josue
  */
-public class Lista_Nombres implements Instruccion{
-    ArrayList<String> lista;
-    public Lista_Nombres(String nombre){
+public class S1 implements Instruccion{
+    ArrayList<Instruccion> lista;
+    
+    public S1(Instruccion dato){
         this.lista = new ArrayList();
-        lista.add(nombre);
+        lista.add(dato);
     }
     
-    public void agregarNombre(String nombre){
-        lista.add(nombre);
+    public void agregar(Instruccion dato){
+        this.lista.add(dato);
     }
-        
 
     @Override
     public String generarPython() {
@@ -41,10 +42,10 @@ public class Lista_Nombres implements Instruccion{
     @Override
     public String imprimir() {
         String retorno = "";
-        for (int i=0;i<lista.size();i++) {
-            retorno = retorno + lista.get(i);
-    }
-        return retorno;
+        for(Instruccion inst : this.lista){
+            retorno  = retorno  + inst.imprimir();
+        }
+       return retorno;
     }
     
 }

@@ -11,18 +11,16 @@ import java.util.ArrayList;
  *
  * @author josue
  */
-public class Lista_Nombres implements Instruccion{
-    ArrayList<String> lista;
-    public Lista_Nombres(String nombre){
+public class Lista_If implements Instruccion {
+    ArrayList<Instruccion> lista;
+    public Lista_If(){
         this.lista = new ArrayList();
-        lista.add(nombre);
     }
     
-    public void agregarNombre(String nombre){
+    
+    public void agregarNombre(Instruccion nombre){
         lista.add(nombre);
-    }
-        
-
+    }    
     @Override
     public String generarPython() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -40,9 +38,9 @@ public class Lista_Nombres implements Instruccion{
 
     @Override
     public String imprimir() {
-        String retorno = "";
+       String retorno = "";
         for (int i=0;i<lista.size();i++) {
-            retorno = retorno + lista.get(i);
+            retorno = retorno + lista.get(i).imprimir();
     }
         return retorno;
     }

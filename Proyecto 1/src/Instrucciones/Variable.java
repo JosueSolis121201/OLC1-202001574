@@ -5,23 +5,18 @@
  */
 package Instrucciones;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author josue
  */
-public class Lista_Nombres implements Instruccion{
-    ArrayList<String> lista;
-    public Lista_Nombres(String nombre){
-        this.lista = new ArrayList();
-        lista.add(nombre);
-    }
+public class Variable implements Instruccion  {
+    String nombre;
+    Instruccion dato;
     
-    public void agregarNombre(String nombre){
-        lista.add(nombre);
+    public Variable(String nombre,Instruccion dato){
+        this.dato = dato;
+        this.nombre = nombre;
     }
-        
 
     @Override
     public String generarPython() {
@@ -40,10 +35,7 @@ public class Lista_Nombres implements Instruccion{
 
     @Override
     public String imprimir() {
-        String retorno = "";
-        for (int i=0;i<lista.size();i++) {
-            retorno = retorno + lista.get(i);
-    }
+       String retorno = this.nombre +this.dato.imprimir();
         return retorno;
     }
     

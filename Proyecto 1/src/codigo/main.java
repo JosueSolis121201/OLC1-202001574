@@ -19,18 +19,11 @@ public class main{
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        
-         try {
-
-            Analizador_Lexico lexico = new Analizador_Lexico(
-                    new BufferedReader(new FileReader("./entrada.txt"))
-            );
-            Analizador_sintactico sintactico = new Analizador_sintactico(lexico);
-            sintactico.parse();
-
-        } catch (Exception e) {
-        }
+    public static void main(String[] args) throws Exception {
+        BufferedReader buff = new BufferedReader(new FileReader("./entrada.txt"));     
+        Analizador_Lexico lexico = new Analizador_Lexico(buff);
+        Analizador_sintactico sintactico = new Analizador_sintactico(lexico);
+        sintactico.parse();
         
     }
     

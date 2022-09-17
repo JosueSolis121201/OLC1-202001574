@@ -5,24 +5,23 @@
  */
 package Instrucciones;
 
-import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author josue
  */
-public class Lista_Nombres implements Instruccion{
-    ArrayList<String> lista;
-    public Lista_Nombres(String nombre){
-        this.lista = new ArrayList();
-        lista.add(nombre);
+public class Impresion implements Instruccion{
+    Instruccion dato;
+    String operador;
+    
+    public Impresion(String operador,Instruccion dato){
+        this.operador = operador;
+        this.dato =dato;
     }
     
-    public void agregarNombre(String nombre){
-        lista.add(nombre);
-    }
-        
-
+    
     @Override
     public String generarPython() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -40,10 +39,7 @@ public class Lista_Nombres implements Instruccion{
 
     @Override
     public String imprimir() {
-        String retorno = "";
-        for (int i=0;i<lista.size();i++) {
-            retorno = retorno + lista.get(i);
-    }
+        String retorno =  this.operador + this.dato.imprimir();
         return retorno;
     }
     

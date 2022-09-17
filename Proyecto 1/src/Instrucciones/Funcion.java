@@ -5,22 +5,21 @@
  */
 package Instrucciones ;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author josue
  */
-public class Estructura implements Instruccion {
-    ArrayList<Instruccion> lista;
+public class Funcion implements Instruccion{
+    String nombre;
+    Instruccion dato;
+    Instruccion tipo;
+    Instruccion cuerpo;
     
-    public Estructura(Instruccion nombre){
-        this.lista = new ArrayList();
-        lista.add(nombre);
-    }
-    
-    public void agregarNombre(Instruccion nombre){
-        lista.add(nombre);
+    public Funcion(String nombre,Instruccion tipo,Instruccion dato,Instruccion cuerpo){
+        this.nombre = nombre;
+        this.dato = dato;
+        this.cuerpo = cuerpo;
+        this.tipo = tipo;
     }
 
     @Override
@@ -40,10 +39,7 @@ public class Estructura implements Instruccion {
 
     @Override
     public String imprimir() {
-        String retorno = " ";
-        for (int i=0;i<lista.size();i++) {
-            retorno = retorno + lista.get(i);
-    }
+        String retorno = this.nombre +this.tipo.imprimir()+this.dato.imprimir()+this.cuerpo.imprimir();
         return retorno;
     }
     

@@ -3,25 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Instrucciones;
-
-import java.util.ArrayList;
+package Instrucciones ;
 
 /**
  *
  * @author josue
  */
-public class Lista_Nombres implements Instruccion{
-    ArrayList<String> lista;
-    public Lista_Nombres(String nombre){
-        this.lista = new ArrayList();
-        lista.add(nombre);
-    }
+public class IF implements Instruccion{
+    Instruccion expresion;
+    Instruccion cuerpo;
+    Instruccion else_if;
+    Instruccion else_f;
     
-    public void agregarNombre(String nombre){
-        lista.add(nombre);
-    }
+    
+    public IF(Instruccion expresion,Instruccion cuerpo, Instruccion else_if, Instruccion else_f){
+        this.expresion = expresion;
+        this.cuerpo = cuerpo;
+        this.else_if = else_if;
+        this.else_f = else_f;
         
+    }
 
     @Override
     public String generarPython() {
@@ -40,10 +41,10 @@ public class Lista_Nombres implements Instruccion{
 
     @Override
     public String imprimir() {
-        String retorno = "";
-        for (int i=0;i<lista.size();i++) {
-            retorno = retorno + lista.get(i);
-    }
+        String retorno = this.expresion.imprimir() +this.cuerpo.imprimir() + this.else_if.imprimir();
+        if (this.else_f != null){
+            retorno= retorno+this.else_f.imprimir();
+        }
         return retorno;
     }
     

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Instrucciones;
+package Instrucciones ;
 
 import java.util.ArrayList;
 
@@ -11,17 +11,17 @@ import java.util.ArrayList;
  *
  * @author josue
  */
-public class Lista_Nombres implements Instruccion{
-    ArrayList<String> lista;
-    public Lista_Nombres(String nombre){
+public class Lista_Estructura implements Instruccion {
+    ArrayList<Instruccion> lista;
+    
+    public Lista_Estructura(Instruccion nombre){
         this.lista = new ArrayList();
         lista.add(nombre);
     }
     
-    public void agregarNombre(String nombre){
+    public void agregarNombre(Instruccion nombre){
         lista.add(nombre);
     }
-        
 
     @Override
     public String generarPython() {
@@ -40,9 +40,9 @@ public class Lista_Nombres implements Instruccion{
 
     @Override
     public String imprimir() {
-        String retorno = "";
+        String retorno = " ";
         for (int i=0;i<lista.size();i++) {
-            retorno = retorno + lista.get(i);
+            retorno = retorno + lista.get(i).imprimir();
     }
         return retorno;
     }
