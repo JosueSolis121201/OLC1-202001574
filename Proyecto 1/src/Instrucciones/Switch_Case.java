@@ -9,7 +9,7 @@ package Instrucciones;
  *
  * @author josue
  */
-public class Switch_Case implements Instruccion  {
+public class Switch_Case extends Instruccion  {
     String nombre;
     Instruccion dato;
     Instruccion cuerpo;
@@ -21,8 +21,11 @@ public class Switch_Case implements Instruccion  {
     }
 
     @Override
-    public String generarPython() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String generarPython(int nivel) {
+       String retorno = this.crearTabuladores(nivel);
+        retorno  = retorno + "elif "+this.dato.generarPython(nivel)+": \n"+this.cuerpo.generarPython(nivel)+"\n" ;
+      
+       return retorno;
     }
 
     @Override

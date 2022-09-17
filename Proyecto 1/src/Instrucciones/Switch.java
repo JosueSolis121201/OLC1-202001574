@@ -9,7 +9,7 @@ package Instrucciones ;
  *
  * @author josue
  */
-public class Switch implements Instruccion{
+public class Switch extends Instruccion{
     Instruccion expresion;
     Instruccion Switch_case;
     Instruccion Switch_f;
@@ -23,8 +23,14 @@ public class Switch implements Instruccion{
     }
 
     @Override
-    public String generarPython() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String generarPython(int nivel) {
+        String retorno = this.crearTabuladores(nivel);
+        retorno  = retorno + "if "+this.expresion.generarPython(nivel)+": \n "+this.Switch_case.generarPython(nivel)+"\n" ;
+        if (this.Switch_f != null){
+      retorno=retorno + this.Switch_f.generarPython(nivel);
+      }
+      
+       return retorno;
     }
 
     @Override

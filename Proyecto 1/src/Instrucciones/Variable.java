@@ -9,7 +9,7 @@ package Instrucciones;
  *
  * @author josue
  */
-public class Variable implements Instruccion  {
+public class Variable extends Instruccion  {
     String nombre;
     Instruccion dato;
     
@@ -19,8 +19,9 @@ public class Variable implements Instruccion  {
     }
 
     @Override
-    public String generarPython() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String generarPython(int nivel) {
+        String retorno  = this.nombre+this.dato.generarPython(nivel);
+        return retorno;
     }
 
     @Override

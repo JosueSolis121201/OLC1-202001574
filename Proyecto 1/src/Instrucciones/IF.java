@@ -9,7 +9,7 @@ package Instrucciones ;
  *
  * @author josue
  */
-public class IF implements Instruccion{
+public class IF extends Instruccion{
     Instruccion expresion;
     Instruccion cuerpo;
     Instruccion else_if;
@@ -25,8 +25,13 @@ public class IF implements Instruccion{
     }
 
     @Override
-    public String generarPython() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String generarPython(int nivel) {
+        String retorno = this.crearTabuladores(nivel);
+        retorno  = retorno +"if "+this.expresion.generarPython(nivel)+":"+" \n "+this.cuerpo.generarPython(nivel)+this.else_if.generarPython(nivel);
+      if (this.else_f != null){
+      retorno=retorno + this.else_f.generarPython(nivel);
+      }
+       return retorno;
     }
 
     @Override

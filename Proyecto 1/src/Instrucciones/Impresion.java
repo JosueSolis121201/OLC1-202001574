@@ -12,7 +12,7 @@ import java.util.logging.Logger;
  *
  * @author josue
  */
-public class Impresion implements Instruccion{
+public class Impresion extends Instruccion{
     Instruccion dato;
     String operador;
     
@@ -23,8 +23,10 @@ public class Impresion implements Instruccion{
     
     
     @Override
-    public String generarPython() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String generarPython(int nivel) {
+        String retorno = this.crearTabuladores(nivel);
+        retorno  =retorno +  "print("+this.dato.generarPython(nivel + 1)+")";
+       return retorno;
     }
 
     @Override

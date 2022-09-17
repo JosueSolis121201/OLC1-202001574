@@ -9,7 +9,7 @@ package Instrucciones;
  *
  * @author josue
  */
-public class Switch_f implements Instruccion  {
+public class Switch_f extends Instruccion  {
     String nombre;
     Instruccion cuerpo;
     
@@ -19,8 +19,10 @@ public class Switch_f implements Instruccion  {
     }
 
     @Override
-    public String generarPython() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String generarPython(int nivel) {
+        String retorno = this.crearTabuladores(nivel);
+        retorno  = retorno +"Else "+": \n "+this.cuerpo.generarPython(nivel);
+        return retorno;
     }
 
     @Override

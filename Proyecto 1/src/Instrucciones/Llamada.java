@@ -9,7 +9,7 @@ package Instrucciones ;
  *
  * @author josue
  */
-public class Llamada implements Instruccion{
+public class Llamada extends Instruccion{
     String nombre;
     Instruccion tipo;
     
@@ -21,8 +21,10 @@ public class Llamada implements Instruccion{
     }
 
     @Override
-    public String generarPython() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String generarPython(int nivel) {
+       String retorno = this.crearTabuladores(nivel);
+        retorno =retorno+this.nombre+" ("+this.tipo.generarPython(nivel)+") \n";
+        return retorno;
     }
 
     @Override

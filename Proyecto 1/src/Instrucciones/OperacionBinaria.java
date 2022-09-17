@@ -5,14 +5,12 @@
  */
 package Instrucciones;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author josue
  */
-public class OperacionBinaria implements Instruccion{
+public class OperacionBinaria extends Instruccion{
     Instruccion izquierdo;
     Instruccion derecho;
     String operador;
@@ -25,8 +23,33 @@ public class OperacionBinaria implements Instruccion{
     
     
     @Override
-    public String generarPython() {
-        String retorno = this.izquierdo.generarPython() + this.operador + this.derecho.generarPython();
+    public String generarPython(int nivel) {
+        String retorno ="";
+        String data_operador ="";
+        switch (this.operador) {
+    case "mayor":
+             data_operador =  ">";
+             break;
+    case "menor":
+             data_operador =  "<";
+             break;
+    case "mayor_o_igual":
+             data_operador = ">=";
+             break;
+    case "menor_o_igual":
+             data_operador = "<=";
+             break;
+    case "es_igual":
+             data_operador = "==";
+             break;
+    case "es_diferente":
+             data_operador = "!=";
+             break;
+    default:
+             data_operador = this.operador;
+             break;
+        }
+        retorno = retorno + this.izquierdo.generarPython(nivel) + data_operador + this.derecho.generarPython(nivel);
         return retorno;
     }
 

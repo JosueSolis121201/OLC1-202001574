@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author josue
  */
-public class Lista_Switch implements Instruccion {
+public class Lista_Switch extends Instruccion {
     ArrayList<Instruccion> lista;
     public Lista_Switch(){
         this.lista = new ArrayList();
@@ -22,8 +22,12 @@ public class Lista_Switch implements Instruccion {
         lista.add(nombre);
     }    
     @Override
-    public String generarPython() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String generarPython(int nivel) {
+        String retorno = this.crearTabuladores(nivel);
+        for(Instruccion inst : this.lista){
+            retorno  = retorno  + inst.generarPython(nivel);
+        }
+       return retorno;
     }
 
     @Override

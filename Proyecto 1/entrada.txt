@@ -1,13 +1,6 @@
 inicio
-metodo _potenciaManual_ con_parametros (_base_ Numero, _exponenete_ Numero)
-	ingresar _i_ como Numero con_valor 0;
-	ingresar _acumulado_ como Numero con_valor 0;
-	para _i_->0 hasta _exponente_-1 hacer
-		_acumulado_ -> _acumulado_ + _acumulado_;
-	fin_para	
-	imprimir _acumulado_;
-	imprimir_nl " Esta es la potencia Manual";	
-fin_metodo
+
+
 metodo _potenciaManual_ con_parametros (_base_ Numero, _exponenete_ Numero)
 	ingresar _i_ como Numero con_valor 0;
 	ingresar _acumulado_ como Numero con_valor 0;
@@ -80,10 +73,7 @@ imprimir_nl (_v3_);
 
 si _v1_ es_igual _v2_ entonces
 	imprimir_nl "Al parecer no funciona la asignacion";
-	mientras (_variable1_ mayor_o_igual 5*5+8/2) hacer
-		imprimir _variable1_;
-		_variable1_ -> _variable1_ + 1;
-	fin_mientras
+	
 
 si _v1_ es_igual _v2_ entonces
 	imprimir_nl "no tiene que imprimir este mensaje";
@@ -97,5 +87,25 @@ fin_si
 fin_si
 
 
+mientras (_variable1_ mayor_o_igual 5*5+8/2) hacer
+		imprimir _variable1_;
+		_variable1_ -> _variable1_ + 1;
+	fin_mientras
+
+retornar _potencia_;
+
+funcion _potenciaFuncion_ Numero con_parametros (_base_ Numero, _exponente_ Numero) 
+	_variable1_ -> _variable1_ + 1;_variable1_ -> _variable1_ + 1;
+fin_funcion
+
+ejecutar _potenciaManual_(_base_ Numero, _exponente_ Numero);
+
+
+segun _varaux_ hacer
+		¿0? entonces
+			imprimir_nl "el valor es mayor a 0 y menos a 2";
+		¿2? entonces
+			imprimir_nl "el valor es mayor a 2";
+	fin_segun
 fin
  

@@ -9,14 +9,24 @@ package Instrucciones;
  *
  * @author josue
  */
-public interface Instruccion {
+public abstract class Instruccion {
     
-    public String generarPython();
+    abstract public String generarPython(int nivel);
     
-    public String generarGo();
+    abstract public String generarGo();
     
-    public String graficar();
+    abstract public String graficar();
     
-    public String imprimir();
+    abstract public String imprimir();
+    
+    public String crearTabuladores(int nivel){
+        String retorno = "";
+        
+        for(int i=0; i<nivel;i++){
+            retorno = retorno + "\t";
+        }
+        return retorno;
+    }
+
 
 }

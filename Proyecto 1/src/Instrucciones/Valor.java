@@ -9,7 +9,7 @@ package Instrucciones;
  *
  * @author josue
  */
-public class Valor implements Instruccion{
+public class Valor extends Instruccion{
     String valor;
     
     public Valor(String valor){
@@ -17,7 +17,7 @@ public class Valor implements Instruccion{
     }
     
     @Override
-    public String generarPython() {
+    public String generarPython(int nivel) {
         return this.valor;
     }
 

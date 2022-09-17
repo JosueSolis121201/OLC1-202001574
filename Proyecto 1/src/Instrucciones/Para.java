@@ -9,7 +9,7 @@ package Instrucciones ;
  *
  * @author josue
  */
-public class Para implements Instruccion{
+public class Para extends Instruccion{
     Instruccion expresion;
     Instruccion expresion1;
     Instruccion expresion2;
@@ -25,8 +25,12 @@ public class Para implements Instruccion{
     }
 
     @Override
-    public String generarPython() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String generarPython(int nivel) {
+        
+        String retorno = this.crearTabuladores(nivel);
+            retorno  = retorno+ this.crearTabuladores(nivel)+"for"+this.expresion.generarPython(nivel + 1)+":"+"\n"+this.expresion1.generarPython(nivel + 1)+"\n" +this.expresion2.generarPython(nivel +1)+"\n"+this.para_f.generarPython(nivel +1)+"\n";
+      
+       return retorno;
     }
 
     @Override

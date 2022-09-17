@@ -9,7 +9,7 @@ package Instrucciones;
  *
  * @author josue
  */
-public class Unario implements Instruccion{
+public class Unario extends Instruccion{
     String operador;
     Instruccion dato;
     
@@ -19,8 +19,10 @@ public class Unario implements Instruccion{
     }
 
     @Override
-    public String generarPython() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String generarPython(int nivel) {
+       String retorno = this.crearTabuladores(nivel);
+            retorno  =retorno+ this.operador +this.dato.generarPython(nivel+1) +"\n";
+       return retorno;
     }
 
     @Override

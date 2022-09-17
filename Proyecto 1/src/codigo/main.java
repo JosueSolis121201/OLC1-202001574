@@ -23,7 +23,10 @@ public class main{
         BufferedReader buff = new BufferedReader(new FileReader("./entrada.txt"));     
         Analizador_Lexico lexico = new Analizador_Lexico(buff);
         Analizador_sintactico sintactico = new Analizador_sintactico(lexico);
+        
         sintactico.parse();
+        String imprmir = sintactico.raiz.generarPython(0);
+        System.out.println(imprmir);
         
     }
     

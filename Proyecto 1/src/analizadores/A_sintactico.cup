@@ -5,7 +5,9 @@ import Instrucciones.*;
 //PARSER 
 parser code
 {://Codigo visible
-    
+    public Instruccion raiz=null;
+
+
     public void syntax_error(Symbol s){
         System.out.println("Error R de sintaxis: "+ s.value +" Linea "+(s.left+1)+" columna "+(s.right+1) );
     }
@@ -176,7 +178,7 @@ non terminal Instruccion S0P;
 start with S0
 ;
 
-S0::= prInicio S0P:a prFin {: System.out.println(a.imprimir());:}  
+S0::= prInicio S0P:a prFin {: raiz = a;:}  
 ;
 
 S0P::=S0P:a S1:b   {: ((S1)a).agregar(b); RESULT=a;  :}

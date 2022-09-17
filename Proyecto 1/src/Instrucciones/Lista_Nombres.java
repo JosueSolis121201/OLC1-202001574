@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author josue
  */
-public class Lista_Nombres implements Instruccion{
+public class Lista_Nombres extends Instruccion{
     ArrayList<String> lista;
     public Lista_Nombres(String nombre){
         this.lista = new ArrayList();
@@ -24,9 +24,14 @@ public class Lista_Nombres implements Instruccion{
         
 
     @Override
-    public String generarPython() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String generarPython(int nivel) {
+        String retorno = "";
+        for(String inst : this.lista){
+            retorno  = retorno + inst;
+        }
+       return retorno;
     }
+    
 
     @Override
     public String generarGo() {

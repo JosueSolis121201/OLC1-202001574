@@ -595,7 +595,9 @@ public class Analizador_sintactico extends java_cup.runtime.lr_parser {
 
 
 //Codigo visible
-    
+    public Instruccion raiz=null;
+
+
     public void syntax_error(Symbol s){
         System.out.println("Error R de sintaxis: "+ s.value +" Linea "+(s.left+1)+" columna "+(s.right+1) );
     }
@@ -651,7 +653,7 @@ class CUP$Analizador_sintactico$actions {
 		int aleft = ((java_cup.runtime.Symbol)CUP$Analizador_sintactico$stack.elementAt(CUP$Analizador_sintactico$top-1)).left;
 		int aright = ((java_cup.runtime.Symbol)CUP$Analizador_sintactico$stack.elementAt(CUP$Analizador_sintactico$top-1)).right;
 		Instruccion a = (Instruccion)((java_cup.runtime.Symbol) CUP$Analizador_sintactico$stack.elementAt(CUP$Analizador_sintactico$top-1)).value;
-		 System.out.println(a.imprimir());
+		 raiz = a;
               CUP$Analizador_sintactico$result = parser.getSymbolFactory().newSymbol("S0",1, ((java_cup.runtime.Symbol)CUP$Analizador_sintactico$stack.elementAt(CUP$Analizador_sintactico$top-2)), ((java_cup.runtime.Symbol)CUP$Analizador_sintactico$stack.peek()), RESULT);
             }
           return CUP$Analizador_sintactico$result;
