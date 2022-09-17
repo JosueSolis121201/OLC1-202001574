@@ -27,13 +27,13 @@ public class Lista_Estructura extends Instruccion {
     public String generarPython(int nivel) {
          String retorno ="";
         for(Instruccion inst : this.lista){
-            retorno  = retorno  + inst.generarPython(nivel) +"\n";
+            retorno  = retorno  + inst.generarPython(nivel+1) +"\n";
         }
        return retorno;
     }
 
     @Override
-    public String generarGo() {
+    public String generarGo() { 
        String retorno ="";
         for(Instruccion inst : this.lista){
             retorno  = retorno  + inst.generarGo()+"\n";

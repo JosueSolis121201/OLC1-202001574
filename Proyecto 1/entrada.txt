@@ -84,6 +84,24 @@ si _v1_ es_igual _v2_ entonces
 		    imprimir_nl "mensaje de prueba";
 		o_si _v1_ es_igual 14 entonces
 		    imprimir_nl "mensaje de prueba";
+si _v1_ es_igual _v2_ entonces
+	imprimir_nl "no tiene que imprimir este mensaje";
+		o_si _v1_ es_igual 13 entonces
+		    imprimir_nl "mensaje de prueba";
+		o_si _v1_ es_igual 14 entonces
+		    imprimir_nl "mensaje de prueba";
+si _v1_ es_igual _v2_ entonces
+	imprimir_nl "no tiene que imprimir este mensaje";
+		o_si _v1_ es_igual 13 entonces
+		    imprimir_nl "mensaje de prueba";
+		o_si _v1_ es_igual 14 entonces
+		    imprimir_nl "mensaje de prueba";
+	de_lo_contrario
+	    imprimir_nl "este print es un ejemplo";
+fin_si
+	de_lo_contrario
+	    imprimir_nl "este print es un ejemplo";
+fin_si
 	de_lo_contrario
 	    imprimir_nl "este print es un ejemplo";
 fin_si
@@ -94,6 +112,17 @@ mientras (_variable1_ mayor_o_igual 5*5+8/2) hacer
 		imprimir _variable1_;
 		_variable1_ -> _variable1_ + 1;
 	fin_mientras
+
+	
+
+retornar _potencia_;
+
+
+retornar _potencia_;
+
+
+retornar _potencia_;
+
 
 retornar _potencia_;
 
