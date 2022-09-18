@@ -37,7 +37,7 @@ public class Retornar extends Instruccion{
     @Override
     public String graficar() {
        String retorno = this.generarId(this)+"[label=\""+"Retornar"+"\"]" + "\n";;
-       retorno  = retorno+ this.generarId(nombre)+"[label=\""+this.nombre+"\"]" + "\n";
+       retorno  = retorno+ this.generarId(nombre)+"[label=\""+this.nombre.replace("\"", "")+"\"]" + "\n";
        retorno  = retorno+ this.tipo.graficar() + "\n";       
        
        retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.tipo) + "\n";

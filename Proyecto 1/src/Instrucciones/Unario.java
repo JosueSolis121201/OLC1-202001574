@@ -35,7 +35,7 @@ public class Unario extends Instruccion{
     @Override
     public String graficar() {
        String retorno = this.generarId(this)+"[label=\""+"Operacion binaria"+"\"]" + "\n";;
-       retorno  = retorno+ this.generarId(operador)+"[label=\""+this.operador+"\"]" + "\n";
+       retorno  = retorno+ this.generarId(operador)+"[label=\""+this.operador.replace("\"", "")+"\"]" + "\n";
        retorno  = retorno+ this.dato.graficar() + "\n";       
        
        retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.dato) + "\n";

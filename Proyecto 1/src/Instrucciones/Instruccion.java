@@ -32,12 +32,12 @@ public abstract class Instruccion {
     public String generarId(Instruccion inst){
         System.out.println(inst);
         String texto = inst.toString();
-        return "Q"+texto.replace(("@"), "").replace(".", "");
+        return texto.replace(("@"), "").replace(".", "");
     }
 
     public String generarId(String texto){
         String id = texto.hashCode()+"";
-        return "Q"+id.replace(("@"), "").replace(".", "");
+        return id.replace(("@"), "").replace(".", "");
     }
     
 }

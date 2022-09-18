@@ -37,7 +37,7 @@ public class Else_If extends Instruccion  {
     @Override
     public String graficar() {
        String retorno = this.generarId(this)+"[label=\""+"Else_if"+"\"]" + "\n";;
-       retorno  = retorno+ this.generarId(nombre)+"[label=\""+this.nombre+"\"]" + "\n";
+       retorno  = retorno+ this.generarId(nombre)+"[label=\""+this.nombre.replace("\"", "")+"\"]" + "\n";
        retorno  = retorno+ this.dato.graficar() + "\n";       
        retorno  = retorno+ this.cuerpo.graficar() + "\n";
        

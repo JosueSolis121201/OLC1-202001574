@@ -39,7 +39,7 @@ public class Funcion extends Instruccion{
     @Override
     public String graficar() {
        String retorno = this.generarId(this)+"[label=\""+"Funcion"+"\"]" + "\n";;
-       retorno  = retorno+ this.generarId(nombre)+"[label=\""+this.nombre+"\"]" + "\n";
+       retorno  = retorno+ this.generarId(nombre)+"[label=\""+this.nombre.replace("\"", "")+"\"]" + "\n";
        retorno  = retorno+ this.dato.graficar() + "\n";       
        retorno  = retorno+ this.tipo.graficar() + "\n";
        retorno  = retorno+ this.cuerpo.graficar() + "\n";

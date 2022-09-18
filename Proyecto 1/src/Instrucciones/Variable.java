@@ -33,7 +33,7 @@ public class Variable extends Instruccion  {
     @Override
     public String graficar() {
        String retorno = this.generarId(this)+"[label=\""+"Variable"+"\"]" + "\n";;
-       retorno  = retorno+ this.generarId(nombre)+"[label=\""+this.nombre+"\"]" + "\n";
+       retorno  = retorno+ this.generarId(nombre)+"[label=\""+this.nombre.replace("\"", "")+"\"]" + "\n";
        retorno  = retorno+ this.dato.graficar() + "\n";       
        
        retorno  = retorno + this.generarId(this)+"->"+ this.generarId(nombre) + "\n";

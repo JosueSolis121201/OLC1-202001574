@@ -1,10 +1,156 @@
 
 
 
+
+
+
 inicio
 
+
+metodo _potenciaManual_ con_parametros (_base_ Numero, _exponenete_ Numero)
+	ingresar _i_ como Numero con_valor 0;
+	ingresar _acumulado_ como Numero con_valor 0;
+	para _i_->0 hasta _exponente_-1 hacer
+		_acumulado_ -> _acumulado_ + _acumulado_;
+	fin_para	
+	imprimir _acumulado_;
+	imprimir_nl " Esta es la potencia Manual";	
+fin_metodo
+ingresaR _v1_, _v2_, _v3_ cOmo CadenA con_vAlor "esta es una cadena";
+ingresaR _curso1_         cOmo cadena con_vAlor "olc";
+ingresaR _curso2_         cOmo cadena con_vAlor "olc";
 ingresaR _curso3_         cOmo cadena con_vAlor "olc";
+ingresar _pi1_            como numero con_valor 3;
+ingresar _pi2_            como numero con_valor 3.1;
+ingresar _pi3_            como numero con_valor 3.14;
+ingresar _pi4_            como numero con_valor 3.141;
+ingresar _anio1_          como numero con_valor 1;
+ingresar _anio2_          como numero con_valor 9;
+ingresar _anio3_          como numero con_valor 4;
+ingresar _anio4_          como numero con_valor 5;
+ingresar _variableNeg_    como numero con_valor -5.0;
+ingresar _encabezado1_    como cadena con_valor "Universidad San Carlos de Guatemala...;";
+ingresar _encabezado2_    como cadena con_valor "Escuela de Ciencias y Sistemas
+Segundo semestre
+";
+
+
+
+ingresar _operaciones1Basica_      como numero con_valor 1+(1);               //2 el resultado
+ingresar _operaciones1Basica2_      como numero con_valor _operaciones1Basica_+_operaciones1Basica_;               //               
+ingresar _operaciones1Intermedia_  Como nUmero con_valor 15+(9*8)+200/8*3+9;  //171 el resultado
+ingresar _operaciones1Avanzadas1_  ComO numeRo con_valor ((15+9)*8+200/8*3+9);   //291 el resultado
+
+
+
+
+
+ingresar _flag1_          como boolean  con_valor verdadero;
+ingresar _flag2_          como boolean  con_valor falso;
+ingresar _name1_          como caracter con_valor 'f';
+ingresar _name2_          como caracter con_valor '$';
+ingresar _name3_          como caracter con_valor 'r';
+ingresar _name4_, _name6_ como caracter con_valor 'n';
+ingresar _name5_          como caracter con_valor 'a';
+
+
+ingresar _operacionRela3_ como boolean con_valor _operaciones1Basica_ mayor 8;
+ingresar _operacionRela3_ como boolean con_valor (_operaciones1Basica_+6) Mayor_o_igual 8;
+ingresar _operacionRela3_ como boolean con_valor (_operaciones1Basica_+6) menor_o_igual 8;
+ingresar _operacionRela4_ como boolean con_valor _operaciones1Basica_ es_iGual 8;
+ingresar _operacionRela5_ como boolean con_valor _operaciones1Basica_ es_igual _operaciones1Basica_;
+
+_v1_                           -> "esta es la cadena numero 1";
+_v2_, _v3_                     -> "estas cadenas deben ser diferentes";
+_curso1_ , _curso2_ ,_curso3_  -> "Organizacion de lenguajes y compiladores 1";
+
+
+imprimir_nl _encabezado1_;
+imprimir_nl _encabezado2_;
+imprimir  "...";
+imprimir _anio1_ ;
+imprimir _anio2_ ;
+imprimir _anio3_ ;
+imprimir _anio4_ ;
+imprimir_nl ".";
+imprimir_nl (_v3_);
+
+
+
+si _v1_ es_igual _v2_ entonces
+	imprimir_nl "Al parecer no funciona la asignacion";
+	
+
+si _v1_ es_igual _v2_ entonces
+	imprimir_nl "no tiene que imprimir este mensaje";
+		o_si _v1_ es_igual 13 entonces
+		    imprimir_nl "mensaje de prueba";
+		o_si _v1_ es_igual 14 entonces
+		    imprimir_nl "mensaje de prueba";
+si _v1_ es_igual _v2_ entonces
+	imprimir_nl "no tiene que imprimir este mensaje";
+		o_si _v1_ es_igual 13 entonces
+		    imprimir_nl "mensaje de prueba";
+		o_si _v1_ es_igual 14 entonces
+		    imprimir_nl "mensaje de prueba";
+si _v1_ es_igual _v2_ entonces
+	imprimir_nl "no tiene que imprimir este mensaje";
+		o_si _v1_ es_igual 13 entonces
+		    imprimir_nl "mensaje de prueba";
+		o_si _v1_ es_igual 14 entonces
+		    imprimir_nl "mensaje de prueba";
+	de_lo_contrario
+	    imprimir_nl "este print es un ejemplo";
+fin_si
+	de_lo_contrario
+	    imprimir_nl "este print es un ejemplo";
+fin_si
+	de_lo_contrario
+	    imprimir_nl "este print es un ejemplo";
+fin_si
+fin_si
+
+
+mientras (_variable1_ mayor_o_igual 5*5+8/2) hacer
+		imprimir _variable1_;
+		_variable1_ -> _variable1_ + 1;
+	fin_mientras
+
+	
+
+retornar _potencia_;
+
+
+retornar _potencia_;
+
+
+retornar _potencia_;
+
+
+retornar _potencia_;
+
+funcion _potenciaFuncion_ Numero con_parametros (_base_ Numero, _exponente_ Numero) 
+	_variable1_ -> _variable1_ + 1;_variable1_ -> _variable1_ + 1;
+fin_funcion
+
+ejecutar _potenciaManual_(_base_ Numero, _exponente_ Numero);
+
+
+segun _varaux_ hacer
+		¿0? entonces
+			imprimir_nl "el valor es mayor a 0 y menos a 2";
+		¿2? entonces
+			imprimir_nl "el valor es mayor a 2";
+	fin_segun
+para _i_->0 hasta _exponente_-1 hacer
+		_acumulado_ -> _acumulado_ + _acumulado_;
+	fin_para
+repetir
+_acumulado_ -> _acumulado_ + _acumulado_;
+hasta_que (1+1)
 fin
+ 
+
  
 
  
