@@ -39,11 +39,11 @@ public class Impresion extends Instruccion{
     @Override
     public String graficar() {
        String retorno = this.generarId(this)+"[label=\""+"Impresion"+"\"]" + "\n";;
-       retorno  = retorno+ this.generarId(operador)+"[label=\""+this.operador.replace("\"", "")+"\"]" + "\n";
+       retorno  = retorno+ this.generarId(this)+"IMP[label=\""+this.operador.replace("\"", "")+"\"]" + "\n";
        retorno  = retorno+ this.dato.graficar() + "\n";       
        
        retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.dato) + "\n";
-       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(operador) + "\n";
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this)+"IMP" + "\n";
        
        return retorno;
     }

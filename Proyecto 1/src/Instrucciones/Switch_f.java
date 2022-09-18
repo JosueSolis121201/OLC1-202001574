@@ -36,10 +36,10 @@ public class Switch_f extends Instruccion  {
     public String graficar() {
         
        String retorno = this.generarId(this)+"[label=\""+"Switch final"+"\"]" + "\n";;
-       retorno  = retorno+ this.generarId(nombre)+"[label=\""+this.nombre.replace("\"", "")+"\"]" + "\n";
+       retorno  = retorno+ this.generarId(this)+"SW[label=\""+this.nombre.replace("\"", "")+"\"]" + "\n";
        retorno  = retorno+ this.cuerpo.graficar() + "\n";
        
-       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(nombre) + "\n";
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this)+"SW" + "\n";
        retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.cuerpo) + "\n";
         return retorno;
     }

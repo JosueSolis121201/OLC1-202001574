@@ -46,8 +46,8 @@ public class Lista_Nombres extends Instruccion{
     public String graficar() {
         String retorno = this.generarId(this)+"[label=\""+"Lista nombres"+"\"]";
         for(String inst : this.lista){
-            retorno  = retorno+ this.generarId(inst)+"[label=\""+inst.replace("\"", "")+"\"]" + "\n";
-            retorno  = retorno + this.generarId(this)+"->"+ this.generarId(inst) + "\n";
+            retorno  = retorno+ this.generarId(inst)+"nom[label=\""+inst.replace("\"", "")+"\"]" + "\n";
+            retorno  = retorno + this.generarId(this)+"->"+ this.generarId(inst) + "nom \n";
         }
        return retorno;
     }

@@ -96,12 +96,12 @@ public class OperacionBinaria extends Instruccion{
     @Override
     public String graficar() {
        String retorno = this.generarId(this)+"[label=\""+"Operacion binaria"+"\"]" + "\n";;
-       retorno  = retorno+ this.generarId(operador)+"[label=\""+this.operador.replace("\"", "")+"\"]" + "\n";
+       retorno  = retorno+ this.generarId(this)+"OP[label=\""+this.operador.replace("\"", "")+"\"]" + "\n";
        retorno  = retorno+ this.izquierdo.graficar() + "\n";       
        retorno  = retorno+ this.derecho.graficar() + "\n";
        
        retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.izquierdo) + "\n";
-       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(operador) + "\n";
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this)+"OP" + "\n";
        retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.derecho) + "\n";
        
        return retorno;

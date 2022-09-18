@@ -4,6 +4,7 @@
 
 
 
+
 inicio
 
 
@@ -149,14 +150,6 @@ repetir
 _acumulado_ -> _acumulado_ + _acumulado_;
 hasta_que (1+1)
 fin
- 
-
- 
-
- 
- 
-
- 
  
 
  

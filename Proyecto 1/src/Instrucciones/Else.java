@@ -37,11 +37,11 @@ public class Else extends Instruccion{
     @Override
     public String graficar() {
        String retorno = this.generarId(this)+"[label=\""+"Else"+"\"]" + "\n";;
-       retorno  = retorno+ this.generarId(nombre)+"[label=\""+this.nombre.replace("\"", "")+"\"]" + "\n";
+       retorno  = retorno+ this.generarId(this)+"Else[label=\""+this.nombre.replace("\"", "")+"\"]" + "\n";
        retorno  = retorno+ this.tipo.graficar() + "\n";
 
        
-       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(nombre) + "\n";
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this)+"Else" + "\n";
        retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.tipo) + "\n";
        
        return retorno;

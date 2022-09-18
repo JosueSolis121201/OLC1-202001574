@@ -30,14 +30,13 @@ public abstract class Instruccion {
 
     
     public String generarId(Instruccion inst){
-        System.out.println(inst);
-        String texto = inst.toString();
-        return texto.replace(("@"), "").replace(".", "");
+        String texto ="Q"+ inst.toString();
+        return texto.replace(("@"), "").replace(".", "").replace("-","M");
     }
 
     public String generarId(String texto){
-        String id = texto.hashCode()+"";
-        return id.replace(("@"), "").replace(".", "");
+        String id = "Q"+texto.hashCode()+"";
+        return id.replace(("@"), "").replace(".", "").replace("-","M");
     }
     
 }

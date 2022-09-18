@@ -39,14 +39,14 @@ public class Funcion extends Instruccion{
     @Override
     public String graficar() {
        String retorno = this.generarId(this)+"[label=\""+"Funcion"+"\"]" + "\n";;
-       retorno  = retorno+ this.generarId(nombre)+"[label=\""+this.nombre.replace("\"", "")+"\"]" + "\n";
+       retorno  = retorno+ this.generarId(this)+"FUN[label=\""+this.nombre.replace("\"", "")+"\"]" + "\n";
        retorno  = retorno+ this.dato.graficar() + "\n";       
        retorno  = retorno+ this.tipo.graficar() + "\n";
        retorno  = retorno+ this.cuerpo.graficar() + "\n";
        
         
 
-       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(nombre) + "\n";
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this)+"FUN" + "\n";
        retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.dato) + "\n";
        retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.tipo) + "\n";
        retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.cuerpo) + "\n";
