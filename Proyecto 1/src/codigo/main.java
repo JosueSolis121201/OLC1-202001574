@@ -27,7 +27,8 @@ public class main{
         sintactico.parse();
         String imprmir = sintactico.raiz.generarPython(0);
         String imprmir1 = sintactico.raiz.generarGo();
-        System.out.println(imprmir);
+        String imprmir2 = sintactico.raiz.graficar();
+        System.out.println(imprmir2);
         
     }
     

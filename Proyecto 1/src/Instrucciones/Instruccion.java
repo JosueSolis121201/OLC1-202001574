@@ -28,5 +28,11 @@ public abstract class Instruccion {
         return retorno;
     }
 
+    
+    public String generarId(Instruccion inst){
+        System.out.println(inst);
+        String texto = inst.toString();
+        return "Q"+texto.replace(("@"), "").replace(".", "");
+    }
 
 }

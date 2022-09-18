@@ -43,7 +43,13 @@ public class Para extends Instruccion{
 
     @Override
     public String graficar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String retorno = "";
+       retorno  =retorno+ this.generarId(this.expresion)+"[label=\""+this.expresion.graficar()+"\"]";
+       retorno  =retorno+ this.generarId(this.expresion1)+"[label=\""+this.expresion1.graficar()+"\"]";
+       retorno  =retorno+ this.generarId(this.expresion2)+"[label=\""+this.expresion2.graficar()+"\"]";
+       retorno  =retorno+ this.generarId(this.para_f)+"[label=\""+this.para_f.graficar()+"\"]";
+       
+       return retorno;
     }
 
     @Override

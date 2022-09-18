@@ -36,7 +36,9 @@ public class Retornar extends Instruccion{
 
     @Override
     public String graficar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String retorno = "";
+        retorno  =retorno+ this.generarId(this.tipo)+"[label=\""+this.tipo.graficar()+"\"]";
+        return retorno;
     }
 
     @Override

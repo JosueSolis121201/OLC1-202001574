@@ -38,7 +38,11 @@ public class Declaracion extends Instruccion {
 
     @Override
     public String graficar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       String retorno = "";
+        retorno  =retorno+  this.generarId(this.dato)+"[label=\""+this.dato.graficar()+"\"]\n";
+        retorno  =retorno+  this.generarId(this.tipo)+"[label=\""+this.tipo.graficar()+"\"]\n";
+        retorno  =retorno+ this.generarId(this.expresion)+"[label=\""+this.expresion.graficar()+"\"]";
+        return retorno; //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override

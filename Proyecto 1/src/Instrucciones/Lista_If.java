@@ -41,7 +41,11 @@ public class Lista_If extends Instruccion {
 
     @Override
     public String graficar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String retorno = "";
+        for(Instruccion inst : this.lista){
+            retorno  = retorno  + inst.graficar();
+        }
+       return retorno;
     }
 
     @Override

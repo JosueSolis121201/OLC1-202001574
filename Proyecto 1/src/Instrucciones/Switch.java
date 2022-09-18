@@ -45,7 +45,13 @@ public class Switch extends Instruccion{
 
     @Override
     public String graficar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String retorno = "";
+        retorno  =retorno+ this.generarId(this.expresion)+"[label=\""+this.expresion.graficar()+"\"]";
+        retorno  =retorno+ this.generarId(this.Switch_case)+"[label=\""+this.Switch_case.graficar()+"\"]";
+        if (this.Switch_f != null){
+      retorno  =retorno+ this.generarId(this.Switch_f)+"[label=\""+this.Switch_f.graficar()+"\"]";
+        }
+        return retorno;
     }
 
     @Override

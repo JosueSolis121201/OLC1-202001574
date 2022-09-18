@@ -38,7 +38,10 @@ public class Impresion extends Instruccion{
 
     @Override
     public String graficar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String retorno = "";
+        retorno  =retorno+ this.operador+"[label=\""+this.operador+"\"]";
+        retorno  =retorno+ this.generarId(this.dato)+"[label=\""+this.dato.graficar()+"\"]";
+        return retorno;
     }
 
     @Override

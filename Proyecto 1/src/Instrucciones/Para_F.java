@@ -38,7 +38,13 @@ public class Para_F extends Instruccion{
 
     @Override
     public String graficar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String retorno = "";
+        if(this.tipo.graficar() != null){
+        retorno  =retorno+ this.generarId(this.tipo)+"[label=\""+this.tipo.graficar()+"\"]";
+      }
+        
+       
+       return retorno;
     }
 
     @Override

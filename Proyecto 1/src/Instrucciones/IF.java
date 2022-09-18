@@ -46,7 +46,14 @@ public class IF extends Instruccion{
 
     @Override
     public String graficar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String retorno = "";
+        retorno  =retorno+ this.generarId(this.expresion)+"[label=\""+this.expresion.graficar()+"\"]";
+        retorno  =retorno+ this.cuerpo+"[label=\""+this.cuerpo+"\"]";
+        retorno  =retorno+ this.generarId(this.else_if)+"[label=\""+this.else_if.graficar()+"\"]";
+        if (this.else_f != null){
+        retorno  =retorno+ this.generarId(this.else_f)+"[label=\""+this.else_f.graficar()+"\"]";
+      }
+        return retorno;
     }
 
     @Override

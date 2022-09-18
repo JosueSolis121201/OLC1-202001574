@@ -34,7 +34,10 @@ public class Unario extends Instruccion{
 
     @Override
     public String graficar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       String retorno = "";
+        retorno  =retorno+ this.generarId(this.dato)+"[label=\""+this.dato.graficar()+"\"]";
+        retorno  =retorno+ this.operador+"[label=\""+this.operador+"\"]";
+        return retorno;
     }
 
     @Override
