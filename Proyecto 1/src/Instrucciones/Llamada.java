@@ -36,10 +36,15 @@ public class Llamada extends Instruccion{
 
     @Override
     public String graficar() {
-        String retorno = "";
-        retorno  =retorno+ this.nombre+"[label=\""+this.nombre+"\"]";
-        retorno  =retorno+ this.generarId(this.tipo)+"[label=\""+this.tipo.graficar()+"\"]";
-        return retorno;
+       String retorno = this.generarId(this)+"[label=\""+"Llamada"+"\"]" + "\n";;
+       
+       retorno  = retorno+ this.generarId(nombre)+"[label=\""+this.nombre+"\"]" + "\n";
+       retorno  = retorno+ this.tipo.graficar() + "\n";    
+       
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.tipo) + "\n";
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(nombre) + "\n";
+       
+       return retorno;
     }
 
     @Override

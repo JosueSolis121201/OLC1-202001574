@@ -34,10 +34,14 @@ public class Unario extends Instruccion{
 
     @Override
     public String graficar() {
-       String retorno = "";
-        retorno  =retorno+ this.generarId(this.dato)+"[label=\""+this.dato.graficar()+"\"]";
-        retorno  =retorno+ this.operador+"[label=\""+this.operador+"\"]";
-        return retorno;
+       String retorno = this.generarId(this)+"[label=\""+"Operacion binaria"+"\"]" + "\n";;
+       retorno  = retorno+ this.generarId(operador)+"[label=\""+this.operador+"\"]" + "\n";
+       retorno  = retorno+ this.dato.graficar() + "\n";       
+       
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.dato) + "\n";
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(operador) + "\n";
+       
+       return retorno;
     }
 
     @Override

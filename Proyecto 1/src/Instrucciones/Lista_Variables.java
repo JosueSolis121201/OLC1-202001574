@@ -62,20 +62,10 @@ public class Lista_Variables extends Instruccion {
 
     @Override
     public String graficar() {
-        String retorno = "";
-        int numero =0;
+        String retorno = this.generarId(this)+"[label=\""+"Lista Variables"+"\"]";
         for(Instruccion inst : this.lista){
-            String coma = "";
-            if(this.lista.size() > 1 ){
-                coma = ",";
-                numero=numero+1;
-                if (this.lista.size()==numero){
-                    coma = "";
-                }
-            }
-            
-            
-            retorno  = retorno+inst.graficar()+ coma ;
+            retorno  = retorno +  inst.graficar()+"\n";
+            retorno = retorno + this.generarId(this) +"->"  + this.generarId(inst) + "\n";
         }
        return retorno;
     }

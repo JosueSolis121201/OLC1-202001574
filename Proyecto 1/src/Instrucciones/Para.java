@@ -43,13 +43,18 @@ public class Para extends Instruccion{
 
     @Override
     public String graficar() {
-        String retorno = "";
-       retorno  =retorno+ this.generarId(this.expresion)+"[label=\""+this.expresion.graficar()+"\"]";
-       retorno  =retorno+ this.generarId(this.expresion1)+"[label=\""+this.expresion1.graficar()+"\"]";
-       retorno  =retorno+ this.generarId(this.expresion2)+"[label=\""+this.expresion2.graficar()+"\"]";
-       retorno  =retorno+ this.generarId(this.para_f)+"[label=\""+this.para_f.graficar()+"\"]";
+       String retorno = this.generarId(this)+"[label=\""+"Para"+"\"]" + "\n";;
+       retorno  = retorno+ this.expresion.graficar() + "\n";       
+       retorno  = retorno+ this.expresion1.graficar() + "\n";
+       retorno  = retorno+ this.expresion2.graficar() + "\n";       
+       retorno  = retorno+ this.para_f.graficar() + "\n";
        
-       return retorno;
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.expresion) + "\n";
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.expresion1) + "\n";
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.expresion2) + "\n";
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.para_f) + "\n";
+       
+        return retorno;
     }
 
     @Override

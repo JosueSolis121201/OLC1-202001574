@@ -45,11 +45,15 @@ public class Switch extends Instruccion{
 
     @Override
     public String graficar() {
-        String retorno = "";
-        retorno  =retorno+ this.generarId(this.expresion)+"[label=\""+this.expresion.graficar()+"\"]";
-        retorno  =retorno+ this.generarId(this.Switch_case)+"[label=\""+this.Switch_case.graficar()+"\"]";
+       String retorno = this.generarId(this)+"[label=\""+"Switch"+"\"]" + "\n";;
+       retorno  = retorno+ this.expresion.graficar() + "\n";       
+       retorno  = retorno+ this.Switch_case.graficar() + "\n";
+       
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.expresion) + "\n";
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.Switch_case) + "\n";
         if (this.Switch_f != null){
-      retorno  =retorno+ this.generarId(this.Switch_f)+"[label=\""+this.Switch_f.graficar()+"\"]";
+     retorno  = retorno+ this.Switch_f.graficar() + "\n";
+     retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.Switch_f) + "\n";
         }
         return retorno;
     }

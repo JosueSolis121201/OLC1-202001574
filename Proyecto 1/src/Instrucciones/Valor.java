@@ -28,7 +28,9 @@ public class Valor extends Instruccion{
 
     @Override
     public String graficar() {
-      return this.valor;
+      String retorno = this.generarId(this)+"[label=\""+this.valor.replace("\"", "")+"\"]" + "\n";;
+      System.out.println(this.valor+"//////////////////////////////////////////////////////////////////////////////////////////");
+      return retorno;
     }
 
     @Override

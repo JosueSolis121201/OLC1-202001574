@@ -41,9 +41,10 @@ public class Lista_If extends Instruccion {
 
     @Override
     public String graficar() {
-        String retorno = "";
+        String retorno = this.generarId(this)+"[label=\""+"Lista if"+"\"]";
         for(Instruccion inst : this.lista){
-            retorno  = retorno  + inst.graficar();
+            retorno  = retorno +  inst.graficar()+"\n";
+            retorno = retorno + this.generarId(this) +"->"  + this.generarId(inst) + "\n";
         }
        return retorno;
     }

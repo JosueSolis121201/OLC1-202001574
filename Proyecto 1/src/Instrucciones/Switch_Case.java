@@ -37,10 +37,16 @@ public class Switch_Case extends Instruccion  {
 
     @Override
     public String graficar() {
-        String retorno = "";
-        retorno  =retorno+ this.generarId(this.dato)+"[label=\""+this.dato.graficar()+"\"]";
-        retorno  =retorno+ this.generarId(this.cuerpo)+"[label=\""+this.cuerpo.graficar()+"\"]";
-        return retorno;
+       String retorno = this.generarId(this)+"[label=\""+"Swich case"+"\"]" + "\n";;
+       retorno  = retorno+ this.generarId(nombre)+"[label=\""+this.nombre+"\"]" + "\n";
+       retorno  = retorno+ this.dato.graficar() + "\n";       
+       retorno  = retorno+ this.cuerpo.graficar() + "\n";
+       
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.dato) + "\n";
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(nombre) + "\n";
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.cuerpo) + "\n";
+       
+       return retorno;
     }
 
     @Override

@@ -38,11 +38,16 @@ public class Declaracion extends Instruccion {
 
     @Override
     public String graficar() {
-       String retorno = "";
-        retorno  =retorno+  this.generarId(this.dato)+"[label=\""+this.dato.graficar()+"\"]\n";
-        retorno  =retorno+  this.generarId(this.tipo)+"[label=\""+this.tipo.graficar()+"\"]\n";
-        retorno  =retorno+ this.generarId(this.expresion)+"[label=\""+this.expresion.graficar()+"\"]";
-        return retorno; //To change body of generated methods, choose Tools | Templates.
+       String retorno = this.generarId(this)+"[label=\""+"Declaracion"+"\"]" + "\n";;
+        retorno  = retorno+ this.dato.graficar() + "\n";
+       retorno  = retorno+ this.tipo.graficar() + "\n";       
+       retorno  = retorno+ this.expresion.graficar() + "\n";
+       
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.dato) + "\n";
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.tipo) + "\n";
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.expresion) + "\n";
+       
+       return retorno;
     }
 
     @Override

@@ -46,12 +46,20 @@ public class IF extends Instruccion{
 
     @Override
     public String graficar() {
-        String retorno = "";
-        retorno  =retorno+ this.generarId(this.expresion)+"[label=\""+this.expresion.graficar()+"\"]";
-        retorno  =retorno+ this.cuerpo+"[label=\""+this.cuerpo+"\"]";
-        retorno  =retorno+ this.generarId(this.else_if)+"[label=\""+this.else_if.graficar()+"\"]";
+        
+       String retorno = this.generarId(this)+"[label=\""+" IF "+"\"]" + "\n";;
+       retorno  = retorno+ this.expresion.graficar() + "\n";       
+       retorno  = retorno+ this.cuerpo.graficar() + "\n";
+       retorno  = retorno+ this.else_if.graficar() + "\n";       
+       
+       
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.expresion) + "\n";
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(cuerpo) + "\n";
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.else_if) + "\n";
+       
         if (this.else_f != null){
-        retorno  =retorno+ this.generarId(this.else_f)+"[label=\""+this.else_f.graficar()+"\"]";
+        retorno  = retorno+ this.else_f.graficar() + "\n";
+        retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.else_f) + "\n";
       }
         return retorno;
     }

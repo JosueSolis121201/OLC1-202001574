@@ -39,10 +39,14 @@ public class Metodo extends Instruccion{
 
     @Override
     public String graficar() {
-        String retorno = "";
-        retorno  =retorno+ this.nombre+"[label=\""+this.nombre+"\"]";
-        retorno  =retorno+ this.generarId(this.dato)+"[label=\""+this.dato.graficar()+"\"]";
-        retorno  =retorno+ this.generarId(this.cuerpo)+"[label=\""+this.cuerpo.graficar()+"\"]";
+       String retorno = this.generarId(this)+"[label=\""+"Metodos"+"\"]" + "\n";;
+       retorno  = retorno+ this.generarId(nombre)+"[label=\""+this.nombre+"\"]" + "\n";
+       retorno  = retorno+ this.dato.graficar() + "\n";       
+       retorno  = retorno+ this.cuerpo.graficar() + "\n";
+       
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.dato) + "\n";
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(nombre) + "\n";
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.cuerpo) + "\n";
     return retorno;
     }
     

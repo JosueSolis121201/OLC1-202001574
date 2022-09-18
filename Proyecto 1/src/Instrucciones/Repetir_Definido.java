@@ -36,9 +36,16 @@ public class Repetir_Definido extends Instruccion{
 
     @Override
     public String graficar() {
-       String retorno = "";
-        retorno  =retorno+ this.generarId(this.tipo)+"[label=\""+this.tipo.graficar()+"\"]";
-        return retorno;
+       String retorno = this.generarId(this)+"[label=\""+"Repetir Definido"+"\"]" + "\n";;
+             
+       retorno  = retorno+ this.tipo.graficar() + "\n";
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.tipo) + "\n";
+       
+       if (this.nombre != null){
+            retorno  = retorno+ this.nombre.graficar() + "\n"; 
+            retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.nombre) + "\n";
+        }
+       return retorno;
     }
 
     @Override

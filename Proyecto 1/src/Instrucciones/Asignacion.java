@@ -36,10 +36,15 @@ public class Asignacion extends Instruccion{
 
     @Override
     public String graficar() {
-        String retorno = "";
-        retorno  =retorno+ this.generarId(this.nombre)+"[label=\""+this.nombre.graficar()+"\"]";
-        retorno  =retorno+ this.generarId(this.tipo)+"[label=\""+this.tipo.graficar()+"\"]";
-        return retorno;
+        
+       String retorno = this.generarId(this)+"[label=\""+"Asignacion"+"\"]" + "\n";;
+       retorno  = retorno+ this.nombre.graficar() + "\n";       
+       retorno  = retorno+ this.tipo.graficar() + "\n";
+       
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.nombre) + "\n";
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.tipo) + "\n";
+       
+       return retorno;
     }
 
     @Override

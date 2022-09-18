@@ -38,10 +38,15 @@ public class Para_F extends Instruccion{
 
     @Override
     public String graficar() {
-        String retorno = "";
-        if(this.tipo.graficar() != null){
-        retorno  =retorno+ this.generarId(this.tipo)+"[label=\""+this.tipo.graficar()+"\"]";
-      }
+       String retorno = this.generarId(this)+"[label=\""+"Para final"+"\"]" + "\n";;
+       
+       retorno  = retorno+ this.tipo.graficar() + "\n";
+       retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.tipo) + "\n";
+       
+       if (this.nombre != null){
+            retorno  = retorno+ this.nombre.graficar() + "\n"; 
+            retorno  = retorno + this.generarId(this)+"->"+ this.generarId(this.nombre) + "\n";
+        }
         
        
        return retorno;

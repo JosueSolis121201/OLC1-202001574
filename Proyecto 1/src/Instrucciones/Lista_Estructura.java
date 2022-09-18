@@ -43,9 +43,10 @@ public class Lista_Estructura extends Instruccion {
 
     @Override
     public String graficar() {
-       String retorno ="";
+        String retorno = this.generarId(this)+"[label=\""+"Lista Estructura"+"\"]";
         for(Instruccion inst : this.lista){
-            retorno  = retorno  + inst.graficar()+"\n";
+            retorno  = retorno +  inst.graficar()+"\n";
+            retorno = retorno + this.generarId(this) +"->"  + this.generarId(inst) + "\n";
         }
        return retorno;
     }

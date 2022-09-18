@@ -35,4 +35,9 @@ public abstract class Instruccion {
         return "Q"+texto.replace(("@"), "").replace(".", "");
     }
 
+    public String generarId(String texto){
+        String id = texto.hashCode()+"";
+        return "Q"+id.replace(("@"), "").replace(".", "");
+    }
+    
 }
