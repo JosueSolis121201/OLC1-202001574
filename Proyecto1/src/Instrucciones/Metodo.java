@@ -23,7 +23,7 @@ public class Metodo extends Instruccion{
     @Override
     public String generarPython(int nivel) {
         String retorno = this.crearTabuladores(nivel);
-        retorno  = retorno + "def "+this.nombre+" ("+this.dato.generarPython(nivel)+"): "+"\n" +this.cuerpo.generarPython(nivel);
+        retorno  = retorno + "def "+this.nombre+" ("+this.dato.generarPython(nivel)+"): "+"\n" +this.cuerpo.generarPython(nivel+1);
       
        return retorno;
     }

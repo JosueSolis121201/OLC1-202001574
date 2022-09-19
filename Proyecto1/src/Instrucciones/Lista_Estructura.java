@@ -27,7 +27,7 @@ public class Lista_Estructura extends Instruccion {
     public String generarPython(int nivel) {
          String retorno ="";
         for(Instruccion inst : this.lista){
-            retorno  = retorno  + inst.generarPython(nivel+1) +"\n";
+            retorno  = retorno  + inst.generarPython(nivel) +"\n";
         }
        return retorno;
     }

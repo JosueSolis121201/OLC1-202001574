@@ -23,7 +23,7 @@ public class Repetir extends Instruccion{
     @Override
     public String generarPython(int nivel) {
         String retorno = this.crearTabuladores(nivel);
-        retorno =retorno+ "While valor == True: \n "+this.nombre.generarPython(nivel)+"\n"+"If valor == False: \n "+this.tipo.generarPython(nivel);
+        retorno =retorno+ "while valor == True: \n "+this.nombre.generarPython(nivel+1)+"\n"+"if valor == False: \n "+this.tipo.generarPython(nivel+1);
         return retorno;
     }
 

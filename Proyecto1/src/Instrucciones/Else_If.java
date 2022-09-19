@@ -23,14 +23,14 @@ public class Else_If extends Instruccion  {
     @Override
     public String generarPython(int nivel) {
         String retorno = this.crearTabuladores(nivel);
-        retorno  = retorno +"elif "+this.dato.generarPython(nivel)+": \n "+this.cuerpo.generarPython(nivel);
+        retorno  = retorno +"elif "+this.dato.generarPython(nivel-1)+": \n "+this.cuerpo.generarPython(nivel+1);
         return retorno;
     }
 
     @Override
     public String generarGo() {
         String retorno = "";
-        retorno  = retorno +"elif "+this.dato.generarGo()+"{"+this.cuerpo.generarGo()+"}";
+        retorno  = retorno +"elif "+this.dato.generarGo()+"{ \n"+this.cuerpo.generarGo()+"\n }";
         return retorno;
     }
 

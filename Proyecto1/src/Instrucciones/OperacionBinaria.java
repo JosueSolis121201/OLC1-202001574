@@ -26,7 +26,7 @@ public class OperacionBinaria extends Instruccion{
     public String generarPython(int nivel) {
         String retorno ="";
         String data_operador = "";
-        switch (this.operador) {
+        switch (this.operador.toLowerCase()) {
     case "mayor":
              data_operador =  ">";
              break;
@@ -45,6 +45,12 @@ public class OperacionBinaria extends Instruccion{
     case "es_diferente":
              data_operador = "!=";
              break;
+    case "verdadero":
+             data_operador = "True";
+             break;
+    case "falso":
+             data_operador = "False";
+             break;
     default:
              data_operador = this.operador;
              break;
@@ -57,7 +63,7 @@ public class OperacionBinaria extends Instruccion{
     public String generarGo() {
         String retorno ="";
         String data_operador ="";
-        switch (this.operador) {
+        switch (this.operador.toLowerCase()) {
     case "mayor":
              data_operador =  ">";
              break;
@@ -84,6 +90,12 @@ public class OperacionBinaria extends Instruccion{
              break;
     case "not":
              data_operador = "!";
+             break;
+    case "verdadero":
+             data_operador = "true";
+             break;
+    case "falso":
+             data_operador = "false";
              break;
     default:
              data_operador = this.operador;

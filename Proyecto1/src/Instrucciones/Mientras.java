@@ -27,7 +27,7 @@ public class Mientras extends Instruccion{
           
         retorno  = retorno +"while ("+ this.nombre.generarPython(nivel)+"): \n ";
         if(this.tipo.generarPython(nivel) != null){
-        retorno = retorno + this.tipo.generarPython(nivel)+"\n "; 
+        retorno = retorno + this.tipo.generarPython(nivel+1)+"\n "; 
       }
         return retorno;
     }

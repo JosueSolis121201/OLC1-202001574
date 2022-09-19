@@ -27,7 +27,7 @@ public class IF extends Instruccion{
     @Override
     public String generarPython(int nivel) {
         String retorno = this.crearTabuladores(nivel);
-        retorno  = retorno +"if "+this.expresion.generarPython(nivel)+":"+" \n "+this.cuerpo.generarPython(nivel)+this.else_if.generarPython(nivel);
+        retorno  = retorno +"if "+this.expresion.generarPython(nivel)+":"+" \n "+this.cuerpo.generarPython(nivel+1)+this.else_if.generarPython(nivel);
       if (this.else_f != null){
       retorno=retorno + this.else_f.generarPython(nivel);
       }
@@ -37,7 +37,7 @@ public class IF extends Instruccion{
     @Override
     public String generarGo() {
          String retorno = "";
-        retorno  = retorno +"if "+this.expresion.generarGo()+this.cuerpo.generarGo()+this.else_if.generarGo();
+        retorno  = retorno +"if "+this.expresion.generarGo()+"{ \n "+this.cuerpo.generarGo()+" \n} "+this.else_if.generarGo();
       if (this.else_f != null){
       retorno=retorno + this.else_f.generarGo();
       }

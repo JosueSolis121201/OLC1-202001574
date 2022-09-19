@@ -28,7 +28,7 @@ public class Para extends Instruccion{
     public String generarPython(int nivel) {
         
         String retorno = this.crearTabuladores(nivel);
-            retorno  = retorno+ this.crearTabuladores(nivel)+"for"+this.expresion.generarPython(nivel)+":"+this.expresion1.generarPython(nivel)+"\n" +this.expresion2.generarPython(nivel)+"\n"+this.para_f.generarPython(nivel)+"\n";
+            retorno  = retorno+"for "+this.expresion.generarPython(nivel)+" in "+this.expresion1.generarPython(nivel)+": \n"+ this.crearTabuladores(nivel+1) +this.para_f.generarPython(nivel)+"\n";
       
        return retorno;
     }

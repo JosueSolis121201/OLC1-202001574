@@ -23,7 +23,7 @@ public class Else extends Instruccion{
     @Override
     public String generarPython(int nivel) {
         String retorno = this.crearTabuladores(nivel);
-        retorno  = retorno +"else "+": \n "+this.tipo.generarPython(nivel);
+        retorno  = retorno +"else "+": \n "+this.tipo.generarPython(nivel+1);
         return retorno;
     }
 

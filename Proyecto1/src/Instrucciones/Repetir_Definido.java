@@ -23,7 +23,7 @@ public class Repetir_Definido extends Instruccion{
     @Override
     public String generarPython(int nivel) {
         String retorno = this.crearTabuladores(nivel);
-        retorno =retorno+this.tipo.generarPython(nivel);
+        retorno =retorno+this.tipo.generarPython(nivel+1);
         return retorno;
     }
 
