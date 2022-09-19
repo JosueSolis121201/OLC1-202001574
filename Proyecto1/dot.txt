@@ -1,0 +1,1416 @@
+digraph G {
+QInstruccionesS1329f9203[label="Lista Estructuras y Metodos"]QInstruccionesMetodo6c79b386[label="Metodos"]
+QInstruccionesMetodo6c79b386ME[label="_potenciaManual_"]
+QInstruccionesLista_Variables414b2081[label="Lista Variables"]QInstruccionesVariable26a640d5[label="Variable"]
+QInstruccionesVariable26a640d5Va[label="_base_"]
+QInstruccionesValor6867c188[label="Numero"]
+
+QInstruccionesVariable26a640d5->QInstruccionesVariable26a640d5Va
+QInstruccionesVariable26a640d5->QInstruccionesValor6867c188
+
+QInstruccionesLista_Variables414b2081->QInstruccionesVariable26a640d5
+QInstruccionesVariable4923ba81[label="Variable"]
+QInstruccionesVariable4923ba81Va[label="_exponenete_"]
+QInstruccionesValor5174d40c[label="Numero"]
+
+QInstruccionesVariable4923ba81->QInstruccionesVariable4923ba81Va
+QInstruccionesVariable4923ba81->QInstruccionesValor5174d40c
+
+QInstruccionesLista_Variables414b2081->QInstruccionesVariable4923ba81
+
+QInstruccionesLista_Estructura45c0961f[label="Lista Estructura"]QInstruccionesDeclaracion137d74ae[label="Declaracion"]
+QInstruccionesLista_Nombres47de23f2[label="Lista nombres"]Q94645nom[label="_i_"]
+QInstruccionesLista_Nombres47de23f2->Q94645nom 
+
+QInstruccionesValor30fd5bb1[label="Numero"]
+
+QInstruccionesValor71cc43df[label="0"]
+
+QInstruccionesDeclaracion137d74ae->QInstruccionesLista_Nombres47de23f2
+QInstruccionesDeclaracion137d74ae->QInstruccionesValor30fd5bb1
+QInstruccionesDeclaracion137d74ae->QInstruccionesValor71cc43df
+
+QInstruccionesLista_Estructura45c0961f->QInstruccionesDeclaracion137d74ae
+QInstruccionesDeclaracion96c914c[label="Declaracion"]
+QInstruccionesLista_Nombres3f9be220[label="Lista nombres"]QM186620765nom[label="_acumulado_"]
+QInstruccionesLista_Nombres3f9be220->QM186620765nom 
+
+QInstruccionesValor656116b1[label="Numero"]
+
+QInstruccionesValor76a06379[label="0"]
+
+QInstruccionesDeclaracion96c914c->QInstruccionesLista_Nombres3f9be220
+QInstruccionesDeclaracion96c914c->QInstruccionesValor656116b1
+QInstruccionesDeclaracion96c914c->QInstruccionesValor76a06379
+
+QInstruccionesLista_Estructura45c0961f->QInstruccionesDeclaracion96c914c
+QInstruccionesPara1b2b6a10[label="Para"]
+QInstruccionesValor7b4111b7[label="_i_"]
+
+QInstruccionesValor167854f0[label="0"]
+
+QInstruccionesOperacionBinaria633656ed[label="Operacion binaria"]
+QInstruccionesOperacionBinaria633656edOP[label="-"]
+QInstruccionesValor238dcb71[label="_exponente_"]
+
+QInstruccionesValor5032ba1e[label="1"]
+
+QInstruccionesOperacionBinaria633656ed->QInstruccionesValor238dcb71
+QInstruccionesOperacionBinaria633656ed->QInstruccionesOperacionBinaria633656edOP
+QInstruccionesOperacionBinaria633656ed->QInstruccionesValor5032ba1e
+
+QInstruccionesPara_F4b9ab3c[label="Para final"]
+QInstruccionesAsignacion55e90478[label="Asignacion"]
+QInstruccionesLista_Nombres18f29bf7[label="Lista nombres"]QM186620765nom[label="_acumulado_"]
+QInstruccionesLista_Nombres18f29bf7->QM186620765nom 
+
+QInstruccionesOperacionBinaria5d5520bd[label="Operacion binaria"]
+QInstruccionesOperacionBinaria5d5520bdOP[label="+"]
+QInstruccionesValor14fc9060[label="_acumulado_"]
+
+QInstruccionesValor92b8c43[label="_acumulado_"]
+
+QInstruccionesOperacionBinaria5d5520bd->QInstruccionesValor14fc9060
+QInstruccionesOperacionBinaria5d5520bd->QInstruccionesOperacionBinaria5d5520bdOP
+QInstruccionesOperacionBinaria5d5520bd->QInstruccionesValor92b8c43
+
+QInstruccionesAsignacion55e90478->QInstruccionesLista_Nombres18f29bf7
+QInstruccionesAsignacion55e90478->QInstruccionesOperacionBinaria5d5520bd
+
+QInstruccionesPara_F4b9ab3c->QInstruccionesAsignacion55e90478
+
+QInstruccionesPara1b2b6a10->QInstruccionesValor7b4111b7
+QInstruccionesPara1b2b6a10->QInstruccionesValor167854f0
+QInstruccionesPara1b2b6a10->QInstruccionesOperacionBinaria633656ed
+QInstruccionesPara1b2b6a10->QInstruccionesPara_F4b9ab3c
+
+QInstruccionesLista_Estructura45c0961f->QInstruccionesPara1b2b6a10
+QInstruccionesImpresion50a93b2[label="Impresion"]
+QInstruccionesImpresion50a93b2IMP[label="imprimir"]
+QInstruccionesValor712e1b66[label="_acumulado_"]
+
+QInstruccionesImpresion50a93b2->QInstruccionesValor712e1b66
+QInstruccionesImpresion50a93b2->QInstruccionesImpresion50a93b2IMP
+
+QInstruccionesLista_Estructura45c0961f->QInstruccionesImpresion50a93b2
+QInstruccionesImpresion121eab3[label="Impresion"]
+QInstruccionesImpresion121eab3IMP[label="imprimir_nl"]
+QInstruccionesValor54bd2740[label=" Esta es la potencia Manual"]
+
+QInstruccionesImpresion121eab3->QInstruccionesValor54bd2740
+QInstruccionesImpresion121eab3->QInstruccionesImpresion121eab3IMP
+
+QInstruccionesLista_Estructura45c0961f->QInstruccionesImpresion121eab3
+
+QInstruccionesMetodo6c79b386->QInstruccionesLista_Variables414b2081
+QInstruccionesMetodo6c79b386->QInstruccionesMetodo6c79b386ME
+QInstruccionesMetodo6c79b386->QInstruccionesLista_Estructura45c0961f
+
+QInstruccionesS1329f9203->QInstruccionesMetodo6c79b386
+QInstruccionesDeclaracion5fbb966[label="Declaracion"]
+QInstruccionesLista_Nombres48f7794[label="Lista nombres"]Q2945157nom[label="_v1_"]
+QInstruccionesLista_Nombres48f7794->Q2945157nom 
+Q2945188nom[label="_v2_"]
+QInstruccionesLista_Nombres48f7794->Q2945188nom 
+Q2945219nom[label="_v3_"]
+QInstruccionesLista_Nombres48f7794->Q2945219nom 
+
+QInstruccionesValora7571c4[label="CadenA"]
+
+QInstruccionesValor374fc0ed[label="esta es una cadena"]
+
+QInstruccionesDeclaracion5fbb966->QInstruccionesLista_Nombres48f7794
+QInstruccionesDeclaracion5fbb966->QInstruccionesValora7571c4
+QInstruccionesDeclaracion5fbb966->QInstruccionesValor374fc0ed
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion5fbb966
+QInstruccionesDeclaracion6f277feb[label="Declaracion"]
+QInstruccionesLista_Nombres106b964c[label="Lista nombres"]QM809765205nom[label="_curso1_"]
+QInstruccionesLista_Nombres106b964c->QM809765205nom 
+
+QInstruccionesValor31b13ed4[label="cadena"]
+
+QInstruccionesValor78b0d8a7[label="olc"]
+
+QInstruccionesDeclaracion6f277feb->QInstruccionesLista_Nombres106b964c
+QInstruccionesDeclaracion6f277feb->QInstruccionesValor31b13ed4
+QInstruccionesDeclaracion6f277feb->QInstruccionesValor78b0d8a7
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion6f277feb
+QInstruccionesDeclaracion2c3c287d[label="Declaracion"]
+QInstruccionesLista_Nombres60a90240[label="Lista nombres"]QM809765174nom[label="_curso2_"]
+QInstruccionesLista_Nombres60a90240->QM809765174nom 
+
+QInstruccionesValor5856d71f[label="cadena"]
+
+QInstruccionesValor26dd5952[label="olc"]
+
+QInstruccionesDeclaracion2c3c287d->QInstruccionesLista_Nombres60a90240
+QInstruccionesDeclaracion2c3c287d->QInstruccionesValor5856d71f
+QInstruccionesDeclaracion2c3c287d->QInstruccionesValor26dd5952
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion2c3c287d
+QInstruccionesDeclaracion6b6fe234[label="Declaracion"]
+QInstruccionesLista_Nombres43fc461b[label="Lista nombres"]QM809765143nom[label="_curso3_"]
+QInstruccionesLista_Nombres43fc461b->QM809765143nom 
+
+QInstruccionesValor2d7c9f54[label="cadena"]
+
+QInstruccionesValor61a75460[label="olc"]
+
+QInstruccionesDeclaracion6b6fe234->QInstruccionesLista_Nombres43fc461b
+QInstruccionesDeclaracion6b6fe234->QInstruccionesValor2d7c9f54
+QInstruccionesDeclaracion6b6fe234->QInstruccionesValor61a75460
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion6b6fe234
+QInstruccionesDeclaracion754d6422[label="Declaracion"]
+QInstruccionesLista_Nombres54a0280e[label="Lista nombres"]Q91173606nom[label="_pi1_"]
+QInstruccionesLista_Nombres54a0280e->Q91173606nom 
+
+QInstruccionesValor1d6f8bf1[label="numero"]
+
+QInstruccionesValor4630c868[label="3"]
+
+QInstruccionesDeclaracion754d6422->QInstruccionesLista_Nombres54a0280e
+QInstruccionesDeclaracion754d6422->QInstruccionesValor1d6f8bf1
+QInstruccionesDeclaracion754d6422->QInstruccionesValor4630c868
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion754d6422
+QInstruccionesDeclaracion58c2c8f8[label="Declaracion"]
+QInstruccionesLista_Nombresdf77bb6[label="Lista nombres"]Q91173637nom[label="_pi2_"]
+QInstruccionesLista_Nombresdf77bb6->Q91173637nom 
+
+QInstruccionesValor6c2659fa[label="numero"]
+
+QInstruccionesValor2c15af9e[label="3.1"]
+
+QInstruccionesDeclaracion58c2c8f8->QInstruccionesLista_Nombresdf77bb6
+QInstruccionesDeclaracion58c2c8f8->QInstruccionesValor6c2659fa
+QInstruccionesDeclaracion58c2c8f8->QInstruccionesValor2c15af9e
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion58c2c8f8
+QInstruccionesDeclaracion62de27ec[label="Declaracion"]
+QInstruccionesLista_Nombres54c2caca[label="Lista nombres"]Q91173668nom[label="_pi3_"]
+QInstruccionesLista_Nombres54c2caca->Q91173668nom 
+
+QInstruccionesValora75a021[label="numero"]
+
+QInstruccionesValorb9d97ae[label="3.14"]
+
+QInstruccionesDeclaracion62de27ec->QInstruccionesLista_Nombres54c2caca
+QInstruccionesDeclaracion62de27ec->QInstruccionesValora75a021
+QInstruccionesDeclaracion62de27ec->QInstruccionesValorb9d97ae
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion62de27ec
+QInstruccionesDeclaracion18ef2076[label="Declaracion"]
+QInstruccionesLista_Nombres5a392d3b[label="Lista nombres"]Q91173699nom[label="_pi4_"]
+QInstruccionesLista_Nombres5a392d3b->Q91173699nom 
+
+QInstruccionesValor7deafaf5[label="numero"]
+
+QInstruccionesValor1aad2201[label="3.141"]
+
+QInstruccionesDeclaracion18ef2076->QInstruccionesLista_Nombres5a392d3b
+QInstruccionesDeclaracion18ef2076->QInstruccionesValor7deafaf5
+QInstruccionesDeclaracion18ef2076->QInstruccionesValor1aad2201
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion18ef2076
+QInstruccionesDeclaracion7b204db2[label="Declaracion"]
+QInstruccionesLista_Nombres68e3f718[label="Lista nombres"]Q1295355072nom[label="_anio1_"]
+QInstruccionesLista_Nombres68e3f718->Q1295355072nom 
+
+QInstruccionesValor427495a3[label="numero"]
+
+QInstruccionesValor313a1ac6[label="1"]
+
+QInstruccionesDeclaracion7b204db2->QInstruccionesLista_Nombres68e3f718
+QInstruccionesDeclaracion7b204db2->QInstruccionesValor427495a3
+QInstruccionesDeclaracion7b204db2->QInstruccionesValor313a1ac6
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion7b204db2
+QInstruccionesDeclaracion488e8c8e[label="Declaracion"]
+QInstruccionesLista_Nombres3fa2f9b0[label="Lista nombres"]Q1295355103nom[label="_anio2_"]
+QInstruccionesLista_Nombres3fa2f9b0->Q1295355103nom 
+
+QInstruccionesValor591dba6a[label="numero"]
+
+QInstruccionesValor381067a5[label="9"]
+
+QInstruccionesDeclaracion488e8c8e->QInstruccionesLista_Nombres3fa2f9b0
+QInstruccionesDeclaracion488e8c8e->QInstruccionesValor591dba6a
+QInstruccionesDeclaracion488e8c8e->QInstruccionesValor381067a5
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion488e8c8e
+QInstruccionesDeclaracion44676d5[label="Declaracion"]
+QInstruccionesLista_Nombres2c817094[label="Lista nombres"]Q1295355134nom[label="_anio3_"]
+QInstruccionesLista_Nombres2c817094->Q1295355134nom 
+
+QInstruccionesValor187b5184[label="numero"]
+
+QInstruccionesValor23ed3061[label="4"]
+
+QInstruccionesDeclaracion44676d5->QInstruccionesLista_Nombres2c817094
+QInstruccionesDeclaracion44676d5->QInstruccionesValor187b5184
+QInstruccionesDeclaracion44676d5->QInstruccionesValor23ed3061
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion44676d5
+QInstruccionesDeclaracion14aa0a17[label="Declaracion"]
+QInstruccionesLista_Nombres3388ddc6[label="Lista nombres"]Q1295355165nom[label="_anio4_"]
+QInstruccionesLista_Nombres3388ddc6->Q1295355165nom 
+
+QInstruccionesValor71bd5d42[label="numero"]
+
+QInstruccionesValor3b19152c[label="5"]
+
+QInstruccionesDeclaracion14aa0a17->QInstruccionesLista_Nombres3388ddc6
+QInstruccionesDeclaracion14aa0a17->QInstruccionesValor71bd5d42
+QInstruccionesDeclaracion14aa0a17->QInstruccionesValor3b19152c
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion14aa0a17
+QInstruccionesDeclaracion7fa75aea[label="Declaracion"]
+QInstruccionesLista_Nombresab4de35[label="Lista nombres"]Q1818467146nom[label="_variableNeg_"]
+QInstruccionesLista_Nombresab4de35->Q1818467146nom 
+
+QInstruccionesValor11f8c56c[label="numero"]
+
+QInstruccionesUnario62bb020a[label="Operacion binaria"]
+QInstruccionesUnario62bb020aUN[label="-"]
+QInstruccionesValor278e64bd[label="5.0"]
+
+QInstruccionesUnario62bb020a->QInstruccionesValor278e64bd
+QInstruccionesUnario62bb020a->QInstruccionesUnario62bb020aUN
+
+QInstruccionesDeclaracion7fa75aea->QInstruccionesLista_Nombresab4de35
+QInstruccionesDeclaracion7fa75aea->QInstruccionesValor11f8c56c
+QInstruccionesDeclaracion7fa75aea->QInstruccionesUnario62bb020a
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion7fa75aea
+QInstruccionesDeclaracionb67430f[label="Declaracion"]
+QInstruccionesLista_Nombres5c6334aa[label="Lista nombres"]QM1525869719nom[label="_encabezado1_"]
+QInstruccionesLista_Nombres5c6334aa->QM1525869719nom 
+
+QInstruccionesValor66f2d67e[label="cadena"]
+
+QInstruccionesValor328ded91[label="Universidad San Carlos de Guatemala...;"]
+
+QInstruccionesDeclaracionb67430f->QInstruccionesLista_Nombres5c6334aa
+QInstruccionesDeclaracionb67430f->QInstruccionesValor66f2d67e
+QInstruccionesDeclaracionb67430f->QInstruccionesValor328ded91
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracionb67430f
+QInstruccionesDeclaracion3c3aff4[label="Declaracion"]
+QInstruccionesLista_Nombres46c00d42[label="Lista nombres"]QM1525869688nom[label="_encabezado2_"]
+QInstruccionesLista_Nombres46c00d42->QM1525869688nom 
+
+QInstruccionesValor36f172c2[label="cadena"]
+
+QInstruccionesValor6b4de0e8[label="Escuela de Ciencias y Sistemas
+Segundo semestre
+"]
+
+QInstruccionesDeclaracion3c3aff4->QInstruccionesLista_Nombres46c00d42
+QInstruccionesDeclaracion3c3aff4->QInstruccionesValor36f172c2
+QInstruccionesDeclaracion3c3aff4->QInstruccionesValor6b4de0e8
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion3c3aff4
+QInstruccionesDeclaracion75ef4e7a[label="Declaracion"]
+QInstruccionesLista_Nombres3383e798[label="Lista nombres"]Q501539938nom[label="_operaciones1Basica_"]
+QInstruccionesLista_Nombres3383e798->Q501539938nom 
+
+QInstruccionesValored9e448[label="numero"]
+
+QInstruccionesOperacionBinariaa170fdb[label="Operacion binaria"]
+QInstruccionesOperacionBinariaa170fdbOP[label="+"]
+QInstruccionesValor5041c7d[label="1"]
+
+QInstruccionesValor29978462[label="1"]
+
+QInstruccionesOperacionBinariaa170fdb->QInstruccionesValor5041c7d
+QInstruccionesOperacionBinariaa170fdb->QInstruccionesOperacionBinariaa170fdbOP
+QInstruccionesOperacionBinariaa170fdb->QInstruccionesValor29978462
+
+QInstruccionesDeclaracion75ef4e7a->QInstruccionesLista_Nombres3383e798
+QInstruccionesDeclaracion75ef4e7a->QInstruccionesValored9e448
+QInstruccionesDeclaracion75ef4e7a->QInstruccionesOperacionBinariaa170fdb
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion75ef4e7a
+QInstruccionesDeclaracion68addebc[label="Declaracion"]
+QInstruccionesLista_Nombres5af67da5[label="Lista nombres"]QM1632132406nom[label="_operaciones1Basica2_"]
+QInstruccionesLista_Nombres5af67da5->QM1632132406nom 
+
+QInstruccionesValor7f347572[label="numero"]
+
+QInstruccionesOperacionBinaria6a154a62[label="Operacion binaria"]
+QInstruccionesOperacionBinaria6a154a62OP[label="+"]
+QInstruccionesValor6ccb21a2[label="_operaciones1Basica_"]
+
+QInstruccionesValor5b972cb[label="_operaciones1Basica_"]
+
+QInstruccionesOperacionBinaria6a154a62->QInstruccionesValor6ccb21a2
+QInstruccionesOperacionBinaria6a154a62->QInstruccionesOperacionBinaria6a154a62OP
+QInstruccionesOperacionBinaria6a154a62->QInstruccionesValor5b972cb
+
+QInstruccionesDeclaracion68addebc->QInstruccionesLista_Nombres5af67da5
+QInstruccionesDeclaracion68addebc->QInstruccionesValor7f347572
+QInstruccionesDeclaracion68addebc->QInstruccionesOperacionBinaria6a154a62
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion68addebc
+QInstruccionesDeclaracion597a18eb[label="Declaracion"]
+QInstruccionesLista_Nombres19fc1ffc[label="Lista nombres"]QM1150387859nom[label="_operaciones1Intermedia_"]
+QInstruccionesLista_Nombres19fc1ffc->QM1150387859nom 
+
+QInstruccionesValor2c8feb50[label="nUmero"]
+
+QInstruccionesOperacionBinaria62eefb20[label="Operacion binaria"]
+QInstruccionesOperacionBinaria62eefb20OP[label="+"]
+QInstruccionesOperacionBinaria6b5a1ad6[label="Operacion binaria"]
+QInstruccionesOperacionBinaria6b5a1ad6OP[label="*"]
+QInstruccionesOperacionBinaria12a0fbbe[label="Operacion binaria"]
+QInstruccionesOperacionBinaria12a0fbbeOP[label="/"]
+QInstruccionesOperacionBinaria41a647d1[label="Operacion binaria"]
+QInstruccionesOperacionBinaria41a647d1OP[label="+"]
+QInstruccionesOperacionBinaria5404933e[label="Operacion binaria"]
+QInstruccionesOperacionBinaria5404933eOP[label="+"]
+QInstruccionesValor6fb3bfc2[label="15"]
+
+QInstruccionesOperacionBinaria7adbc481[label="Operacion binaria"]
+QInstruccionesOperacionBinaria7adbc481OP[label="*"]
+QInstruccionesValor9b09cc4[label="9"]
+
+QInstruccionesValor795d73af[label="8"]
+
+QInstruccionesOperacionBinaria7adbc481->QInstruccionesValor9b09cc4
+QInstruccionesOperacionBinaria7adbc481->QInstruccionesOperacionBinaria7adbc481OP
+QInstruccionesOperacionBinaria7adbc481->QInstruccionesValor795d73af
+
+QInstruccionesOperacionBinaria5404933e->QInstruccionesValor6fb3bfc2
+QInstruccionesOperacionBinaria5404933e->QInstruccionesOperacionBinaria5404933eOP
+QInstruccionesOperacionBinaria5404933e->QInstruccionesOperacionBinaria7adbc481
+
+QInstruccionesValorbe28ee9[label="200"]
+
+QInstruccionesOperacionBinaria41a647d1->QInstruccionesOperacionBinaria5404933e
+QInstruccionesOperacionBinaria41a647d1->QInstruccionesOperacionBinaria41a647d1OP
+QInstruccionesOperacionBinaria41a647d1->QInstruccionesValorbe28ee9
+
+QInstruccionesValor2fb9bcd8[label="8"]
+
+QInstruccionesOperacionBinaria12a0fbbe->QInstruccionesOperacionBinaria41a647d1
+QInstruccionesOperacionBinaria12a0fbbe->QInstruccionesOperacionBinaria12a0fbbeOP
+QInstruccionesOperacionBinaria12a0fbbe->QInstruccionesValor2fb9bcd8
+
+QInstruccionesValor22e24357[label="3"]
+
+QInstruccionesOperacionBinaria6b5a1ad6->QInstruccionesOperacionBinaria12a0fbbe
+QInstruccionesOperacionBinaria6b5a1ad6->QInstruccionesOperacionBinaria6b5a1ad6OP
+QInstruccionesOperacionBinaria6b5a1ad6->QInstruccionesValor22e24357
+
+QInstruccionesValor30309caf[label="9"]
+
+QInstruccionesOperacionBinaria62eefb20->QInstruccionesOperacionBinaria6b5a1ad6
+QInstruccionesOperacionBinaria62eefb20->QInstruccionesOperacionBinaria62eefb20OP
+QInstruccionesOperacionBinaria62eefb20->QInstruccionesValor30309caf
+
+QInstruccionesDeclaracion597a18eb->QInstruccionesLista_Nombres19fc1ffc
+QInstruccionesDeclaracion597a18eb->QInstruccionesValor2c8feb50
+QInstruccionesDeclaracion597a18eb->QInstruccionesOperacionBinaria62eefb20
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion597a18eb
+QInstruccionesDeclaracion2fbad986[label="Declaracion"]
+QInstruccionesLista_Nombres4d87efd5[label="Lista nombres"]QM283959087nom[label="_operaciones1Avanzadas1_"]
+QInstruccionesLista_Nombres4d87efd5->QM283959087nom 
+
+QInstruccionesValor7dcff5c9[label="numeRo"]
+
+QInstruccionesOperacionBinaria492ecb3b[label="Operacion binaria"]
+QInstruccionesOperacionBinaria492ecb3bOP[label="+"]
+QInstruccionesOperacionBinaria30215d71[label="Operacion binaria"]
+QInstruccionesOperacionBinaria30215d71OP[label="*"]
+QInstruccionesOperacionBinaria422ae5e7[label="Operacion binaria"]
+QInstruccionesOperacionBinaria422ae5e7OP[label="/"]
+QInstruccionesOperacionBinaria404921d6[label="Operacion binaria"]
+QInstruccionesOperacionBinaria404921d6OP[label="+"]
+QInstruccionesOperacionBinaria7f015df7[label="Operacion binaria"]
+QInstruccionesOperacionBinaria7f015df7OP[label="*"]
+QInstruccionesOperacionBinaria45f15db3[label="Operacion binaria"]
+QInstruccionesOperacionBinaria45f15db3OP[label="+"]
+QInstruccionesValor50619d37[label="15"]
+
+QInstruccionesValor59af417c[label="9"]
+
+QInstruccionesOperacionBinaria45f15db3->QInstruccionesValor50619d37
+QInstruccionesOperacionBinaria45f15db3->QInstruccionesOperacionBinaria45f15db3OP
+QInstruccionesOperacionBinaria45f15db3->QInstruccionesValor59af417c
+
+QInstruccionesValor2cb4515b[label="8"]
+
+QInstruccionesOperacionBinaria7f015df7->QInstruccionesOperacionBinaria45f15db3
+QInstruccionesOperacionBinaria7f015df7->QInstruccionesOperacionBinaria7f015df7OP
+QInstruccionesOperacionBinaria7f015df7->QInstruccionesValor2cb4515b
+
+QInstruccionesValor63e78dbb[label="200"]
+
+QInstruccionesOperacionBinaria404921d6->QInstruccionesOperacionBinaria7f015df7
+QInstruccionesOperacionBinaria404921d6->QInstruccionesOperacionBinaria404921d6OP
+QInstruccionesOperacionBinaria404921d6->QInstruccionesValor63e78dbb
+
+QInstruccionesValor3f332cd5[label="8"]
+
+QInstruccionesOperacionBinaria422ae5e7->QInstruccionesOperacionBinaria404921d6
+QInstruccionesOperacionBinaria422ae5e7->QInstruccionesOperacionBinaria422ae5e7OP
+QInstruccionesOperacionBinaria422ae5e7->QInstruccionesValor3f332cd5
+
+QInstruccionesValor1c342eee[label="3"]
+
+QInstruccionesOperacionBinaria30215d71->QInstruccionesOperacionBinaria422ae5e7
+QInstruccionesOperacionBinaria30215d71->QInstruccionesOperacionBinaria30215d71OP
+QInstruccionesOperacionBinaria30215d71->QInstruccionesValor1c342eee
+
+QInstruccionesValor12848aba[label="9"]
+
+QInstruccionesOperacionBinaria492ecb3b->QInstruccionesOperacionBinaria30215d71
+QInstruccionesOperacionBinaria492ecb3b->QInstruccionesOperacionBinaria492ecb3bOP
+QInstruccionesOperacionBinaria492ecb3b->QInstruccionesValor12848aba
+
+QInstruccionesDeclaracion2fbad986->QInstruccionesLista_Nombres4d87efd5
+QInstruccionesDeclaracion2fbad986->QInstruccionesValor7dcff5c9
+QInstruccionesDeclaracion2fbad986->QInstruccionesOperacionBinaria492ecb3b
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion2fbad986
+QInstruccionesDeclaracion4d515704[label="Declaracion"]
+QInstruccionesLista_Nombres6ba28fff[label="Lista nombres"]Q1436407769nom[label="_flag1_"]
+QInstruccionesLista_Nombres6ba28fff->Q1436407769nom 
+
+QInstruccionesValor56dc8f3b[label="boolean"]
+
+QInstruccionesValor603b1e00[label="verdadero"]
+
+QInstruccionesDeclaracion4d515704->QInstruccionesLista_Nombres6ba28fff
+QInstruccionesDeclaracion4d515704->QInstruccionesValor56dc8f3b
+QInstruccionesDeclaracion4d515704->QInstruccionesValor603b1e00
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion4d515704
+QInstruccionesDeclaracion27159c74[label="Declaracion"]
+QInstruccionesLista_Nombres5837321e[label="Lista nombres"]Q1436407800nom[label="_flag2_"]
+QInstruccionesLista_Nombres5837321e->Q1436407800nom 
+
+QInstruccionesValor6aa0db74[label="boolean"]
+
+QInstruccionesValor5253133e[label="falso"]
+
+QInstruccionesDeclaracion27159c74->QInstruccionesLista_Nombres5837321e
+QInstruccionesDeclaracion27159c74->QInstruccionesValor6aa0db74
+QInstruccionesDeclaracion27159c74->QInstruccionesValor5253133e
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion27159c74
+QInstruccionesDeclaracion592ec33c[label="Declaracion"]
+QInstruccionesLista_Nombres38e8adc5[label="Lista nombres"]Q1655637816nom[label="_name1_"]
+QInstruccionesLista_Nombres38e8adc5->Q1655637816nom 
+
+QInstruccionesValor547faad7[label="caracter"]
+
+QInstruccionesValor1eff9985[label="'f'"]
+
+QInstruccionesDeclaracion592ec33c->QInstruccionesLista_Nombres38e8adc5
+QInstruccionesDeclaracion592ec33c->QInstruccionesValor547faad7
+QInstruccionesDeclaracion592ec33c->QInstruccionesValor1eff9985
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion592ec33c
+QInstruccionesDeclaracion31e79e45[label="Declaracion"]
+QInstruccionesLista_Nombres4c1c8b39[label="Lista nombres"]Q1655637847nom[label="_name2_"]
+QInstruccionesLista_Nombres4c1c8b39->Q1655637847nom 
+
+QInstruccionesValor651ca97f[label="caracter"]
+
+QInstruccionesValor74d37e8[label="'$'"]
+
+QInstruccionesDeclaracion31e79e45->QInstruccionesLista_Nombres4c1c8b39
+QInstruccionesDeclaracion31e79e45->QInstruccionesValor651ca97f
+QInstruccionesDeclaracion31e79e45->QInstruccionesValor74d37e8
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion31e79e45
+QInstruccionesDeclaracionad584f2[label="Declaracion"]
+QInstruccionesLista_Nombres22b883d2[label="Lista nombres"]Q1655637878nom[label="_name3_"]
+QInstruccionesLista_Nombres22b883d2->Q1655637878nom 
+
+QInstruccionesValor22ef81ab[label="caracter"]
+
+QInstruccionesValor4cf30069[label="'r'"]
+
+QInstruccionesDeclaracionad584f2->QInstruccionesLista_Nombres22b883d2
+QInstruccionesDeclaracionad584f2->QInstruccionesValor22ef81ab
+QInstruccionesDeclaracionad584f2->QInstruccionesValor4cf30069
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracionad584f2
+QInstruccionesDeclaracion6aa7ff11[label="Declaracion"]
+QInstruccionesLista_Nombresce74784[label="Lista nombres"]Q1655637909nom[label="_name4_"]
+QInstruccionesLista_Nombresce74784->Q1655637909nom 
+Q1655637971nom[label="_name6_"]
+QInstruccionesLista_Nombresce74784->Q1655637971nom 
+
+QInstruccionesValor525b6d6a[label="caracter"]
+
+QInstruccionesValor6ffcf00[label="'n'"]
+
+QInstruccionesDeclaracion6aa7ff11->QInstruccionesLista_Nombresce74784
+QInstruccionesDeclaracion6aa7ff11->QInstruccionesValor525b6d6a
+QInstruccionesDeclaracion6aa7ff11->QInstruccionesValor6ffcf00
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion6aa7ff11
+QInstruccionesDeclaracion53f5f7b9[label="Declaracion"]
+QInstruccionesLista_Nombres65985124[label="Lista nombres"]Q1655637940nom[label="_name5_"]
+QInstruccionesLista_Nombres65985124->Q1655637940nom 
+
+QInstruccionesValor6ca150c0[label="caracter"]
+
+QInstruccionesValor145e159b[label="'a'"]
+
+QInstruccionesDeclaracion53f5f7b9->QInstruccionesLista_Nombres65985124
+QInstruccionesDeclaracion53f5f7b9->QInstruccionesValor6ca150c0
+QInstruccionesDeclaracion53f5f7b9->QInstruccionesValor145e159b
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion53f5f7b9
+QInstruccionesDeclaracion686a6096[label="Declaracion"]
+QInstruccionesLista_Nombres4fdc0dce[label="Lista nombres"]Q226030189nom[label="_operacionRela3_"]
+QInstruccionesLista_Nombres4fdc0dce->Q226030189nom 
+
+QInstruccionesValor299d63a5[label="boolean"]
+
+QInstruccionesOperacionBinaria4d8b49c0[label="Operacion binaria"]
+QInstruccionesOperacionBinaria4d8b49c0OP[label="mayor"]
+QInstruccionesValor76defe37[label="_operaciones1Basica_"]
+
+QInstruccionesValor59433f5f[label="8"]
+
+QInstruccionesOperacionBinaria4d8b49c0->QInstruccionesValor76defe37
+QInstruccionesOperacionBinaria4d8b49c0->QInstruccionesOperacionBinaria4d8b49c0OP
+QInstruccionesOperacionBinaria4d8b49c0->QInstruccionesValor59433f5f
+
+QInstruccionesDeclaracion686a6096->QInstruccionesLista_Nombres4fdc0dce
+QInstruccionesDeclaracion686a6096->QInstruccionesValor299d63a5
+QInstruccionesDeclaracion686a6096->QInstruccionesOperacionBinaria4d8b49c0
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion686a6096
+QInstruccionesDeclaracion1b81ff99[label="Declaracion"]
+QInstruccionesLista_Nombresc537060[label="Lista nombres"]Q226030189nom[label="_operacionRela3_"]
+QInstruccionesLista_Nombresc537060->Q226030189nom 
+
+QInstruccionesValordfd189b[label="boolean"]
+
+QInstruccionesOperacionBinaria4d0477bc[label="Operacion binaria"]
+QInstruccionesOperacionBinaria4d0477bcOP[label="Mayor_o_igual"]
+QInstruccionesOperacionBinaria596d24b2[label="Operacion binaria"]
+QInstruccionesOperacionBinaria596d24b2OP[label="+"]
+QInstruccionesValor4e2a9f8f[label="_operaciones1Basica_"]
+
+QInstruccionesValor2b766f11[label="6"]
+
+QInstruccionesOperacionBinaria596d24b2->QInstruccionesValor4e2a9f8f
+QInstruccionesOperacionBinaria596d24b2->QInstruccionesOperacionBinaria596d24b2OP
+QInstruccionesOperacionBinaria596d24b2->QInstruccionesValor2b766f11
+
+QInstruccionesValor45214454[label="8"]
+
+QInstruccionesOperacionBinaria4d0477bc->QInstruccionesOperacionBinaria596d24b2
+QInstruccionesOperacionBinaria4d0477bc->QInstruccionesOperacionBinaria4d0477bcOP
+QInstruccionesOperacionBinaria4d0477bc->QInstruccionesValor45214454
+
+QInstruccionesDeclaracion1b81ff99->QInstruccionesLista_Nombresc537060
+QInstruccionesDeclaracion1b81ff99->QInstruccionesValordfd189b
+QInstruccionesDeclaracion1b81ff99->QInstruccionesOperacionBinaria4d0477bc
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion1b81ff99
+QInstruccionesDeclaracion75d9a0f6[label="Declaracion"]
+QInstruccionesLista_Nombres6f159f25[label="Lista nombres"]Q226030189nom[label="_operacionRela3_"]
+QInstruccionesLista_Nombres6f159f25->Q226030189nom 
+
+QInstruccionesValor77837b31[label="boolean"]
+
+QInstruccionesOperacionBinaria384f8271[label="Operacion binaria"]
+QInstruccionesOperacionBinaria384f8271OP[label="menor_o_igual"]
+QInstruccionesOperacionBinaria294b9e[label="Operacion binaria"]
+QInstruccionesOperacionBinaria294b9eOP[label="+"]
+QInstruccionesValor43060009[label="_operaciones1Basica_"]
+
+QInstruccionesValor2fb0a1ab[label="6"]
+
+QInstruccionesOperacionBinaria294b9e->QInstruccionesValor43060009
+QInstruccionesOperacionBinaria294b9e->QInstruccionesOperacionBinaria294b9eOP
+QInstruccionesOperacionBinaria294b9e->QInstruccionesValor2fb0a1ab
+
+QInstruccionesValor6ba8e226[label="8"]
+
+QInstruccionesOperacionBinaria384f8271->QInstruccionesOperacionBinaria294b9e
+QInstruccionesOperacionBinaria384f8271->QInstruccionesOperacionBinaria384f8271OP
+QInstruccionesOperacionBinaria384f8271->QInstruccionesValor6ba8e226
+
+QInstruccionesDeclaracion75d9a0f6->QInstruccionesLista_Nombres6f159f25
+QInstruccionesDeclaracion75d9a0f6->QInstruccionesValor77837b31
+QInstruccionesDeclaracion75d9a0f6->QInstruccionesOperacionBinaria384f8271
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion75d9a0f6
+QInstruccionesDeclaracion21173176[label="Declaracion"]
+QInstruccionesLista_Nombres52627b15[label="Lista nombres"]Q226030220nom[label="_operacionRela4_"]
+QInstruccionesLista_Nombres52627b15->Q226030220nom 
+
+QInstruccionesValor78f5350b[label="boolean"]
+
+QInstruccionesOperacionBinaria54e051e1[label="Operacion binaria"]
+QInstruccionesOperacionBinaria54e051e1OP[label="es_iGual"]
+QInstruccionesValor4ce4568a[label="_operaciones1Basica_"]
+
+QInstruccionesValord1f36d0[label="8"]
+
+QInstruccionesOperacionBinaria54e051e1->QInstruccionesValor4ce4568a
+QInstruccionesOperacionBinaria54e051e1->QInstruccionesOperacionBinaria54e051e1OP
+QInstruccionesOperacionBinaria54e051e1->QInstruccionesValord1f36d0
+
+QInstruccionesDeclaracion21173176->QInstruccionesLista_Nombres52627b15
+QInstruccionesDeclaracion21173176->QInstruccionesValor78f5350b
+QInstruccionesDeclaracion21173176->QInstruccionesOperacionBinaria54e051e1
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion21173176
+QInstruccionesDeclaracion5c930715[label="Declaracion"]
+QInstruccionesLista_Nombresa2a2a3f[label="Lista nombres"]Q226030251nom[label="_operacionRela5_"]
+QInstruccionesLista_Nombresa2a2a3f->Q226030251nom 
+
+QInstruccionesValor64147df6[label="boolean"]
+
+QInstruccionesOperacionBinaria10496e12[label="Operacion binaria"]
+QInstruccionesOperacionBinaria10496e12OP[label="es_igual"]
+QInstruccionesValor54a678a1[label="_operaciones1Basica_"]
+
+QInstruccionesValorf86cbd8[label="_operaciones1Basica_"]
+
+QInstruccionesOperacionBinaria10496e12->QInstruccionesValor54a678a1
+QInstruccionesOperacionBinaria10496e12->QInstruccionesOperacionBinaria10496e12OP
+QInstruccionesOperacionBinaria10496e12->QInstruccionesValorf86cbd8
+
+QInstruccionesDeclaracion5c930715->QInstruccionesLista_Nombresa2a2a3f
+QInstruccionesDeclaracion5c930715->QInstruccionesValor64147df6
+QInstruccionesDeclaracion5c930715->QInstruccionesOperacionBinaria10496e12
+
+QInstruccionesS1329f9203->QInstruccionesDeclaracion5c930715
+QInstruccionesAsignacion48baec13[label="Asignacion"]
+QInstruccionesLista_Nombres135822e8[label="Lista nombres"]Q2945157nom[label="_v1_"]
+QInstruccionesLista_Nombres135822e8->Q2945157nom 
+
+QInstruccionesValor74dc2352[label="esta es la cadena numero 1"]
+
+QInstruccionesAsignacion48baec13->QInstruccionesLista_Nombres135822e8
+QInstruccionesAsignacion48baec13->QInstruccionesValor74dc2352
+
+QInstruccionesS1329f9203->QInstruccionesAsignacion48baec13
+QInstruccionesAsignacion4dbdfe1a[label="Asignacion"]
+QInstruccionesLista_Nombres52f849ca[label="Lista nombres"]Q2945188nom[label="_v2_"]
+QInstruccionesLista_Nombres52f849ca->Q2945188nom 
+Q2945219nom[label="_v3_"]
+QInstruccionesLista_Nombres52f849ca->Q2945219nom 
+
+QInstruccionesValore56e1f[label="estas cadenas deben ser diferentes"]
+
+QInstruccionesAsignacion4dbdfe1a->QInstruccionesLista_Nombres52f849ca
+QInstruccionesAsignacion4dbdfe1a->QInstruccionesValore56e1f
+
+QInstruccionesS1329f9203->QInstruccionesAsignacion4dbdfe1a
+QInstruccionesAsignacion15b61be2[label="Asignacion"]
+QInstruccionesLista_Nombres37d96a60[label="Lista nombres"]QM809765205nom[label="_curso1_"]
+QInstruccionesLista_Nombres37d96a60->QM809765205nom 
+QM809765174nom[label="_curso2_"]
+QInstruccionesLista_Nombres37d96a60->QM809765174nom 
+QM809765143nom[label="_curso3_"]
+QInstruccionesLista_Nombres37d96a60->QM809765143nom 
+
+QInstruccionesValor27ffd348[label="Organizacion de lenguajes y compiladores 1"]
+
+QInstruccionesAsignacion15b61be2->QInstruccionesLista_Nombres37d96a60
+QInstruccionesAsignacion15b61be2->QInstruccionesValor27ffd348
+
+QInstruccionesS1329f9203->QInstruccionesAsignacion15b61be2
+QInstruccionesImpresionc41d43e[label="Impresion"]
+QInstruccionesImpresionc41d43eIMP[label="imprimir_nl"]
+QInstruccionesValor290db75f[label="_encabezado1_"]
+
+QInstruccionesImpresionc41d43e->QInstruccionesValor290db75f
+QInstruccionesImpresionc41d43e->QInstruccionesImpresionc41d43eIMP
+
+QInstruccionesS1329f9203->QInstruccionesImpresionc41d43e
+QInstruccionesImpresion55fb5274[label="Impresion"]
+QInstruccionesImpresion55fb5274IMP[label="imprimir_nl"]
+QInstruccionesValorc47ae10[label="_encabezado2_"]
+
+QInstruccionesImpresion55fb5274->QInstruccionesValorc47ae10
+QInstruccionesImpresion55fb5274->QInstruccionesImpresion55fb5274IMP
+
+QInstruccionesS1329f9203->QInstruccionesImpresion55fb5274
+QInstruccionesImpresionea57b82[label="Impresion"]
+QInstruccionesImpresionea57b82IMP[label="imprimir"]
+QInstruccionesValor4a569246[label="..."]
+
+QInstruccionesImpresionea57b82->QInstruccionesValor4a569246
+QInstruccionesImpresionea57b82->QInstruccionesImpresionea57b82IMP
+
+QInstruccionesS1329f9203->QInstruccionesImpresionea57b82
+QInstruccionesImpresion45b1118a[label="Impresion"]
+QInstruccionesImpresion45b1118aIMP[label="imprimir"]
+QInstruccionesValor74370002[label="_anio1_"]
+
+QInstruccionesImpresion45b1118a->QInstruccionesValor74370002
+QInstruccionesImpresion45b1118a->QInstruccionesImpresion45b1118aIMP
+
+QInstruccionesS1329f9203->QInstruccionesImpresion45b1118a
+QInstruccionesImpresion51eb0c6d[label="Impresion"]
+QInstruccionesImpresion51eb0c6dIMP[label="imprimir"]
+QInstruccionesValor2f5160b4[label="_anio2_"]
+
+QInstruccionesImpresion51eb0c6d->QInstruccionesValor2f5160b4
+QInstruccionesImpresion51eb0c6d->QInstruccionesImpresion51eb0c6dIMP
+
+QInstruccionesS1329f9203->QInstruccionesImpresion51eb0c6d
+QInstruccionesImpresion62a11995[label="Impresion"]
+QInstruccionesImpresion62a11995IMP[label="imprimir"]
+QInstruccionesValor2eda22d3[label="_anio3_"]
+
+QInstruccionesImpresion62a11995->QInstruccionesValor2eda22d3
+QInstruccionesImpresion62a11995->QInstruccionesImpresion62a11995IMP
+
+QInstruccionesS1329f9203->QInstruccionesImpresion62a11995
+QInstruccionesImpresion275bdb01[label="Impresion"]
+QInstruccionesImpresion275bdb01IMP[label="imprimir"]
+QInstruccionesValor3ab5b9e[label="_anio4_"]
+
+QInstruccionesImpresion275bdb01->QInstruccionesValor3ab5b9e
+QInstruccionesImpresion275bdb01->QInstruccionesImpresion275bdb01IMP
+
+QInstruccionesS1329f9203->QInstruccionesImpresion275bdb01
+QInstruccionesImpresion692c87cf[label="Impresion"]
+QInstruccionesImpresion692c87cfIMP[label="imprimir_nl"]
+QInstruccionesValor169fec83[label="."]
+
+QInstruccionesImpresion692c87cf->QInstruccionesValor169fec83
+QInstruccionesImpresion692c87cf->QInstruccionesImpresion692c87cfIMP
+
+QInstruccionesS1329f9203->QInstruccionesImpresion692c87cf
+QInstruccionesImpresion6f65ae82[label="Impresion"]
+QInstruccionesImpresion6f65ae82IMP[label="imprimir_nl"]
+QInstruccionesValor364b6f5b[label="_v3_"]
+
+QInstruccionesImpresion6f65ae82->QInstruccionesValor364b6f5b
+QInstruccionesImpresion6f65ae82->QInstruccionesImpresion6f65ae82IMP
+
+QInstruccionesS1329f9203->QInstruccionesImpresion6f65ae82
+QInstruccionesIF3bd494a2[label=" IF "]
+QInstruccionesOperacionBinaria52469caf[label="Operacion binaria"]
+QInstruccionesOperacionBinaria52469cafOP[label="es_igual"]
+QInstruccionesValor109539db[label="_v1_"]
+
+QInstruccionesValor7d49ad25[label="_v2_"]
+
+QInstruccionesOperacionBinaria52469caf->QInstruccionesValor109539db
+QInstruccionesOperacionBinaria52469caf->QInstruccionesOperacionBinaria52469cafOP
+QInstruccionesOperacionBinaria52469caf->QInstruccionesValor7d49ad25
+
+QInstruccionesLista_Estructura62a757aa[label="Lista Estructura"]QInstruccionesImpresion4620cb5[label="Impresion"]
+QInstruccionesImpresion4620cb5IMP[label="imprimir_nl"]
+QInstruccionesValor3d00a603[label="Al parecer no funciona la asignacion"]
+
+QInstruccionesImpresion4620cb5->QInstruccionesValor3d00a603
+QInstruccionesImpresion4620cb5->QInstruccionesImpresion4620cb5IMP
+
+QInstruccionesLista_Estructura62a757aa->QInstruccionesImpresion4620cb5
+QInstruccionesIFd101403[label=" IF "]
+QInstruccionesOperacionBinaria55d2180c[label="Operacion binaria"]
+QInstruccionesOperacionBinaria55d2180cOP[label="es_igual"]
+QInstruccionesValor4141b1a7[label="_v1_"]
+
+QInstruccionesValor79c92732[label="_v2_"]
+
+QInstruccionesOperacionBinaria55d2180c->QInstruccionesValor4141b1a7
+QInstruccionesOperacionBinaria55d2180c->QInstruccionesOperacionBinaria55d2180cOP
+QInstruccionesOperacionBinaria55d2180c->QInstruccionesValor79c92732
+
+QInstruccionesLista_Estructura74749404[label="Lista Estructura"]QInstruccionesImpresion31a3f0fe[label="Impresion"]
+QInstruccionesImpresion31a3f0feIMP[label="imprimir_nl"]
+QInstruccionesValor7da3a3e4[label="no tiene que imprimir este mensaje"]
+
+QInstruccionesImpresion31a3f0fe->QInstruccionesValor7da3a3e4
+QInstruccionesImpresion31a3f0fe->QInstruccionesImpresion31a3f0feIMP
+
+QInstruccionesLista_Estructura74749404->QInstruccionesImpresion31a3f0fe
+
+QInstruccionesLista_If4d63ebd5[label="Lista if"]QInstruccionesElse_If1d6782c9[label="Else_if"]
+QInstruccionesElse_If1d6782c9Els[label="o_si"]
+QInstruccionesOperacionBinaria33edb59b[label="Operacion binaria"]
+QInstruccionesOperacionBinaria33edb59bOP[label="es_igual"]
+QInstruccionesValor53318c81[label="_v1_"]
+
+QInstruccionesValor15ef871[label="13"]
+
+QInstruccionesOperacionBinaria33edb59b->QInstruccionesValor53318c81
+QInstruccionesOperacionBinaria33edb59b->QInstruccionesOperacionBinaria33edb59bOP
+QInstruccionesOperacionBinaria33edb59b->QInstruccionesValor15ef871
+
+QInstruccionesLista_Estructura208e4359[label="Lista Estructura"]QInstruccionesImpresion7e917bbe[label="Impresion"]
+QInstruccionesImpresion7e917bbeIMP[label="imprimir_nl"]
+QInstruccionesValor211bb569[label="mensaje de prueba"]
+
+QInstruccionesImpresion7e917bbe->QInstruccionesValor211bb569
+QInstruccionesImpresion7e917bbe->QInstruccionesImpresion7e917bbeIMP
+
+QInstruccionesLista_Estructura208e4359->QInstruccionesImpresion7e917bbe
+
+QInstruccionesElse_If1d6782c9->QInstruccionesOperacionBinaria33edb59b
+QInstruccionesElse_If1d6782c9->QInstruccionesElse_If1d6782c9Els
+QInstruccionesElse_If1d6782c9->QInstruccionesLista_Estructura208e4359
+
+QInstruccionesLista_If4d63ebd5->QInstruccionesElse_If1d6782c9
+QInstruccionesElse_If57705c4b[label="Else_if"]
+QInstruccionesElse_If57705c4bEls[label="o_si"]
+QInstruccionesOperacionBinaria5365977[label="Operacion binaria"]
+QInstruccionesOperacionBinaria5365977OP[label="es_igual"]
+QInstruccionesValor700f9ee4[label="_v1_"]
+
+QInstruccionesValorc43dd71[label="14"]
+
+QInstruccionesOperacionBinaria5365977->QInstruccionesValor700f9ee4
+QInstruccionesOperacionBinaria5365977->QInstruccionesOperacionBinaria5365977OP
+QInstruccionesOperacionBinaria5365977->QInstruccionesValorc43dd71
+
+QInstruccionesLista_Estructura59845ab6[label="Lista Estructura"]QInstruccionesImpresion6ece5d10[label="Impresion"]
+QInstruccionesImpresion6ece5d10IMP[label="imprimir_nl"]
+QInstruccionesValor623a1693[label="mensaje de prueba"]
+
+QInstruccionesImpresion6ece5d10->QInstruccionesValor623a1693
+QInstruccionesImpresion6ece5d10->QInstruccionesImpresion6ece5d10IMP
+
+QInstruccionesLista_Estructura59845ab6->QInstruccionesImpresion6ece5d10
+QInstruccionesIF7000e7f0[label=" IF "]
+QInstruccionesOperacionBinariabaa42ac[label="Operacion binaria"]
+QInstruccionesOperacionBinariabaa42acOP[label="es_igual"]
+QInstruccionesValor1790b814[label="_v1_"]
+
+QInstruccionesValor25acbafb[label="_v2_"]
+
+QInstruccionesOperacionBinariabaa42ac->QInstruccionesValor1790b814
+QInstruccionesOperacionBinariabaa42ac->QInstruccionesOperacionBinariabaa42acOP
+QInstruccionesOperacionBinariabaa42ac->QInstruccionesValor25acbafb
+
+QInstruccionesLista_Estructura5264f6d9[label="Lista Estructura"]QInstruccionesImpresionb82611b[label="Impresion"]
+QInstruccionesImpresionb82611bIMP[label="imprimir_nl"]
+QInstruccionesValor19402867[label="no tiene que imprimir este mensaje"]
+
+QInstruccionesImpresionb82611b->QInstruccionesValor19402867
+QInstruccionesImpresionb82611b->QInstruccionesImpresionb82611bIMP
+
+QInstruccionesLista_Estructura5264f6d9->QInstruccionesImpresionb82611b
+
+QInstruccionesLista_If59fb22d6[label="Lista if"]QInstruccionesElse_If2c5cc50e[label="Else_if"]
+QInstruccionesElse_If2c5cc50eEls[label="o_si"]
+QInstruccionesOperacionBinaria34cef327[label="Operacion binaria"]
+QInstruccionesOperacionBinaria34cef327OP[label="es_igual"]
+QInstruccionesValor2c55e6c9[label="_v1_"]
+
+QInstruccionesValor2c388c07[label="13"]
+
+QInstruccionesOperacionBinaria34cef327->QInstruccionesValor2c55e6c9
+QInstruccionesOperacionBinaria34cef327->QInstruccionesOperacionBinaria34cef327OP
+QInstruccionesOperacionBinaria34cef327->QInstruccionesValor2c388c07
+
+QInstruccionesLista_Estructura6686483b[label="Lista Estructura"]QInstruccionesImpresion2592c807[label="Impresion"]
+QInstruccionesImpresion2592c807IMP[label="imprimir_nl"]
+QInstruccionesValor26f211d2[label="mensaje de prueba"]
+
+QInstruccionesImpresion2592c807->QInstruccionesValor26f211d2
+QInstruccionesImpresion2592c807->QInstruccionesImpresion2592c807IMP
+
+QInstruccionesLista_Estructura6686483b->QInstruccionesImpresion2592c807
+
+QInstruccionesElse_If2c5cc50e->QInstruccionesOperacionBinaria34cef327
+QInstruccionesElse_If2c5cc50e->QInstruccionesElse_If2c5cc50eEls
+QInstruccionesElse_If2c5cc50e->QInstruccionesLista_Estructura6686483b
+
+QInstruccionesLista_If59fb22d6->QInstruccionesElse_If2c5cc50e
+QInstruccionesElse_If4e42e9bf[label="Else_if"]
+QInstruccionesElse_If4e42e9bfEls[label="o_si"]
+QInstruccionesOperacionBinaria1a51b7dc[label="Operacion binaria"]
+QInstruccionesOperacionBinaria1a51b7dcOP[label="es_igual"]
+QInstruccionesValor29b08661[label="_v1_"]
+
+QInstruccionesValor1ffa6e04[label="14"]
+
+QInstruccionesOperacionBinaria1a51b7dc->QInstruccionesValor29b08661
+QInstruccionesOperacionBinaria1a51b7dc->QInstruccionesOperacionBinaria1a51b7dcOP
+QInstruccionesOperacionBinaria1a51b7dc->QInstruccionesValor1ffa6e04
+
+QInstruccionesLista_Estructura46ac6355[label="Lista Estructura"]QInstruccionesImpresion5154c30b[label="Impresion"]
+QInstruccionesImpresion5154c30bIMP[label="imprimir_nl"]
+QInstruccionesValor7cfad4ce[label="mensaje de prueba"]
+
+QInstruccionesImpresion5154c30b->QInstruccionesValor7cfad4ce
+QInstruccionesImpresion5154c30b->QInstruccionesImpresion5154c30bIMP
+
+QInstruccionesLista_Estructura46ac6355->QInstruccionesImpresion5154c30b
+QInstruccionesIF303c0f1b[label=" IF "]
+QInstruccionesOperacionBinaria152f6482[label="Operacion binaria"]
+QInstruccionesOperacionBinaria152f6482OP[label="es_igual"]
+QInstruccionesValor6214b1b7[label="_v1_"]
+
+QInstruccionesValor4862459f[label="_v2_"]
+
+QInstruccionesOperacionBinaria152f6482->QInstruccionesValor6214b1b7
+QInstruccionesOperacionBinaria152f6482->QInstruccionesOperacionBinaria152f6482OP
+QInstruccionesOperacionBinaria152f6482->QInstruccionesValor4862459f
+
+QInstruccionesLista_Estructura1876df5f[label="Lista Estructura"]QInstruccionesImpresion7613a3a7[label="Impresion"]
+QInstruccionesImpresion7613a3a7IMP[label="imprimir_nl"]
+QInstruccionesValor314d3ddb[label="no tiene que imprimir este mensaje"]
+
+QInstruccionesImpresion7613a3a7->QInstruccionesValor314d3ddb
+QInstruccionesImpresion7613a3a7->QInstruccionesImpresion7613a3a7IMP
+
+QInstruccionesLista_Estructura1876df5f->QInstruccionesImpresion7613a3a7
+
+QInstruccionesLista_If6b59d8d0[label="Lista if"]QInstruccionesElse_If457b6ec3[label="Else_if"]
+QInstruccionesElse_If457b6ec3Els[label="o_si"]
+QInstruccionesOperacionBinaria2e9ef350[label="Operacion binaria"]
+QInstruccionesOperacionBinaria2e9ef350OP[label="es_igual"]
+QInstruccionesValor76e5a0bd[label="_v1_"]
+
+QInstruccionesValor535f69e9[label="13"]
+
+QInstruccionesOperacionBinaria2e9ef350->QInstruccionesValor76e5a0bd
+QInstruccionesOperacionBinaria2e9ef350->QInstruccionesOperacionBinaria2e9ef350OP
+QInstruccionesOperacionBinaria2e9ef350->QInstruccionesValor535f69e9
+
+QInstruccionesLista_Estructura4dcc1837[label="Lista Estructura"]QInstruccionesImpresion149176ad[label="Impresion"]
+QInstruccionesImpresion149176adIMP[label="imprimir_nl"]
+QInstruccionesValor4f2accca[label="mensaje de prueba"]
+
+QInstruccionesImpresion149176ad->QInstruccionesValor4f2accca
+QInstruccionesImpresion149176ad->QInstruccionesImpresion149176adIMP
+
+QInstruccionesLista_Estructura4dcc1837->QInstruccionesImpresion149176ad
+
+QInstruccionesElse_If457b6ec3->QInstruccionesOperacionBinaria2e9ef350
+QInstruccionesElse_If457b6ec3->QInstruccionesElse_If457b6ec3Els
+QInstruccionesElse_If457b6ec3->QInstruccionesLista_Estructura4dcc1837
+
+QInstruccionesLista_If6b59d8d0->QInstruccionesElse_If457b6ec3
+QInstruccionesElse_If6792e4e7[label="Else_if"]
+QInstruccionesElse_If6792e4e7Els[label="o_si"]
+QInstruccionesOperacionBinaria4a324582[label="Operacion binaria"]
+QInstruccionesOperacionBinaria4a324582OP[label="es_igual"]
+QInstruccionesValor55096677[label="_v1_"]
+
+QInstruccionesValor4cdcac80[label="14"]
+
+QInstruccionesOperacionBinaria4a324582->QInstruccionesValor55096677
+QInstruccionesOperacionBinaria4a324582->QInstruccionesOperacionBinaria4a324582OP
+QInstruccionesOperacionBinaria4a324582->QInstruccionesValor4cdcac80
+
+QInstruccionesLista_Estructura3c99cc20[label="Lista Estructura"]QInstruccionesImpresion64df9064[label="Impresion"]
+QInstruccionesImpresion64df9064IMP[label="imprimir_nl"]
+QInstruccionesValor7a7b6856[label="mensaje de prueba"]
+
+QInstruccionesImpresion64df9064->QInstruccionesValor7a7b6856
+QInstruccionesImpresion64df9064->QInstruccionesImpresion64df9064IMP
+
+QInstruccionesLista_Estructura3c99cc20->QInstruccionesImpresion64df9064
+
+QInstruccionesElse_If6792e4e7->QInstruccionesOperacionBinaria4a324582
+QInstruccionesElse_If6792e4e7->QInstruccionesElse_If6792e4e7Els
+QInstruccionesElse_If6792e4e7->QInstruccionesLista_Estructura3c99cc20
+
+QInstruccionesLista_If6b59d8d0->QInstruccionesElse_If6792e4e7
+
+QInstruccionesIF303c0f1b->QInstruccionesOperacionBinaria152f6482
+QInstruccionesIF303c0f1b->QInstruccionesLista_Estructura1876df5f
+QInstruccionesIF303c0f1b->QInstruccionesLista_If6b59d8d0
+QInstruccionesElse536a7335[label="Else"]
+QInstruccionesElse536a7335Else[label="de_lo_contrario"]
+QInstruccionesLista_Estructura21e05db4[label="Lista Estructura"]QInstruccionesImpresion39a4a55c[label="Impresion"]
+QInstruccionesImpresion39a4a55cIMP[label="imprimir_nl"]
+QInstruccionesValor183c53e6[label="este print es un ejemplo"]
+
+QInstruccionesImpresion39a4a55c->QInstruccionesValor183c53e6
+QInstruccionesImpresion39a4a55c->QInstruccionesImpresion39a4a55cIMP
+
+QInstruccionesLista_Estructura21e05db4->QInstruccionesImpresion39a4a55c
+
+QInstruccionesElse536a7335->QInstruccionesElse536a7335Else
+QInstruccionesElse536a7335->QInstruccionesLista_Estructura21e05db4
+
+QInstruccionesIF303c0f1b->QInstruccionesElse536a7335
+
+QInstruccionesLista_Estructura46ac6355->QInstruccionesIF303c0f1b
+
+QInstruccionesElse_If4e42e9bf->QInstruccionesOperacionBinaria1a51b7dc
+QInstruccionesElse_If4e42e9bf->QInstruccionesElse_If4e42e9bfEls
+QInstruccionesElse_If4e42e9bf->QInstruccionesLista_Estructura46ac6355
+
+QInstruccionesLista_If59fb22d6->QInstruccionesElse_If4e42e9bf
+
+QInstruccionesIF7000e7f0->QInstruccionesOperacionBinariabaa42ac
+QInstruccionesIF7000e7f0->QInstruccionesLista_Estructura5264f6d9
+QInstruccionesIF7000e7f0->QInstruccionesLista_If59fb22d6
+QInstruccionesElse184f780f[label="Else"]
+QInstruccionesElse184f780fElse[label="de_lo_contrario"]
+QInstruccionesLista_Estructura3be19b4f[label="Lista Estructura"]QInstruccionesImpresion27f3572a[label="Impresion"]
+QInstruccionesImpresion27f3572aIMP[label="imprimir_nl"]
+QInstruccionesValor5daa8351[label="este print es un ejemplo"]
+
+QInstruccionesImpresion27f3572a->QInstruccionesValor5daa8351
+QInstruccionesImpresion27f3572a->QInstruccionesImpresion27f3572aIMP
+
+QInstruccionesLista_Estructura3be19b4f->QInstruccionesImpresion27f3572a
+
+QInstruccionesElse184f780f->QInstruccionesElse184f780fElse
+QInstruccionesElse184f780f->QInstruccionesLista_Estructura3be19b4f
+
+QInstruccionesIF7000e7f0->QInstruccionesElse184f780f
+
+QInstruccionesLista_Estructura59845ab6->QInstruccionesIF7000e7f0
+
+QInstruccionesElse_If57705c4b->QInstruccionesOperacionBinaria5365977
+QInstruccionesElse_If57705c4b->QInstruccionesElse_If57705c4bEls
+QInstruccionesElse_If57705c4b->QInstruccionesLista_Estructura59845ab6
+
+QInstruccionesLista_If4d63ebd5->QInstruccionesElse_If57705c4b
+
+QInstruccionesIFd101403->QInstruccionesOperacionBinaria55d2180c
+QInstruccionesIFd101403->QInstruccionesLista_Estructura74749404
+QInstruccionesIFd101403->QInstruccionesLista_If4d63ebd5
+QInstruccionesElse3ec607eb[label="Else"]
+QInstruccionesElse3ec607ebElse[label="de_lo_contrario"]
+QInstruccionesLista_Estructura9cac89f[label="Lista Estructura"]QInstruccionesImpresion34bd948b[label="Impresion"]
+QInstruccionesImpresion34bd948bIMP[label="imprimir_nl"]
+QInstruccionesValor3d043946[label="este print es un ejemplo"]
+
+QInstruccionesImpresion34bd948b->QInstruccionesValor3d043946
+QInstruccionesImpresion34bd948b->QInstruccionesImpresion34bd948bIMP
+
+QInstruccionesLista_Estructura9cac89f->QInstruccionesImpresion34bd948b
+
+QInstruccionesElse3ec607eb->QInstruccionesElse3ec607ebElse
+QInstruccionesElse3ec607eb->QInstruccionesLista_Estructura9cac89f
+
+QInstruccionesIFd101403->QInstruccionesElse3ec607eb
+
+QInstruccionesLista_Estructura62a757aa->QInstruccionesIFd101403
+
+QInstruccionesLista_If33738852[label="Lista if"]
+QInstruccionesIF3bd494a2->QInstruccionesOperacionBinaria52469caf
+QInstruccionesIF3bd494a2->QInstruccionesLista_Estructura62a757aa
+QInstruccionesIF3bd494a2->QInstruccionesLista_If33738852
+
+QInstruccionesS1329f9203->QInstruccionesIF3bd494a2
+QInstruccionesMientras6c223093[label="Mientras"]
+QInstruccionesOperacionBinaria3463f850[label="Operacion binaria"]
+QInstruccionesOperacionBinaria3463f850OP[label="/"]
+QInstruccionesOperacionBinaria28312993[label="Operacion binaria"]
+QInstruccionesOperacionBinaria28312993OP[label="+"]
+QInstruccionesOperacionBinaria7af05df[label="Operacion binaria"]
+QInstruccionesOperacionBinaria7af05dfOP[label="*"]
+QInstruccionesOperacionBinaria7af41b11[label="Operacion binaria"]
+QInstruccionesOperacionBinaria7af41b11OP[label="mayor_o_igual"]
+QInstruccionesValor51fecd67[label="_variable1_"]
+
+QInstruccionesValor70221b7a[label="5"]
+
+QInstruccionesOperacionBinaria7af41b11->QInstruccionesValor51fecd67
+QInstruccionesOperacionBinaria7af41b11->QInstruccionesOperacionBinaria7af41b11OP
+QInstruccionesOperacionBinaria7af41b11->QInstruccionesValor70221b7a
+
+QInstruccionesValorf5c695c[label="5"]
+
+QInstruccionesOperacionBinaria7af05df->QInstruccionesOperacionBinaria7af41b11
+QInstruccionesOperacionBinaria7af05df->QInstruccionesOperacionBinaria7af05dfOP
+QInstruccionesOperacionBinaria7af05df->QInstruccionesValorf5c695c
+
+QInstruccionesValor55aac735[label="8"]
+
+QInstruccionesOperacionBinaria28312993->QInstruccionesOperacionBinaria7af05df
+QInstruccionesOperacionBinaria28312993->QInstruccionesOperacionBinaria28312993OP
+QInstruccionesOperacionBinaria28312993->QInstruccionesValor55aac735
+
+QInstruccionesValor7218ad12[label="2"]
+
+QInstruccionesOperacionBinaria3463f850->QInstruccionesOperacionBinaria28312993
+QInstruccionesOperacionBinaria3463f850->QInstruccionesOperacionBinaria3463f850OP
+QInstruccionesOperacionBinaria3463f850->QInstruccionesValor7218ad12
+
+QInstruccionesMientras6c223093->QInstruccionesOperacionBinaria3463f850
+QInstruccionesMientras_Definido128191e0[label="Mientras Definido"]
+QInstruccionesAsignacion7efb0c65[label="Asignacion"]
+QInstruccionesLista_Nombres7d6bffe0[label="Lista nombres"]QM1468498071nom[label="_variable1_"]
+QInstruccionesLista_Nombres7d6bffe0->QM1468498071nom 
+
+QInstruccionesOperacionBinaria4aacbd62[label="Operacion binaria"]
+QInstruccionesOperacionBinaria4aacbd62OP[label="+"]
+QInstruccionesValor54bc3b46[label="_variable1_"]
+
+QInstruccionesValor72829d90[label="1"]
+
+QInstruccionesOperacionBinaria4aacbd62->QInstruccionesValor54bc3b46
+QInstruccionesOperacionBinaria4aacbd62->QInstruccionesOperacionBinaria4aacbd62OP
+QInstruccionesOperacionBinaria4aacbd62->QInstruccionesValor72829d90
+
+QInstruccionesAsignacion7efb0c65->QInstruccionesLista_Nombres7d6bffe0
+QInstruccionesAsignacion7efb0c65->QInstruccionesOperacionBinaria4aacbd62
+
+QInstruccionesMientras_Definido128191e0->QInstruccionesAsignacion7efb0c65
+QInstruccionesMientras_Definido5034f8df[label="Mientras Definido"]
+QInstruccionesImpresion7fdc1816[label="Impresion"]
+QInstruccionesImpresion7fdc1816IMP[label="imprimir"]
+QInstruccionesValor4a8f6aa0[label="_variable1_"]
+
+QInstruccionesImpresion7fdc1816->QInstruccionesValor4a8f6aa0
+QInstruccionesImpresion7fdc1816->QInstruccionesImpresion7fdc1816IMP
+
+QInstruccionesMientras_Definido5034f8df->QInstruccionesImpresion7fdc1816
+
+QInstruccionesMientras_Definido128191e0->QInstruccionesMientras_Definido5034f8df
+
+QInstruccionesMientras6c223093->QInstruccionesMientras_Definido128191e0
+
+QInstruccionesS1329f9203->QInstruccionesMientras6c223093
+QInstruccionesRetornar2c87007c[label="Retornar"]
+QInstruccionesRetornar2c87007cRE[label="retornar"]
+QInstruccionesValor5b82e733[label="_potencia_"]
+
+QInstruccionesRetornar2c87007c->QInstruccionesValor5b82e733
+QInstruccionesRetornar2c87007c->QInstruccionesRetornar2c87007cRE
+
+QInstruccionesS1329f9203->QInstruccionesRetornar2c87007c
+QInstruccionesRetornar448158fd[label="Retornar"]
+QInstruccionesRetornar448158fdRE[label="retornar"]
+QInstruccionesValor75eae0a7[label="_potencia_"]
+
+QInstruccionesRetornar448158fd->QInstruccionesValor75eae0a7
+QInstruccionesRetornar448158fd->QInstruccionesRetornar448158fdRE
+
+QInstruccionesS1329f9203->QInstruccionesRetornar448158fd
+QInstruccionesRetornar61fa9a86[label="Retornar"]
+QInstruccionesRetornar61fa9a86RE[label="retornar"]
+QInstruccionesValor2d0d52f5[label="_potencia_"]
+
+QInstruccionesRetornar61fa9a86->QInstruccionesValor2d0d52f5
+QInstruccionesRetornar61fa9a86->QInstruccionesRetornar61fa9a86RE
+
+QInstruccionesS1329f9203->QInstruccionesRetornar61fa9a86
+QInstruccionesRetornar6305a119[label="Retornar"]
+QInstruccionesRetornar6305a119RE[label="retornar"]
+QInstruccionesValor41489a06[label="_potencia_"]
+
+QInstruccionesRetornar6305a119->QInstruccionesValor41489a06
+QInstruccionesRetornar6305a119->QInstruccionesRetornar6305a119RE
+
+QInstruccionesS1329f9203->QInstruccionesRetornar6305a119
+QInstruccionesFuncion74d30603[label="Funcion"]
+QInstruccionesFuncion74d30603FUN[label="_potenciaFuncion_"]
+QInstruccionesLista_Variables330e6896[label="Lista Variables"]QInstruccionesVariable7d4d0a87[label="Variable"]
+QInstruccionesVariable7d4d0a87Va[label="_base_"]
+QInstruccionesValor78503782[label="Numero"]
+
+QInstruccionesVariable7d4d0a87->QInstruccionesVariable7d4d0a87Va
+QInstruccionesVariable7d4d0a87->QInstruccionesValor78503782
+
+QInstruccionesLista_Variables330e6896->QInstruccionesVariable7d4d0a87
+QInstruccionesVariable145fd595[label="Variable"]
+QInstruccionesVariable145fd595Va[label="_exponente_"]
+QInstruccionesValor54554550[label="Numero"]
+
+QInstruccionesVariable145fd595->QInstruccionesVariable145fd595Va
+QInstruccionesVariable145fd595->QInstruccionesValor54554550
+
+QInstruccionesLista_Variables330e6896->QInstruccionesVariable145fd595
+
+QInstruccionesValor4159646f[label="Numero"]
+
+QInstruccionesLista_Estructura38cca7e1[label="Lista Estructura"]QInstruccionesAsignacion52d52e10[label="Asignacion"]
+QInstruccionesLista_Nombres2c548edf[label="Lista nombres"]QM1468498071nom[label="_variable1_"]
+QInstruccionesLista_Nombres2c548edf->QM1468498071nom 
+
+QInstruccionesOperacionBinaria26a4ed26[label="Operacion binaria"]
+QInstruccionesOperacionBinaria26a4ed26OP[label="+"]
+QInstruccionesValor7b0aa5bc[label="_variable1_"]
+
+QInstruccionesValord4b163[label="1"]
+
+QInstruccionesOperacionBinaria26a4ed26->QInstruccionesValor7b0aa5bc
+QInstruccionesOperacionBinaria26a4ed26->QInstruccionesOperacionBinaria26a4ed26OP
+QInstruccionesOperacionBinaria26a4ed26->QInstruccionesValord4b163
+
+QInstruccionesAsignacion52d52e10->QInstruccionesLista_Nombres2c548edf
+QInstruccionesAsignacion52d52e10->QInstruccionesOperacionBinaria26a4ed26
+
+QInstruccionesLista_Estructura38cca7e1->QInstruccionesAsignacion52d52e10
+QInstruccionesAsignacion87ef5d0[label="Asignacion"]
+QInstruccionesLista_Nombres932e424[label="Lista nombres"]QM1468498071nom[label="_variable1_"]
+QInstruccionesLista_Nombres932e424->QM1468498071nom 
+
+QInstruccionesOperacionBinaria27bb97fb[label="Operacion binaria"]
+QInstruccionesOperacionBinaria27bb97fbOP[label="+"]
+QInstruccionesValor2c165c6[label="_variable1_"]
+
+QInstruccionesValor7deec03b[label="1"]
+
+QInstruccionesOperacionBinaria27bb97fb->QInstruccionesValor2c165c6
+QInstruccionesOperacionBinaria27bb97fb->QInstruccionesOperacionBinaria27bb97fbOP
+QInstruccionesOperacionBinaria27bb97fb->QInstruccionesValor7deec03b
+
+QInstruccionesAsignacion87ef5d0->QInstruccionesLista_Nombres932e424
+QInstruccionesAsignacion87ef5d0->QInstruccionesOperacionBinaria27bb97fb
+
+QInstruccionesLista_Estructura38cca7e1->QInstruccionesAsignacion87ef5d0
+
+QInstruccionesFuncion74d30603->QInstruccionesFuncion74d30603FUN
+QInstruccionesFuncion74d30603->QInstruccionesLista_Variables330e6896
+QInstruccionesFuncion74d30603->QInstruccionesValor4159646f
+QInstruccionesFuncion74d30603->QInstruccionesLista_Estructura38cca7e1
+
+QInstruccionesS1329f9203->QInstruccionesFuncion74d30603
+QInstruccionesLlamada63e30866[label="Llamada"]
+QInstruccionesLlamada63e30866LLA[label="_potenciaManual_"]
+QInstruccionesLista_Variables181c5fae[label="Lista Variables"]QInstruccionesVariable11fae63e[label="Variable"]
+QInstruccionesVariable11fae63eVa[label="_base_"]
+QInstruccionesValor1a9e1322[label="Numero"]
+
+QInstruccionesVariable11fae63e->QInstruccionesVariable11fae63eVa
+QInstruccionesVariable11fae63e->QInstruccionesValor1a9e1322
+
+QInstruccionesLista_Variables181c5fae->QInstruccionesVariable11fae63e
+QInstruccionesVariable61c5982f[label="Variable"]
+QInstruccionesVariable61c5982fVa[label="_exponente_"]
+QInstruccionesValor1bde5a96[label="Numero"]
+
+QInstruccionesVariable61c5982f->QInstruccionesVariable61c5982fVa
+QInstruccionesVariable61c5982f->QInstruccionesValor1bde5a96
+
+QInstruccionesLista_Variables181c5fae->QInstruccionesVariable61c5982f
+
+QInstruccionesLlamada63e30866->QInstruccionesLista_Variables181c5fae
+QInstruccionesLlamada63e30866->QInstruccionesLlamada63e30866LLA
+
+QInstruccionesS1329f9203->QInstruccionesLlamada63e30866
+QInstruccionesSwitch5dd394c5[label="Switch"]
+QInstruccionesValor37be9b5e[label="_varaux_"]
+
+QInstruccionesLista_Switch7af77966[label="Lista Switch"]QInstruccionesSwitch_Case13949644[label="Swich case"]
+QInstruccionesSwitch_Case13949644SWC[label="entonces"]
+QInstruccionesValor52205d4f[label="0"]
+
+QInstruccionesLista_Estructura1187483e[label="Lista Estructura"]QInstruccionesImpresion507a3f21[label="Impresion"]
+QInstruccionesImpresion507a3f21IMP[label="imprimir_nl"]
+QInstruccionesValor67ebb5dc[label="el valor es mayor a 0 y menos a 2"]
+
+QInstruccionesImpresion507a3f21->QInstruccionesValor67ebb5dc
+QInstruccionesImpresion507a3f21->QInstruccionesImpresion507a3f21IMP
+
+QInstruccionesLista_Estructura1187483e->QInstruccionesImpresion507a3f21
+
+QInstruccionesSwitch_Case13949644->QInstruccionesValor52205d4f
+QInstruccionesSwitch_Case13949644->QInstruccionesSwitch_Case13949644SWC
+QInstruccionesSwitch_Case13949644->QInstruccionesLista_Estructura1187483e
+
+QInstruccionesLista_Switch7af77966->QInstruccionesSwitch_Case13949644
+QInstruccionesSwitch_Case37f1564b[label="Swich case"]
+QInstruccionesSwitch_Case37f1564bSWC[label="entonces"]
+QInstruccionesValor1c1c3e33[label="2"]
+
+QInstruccionesLista_Estructura1d9e99a6[label="Lista Estructura"]QInstruccionesImpresion27e19a9c[label="Impresion"]
+QInstruccionesImpresion27e19a9cIMP[label="imprimir_nl"]
+QInstruccionesValor1a9fc325[label="el valor es mayor a 2"]
+
+QInstruccionesImpresion27e19a9c->QInstruccionesValor1a9fc325
+QInstruccionesImpresion27e19a9c->QInstruccionesImpresion27e19a9cIMP
+
+QInstruccionesLista_Estructura1d9e99a6->QInstruccionesImpresion27e19a9c
+
+QInstruccionesSwitch_Case37f1564b->QInstruccionesValor1c1c3e33
+QInstruccionesSwitch_Case37f1564b->QInstruccionesSwitch_Case37f1564bSWC
+QInstruccionesSwitch_Case37f1564b->QInstruccionesLista_Estructura1d9e99a6
+
+QInstruccionesLista_Switch7af77966->QInstruccionesSwitch_Case37f1564b
+
+QInstruccionesSwitch5dd394c5->QInstruccionesValor37be9b5e
+QInstruccionesSwitch5dd394c5->QInstruccionesLista_Switch7af77966
+
+QInstruccionesS1329f9203->QInstruccionesSwitch5dd394c5
+QInstruccionesPara670f9be3[label="Para"]
+QInstruccionesValore357d0d[label="_i_"]
+
+QInstruccionesValor25ab232d[label="0"]
+
+QInstruccionesOperacionBinaria41494a56[label="Operacion binaria"]
+QInstruccionesOperacionBinaria41494a56OP[label="-"]
+QInstruccionesValor5a02111f[label="_exponente_"]
+
+QInstruccionesValor7ffac247[label="1"]
+
+QInstruccionesOperacionBinaria41494a56->QInstruccionesValor5a02111f
+QInstruccionesOperacionBinaria41494a56->QInstruccionesOperacionBinaria41494a56OP
+QInstruccionesOperacionBinaria41494a56->QInstruccionesValor7ffac247
+
+QInstruccionesPara_F33424de[label="Para final"]
+QInstruccionesAsignacion824d514[label="Asignacion"]
+QInstruccionesLista_Nombres4264a7e6[label="Lista nombres"]QM186620765nom[label="_acumulado_"]
+QInstruccionesLista_Nombres4264a7e6->QM186620765nom 
+
+QInstruccionesOperacionBinaria6ba5bd17[label="Operacion binaria"]
+QInstruccionesOperacionBinaria6ba5bd17OP[label="+"]
+QInstruccionesValor49957669[label="_acumulado_"]
+
+QInstruccionesValor67b7863a[label="_acumulado_"]
+
+QInstruccionesOperacionBinaria6ba5bd17->QInstruccionesValor49957669
+QInstruccionesOperacionBinaria6ba5bd17->QInstruccionesOperacionBinaria6ba5bd17OP
+QInstruccionesOperacionBinaria6ba5bd17->QInstruccionesValor67b7863a
+
+QInstruccionesAsignacion824d514->QInstruccionesLista_Nombres4264a7e6
+QInstruccionesAsignacion824d514->QInstruccionesOperacionBinaria6ba5bd17
+
+QInstruccionesPara_F33424de->QInstruccionesAsignacion824d514
+
+QInstruccionesPara670f9be3->QInstruccionesValore357d0d
+QInstruccionesPara670f9be3->QInstruccionesValor25ab232d
+QInstruccionesPara670f9be3->QInstruccionesOperacionBinaria41494a56
+QInstruccionesPara670f9be3->QInstruccionesPara_F33424de
+
+QInstruccionesS1329f9203->QInstruccionesPara670f9be3
+QInstruccionesRepetir8b56bd[label="Repetir"]
+QInstruccionesRepetir_Definido46800ebe[label="Repetir Definido"]
+QInstruccionesAsignacion24440e39[label="Asignacion"]
+QInstruccionesLista_Nombres7f99dadd[label="Lista nombres"]QM186620765nom[label="_acumulado_"]
+QInstruccionesLista_Nombres7f99dadd->QM186620765nom 
+
+QInstruccionesOperacionBinaria257d552d[label="Operacion binaria"]
+QInstruccionesOperacionBinaria257d552dOP[label="+"]
+QInstruccionesValor634e4ac2[label="_acumulado_"]
+
+QInstruccionesValor677fb554[label="_acumulado_"]
+
+QInstruccionesOperacionBinaria257d552d->QInstruccionesValor634e4ac2
+QInstruccionesOperacionBinaria257d552d->QInstruccionesOperacionBinaria257d552dOP
+QInstruccionesOperacionBinaria257d552d->QInstruccionesValor677fb554
+
+QInstruccionesAsignacion24440e39->QInstruccionesLista_Nombres7f99dadd
+QInstruccionesAsignacion24440e39->QInstruccionesOperacionBinaria257d552d
+
+QInstruccionesRepetir_Definido46800ebe->QInstruccionesAsignacion24440e39
+
+QInstruccionesOperacionBinaria5681c454[label="Operacion binaria"]
+QInstruccionesOperacionBinaria5681c454OP[label="+"]
+QInstruccionesValor191a3794[label="1"]
+
+QInstruccionesValor813662f[label="1"]
+
+QInstruccionesOperacionBinaria5681c454->QInstruccionesValor191a3794
+QInstruccionesOperacionBinaria5681c454->QInstruccionesOperacionBinaria5681c454OP
+QInstruccionesOperacionBinaria5681c454->QInstruccionesValor813662f
+
+QInstruccionesRepetir8b56bd->QInstruccionesRepetir_Definido46800ebe
+QInstruccionesRepetir8b56bd->QInstruccionesOperacionBinaria5681c454
+
+QInstruccionesS1329f9203->QInstruccionesRepetir8b56bd
+ }
