@@ -25,7 +25,7 @@ public class Switch extends Instruccion{
     @Override
     public String generarPython(int nivel) {
         String retorno = this.crearTabuladores(nivel);
-        retorno  = retorno + "if "+this.expresion.generarPython(nivel)+": \n "+this.Switch_case.generarPython(nivel+1)+"\n" ;
+        retorno  = retorno + "if "+this.expresion.generarPython(nivel)+": \n "+this.Switch_case.generarPython(nivel)+"\n" ;
         if (this.Switch_f != null){
       retorno=retorno + this.Switch_f.generarPython(nivel);
       }
@@ -36,7 +36,7 @@ public class Switch extends Instruccion{
     @Override
     public String generarGo() {
         String retorno = "";
-        retorno  = retorno + "switch "+this.expresion.generarGo()+"{ \n "+this.Switch_case.generarGo();
+        retorno  = retorno + "switch "+this.expresion.generarGo()+"{ \n "+this.Switch_case.generarGo()+"\n } ";
         if (this.Switch_f != null){
       retorno=retorno + this.Switch_f.generarGo();
         }

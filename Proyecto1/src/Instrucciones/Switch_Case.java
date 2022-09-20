@@ -23,7 +23,7 @@ public class Switch_Case extends Instruccion  {
     @Override
     public String generarPython(int nivel) {
        String retorno = this.crearTabuladores(nivel);
-        retorno  = retorno + "elif "+this.dato.generarPython(nivel)+": \n"+this.cuerpo.generarPython(nivel+1)+"\n" ;
+        retorno  = retorno + "elif "+this.dato.generarPython(nivel-1)+": \n"+this.cuerpo.generarPython(nivel+1)+"\n" ;
       
        return retorno;
     }
@@ -31,7 +31,7 @@ public class Switch_Case extends Instruccion  {
     @Override
     public String generarGo() {
         String retorno = "";
-        retorno  = retorno + "case "+this.dato.generarGo()+": \n"+this.cuerpo.generarGo()+"\n }" ;
+        retorno  = retorno + "case "+this.dato.generarGo()+": \n"+this.cuerpo.generarGo()+"\n " ;
        return retorno;
     }
 
