@@ -13,7 +13,8 @@
 (\/\/[^\n]*\n)      {  }
 (\/\*[^*\/]*\*\/)    {  }    
 
-
+"inicio" {return 'inicio'}
+"fin"    {return 'fin'}
 
 ","      {
                 console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yytext);
@@ -29,27 +30,27 @@
 }
 
 "int"      {
-                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yytext);
+                console.log("Reconocio un simbolo int, coma. Con lexema: "+ yytext);
         return 'int';   
 }
 
 "double"      {
-                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yytext);
+                console.log("Reconocio un simbolo double, coma. Con lexema: "+ yytext);
         return 'double';   
 }
 
 "char"      {
-                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yytext);
+                console.log("Reconocio un simbolo char, coma. Con lexema: "+ yytext);
         return 'prchar';   
 }
 
 "string"        {
-                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yytext);
+                console.log("Reconocio un simbolo string, coma. Con lexema: "+ yytext);
         return 'prstring';   
 }
 
 "boolean"        {
-                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yytext);
+                console.log("Reconocio un simbolo boolean, coma. Con lexema: "+ yytext);
         return 'boolean';   
 }
 
@@ -309,12 +310,12 @@
 }
 
 [a-zA-Z0-9_]+      {
-        return 'identificador';   
+        console.log("Reconocio un simbolo reservado, identificador "+ yytext);
+        return 'identificador';     
 }
 
 
-"inicio" {return 'inicio'}
-"fin"    {return 'fin'}
+
 
 
 
@@ -337,10 +338,12 @@
 
 .          {console.log("Este es un error lexico "+yytext)}
 
+%options case-insensitive
 /lex
 
 
-%start BLOQUE
+
+%start S0
 
 
 
@@ -350,11 +353,82 @@
 //gramaticas
 
 
-INICIAR :  inicio BLOQUE fin EOF  {console.log("TERMINE DE ANALIZAR EL PROYECTO C:");}
-        | error EOF   {console.log("Error sintactico"+ $0)}
+S0 :  inicio S0P fin EOF  {console.log("TERMINE DE ANALIZAR EL PROYECTO C:");}
+        
 ;
 
 
 
-BLOQUE : if EOF
+S0P : S0P S1 
+        | S1
+;
+
+S1 : ESTRUCTURA
+;
+
+INSTRUCCIONES : INSTRUCCIONES ESTRUCTURA
+        | ESTRUCTURA
+;
+
+ESTRUCTURA : DECLARACION
+        | ASIGNACION
+        | CASTEO
+;
+DECLARACION : TIPO IDENTIFICADORES punto_coma {console.error("Declaracion");}
+        | TIPO IDENTIFICADORES igualacion EXPRESION punto_coma
+;
+ASIGNACION : IDENTIFICADORES igualacion EXPRESION punto_coma {console.error("asignacion");}
+;
+
+CASTEO : TIPO IDENTIFICADORES igualacion parentesis_A TIPO parentesis_B EXPRESION punto_coma {console.error("---------CASTEO--------");}
+;   
+
+
+
+EXPRESION : OPERACION 
+;
+
+OPERACION : OPERACION OPERADORES VALORES
+        | VALORES
+;
+
+OPERADORES : mas
+        | menos
+        | por
+        | division
+        | potencia
+        | porcentaje
+        | mayor_igual
+        | menor_igual
+        | mayor_que
+        | menor_que
+        | igual
+        | diferente
+        | or
+        | and
+        | igualacion
+        |
+;
+
+VALORES : numero
+        | decimal
+        | identificador
+        | string
+        | parentesis_A OPERACION parentesis_B
+        | corchete_A OPERACION corchete_B
+        | llave_A OPERACION llave_B
+        | true
+        | false 
+        | char
+;
+
+TIPO : prchar
+        | int
+        | double
+        | prstring
+        | boolean
+;
+
+IDENTIFICADORES : IDENTIFICADORES coma identificador 
+        |identificador
 ;

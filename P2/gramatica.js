@@ -72,12 +72,12 @@
   }
 */
 var gramatica = (function(){
-var o=function(k,v,o,l){for(o=o||{},l=k.length;l--;o[k[l]]=v);return o};
+var o=function(k,v,o,l){for(o=o||{},l=k.length;l--;o[k[l]]=v);return o},$V0=[1,16],$V1=[1,11],$V2=[1,12],$V3=[1,13],$V4=[1,14],$V5=[1,15],$V6=[6,40,49,50,51,52,53],$V7=[1,21],$V8=[20,40],$V9=[16,17,54],$Va=[1,32],$Vb=[1,28],$Vc=[1,29],$Vd=[1,30],$Ve=[1,31],$Vf=[1,33],$Vg=[1,34],$Vh=[1,35],$Vi=[1,36],$Vj=[1,37],$Vk=[19,38,39,40,41,42,44,46,47,48],$Vl=[2,32],$Vm=[1,57],$Vn=[1,43],$Vo=[1,44],$Vp=[1,45],$Vq=[1,46],$Vr=[1,47],$Vs=[1,48],$Vt=[1,49],$Vu=[1,50],$Vv=[1,51],$Vw=[1,52],$Vx=[1,53],$Vy=[1,54],$Vz=[1,55],$VA=[1,56],$VB=[16,17,19,20,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48];
 var parser = {trace: function trace () { },
 yy: {},
-symbols_: {"error":2,"INICIAR":3,"inicio":4,"BLOQUE":5,"fin":6,"EOF":7,"if":8,"$accept":0,"$end":1},
-terminals_: {2:"error",4:"inicio",6:"fin",7:"EOF",8:"if"},
-productions_: [0,[3,4],[3,2],[5,2]],
+symbols_: {"error":2,"S0":3,"inicio":4,"S0P":5,"fin":6,"EOF":7,"S1":8,"ESTRUCTURA":9,"INSTRUCCIONES":10,"DECLARACION":11,"ASIGNACION":12,"CASTEO":13,"TIPO":14,"IDENTIFICADORES":15,"punto_coma":16,"igualacion":17,"EXPRESION":18,"parentesis_A":19,"parentesis_B":20,"OPERACION":21,"OPERADORES":22,"VALORES":23,"mas":24,"menos":25,"por":26,"division":27,"potencia":28,"porcentaje":29,"mayor_igual":30,"menor_igual":31,"mayor_que":32,"menor_que":33,"igual":34,"diferente":35,"or":36,"and":37,"numero":38,"decimal":39,"identificador":40,"string":41,"corchete_A":42,"corchete_B":43,"llave_A":44,"llave_B":45,"true":46,"false":47,"char":48,"prchar":49,"int":50,"double":51,"prstring":52,"boolean":53,"coma":54,"$accept":0,"$end":1},
+terminals_: {2:"error",4:"inicio",6:"fin",7:"EOF",16:"punto_coma",17:"igualacion",19:"parentesis_A",20:"parentesis_B",24:"mas",25:"menos",26:"por",27:"division",28:"potencia",29:"porcentaje",30:"mayor_igual",31:"menor_igual",32:"mayor_que",33:"menor_que",34:"igual",35:"diferente",36:"or",37:"and",38:"numero",39:"decimal",40:"identificador",41:"string",42:"corchete_A",43:"corchete_B",44:"llave_A",45:"llave_B",46:"true",47:"false",48:"char",49:"prchar",50:"int",51:"double",52:"prstring",53:"boolean",54:"coma"},
+productions_: [0,[3,4],[5,2],[5,1],[8,1],[10,2],[10,1],[9,1],[9,1],[9,1],[11,3],[11,5],[12,4],[13,8],[18,1],[21,3],[21,1],[22,1],[22,1],[22,1],[22,1],[22,1],[22,1],[22,1],[22,1],[22,1],[22,1],[22,1],[22,1],[22,1],[22,1],[22,1],[22,0],[23,1],[23,1],[23,1],[23,1],[23,3],[23,3],[23,3],[23,1],[23,1],[23,1],[14,1],[14,1],[14,1],[14,1],[14,1],[15,3],[15,1]],
 performAction: function anonymous(yytext, yyleng, yylineno, yy, yystate /* action[1] */, $$ /* vstack */, _$ /* lstack */) {
 /* this == yyval */
 
@@ -86,13 +86,19 @@ switch (yystate) {
 case 1:
 console.log("TERMINE DE ANALIZAR EL PROYECTO C:");
 break;
-case 2:
-console.log("Error sintactico"+ $$[$0-2])
+case 10:
+console.error("Declaracion");
+break;
+case 12:
+console.error("asignacion");
+break;
+case 13:
+console.error("---------CASTEO--------");
 break;
 }
 },
-table: [{5:1,8:[1,2]},{1:[3]},{7:[1,3]},{1:[2,3]}],
-defaultActions: {3:[2,3]},
+table: [{3:1,4:[1,2]},{1:[3]},{5:3,8:4,9:5,11:6,12:7,13:8,14:9,15:10,40:$V0,49:$V1,50:$V2,51:$V3,52:$V4,53:$V5},{6:[1,17],8:18,9:5,11:6,12:7,13:8,14:9,15:10,40:$V0,49:$V1,50:$V2,51:$V3,52:$V4,53:$V5},o($V6,[2,3]),o($V6,[2,4]),o($V6,[2,7]),o($V6,[2,8]),o($V6,[2,9]),{15:19,40:$V0},{17:[1,20],54:$V7},o($V8,[2,43]),o($V8,[2,44]),o($V8,[2,45]),o($V8,[2,46]),o($V8,[2,47]),o($V9,[2,49]),{7:[1,22]},o($V6,[2,2]),{16:[1,23],17:[1,24],54:$V7},{18:25,19:$Va,21:26,23:27,38:$Vb,39:$Vc,40:$Vd,41:$Ve,42:$Vf,44:$Vg,46:$Vh,47:$Vi,48:$Vj},{40:[1,38]},{1:[2,1]},o($V6,[2,10]),{18:39,19:[1,40],21:26,23:27,38:$Vb,39:$Vc,40:$Vd,41:$Ve,42:$Vf,44:$Vg,46:$Vh,47:$Vi,48:$Vj},{16:[1,41]},o($Vk,$Vl,{22:42,16:[2,14],17:$Vm,24:$Vn,25:$Vo,26:$Vp,27:$Vq,28:$Vr,29:$Vs,30:$Vt,31:$Vu,32:$Vv,33:$Vw,34:$Vx,35:$Vy,36:$Vz,37:$VA}),o($VB,[2,16]),o($VB,[2,33]),o($VB,[2,34]),o($VB,[2,35]),o($VB,[2,36]),{19:$Va,21:58,23:27,38:$Vb,39:$Vc,40:$Vd,41:$Ve,42:$Vf,44:$Vg,46:$Vh,47:$Vi,48:$Vj},{19:$Va,21:59,23:27,38:$Vb,39:$Vc,40:$Vd,41:$Ve,42:$Vf,44:$Vg,46:$Vh,47:$Vi,48:$Vj},{19:$Va,21:60,23:27,38:$Vb,39:$Vc,40:$Vd,41:$Ve,42:$Vf,44:$Vg,46:$Vh,47:$Vi,48:$Vj},o($VB,[2,40]),o($VB,[2,41]),o($VB,[2,42]),o($V9,[2,48]),{16:[1,61]},{14:62,19:$Va,21:58,23:27,38:$Vb,39:$Vc,40:$Vd,41:$Ve,42:$Vf,44:$Vg,46:$Vh,47:$Vi,48:$Vj,49:$V1,50:$V2,51:$V3,52:$V4,53:$V5},o($V6,[2,12]),{19:$Va,23:63,38:$Vb,39:$Vc,40:$Vd,41:$Ve,42:$Vf,44:$Vg,46:$Vh,47:$Vi,48:$Vj},o($Vk,[2,17]),o($Vk,[2,18]),o($Vk,[2,19]),o($Vk,[2,20]),o($Vk,[2,21]),o($Vk,[2,22]),o($Vk,[2,23]),o($Vk,[2,24]),o($Vk,[2,25]),o($Vk,[2,26]),o($Vk,[2,27]),o($Vk,[2,28]),o($Vk,[2,29]),o($Vk,[2,30]),o($Vk,[2,31]),o($Vk,$Vl,{22:42,17:$Vm,20:[1,64],24:$Vn,25:$Vo,26:$Vp,27:$Vq,28:$Vr,29:$Vs,30:$Vt,31:$Vu,32:$Vv,33:$Vw,34:$Vx,35:$Vy,36:$Vz,37:$VA}),o($Vk,$Vl,{22:42,17:$Vm,24:$Vn,25:$Vo,26:$Vp,27:$Vq,28:$Vr,29:$Vs,30:$Vt,31:$Vu,32:$Vv,33:$Vw,34:$Vx,35:$Vy,36:$Vz,37:$VA,43:[1,65]}),o($Vk,$Vl,{22:42,17:$Vm,24:$Vn,25:$Vo,26:$Vp,27:$Vq,28:$Vr,29:$Vs,30:$Vt,31:$Vu,32:$Vv,33:$Vw,34:$Vx,35:$Vy,36:$Vz,37:$VA,45:[1,66]}),o($V6,[2,11]),{20:[1,67]},o($VB,[2,15]),o($VB,[2,37]),o($VB,[2,38]),o($VB,[2,39]),{18:68,19:$Va,21:26,23:27,38:$Vb,39:$Vc,40:$Vd,41:$Ve,42:$Vf,44:$Vg,46:$Vh,47:$Vi,48:$Vj},{16:[1,69]},o($V6,[2,13])],
+defaultActions: {22:[2,1]},
 parseError: function parseError (str, hash) {
     if (hash.recoverable) {
         this.trace(str);
@@ -102,33 +108,16 @@ parseError: function parseError (str, hash) {
         throw error;
     }
 },
-parse: function parse (input) {
-    var self = this,
-        stack = [0],
-        tstack = [], // token stack
-        vstack = [null], // semantic value stack
-        lstack = [], // location stack
-        table = this.table,
-        yytext = '',
-        yylineno = 0,
-        yyleng = 0,
-        recovering = 0,
-        TERROR = 2,
-        EOF = 1;
-
+parse: function parse(input) {
+    var self = this, stack = [0], tstack = [], vstack = [null], lstack = [], table = this.table, yytext = '', yylineno = 0, yyleng = 0, recovering = 0, TERROR = 2, EOF = 1;
     var args = lstack.slice.call(arguments, 1);
-
-    //this.reductionCount = this.shiftCount = 0;
-
     var lexer = Object.create(this.lexer);
     var sharedState = { yy: {} };
-    // copy state
     for (var k in this.yy) {
-      if (Object.prototype.hasOwnProperty.call(this.yy, k)) {
-        sharedState.yy[k] = this.yy[k];
-      }
+        if (Object.prototype.hasOwnProperty.call(this.yy, k)) {
+            sharedState.yy[k] = this.yy[k];
+        }
     }
-
     lexer.setInput(input, sharedState.yy);
     sharedState.yy.lexer = lexer;
     sharedState.yy.parser = this;
@@ -137,207 +126,123 @@ parse: function parse (input) {
     }
     var yyloc = lexer.yylloc;
     lstack.push(yyloc);
-
     var ranges = lexer.options && lexer.options.ranges;
-
     if (typeof sharedState.yy.parseError === 'function') {
         this.parseError = sharedState.yy.parseError;
     } else {
         this.parseError = Object.getPrototypeOf(this).parseError;
     }
-
-    function popStack (n) {
+    function popStack(n) {
         stack.length = stack.length - 2 * n;
         vstack.length = vstack.length - n;
         lstack.length = lstack.length - n;
     }
-
-_token_stack:
-    var lex = function () {
-        var token;
-        token = lexer.lex() || EOF;
-        // if token isn't its numeric value, convert
-        if (typeof token !== 'number') {
-            token = self.symbols_[token] || token;
-        }
-        return token;
-    }
-
+    _token_stack:
+        var lex = function () {
+            var token;
+            token = lexer.lex() || EOF;
+            if (typeof token !== 'number') {
+                token = self.symbols_[token] || token;
+            }
+            return token;
+        };
     var symbol, preErrorSymbol, state, action, a, r, yyval = {}, p, len, newState, expected;
     while (true) {
-        // retreive state number from top of stack
         state = stack[stack.length - 1];
-
-        // use default actions if available
         if (this.defaultActions[state]) {
             action = this.defaultActions[state];
         } else {
             if (symbol === null || typeof symbol == 'undefined') {
                 symbol = lex();
             }
-            // read action for current state and first input
             action = table[state] && table[state][symbol];
         }
-
-_handle_error:
-        // handle parse error
-        if (typeof action === 'undefined' || !action.length || !action[0]) {
-            var error_rule_depth;
-            var errStr = '';
-
-            // Return the rule stack depth where the nearest error rule can be found.
-            // Return FALSE when no error recovery rule was found.
-            function locateNearestErrorRecoveryRule(state) {
-                var stack_probe = stack.length - 1;
-                var depth = 0;
-
-                // try to recover from error
-                for(;;) {
-                    // check for error recovery rule in this state
-                    if ((TERROR.toString()) in table[state]) {
-                        return depth;
-                    }
-                    if (state === 0 || stack_probe < 2) {
-                        return false; // No suitable error recovery rule available.
-                    }
-                    stack_probe -= 2; // popStack(1): [symbol, action]
-                    state = stack[stack_probe];
-                    ++depth;
-                }
-            }
-
-            if (!recovering) {
-                // first see if there's any chance at hitting an error recovery rule:
-                error_rule_depth = locateNearestErrorRecoveryRule(state);
-
-                // Report error
+                    if (typeof action === 'undefined' || !action.length || !action[0]) {
+                var errStr = '';
                 expected = [];
                 for (p in table[state]) {
                     if (this.terminals_[p] && p > TERROR) {
-                        expected.push("'"+this.terminals_[p]+"'");
+                        expected.push('\'' + this.terminals_[p] + '\'');
                     }
                 }
                 if (lexer.showPosition) {
-                    errStr = 'Parse error on line '+(yylineno+1)+":\n"+lexer.showPosition()+"\nExpecting "+expected.join(', ') + ", got '" + (this.terminals_[symbol] || symbol)+ "'";
+                    errStr = 'Parse error on line ' + (yylineno + 1) + ':\n' + lexer.showPosition() + '\nExpecting ' + expected.join(', ') + ', got \'' + (this.terminals_[symbol] || symbol) + '\'';
                 } else {
-                    errStr = 'Parse error on line '+(yylineno+1)+": Unexpected " +
-                                  (symbol == EOF ? "end of input" :
-                                              ("'"+(this.terminals_[symbol] || symbol)+"'"));
+                    errStr = 'Parse error on line ' + (yylineno + 1) + ': Unexpected ' + (symbol == EOF ? 'end of input' : '\'' + (this.terminals_[symbol] || symbol) + '\'');
                 }
                 this.parseError(errStr, {
                     text: lexer.match,
                     token: this.terminals_[symbol] || symbol,
                     line: lexer.yylineno,
                     loc: yyloc,
-                    expected: expected,
-                    recoverable: (error_rule_depth !== false)
+                    expected: expected
                 });
-            } else if (preErrorSymbol !== EOF) {
-                error_rule_depth = locateNearestErrorRecoveryRule(state);
             }
-
-            // just recovered from another error
-            if (recovering == 3) {
-                if (symbol === EOF || preErrorSymbol === EOF) {
-                    throw new Error(errStr || 'Parsing halted while starting to recover from another error.');
-                }
-
-                // discard current lookahead and grab another
+        if (action[0] instanceof Array && action.length > 1) {
+            throw new Error('Parse Error: multiple actions possible at state: ' + state + ', token: ' + symbol);
+        }
+        switch (action[0]) {
+        case 1:
+            stack.push(symbol);
+            vstack.push(lexer.yytext);
+            lstack.push(lexer.yylloc);
+            stack.push(action[1]);
+            symbol = null;
+            if (!preErrorSymbol) {
                 yyleng = lexer.yyleng;
                 yytext = lexer.yytext;
                 yylineno = lexer.yylineno;
                 yyloc = lexer.yylloc;
-                symbol = lex();
+                if (recovering > 0) {
+                    recovering--;
+                }
+            } else {
+                symbol = preErrorSymbol;
+                preErrorSymbol = null;
             }
-
-            // try to recover from error
-            if (error_rule_depth === false) {
-                throw new Error(errStr || 'Parsing halted. No suitable error recovery rule available.');
+            break;
+        case 2:
+            len = this.productions_[action[1]][1];
+            yyval.$ = vstack[vstack.length - len];
+            yyval._$ = {
+                first_line: lstack[lstack.length - (len || 1)].first_line,
+                last_line: lstack[lstack.length - 1].last_line,
+                first_column: lstack[lstack.length - (len || 1)].first_column,
+                last_column: lstack[lstack.length - 1].last_column
+            };
+            if (ranges) {
+                yyval._$.range = [
+                    lstack[lstack.length - (len || 1)].range[0],
+                    lstack[lstack.length - 1].range[1]
+                ];
             }
-            popStack(error_rule_depth);
-
-            preErrorSymbol = (symbol == TERROR ? null : symbol); // save the lookahead token
-            symbol = TERROR;         // insert generic error symbol as new lookahead
-            state = stack[stack.length-1];
-            action = table[state] && table[state][TERROR];
-            recovering = 3; // allow 3 real symbols to be shifted before reporting a new error
+            r = this.performAction.apply(yyval, [
+                yytext,
+                yyleng,
+                yylineno,
+                sharedState.yy,
+                action[1],
+                vstack,
+                lstack
+            ].concat(args));
+            if (typeof r !== 'undefined') {
+                return r;
+            }
+            if (len) {
+                stack = stack.slice(0, -1 * len * 2);
+                vstack = vstack.slice(0, -1 * len);
+                lstack = lstack.slice(0, -1 * len);
+            }
+            stack.push(this.productions_[action[1]][0]);
+            vstack.push(yyval.$);
+            lstack.push(yyval._$);
+            newState = table[stack[stack.length - 2]][stack[stack.length - 1]];
+            stack.push(newState);
+            break;
+        case 3:
+            return true;
         }
-
-        // this shouldn't happen, unless resolve defaults are off
-        if (action[0] instanceof Array && action.length > 1) {
-            throw new Error('Parse Error: multiple actions possible at state: '+state+', token: '+symbol);
-        }
-
-        switch (action[0]) {
-            case 1: // shift
-                //this.shiftCount++;
-
-                stack.push(symbol);
-                vstack.push(lexer.yytext);
-                lstack.push(lexer.yylloc);
-                stack.push(action[1]); // push state
-                symbol = null;
-                if (!preErrorSymbol) { // normal execution/no error
-                    yyleng = lexer.yyleng;
-                    yytext = lexer.yytext;
-                    yylineno = lexer.yylineno;
-                    yyloc = lexer.yylloc;
-                    if (recovering > 0) {
-                        recovering--;
-                    }
-                } else {
-                    // error just occurred, resume old lookahead f/ before error
-                    symbol = preErrorSymbol;
-                    preErrorSymbol = null;
-                }
-                break;
-
-            case 2:
-                // reduce
-                //this.reductionCount++;
-
-                len = this.productions_[action[1]][1];
-
-                // perform semantic action
-                yyval.$ = vstack[vstack.length-len]; // default to $$ = $1
-                // default location, uses first token for firsts, last for lasts
-                yyval._$ = {
-                    first_line: lstack[lstack.length-(len||1)].first_line,
-                    last_line: lstack[lstack.length-1].last_line,
-                    first_column: lstack[lstack.length-(len||1)].first_column,
-                    last_column: lstack[lstack.length-1].last_column
-                };
-                if (ranges) {
-                  yyval._$.range = [lstack[lstack.length-(len||1)].range[0], lstack[lstack.length-1].range[1]];
-                }
-                r = this.performAction.apply(yyval, [yytext, yyleng, yylineno, sharedState.yy, action[1], vstack, lstack].concat(args));
-
-                if (typeof r !== 'undefined') {
-                    return r;
-                }
-
-                // pop off stack
-                if (len) {
-                    stack = stack.slice(0,-1*len*2);
-                    vstack = vstack.slice(0, -1*len);
-                    lstack = lstack.slice(0, -1*len);
-                }
-
-                stack.push(this.productions_[action[1]][0]);    // push nonterminal (reduce)
-                vstack.push(yyval.$);
-                lstack.push(yyval._$);
-                // goto new state = table[STATE][NONTERMINAL]
-                newState = table[stack[stack.length-2]][stack[stack.length-1]];
-                stack.push(newState);
-                break;
-
-            case 3:
-                // accept
-                return true;
-        }
-
     }
-
     return true;
 }};
 
@@ -667,7 +572,7 @@ pushState:function pushState (condition) {
 stateStackSize:function stateStackSize() {
         return this.conditionStack.length;
     },
-options: {},
+options: {"case-insensitive":true},
 performAction: function anonymous(yy,yy_,$avoiding_name_collisions,YY_START) {
 var YYSTATE=YY_START;
 switch($avoiding_name_collisions) {
@@ -675,316 +580,317 @@ case 0:
 break;
 case 1:  
 break;
-case 2:
-                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yy_.yytext);
-        return 'coma';   
-
+case 2:return 4
 break;
-case 3:
-                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yy_.yytext);
-        return 'incremento';   
-
+case 3:return 6
 break;
 case 4:
                 console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yy_.yytext);
-        return 'decremento';   
+        return 54;   
 
 break;
 case 5:
                 console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yy_.yytext);
-        return 'int';   
+        return 'incremento';   
 
 break;
 case 6:
                 console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yy_.yytext);
-        return 'double';   
+        return 'decremento';   
 
 break;
 case 7:
-                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yy_.yytext);
-        return 'prchar';   
+                console.log("Reconocio un simbolo int, coma. Con lexema: "+ yy_.yytext);
+        return 50;   
 
 break;
 case 8:
-                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yy_.yytext);
-        return 'prstring';   
+                console.log("Reconocio un simbolo double, coma. Con lexema: "+ yy_.yytext);
+        return 51;   
 
 break;
 case 9:
-                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yy_.yytext);
-        return 'boolean';   
+                console.log("Reconocio un simbolo char, coma. Con lexema: "+ yy_.yytext);
+        return 49;   
 
 break;
 case 10:
-            console.log("Reconocio un palabra, con el decimal : "+ yy_.yytext);
-            return 'decimal';
+                console.log("Reconocio un simbolo string, coma. Con lexema: "+ yy_.yytext);
+        return 52;   
 
 break;
 case 11:
-            console.log("Reconocio un palabra, con el entero : "+ yy_.yytext);
-            return 'numero';
+                console.log("Reconocio un simbolo boolean, coma. Con lexema: "+ yy_.yytext);
+        return 53;   
 
 break;
 case 12:
-                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yy_.yytext);
-        return 'true';   
+            console.log("Reconocio un palabra, con el decimal : "+ yy_.yytext);
+            return 39;
 
 break;
 case 13:
-                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yy_.yytext);
-        return 'false';   
+            console.log("Reconocio un palabra, con el entero : "+ yy_.yytext);
+            return 38;
 
 break;
 case 14:
-            console.log("Reconocio un palabra, con el char : "+ yy_.yytext);
-            return 'char';
+                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yy_.yytext);
+        return 46;   
 
 break;
 case 15:
-            console.log("Reconocio un palabra, con el str : "+ yy_.yytext);
-            return 'string';
+                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yy_.yytext);
+        return 47;   
 
 break;
 case 16:
-                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yy_.yytext);
-        return 'mas';   
+            console.log("Reconocio un palabra, con el char : "+ yy_.yytext);
+            return 48;
 
 break;
 case 17:
-                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yy_.yytext);
-        return 'menos';   
+            console.log("Reconocio un palabra, con el str : "+ yy_.yytext);
+            return 41;
 
 break;
 case 18:
                 console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yy_.yytext);
-        return 'por';   
+        return 24;   
 
 break;
 case 19:
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'division';   
+                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yy_.yytext);
+        return 25;   
 
 break;
 case 20:
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'potencia';   
+                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yy_.yytext);
+        return 26;   
 
 break;
 case 21:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'porcentaje';   
+        return 27;   
 
 break;
 case 22:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'mayor_igual';   
+        return 28;   
 
 break;
 case 23:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'menor_igual';   
+        return 29;   
 
 break;
 case 24:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'mayor_que';   
+        return 30;   
 
 break;
 case 25:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'menor_que';   
+        return 31;   
 
 break;
 case 26:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'igual';   
+        return 32;   
 
 break;
 case 27:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'diferente';   
+        return 33;   
 
 break;
 case 28:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'not';   
+        return 34;   
 
 break;
 case 29:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'or';   
+        return 35;   
 
 break;
 case 30:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'and';   
+        return 'not';   
 
 break;
 case 31:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'parentesis_A';   
+        return 36;   
 
 break;
 case 32:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'parentesis_B';   
+        return 37;   
 
 break;
 case 33:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'llave_A';   
+        return 19;   
 
 break;
 case 34:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'llave_B';   
+        return 20;   
 
 break;
 case 35:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'corchete_A';   
+        return 44;   
 
 break;
 case 36:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'corchete_B';   
+        return 45;   
 
 break;
 case 37:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'punto_coma';   
+        return 42;   
 
 break;
 case 38:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'igualacion';   
+        return 43;   
 
 break;
 case 39:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 8;   
+        return 16;   
 
 break;
 case 40:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'else';   
+        return 17;   
 
 break;
 case 41:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'switch';   
+        return 'if';   
 
 break;
 case 42:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'case';   
+        return 'else';   
 
 break;
 case 43:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'dos_puntos';   
+        return 'switch';   
 
 break;
 case 44:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'while';   
+        return 'case';   
 
 break;
 case 45:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'for';   
+        return 'dos_puntos';   
 
 break;
 case 46:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'do';   
+        return 'while';   
 
 break;
 case 47:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'until';   
+        return 'for';   
 
 break;
 case 48:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'break';   
+        return 'do';   
 
 break;
 case 49:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'continue';   
+        return 'until';   
 
 break;
 case 50:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'return';   
+        return 'break';   
 
 break;
 case 51:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'void';   
+        return 'continue';   
 
 break;
 case 52:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'printnl';   
+        return 'return';   
 
 break;
 case 53:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'print';   
+        return 'void';   
 
 break;
 case 54:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'toLower';   
+        return 'printnl';   
 
 break;
 case 55:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'toUpper';   
+        return 'print';   
 
 break;
 case 56:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'length';   
+        return 'toLower';   
 
 break;
 case 57:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'typeof';   
+        return 'toUpper';   
 
 break;
 case 58:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'toCharArray';   
+        return 'length';   
 
 break;
 case 59:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'push';   
+        return 'typeof';   
 
 break;
 case 60:
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
-        return 'pop';   
+        return 'toCharArray';   
 
 break;
 case 61:
-        return 'run';   
+                console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
+        return 'push';   
 
 break;
 case 62:
-        return 'tostring';   
+                console.log("Reconocio un simbolo reservado, coma. Con : "+ yy_.yytext);
+        return 'pop';   
 
 break;
 case 63:
-        return 'identificador';   
+        return 'run';   
 
 break;
-case 64:return 4
+case 64:
+        return 'tostring';   
+
 break;
-case 65:return 6
+case 65:
+        console.log("Reconocio un simbolo reservado, identificador "+ yy_.yytext);
+        return 40;     
+
 break;
 case 66: /*estos caracteres se omiten*/  
 break;
@@ -996,7 +902,7 @@ case 69:console.log("Este es un error lexico "+yy_.yytext)
 break;
 }
 },
-rules: [/^(?:(\/\/[^\n]*\n))/,/^(?:(\/\*[^*\/]*\*\/))/,/^(?:,)/,/^(?:\+\+)/,/^(?:--)/,/^(?:int\b)/,/^(?:double\b)/,/^(?:char\b)/,/^(?:string\b)/,/^(?:boolean\b)/,/^(?:[0-9]+\.[0-9]+)/,/^(?:[0-9]+)/,/^(?:True\b)/,/^(?:False\b)/,/^(?:(')([^\']{1}|\\n|\\t|\\r|\\\\)('))/,/^(?:(")[^\"]*("))/,/^(?:\+)/,/^(?:-)/,/^(?:\*)/,/^(?:\/)/,/^(?:\^)/,/^(?:%)/,/^(?:>=)/,/^(?:<=)/,/^(?:>)/,/^(?:<)/,/^(?:==)/,/^(?:!=)/,/^(?:!)/,/^(?:\|\|)/,/^(?:&&)/,/^(?:\()/,/^(?:\))/,/^(?:\{)/,/^(?:\})/,/^(?:\[)/,/^(?:\])/,/^(?:;)/,/^(?:=)/,/^(?:if\b)/,/^(?:else\b)/,/^(?:switch\b)/,/^(?:case\b)/,/^(?::)/,/^(?:while\b)/,/^(?:for\b)/,/^(?:do\b)/,/^(?:until\b)/,/^(?:break\b)/,/^(?:continue\b)/,/^(?:return\b)/,/^(?:void\b)/,/^(?:printnl\b)/,/^(?:print\b)/,/^(?:toLower\b)/,/^(?:toUpper\b)/,/^(?:length\b)/,/^(?:typeof\b)/,/^(?:toCharArray\b)/,/^(?:push\b)/,/^(?:pop\b)/,/^(?:run\b)/,/^(?:tostring\b)/,/^(?:[a-zA-Z0-9_]+)/,/^(?:inicio\b)/,/^(?:fin\b)/,/^(?:[ \r\t]+)/,/^(?:\n)/,/^(?:$)/,/^(?:.)/],
+rules: [/^(?:(\/\/[^\n]*\n))/i,/^(?:(\/\*[^*\/]*\*\/))/i,/^(?:inicio\b)/i,/^(?:fin\b)/i,/^(?:,)/i,/^(?:\+\+)/i,/^(?:--)/i,/^(?:int\b)/i,/^(?:double\b)/i,/^(?:char\b)/i,/^(?:string\b)/i,/^(?:boolean\b)/i,/^(?:[0-9]+\.[0-9]+)/i,/^(?:[0-9]+)/i,/^(?:True\b)/i,/^(?:False\b)/i,/^(?:(')([^\']{1}|\\n|\\t|\\r|\\\\)('))/i,/^(?:(")[^\"]*("))/i,/^(?:\+)/i,/^(?:-)/i,/^(?:\*)/i,/^(?:\/)/i,/^(?:\^)/i,/^(?:%)/i,/^(?:>=)/i,/^(?:<=)/i,/^(?:>)/i,/^(?:<)/i,/^(?:==)/i,/^(?:!=)/i,/^(?:!)/i,/^(?:\|\|)/i,/^(?:&&)/i,/^(?:\()/i,/^(?:\))/i,/^(?:\{)/i,/^(?:\})/i,/^(?:\[)/i,/^(?:\])/i,/^(?:;)/i,/^(?:=)/i,/^(?:if\b)/i,/^(?:else\b)/i,/^(?:switch\b)/i,/^(?:case\b)/i,/^(?::)/i,/^(?:while\b)/i,/^(?:for\b)/i,/^(?:do\b)/i,/^(?:until\b)/i,/^(?:break\b)/i,/^(?:continue\b)/i,/^(?:return\b)/i,/^(?:void\b)/i,/^(?:printnl\b)/i,/^(?:print\b)/i,/^(?:toLower\b)/i,/^(?:toUpper\b)/i,/^(?:length\b)/i,/^(?:typeof\b)/i,/^(?:toCharArray\b)/i,/^(?:push\b)/i,/^(?:pop\b)/i,/^(?:run\b)/i,/^(?:tostring\b)/i,/^(?:[a-zA-Z0-9_]+)/i,/^(?:[ \r\t]+)/i,/^(?:\n)/i,/^(?:$)/i,/^(?:.)/i],
 conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69],"inclusive":true}}
 });
 return lexer;
