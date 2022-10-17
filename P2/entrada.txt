@@ -1,19 +1,4 @@
 inicio
-Int edad = (Int) 18.6; //toma el valor entero de 18
-Int intBool = (Int) false; //false = 0, true = 1
-Int intDecimal = (Int) '0'; // = 0 caracteres numerales de longitud 1
-Int intCadena = (Int) "100"; // = 100 cadena de caracteres de longitud variable
-Double doubleInt = (Double) 16; //16.0
-Double doubleString = (Double) "16.0"; //16.0 Cadenas numericas
-Boolean boolInt = (Boolean) 0; //false
-Boolean boolDouble = (Boolean) 1.0; //true
-Boolean boolString = (Boolean) "0"; //false
-Boolean boolChar = (Boolean) '1'; //true
-Char charInt = (Char) 16; //'1' solo toma el primer carácter
-Char charDouble = (Char) 16.1; //'1' solo toma el primer carácter
-Char charBoolean = (Char) false; //'0' false = '0' true='1'
-Char charString = (Char) "asdf"; //'a' solo toma el primer carácter
-String stringInt = (String) 16; //'16"
-String stringDouble = (String) 16.1; //"16.1"
-String stringBoolean = (String) false;
+
+Int num = suma(5+5); 
 fin

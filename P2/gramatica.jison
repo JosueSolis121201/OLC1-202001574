@@ -202,6 +202,11 @@
         return 'else';   
 }
 
+"elif"        {
+                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
+        return 'elif';   
+}
+
 "switch"        {
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'switch';   
@@ -210,6 +215,11 @@
 "case"        {
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'case';   
+}
+
+"default"        {
+                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
+        return 'default';   
 }
 
 ":"        {
@@ -225,6 +235,11 @@
 "for"        {
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'for';   
+}
+
+"new"        {
+                console.log("Reconocio un new reservado, coma. Con : "+ yytext);
+        return 'new';   
 }
 
 "do"        {
@@ -257,9 +272,9 @@
         return 'void';   
 }
 
-"printnl"        {
+"println"        {
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
-        return 'printnl';   
+        return 'println';   
 }
 "print"        {
                 console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
@@ -372,21 +387,163 @@ INSTRUCCIONES : INSTRUCCIONES ESTRUCTURA
 
 ESTRUCTURA : DECLARACION
         | ASIGNACION
+        | D_VECTORES
+        | DL_VECTORES
+        | MODIFICAR_VEC
+        | IF
+        | PRINT
+        | PRINTLN
+        | SWITCH
+        | WHILE
+        | INCREMENTO_MINI
+        | DECREMENTO_MINI
+        | FOR
+        | DO_WHILE
+        | DO_ULTIL
+        | BREAK
+        | CONTINUE
+        | RETURN
+        | FUNCION
+        | METODO
+        
+   
+;
+EXPRESION : OPERACION 
         | CASTEO
+        | INCREMENTOS
+        | DECREMENTOS
+        | menos numero
 ;
+
+
+
+LISTA_VALORES : LISTA_VALORES coma VALORES
+        |VALORES
+        
+;
+
+
+ 
+METODO : identificador parentesis_A PARAMETROS parentesis_B dos_puntos void llave_A INSTRUCCIONES llave_B {console.error("---------METODO VOID");}
+        | identificador parentesis_A PARAMETROS parentesis_B llave_A INSTRUCCIONES llave_B {console.error("---------METODO");}
+;
+FUNCION : identificador parentesis_A PARAMETROS parentesis_B dos_puntos TIPO llave_A INSTRUCCIONES llave_B  {console.error("---------FUNCION");}
+;
+
+PARAMETROS: PARAMETROS coma TIPO identificador
+        | TIPO identificador
+        |
+;
+
+
+
+
+RETURN : return punto_coma
+        | return EXPRESION punto_coma
+;
+CONTINUE : continue punto_coma
+;
+
+BREAK : break punto_coma
+;
+
+INCREMENTO_MINI : identificador incremento punto_coma
+;
+
+DECREMENTO_MINI : identificador decremento punto_coma
+;
+
+PRINT : print parentesis_A EXPRESION parentesis_B punto_coma
+;
+
+PRINTLN : println parentesis_A EXPRESION parentesis_B punto_coma
+;
+
+
+DO_ULTIL : do llave_A INSTRUCCIONES llave_B until parentesis_A OPERACION parentesis_B punto_coma  {console.error("---------DO_UNTIL");}
+;
+
+DO_WHILE : do llave_A INSTRUCCIONES llave_B while parentesis_A OPERACION parentesis_B punto_coma  {console.error("---------DO_WHILE");}
+;
+
+FOR : for parentesis_A ESTRUCTURA OPERACION punto_coma EXPRESION parentesis_B llave_A INSTRUCCIONES  llave_B   {console.error("---------FOR");}
+;
+
+
+
+
+
+
+
+
+IF : if parentesis_A EXPRESION parentesis_B llave_A INSTRUCCIONES  llave_B ELSE_IF ELSE {console.error("---------IF");}
+;
+
+ELSE :  else llave_A  INSTRUCCIONES llave_B {console.error("---------ELSE");}
+        |   
+;
+
+ELSE_IF : ELSE_IF elif parentesis_A EXPRESION parentesis_B llave_A INSTRUCCIONES llave_B {console.error("---------ELIF");}
+        |   
+;
+
+
+
+SWITCH : switch parentesis_A EXPRESION parentesis_B llave_A CASE DEFAULT llave_B  {console.error("---------SWITCH");}
+;
+
+DEFAULT :  default dos_puntos  INSTRUCCIONES  {console.error("---------DEFAULT");}
+        |   
+;
+
+CASE : CASE case  EXPRESION dos_puntos INSTRUCCIONES {console.error("---------CASE");}
+        |   
+;
+
+WHILE : while parentesis_A EXPRESION parentesis_B llave_A INSTRUCCIONES llave_B {console.error("---------WHILE");}
+;
+
+
+
+
+
+
+
+
+
+
+MODIFICAR_VEC : IDENTIFICADORES corchete_A EXPRESION corchete_B igualacion EXPRESION punto_coma {console.error("--------------MODFICAR VEC");}
+        | IDENTIFICADORES corchete_A EXPRESION corchete_B corchete_A EXPRESION corchete_B igualacion EXPRESION punto_coma {console.error("--------------MODFICAR VEC 2");}
+;
+
 DECLARACION : TIPO IDENTIFICADORES punto_coma {console.error("Declaracion");}
-        | TIPO IDENTIFICADORES igualacion EXPRESION punto_coma
+        | TIPO IDENTIFICADORES igualacion EXPRESION punto_coma {console.error("Declaracion");}
 ;
+
+DL_VECTORES : TIPO corchete_A corchete_B IDENTIFICADORES igualacion llave_A LISTA_VALORES llave_B punto_coma {console.error("---------VECTOR DECLARACION 1 lista--------");}
+        | TIPO corchete_A corchete_B corchete_A corchete_B IDENTIFICADORES igualacion llave_A  llave_A LISTA_VALORES llave_B coma llave_A LISTA_VALORES llave_B llave_B punto_coma {console.error("---------VECTOR DECLARACION 2 lsita-------");}
+;
+
+D_VECTORES : TIPO corchete_A corchete_B IDENTIFICADORES igualacion new TIPO  corchete_A EXPRESION corchete_B punto_coma {console.error("---------VECTOR DECLARACION 1--------");}
+        | TIPO corchete_A corchete_B corchete_A corchete_B IDENTIFICADORES igualacion new TIPO  corchete_A EXPRESION corchete_B corchete_A EXPRESION corchete_B punto_coma {console.error("---------VECTOR DECLARACION 2-------");}
+;
+
 ASIGNACION : IDENTIFICADORES igualacion EXPRESION punto_coma {console.error("asignacion");}
 ;
 
-CASTEO : TIPO IDENTIFICADORES igualacion parentesis_A TIPO parentesis_B EXPRESION punto_coma {console.error("---------CASTEO--------");}
-;   
-
-
-
-EXPRESION : OPERACION 
+CASTEO : parentesis_A TIPO parentesis_B OPERACION  
 ;
+
+
+
+INCREMENTOS :  OPERACION incremento   
+;
+
+DECREMENTOS :  OPERACION decremento             
+;
+
+
+
 
 OPERACION : OPERACION OPERADORES VALORES
         | VALORES
@@ -420,7 +577,10 @@ VALORES : numero
         | true
         | false 
         | char
+        
 ;
+
+
 
 TIPO : prchar
         | int
@@ -428,6 +588,8 @@ TIPO : prchar
         | prstring
         | boolean
 ;
+
+
 
 IDENTIFICADORES : IDENTIFICADORES coma identificador 
         |identificador
