@@ -1,4 +1,3 @@
 inicio
-
-Int num = suma(5+5); 
+holamundo(5);
 fin

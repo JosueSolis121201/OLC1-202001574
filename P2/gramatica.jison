@@ -316,8 +316,17 @@
         return 'pop';   
 }
 
+"."        {
+                console.log("RPUNTO : "+ yytext);
+        return 'punto';   
+}
+
 "run"        {
         return 'run';   
+}
+
+"round"        {
+        return 'round';   
 }
 
 "tostring"        {
@@ -405,17 +414,58 @@ ESTRUCTURA : DECLARACION
         | RETURN
         | FUNCION
         | METODO
-        
-   
+        | PUSH
+        | POP
+        | RUN
+        | LLAMADA
 ;
 EXPRESION : OPERACION 
         | CASTEO
         | INCREMENTOS
         | DECREMENTOS
         | menos numero
+        | LOWER
+        | UPPER
+        | ROUND
+        | LENGTH
+        | TYPEOF
+        | TOSTRING
+        | TOCHARARRAY
 ;
 
+LLAMADA : identificador parentesis_A LISTA_VALORES parentesis_B punto_coma {console.error("---------LLAMADA");}
+;
 
+RUN : run identificador parentesis_A parentesis_B punto_coma {console.error("---------RUN");}
+        | run identificador parentesis_A LISTA_VALORES parentesis_B  punto_coma {console.error("---------RUN");}
+;
+
+POP : identificador punto pop parentesis_A parentesis_B punto_coma
+;
+
+PUSH : identificador punto push parentesis_A EXPRESION parentesis_B punto_coma
+;
+
+TOCHARARRAY : toCharArray parentesis_A EXPRESION parentesis_B
+;
+
+TOSTRING : tostring parentesis_A EXPRESION parentesis_B
+;
+
+TYPEOF : typeof parentesis_A EXPRESION parentesis_B
+;
+
+LENGTH : length parentesis_A EXPRESION parentesis_B
+;
+
+ROUND : round parentesis_A EXPRESION parentesis_B
+;
+
+UPPER : toUpper parentesis_A EXPRESION parentesis_B
+;
+
+LOWER : toLower parentesis_A EXPRESION parentesis_B
+;
 
 LISTA_VALORES : LISTA_VALORES coma VALORES
         |VALORES
@@ -564,7 +614,6 @@ OPERADORES : mas
         | or
         | and
         | igualacion
-        |
 ;
 
 VALORES : numero
