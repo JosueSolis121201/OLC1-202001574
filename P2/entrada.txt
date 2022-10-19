@@ -1,3 +1,3 @@
 inicio
-holamundo(5);
+mayoria_edadd = edad > 21 ? true : false;
 fin

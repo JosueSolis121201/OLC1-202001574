@@ -316,6 +316,11 @@
         return 'pop';   
 }
 
+"?"        {
+                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
+        return 'interrogacion';   
+}
+
 "."        {
                 console.log("RPUNTO : "+ yytext);
         return 'punto';   
@@ -431,6 +436,15 @@ EXPRESION : OPERACION
         | TYPEOF
         | TOSTRING
         | TOCHARARRAY
+        | LLAMADA_MINI
+        | TERNARIO
+;
+
+TERNARIO : OPERACION interrogacion OPERACION dos_puntos OPERACION 
+;
+
+LLAMADA_MINI : identificador parentesis_A LISTA_VALORES parentesis_B
+        | identificador parentesis_A  parentesis_B
 ;
 
 LLAMADA : identificador parentesis_A LISTA_VALORES parentesis_B punto_coma {console.error("---------LLAMADA");}
