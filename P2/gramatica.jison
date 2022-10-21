@@ -491,6 +491,7 @@ LISTA_VALORES : LISTA_VALORES coma VALORES
 METODO : identificador parentesis_A PARAMETROS parentesis_B dos_puntos void llave_A INSTRUCCIONES llave_B {console.error("---------METODO VOID");}
         | identificador parentesis_A PARAMETROS parentesis_B llave_A INSTRUCCIONES llave_B {console.error("---------METODO");}
 ;
+        
 FUNCION : identificador parentesis_A PARAMETROS parentesis_B dos_puntos TIPO llave_A INSTRUCCIONES llave_B  {console.error("---------FUNCION");}
 ;
 

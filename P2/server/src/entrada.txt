@@ -1,0 +1,3 @@
+int hola ;
+char mundo ;
+int olc;
