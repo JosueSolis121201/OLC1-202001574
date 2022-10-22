@@ -1,3 +1,8 @@
-int hola ;
-char mundo ;
-int olc;
+inicio
+
+if (x <50)
+{
+Println("Menor que 50");
+//Más sentencias
+}
+fin
