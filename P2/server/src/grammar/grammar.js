@@ -92,7 +92,7 @@ break;
 case 3: case 6: case 64: case 138:
 this.$=[$$[$0]]
 break;
-case 4: case 7: case 8: case 9: case 10: case 11: case 12: case 13: case 14: case 17: case 18: case 31: case 32: case 33: case 34: case 35: case 36: case 37: case 38: case 39: case 40: case 41: case 42: case 43: case 44: case 45: case 106: case 107: case 108: case 109: case 110: case 111: case 112: case 113: case 114: case 115: case 116: case 117: case 118: case 119: case 120: case 121: case 132: case 133: case 134: case 135: case 136:
+case 4: case 7: case 8: case 9: case 10: case 11: case 12: case 13: case 14: case 15: case 16: case 17: case 18: case 19: case 20: case 21: case 22: case 23: case 24: case 25: case 26: case 30: case 31: case 32: case 33: case 34: case 35: case 36: case 37: case 38: case 39: case 40: case 41: case 42: case 43: case 44: case 45: case 106: case 107: case 108: case 109: case 110: case 111: case 112: case 113: case 114: case 115: case 116: case 117: case 118: case 119: case 120: case 121: case 124: case 132: case 133: case 134: case 135: case 136:
 this.$=$$[$0];
 break;
 case 46:
@@ -104,23 +104,80 @@ break;
 case 48:
  this.$= new Ternario($$[$0-4],$$[$0-3],$$[$0-2],$$[$0],_$[$0-4].first_line,_$[$0-4].first_column);
 break;
-case 51:
-console.error("---------LLAMADA");
+case 49:
+ this.$= new Llamada($$[$0-3],$$[$0-1],_$[$0-3].first_line,_$[$0-3].first_column);
 break;
-case 52: case 53:
-console.error("---------RUN");
+case 50:
+ this.$= new LlamadaSinParamaetros($$[$0-2],_$[$0-2].first_line,_$[$0-2].first_column);
+break;
+case 51:
+ this.$= new Llamada($$[$0-4],$$[$0-2],_$[$0-4].first_line,_$[$0-4].first_column);
+break;
+case 52:
+ this.$= new RunSinParametros($$[$0-3],_$[$0-4].first_line,_$[$0-4].first_column);
+break;
+case 53:
+ this.$= new Run($$[$0-4],$$[$0-3],_$[$0-5].first_line,_$[$0-5].first_column);
+break;
+case 54:
+ this.$= new Pop($$[$0-5],_$[$0-5].first_line,_$[$0-5].first_column);
+break;
+case 55:
+ this.$= new Push($$[$0-6],$$[$0-2],_$[$0-6].first_line,_$[$0-6].first_column);
+break;
+case 56:
+ this.$= new ToCharArray($$[$0-1],_$[$0-3].first_line,_$[$0-3].first_column);
+break;
+case 57:
+ this.$= new ToString($$[$0-1],_$[$0-3].first_line,_$[$0-3].first_column);
+break;
+case 58:
+ this.$= new Typeof($$[$0-1],_$[$0-3].first_line,_$[$0-3].first_column);
+break;
+case 59:
+ this.$= new Length($$[$0-1],_$[$0-3].first_line,_$[$0-3].first_column);
+break;
+case 60:
+ this.$= new Round($$[$0-1],_$[$0-3].first_line,_$[$0-3].first_column);
+break;
+case 61:
+ this.$= new ToUpper($$[$0-1],_$[$0-3].first_line,_$[$0-3].first_column);
+break;
+case 62:
+ this.$= new ToLower($$[$0-1],_$[$0-3].first_line,_$[$0-3].first_column);
 break;
 case 63: case 137:
  $$[$0-2].push($$[$0]);  this.$= $$[$0-2];  
 break;
 case 65:
-console.error("---------METODO VOID");
+ this.$= new MetodoVoid($$[$0-8],$$[$0-6],$$[$0-3],$$[$0-1],_$[$0-8].first_line,_$[$0-8].first_column);
 break;
 case 66:
-console.error("---------METODO");
+ this.$= new Metodo($$[$0-6],$$[$0-4],$$[$0-1],_$[$0-6].first_line,_$[$0-6].first_column);
 break;
 case 67:
-console.error("---------FUNCION");
+ this.$= new Funcion($$[$0-8],$$[$0-6],$$[$0-3],$$[$0-1],_$[$0-8].first_line,_$[$0-8].first_column);
+break;
+case 68:
+ this.$= $$[$0-3];  $$[$0-3].agregar( new Parametros($$[$0-1],$$[$0],_$[$0-3].first_line,_$[$0-3].first_column) );  
+break;
+case 69:
+ this.$= new Parametros_list(_$[$0-1].first_line,_$[$0-1].first_column);
+break;
+case 70:
+ this.$= new Parametros_list(_$[$0].first_line,_$[$0].first_column);
+break;
+case 71:
+ this.$= new Return($$[$0-1],_$[$0-1].first_line,_$[$0-1].first_column);
+break;
+case 72:
+ this.$= new Return($$[$0-1],_$[$0-2].first_line,_$[$0-2].first_column);
+break;
+case 73:
+ this.$= new Continue($$[$0-1],_$[$0-1].first_line,_$[$0-1].first_column);
+break;
+case 74:
+ this.$= new Break($$[$0-1],_$[$0-1].first_line,_$[$0-1].first_column);
 break;
 case 75: case 76:
  this.$= new Incremento($$[$0-2],$$[$0-1],_$[$0-2].first_line,_$[$0-2].first_column);
@@ -132,13 +189,13 @@ case 78:
  this.$= new Println($$[$0-4],$$[$0-2],_$[$0-4].first_line,_$[$0-4].first_column);
 break;
 case 79:
-console.error("---------DO_UNTIL");
+this.$ = new DoUntil($$[$0-6],$$[$0-2],_$[$0-8].first_line,_$[$0-8].first_column);
 break;
 case 80:
-console.error("---------DO_WHILE");
+this.$ = new DoWhile($$[$0-6],$$[$0-2],_$[$0-8].first_line,_$[$0-8].first_column);
 break;
 case 81:
-console.error("---------FOR");
+this.$ = new For($$[$0-7],$$[$0-6],$$[$0-4],$$[$0-1],_$[$0-9].first_line,_$[$0-9].first_column);
 break;
 case 82:
  this.$= new If($$[$0-6],$$[$0-3],$$[$0-1],$$[$0],_$[$0-8].first_line,_$[$0-8].first_column);
@@ -153,16 +210,19 @@ case 86:
  this.$= new If_lista(_$[$0].first_line,_$[$0].first_column);
 break;
 case 87:
-console.error("---------SWITCH");
+ this.$= new Switch($$[$0-5],$$[$0-2],$$[$0-1],_$[$0-7].first_line,_$[$0-7].first_column);
 break;
 case 88:
-console.error("---------DEFAULT");
+ this.$= new Default($$[$0],_$[$0-2].first_line,_$[$0-2].first_column);
 break;
 case 90:
-console.error("---------CASE");
+ this.$= $$[$0-4];  $$[$0-4].agregar( new Case($$[$0-2],$$[$0]) );  
+break;
+case 91:
+ this.$= new Case_list(_$[$0].first_line,_$[$0].first_column);
 break;
 case 92:
-console.error("---------WHILE");
+ this.$= new While($$[$0-4],$$[$0-1],_$[$0-6].first_line,_$[$0-6].first_column);
 break;
 case 93:
  this.$= new VectorModificar_1D($$[$0-6],$$[$0-4],$$[$0-1],_$[$0-6].first_line,_$[$0-6].first_column);
@@ -192,7 +252,7 @@ case 101:
  this.$= new Asignacion($$[$0-3],$$[$0-1],_$[$0-3].first_line,_$[$0-3].first_column);
 break;
 case 102:
- this.$= new Asignacion($$[$0-2],$$[$0],_$[$0-3].first_line,_$[$0-3].first_column);
+ this.$= new Casteo($$[$0-2],$$[$0],_$[$0-3].first_line,_$[$0-3].first_column);
 break;
 case 103: case 104:
  this.$= new Incremento($$[$0-1],$$[$0],_$[$0-1].first_line,_$[$0-1].first_column);
@@ -201,16 +261,13 @@ case 105:
  this.$= new OperacionBinaria($$[$0-2],$$[$0-1],$$[$0],_$[$0-2].first_line,_$[$0-2].first_column);
 break;
 case 122:
- this.$= new Valor($$[$0],1);
+ this.$=new Primitivos(new Valor($$[$0],1),_$[$0].first_line,_$[$0].first_column);
 break;
 case 123:
- this.$= new Valor($$[$0],2);
-break;
-case 124:
- this.$= $$[$0];
+ this.$=new Primitivos(new Valor($$[$0],2),_$[$0].first_line,_$[$0].first_column);
 break;
 case 125:
- this.$= new Valor($$[$0],3);
+ this.$=new Primitivos(new Valor($$[$0],3),_$[$0].first_line,_$[$0].first_column);
 break;
 case 126:
 this.$= $$[$0-1];
@@ -219,10 +276,10 @@ case 127: case 128:
 this.$=$$[$0-1];
 break;
 case 129: case 130:
- this.$= new Valor($$[$0],4);
+ this.$=new Primitivos(new Valor($$[$0],4),_$[$0].first_line,_$[$0].first_column);
 break;
 case 131:
- this.$= new Valor($$[$0],5);
+ this.$=new Primitivos(new Valor($$[$0],5),_$[$0].first_line,_$[$0].first_column);
 break;
 }
 },
@@ -397,6 +454,36 @@ parse: function parse(input) {
     const {If_lista} = require('../instrucciones/if_lista.ts');
     const {Valor} = require('../datos/valor.ts');
     const {Primitivos} = require('../instrucciones/primitivos.ts');
+    const {Identificadores_lista} = require('../instrucciones/lista_identificadores.ts');
+    const {Case} = require('../instrucciones/case.ts');
+    const {Default} = require('../instrucciones/default.ts');
+    const {Case_list} = require('../instrucciones/lista_case.ts');
+    const {Switch} = require('../instrucciones/switch.ts');
+    const {While} = require('../instrucciones/while.ts');
+    const {For} = require('../instrucciones/for.ts');
+    const {DoWhile} = require('../instrucciones/do_while.ts');
+    const {DoUntil} = require('../instrucciones/do_until.ts');
+    const {Break} = require('../instrucciones/break.ts');
+    const {Continue} = require('../instrucciones/continue.ts');
+    const {Return} = require('../instrucciones/return.ts');
+    const {Metodo} = require('../instrucciones/metodo.ts');
+    const {MetodoVoid} = require('../instrucciones/metodo_void.ts');
+    const {Funcion} = require('../instrucciones/funcion.ts');
+    const {Parametros_list} = require('../instrucciones/lista_parametros.ts');
+    const {Parametros} = require('../instrucciones/parametros.ts');
+    const {Llamada} = require('../instrucciones/llamada.ts');
+    const {LlamadaSinParamaetros} = require('../instrucciones/llamada_sin_parametros.ts');
+    const {ToLower} = require('../instrucciones/lower.ts');
+    const {ToUpper} = require('../instrucciones/upper.ts');
+    const {Round} = require('../instrucciones/round.ts');
+    const {Length} = require('../instrucciones/length.ts');
+    const {Typeof} = require('../instrucciones/typeof.ts');
+    const {ToString} = require('../instrucciones/string.ts');
+    const {ToCharArray} = require('../instrucciones/chararray.ts');
+    const {Push} = require('../instrucciones/push.ts');
+    const {Run} = require('../instrucciones/run.ts');
+    const {RunSinParametros} = require('../instrucciones/run_sin_parametros.ts');
+    const {Pop} = require('../instrucciones/pop.ts');
 
 /* generated by jison-lex 0.3.4 */
 var lexer = (function(){

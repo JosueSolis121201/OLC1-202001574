@@ -1,29 +1,5 @@
 inicio
 
-if (x > 50)
-{
-Print("Mayor que 50");
-//Más sentencias
-}
-elif (x <= 50 && x > 0)
-{
 
-Print ("Menor que 50");
-if (x > 25)
-{
-Print("Número mayor que 25");
-//Más sentencias
-}else{
-Print("Número menor que 25");
-//Más sentencias
-}
-//Más sentencias
-
-
-}
-else
-{
-Print("Número negativo");
-//Más
-}
+run funcion1();
 fin

@@ -22,6 +22,35 @@
     const {Valor} = require('../datos/valor.ts');
     const {Primitivos} = require('../instrucciones/primitivos.ts');
     const {Identificadores_lista} = require('../instrucciones/lista_identificadores.ts');
+    const {Case} = require('../instrucciones/case.ts');
+    const {Default} = require('../instrucciones/default.ts');
+    const {Case_list} = require('../instrucciones/lista_case.ts');
+    const {Switch} = require('../instrucciones/switch.ts');
+    const {While} = require('../instrucciones/while.ts');
+    const {For} = require('../instrucciones/for.ts');
+    const {DoWhile} = require('../instrucciones/do_while.ts');
+    const {DoUntil} = require('../instrucciones/do_until.ts');
+    const {Break} = require('../instrucciones/break.ts');
+    const {Continue} = require('../instrucciones/continue.ts');
+    const {Return} = require('../instrucciones/return.ts');
+    const {Metodo} = require('../instrucciones/metodo.ts');
+    const {MetodoVoid} = require('../instrucciones/metodo_void.ts');
+    const {Funcion} = require('../instrucciones/funcion.ts');
+    const {Parametros_list} = require('../instrucciones/lista_parametros.ts');
+    const {Parametros} = require('../instrucciones/parametros.ts');
+    const {Llamada} = require('../instrucciones/llamada.ts');
+    const {LlamadaSinParamaetros} = require('../instrucciones/llamada_sin_parametros.ts');
+    const {ToLower} = require('../instrucciones/lower.ts');
+    const {ToUpper} = require('../instrucciones/upper.ts');
+    const {Round} = require('../instrucciones/round.ts');
+    const {Length} = require('../instrucciones/length.ts');
+    const {Typeof} = require('../instrucciones/typeof.ts');
+    const {ToString} = require('../instrucciones/string.ts');
+    const {ToCharArray} = require('../instrucciones/chararray.ts');
+    const {Push} = require('../instrucciones/push.ts');
+    const {Run} = require('../instrucciones/run.ts');
+    const {RunSinParametros} = require('../instrucciones/run_sin_parametros.ts');
+    const {Pop} = require('../instrucciones/pop.ts');
 
 %}
 
@@ -429,22 +458,22 @@ ESTRUCTURA : DECLARACION {$$=$1;}
         | IF {$$=$1;}
         | PRINT {$$=$1;}
         | PRINTLN {$$=$1;}
-        | SWITCH
-        | WHILE
+        | SWITCH {$$=$1;}
+        | WHILE {$$=$1;}
         | INCREMENTO_MINI {$$=$1;}
         | DECREMENTO_MINI {$$=$1;}
-        | FOR
-        | DO_WHILE
-        | DO_ULTIL
-        | BREAK
-        | CONTINUE
-        | RETURN
-        | FUNCION
-        | METODO
+        | FOR {$$=$1;}
+        | DO_WHILE {$$=$1;}
+        | DO_ULTIL {$$=$1;}
+        | BREAK {$$=$1;}
+        | CONTINUE {$$=$1;}
+        | RETURN {$$=$1;}
+        | FUNCION {$$=$1;}
+        | METODO {$$=$1;}
         | PUSH
         | POP
         | RUN
-        | LLAMADA
+        | LLAMADA {$$=$1;}
 ;
 EXPRESION : OPERACION {$$=$1;}
         | CASTEO {$$=$1;}
@@ -469,42 +498,42 @@ ACCESO_VEC : identificador corchete_A numero corchete_B { $$= new Acceso_1D($1,$
 TERNARIO : OPERACION interrogacion OPERACION dos_puntos OPERACION  { $$= new Ternario($1,$2,$3,$5,@1.first_line,@1.first_column);}
 ;
 
-LLAMADA_MINI : identificador parentesis_A LISTA_VALORES parentesis_B
-        | identificador parentesis_A  parentesis_B
+LLAMADA_MINI : identificador parentesis_A LISTA_VALORES parentesis_B { $$= new Llamada($1,$3,@1.first_line,@1.first_column);}
+        | identificador parentesis_A  parentesis_B { $$= new LlamadaSinParamaetros($1,@1.first_line,@1.first_column);}
 ;
 
-LLAMADA : identificador parentesis_A LISTA_VALORES parentesis_B punto_coma {console.error("---------LLAMADA");}
+LLAMADA : identificador parentesis_A LISTA_VALORES parentesis_B punto_coma { $$= new Llamada($1,$3,@1.first_line,@1.first_column);}
 ;
 
-RUN : run identificador parentesis_A parentesis_B punto_coma {console.error("---------RUN");}
-        | run identificador parentesis_A LISTA_VALORES parentesis_B  punto_coma {console.error("---------RUN");}
+RUN : run identificador parentesis_A parentesis_B punto_coma { $$= new RunSinParametros($2,@1.first_line,@1.first_column);}
+        | run identificador parentesis_A LISTA_VALORES parentesis_B  punto_coma { $$= new Run($2,$3,@1.first_line,@1.first_column);}
 ;
 
-POP : identificador punto pop parentesis_A parentesis_B punto_coma
+POP : identificador punto pop parentesis_A parentesis_B punto_coma { $$= new Pop($1,@1.first_line,@1.first_column);}
 ;
 
-PUSH : identificador punto push parentesis_A EXPRESION parentesis_B punto_coma
+PUSH : identificador punto push parentesis_A EXPRESION parentesis_B punto_coma { $$= new Push($1,$5,@1.first_line,@1.first_column);}
 ;
 
-TOCHARARRAY : toCharArray parentesis_A EXPRESION parentesis_B
+TOCHARARRAY : toCharArray parentesis_A EXPRESION parentesis_B { $$= new ToCharArray($3,@1.first_line,@1.first_column);}
 ;
 
-TOSTRING : tostring parentesis_A EXPRESION parentesis_B
+TOSTRING : tostring parentesis_A EXPRESION parentesis_B { $$= new ToString($3,@1.first_line,@1.first_column);}
 ;
 
-TYPEOF : typeof parentesis_A EXPRESION parentesis_B
+TYPEOF : typeof parentesis_A EXPRESION parentesis_B { $$= new Typeof($3,@1.first_line,@1.first_column);}
 ;
 
-LENGTH : length parentesis_A EXPRESION parentesis_B
+LENGTH : length parentesis_A EXPRESION parentesis_B { $$= new Length($3,@1.first_line,@1.first_column);}
 ;
 
-ROUND : round parentesis_A EXPRESION parentesis_B
+ROUND : round parentesis_A EXPRESION parentesis_B { $$= new Round($3,@1.first_line,@1.first_column);}
 ;
 
-UPPER : toUpper parentesis_A EXPRESION parentesis_B
+UPPER : toUpper parentesis_A EXPRESION parentesis_B { $$= new ToUpper($3,@1.first_line,@1.first_column);}
 ;
 
-LOWER : toLower parentesis_A EXPRESION parentesis_B
+LOWER : toLower parentesis_A EXPRESION parentesis_B { $$= new ToLower($3,@1.first_line,@1.first_column);}
 ;
 
 LISTA_VALORES : LISTA_VALORES coma VALORES { $1.push($3);  $$= $1;  }
@@ -514,28 +543,28 @@ LISTA_VALORES : LISTA_VALORES coma VALORES { $1.push($3);  $$= $1;  }
 
 
  
-METODO : identificador parentesis_A PARAMETROS parentesis_B dos_puntos void llave_A INSTRUCCIONES llave_B {console.error("---------METODO VOID");}
-        | identificador parentesis_A PARAMETROS parentesis_B llave_A INSTRUCCIONES llave_B {console.error("---------METODO");}
+METODO : identificador parentesis_A PARAMETROS parentesis_B dos_puntos void llave_A INSTRUCCIONES llave_B { $$= new MetodoVoid($1,$3,$6,$8,@1.first_line,@1.first_column);}
+        | identificador parentesis_A PARAMETROS parentesis_B llave_A INSTRUCCIONES llave_B { $$= new Metodo($1,$3,$6,@1.first_line,@1.first_column);}
 ;
         
-FUNCION : identificador parentesis_A PARAMETROS parentesis_B dos_puntos TIPO llave_A INSTRUCCIONES llave_B  {console.error("---------FUNCION");}
+FUNCION : identificador parentesis_A PARAMETROS parentesis_B dos_puntos TIPO llave_A INSTRUCCIONES llave_B  { $$= new Funcion($1,$3,$6,$8,@1.first_line,@1.first_column);}
 ;
 
-PARAMETROS: PARAMETROS coma TIPO identificador
-        | TIPO identificador
-        |
+PARAMETROS: PARAMETROS coma TIPO identificador { $$= $1;  $1.agregar( new Parametros($3,$4,@1.first_line,@1.first_column) );  }
+        | TIPO identificador { $$= new Parametros_list(@1.first_line,@1.first_column);} 
+        | { $$= new Parametros_list(@1.first_line,@1.first_column);}
 ;
 
 
 
 
-RETURN : return punto_coma
-        | return EXPRESION punto_coma
+RETURN : return punto_coma { $$= new Return($1,@1.first_line,@1.first_column);}
+        | return EXPRESION punto_coma { $$= new Return($2,@1.first_line,@1.first_column);}
 ;
-CONTINUE : continue punto_coma
+CONTINUE : continue punto_coma { $$= new Continue($1,@1.first_line,@1.first_column);}
 ;
 
-BREAK : break punto_coma
+BREAK : break punto_coma { $$= new Break($1,@1.first_line,@1.first_column);}
 ;
 
 INCREMENTO_MINI : identificador incremento punto_coma { $$= new Incremento($1,$2,@1.first_line,@1.first_column);}
@@ -551,13 +580,13 @@ PRINTLN : println parentesis_A EXPRESION parentesis_B punto_coma { $$= new Print
 ;
 
 
-DO_ULTIL : do llave_A INSTRUCCIONES llave_B until parentesis_A OPERACION parentesis_B punto_coma  {console.error("---------DO_UNTIL");}
+DO_ULTIL : do llave_A INSTRUCCIONES llave_B until parentesis_A OPERACION parentesis_B punto_coma  {$$ = new DoUntil($3,$7,@1.first_line,@1.first_column);}
 ;
 
-DO_WHILE : do llave_A INSTRUCCIONES llave_B while parentesis_A OPERACION parentesis_B punto_coma  {console.error("---------DO_WHILE");}
+DO_WHILE : do llave_A INSTRUCCIONES llave_B while parentesis_A OPERACION parentesis_B punto_coma  {$$ = new DoWhile($3,$7,@1.first_line,@1.first_column);}
 ;
 
-FOR : for parentesis_A ESTRUCTURA OPERACION punto_coma EXPRESION parentesis_B llave_A INSTRUCCIONES  llave_B   {console.error("---------FOR");}
+FOR : for parentesis_A ESTRUCTURA OPERACION punto_coma EXPRESION parentesis_B llave_A INSTRUCCIONES  llave_B   {$$ = new For($3,$4,$6,$9,@1.first_line,@1.first_column);}
 ;
 
 
@@ -580,18 +609,18 @@ ELSE_IF : ELSE_IF elif parentesis_A EXPRESION parentesis_B llave_A INSTRUCCIONES
 
 
 
-SWITCH : switch parentesis_A EXPRESION parentesis_B llave_A CASE DEFAULT llave_B  {console.error("---------SWITCH");}
+SWITCH : switch parentesis_A EXPRESION parentesis_B llave_A CASE DEFAULT llave_B  { $$= new Switch($3,$6,$7,@1.first_line,@1.first_column);}
 ;
 
-DEFAULT :  default dos_puntos  INSTRUCCIONES  {console.error("---------DEFAULT");}
+DEFAULT :  default dos_puntos  INSTRUCCIONES  { $$= new Default($3,@1.first_line,@1.first_column);}
         |   
 ;
 
-CASE : CASE case  EXPRESION dos_puntos INSTRUCCIONES {console.error("---------CASE");}
-        |   
+CASE : CASE case  EXPRESION dos_puntos INSTRUCCIONES { $$= $1;  $1.agregar( new Case($3,$5) );  }
+        | { $$= new Case_list(@1.first_line,@1.first_column);}  
 ;
 
-WHILE : while parentesis_A EXPRESION parentesis_B llave_A INSTRUCCIONES llave_B {console.error("---------WHILE");}
+WHILE : while parentesis_A EXPRESION parentesis_B llave_A INSTRUCCIONES llave_B { $$= new While($3,$6,@1.first_line,@1.first_column);}  
 ;
 
 
@@ -622,7 +651,7 @@ D_VECTORES : TIPO corchete_A corchete_B IDENTIFICADORES igualacion new TIPO  cor
 ASIGNACION : IDENTIFICADORES igualacion EXPRESION punto_coma { $$= new Asignacion($1,$3,@1.first_line,@1.first_column);}
 ;
 
-CASTEO : parentesis_A TIPO parentesis_B OPERACION  { $$= new Asignacion($2,$4,@1.first_line,@1.first_column);} 
+CASTEO : parentesis_A TIPO parentesis_B OPERACION  { $$= new Casteo($2,$4,@1.first_line,@1.first_column);} 
 ;
 
 
