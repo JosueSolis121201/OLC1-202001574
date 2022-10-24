@@ -16,6 +16,12 @@
     const {Print} = require('../instrucciones/print.ts');
     const {Println} = require('../instrucciones/println.ts');
     const {If} = require('../instrucciones/if.ts');
+    const {Elif} = require('../instrucciones/elif.ts');
+    const {Else} = require('../instrucciones/else.ts');
+    const {If_lista} = require('../instrucciones/if_lista.ts');
+    const {Valor} = require('../datos/valor.ts');
+    const {Primitivos} = require('../instrucciones/primitivos.ts');
+    const {Identificadores_lista} = require('../instrucciones/lista_identificadores.ts');
 
 %}
 
@@ -564,12 +570,12 @@ FOR : for parentesis_A ESTRUCTURA OPERACION punto_coma EXPRESION parentesis_B ll
 IF : if parentesis_A EXPRESION parentesis_B llave_A INSTRUCCIONES  llave_B ELSE_IF ELSE { $$= new If($3,$6,$8,$9,@1.first_line,@1.first_column);}
 ;
 
-ELSE :  else llave_A  INSTRUCCIONES llave_B {console.error("---------ELSE");}
+ELSE :  else llave_A  INSTRUCCIONES llave_B { $$= new Else($3,@1.first_line,@1.first_column);}
         |   
 ;
 
-ELSE_IF : ELSE_IF elif parentesis_A EXPRESION parentesis_B llave_A INSTRUCCIONES llave_B { $1.push($3);  $$= $1;  }
-        |    {$$=[]} 
+ELSE_IF : ELSE_IF elif parentesis_A EXPRESION parentesis_B llave_A INSTRUCCIONES llave_B { $$= $1;  $1.agregar( new Elif($4,$7) );  }
+        |  { $$= new If_lista(@1.first_line,@1.first_column);}
 ;
 
 
@@ -651,16 +657,16 @@ OPERADORES : mas {$$=$1;}
         | igualacion {$$=$1;}
 ;
 
-VALORES : numero {$$=$1;}
-        | decimal {$$=$1;}
+VALORES : numero { $$=new Primitivos(new Valor($1,1),@1.first_line,@1.first_column);}
+        | decimal { $$=new Primitivos(new Valor($1,2),@1.first_line,@1.first_column);}
         | identificador {$$=$1;}
-        | string {$$=$1;}
-        | parentesis_A OPERACION parentesis_B { $$= new OperacionBinaria($1,$2,$3,@1.first_line,@1.first_column);}
-        | corchete_A OPERACION corchete_B { $$= new OperacionBinaria($1,$2,$3,@1.first_line,@1.first_column);}
-        | llave_A OPERACION llave_B { $$= new OperacionBinaria($1,$2,$3,@1.first_line,@1.first_column);}
-        | true {$$=$1;}
-        | false {$$=$1;}
-        | char {$$=$1;}
+        | string { $$=new Primitivos(new Valor($1,3),@1.first_line,@1.first_column);}
+        | parentesis_A OPERACION parentesis_B {$$= $2;}
+        | corchete_A OPERACION corchete_B {$$=$2;}
+        | llave_A OPERACION llave_B {$$=$2;}
+        | true { $$=new Primitivos(new Valor($1,4),@1.first_line,@1.first_column);}
+        | false { $$=new Primitivos(new Valor($1,4),@1.first_line,@1.first_column);}
+        | char { $$=new Primitivos(new Valor($1,5),@1.first_line,@1.first_column);}
         
 ;
 
