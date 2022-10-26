@@ -17,9 +17,15 @@ export class DeclaracionListaVector_2D extends Instruccion {
     }
 
     public ejecutar():any {
-            console.log("Encontre un vecotr , nombre:"+this.tipo+" con expresion "+this.D1_a +this.D1_b +this.D2_a +this.D2_b +this.identificador +this.lista_valores_1 +this.lista_valores_2 +" lo encontre en la linea "+this.line);
+            
     
        
         //metodo para guardar la variable
+    }
+    public graficar(): any {
+        
+    }
+    public imprimir(): any {
+        console.log("Encontre un vecotr , nombre:"+this.tipo+" con expresion "+this.D1_a +this.D1_b +this.D2_a +this.D2_b +this.identificador +this.lista_valores_1 +this.lista_valores_2 +" lo encontre en la linea "+this.line);
     }
 }

@@ -13,9 +13,16 @@ export class VectorModificar_2D extends Instruccion {
     }
 
     public ejecutar():any {
-            console.log("Encontre un vecotr , nombre:"+this.identificador+" con expresion "+this.expresion_1 +this.expresion_2+this.nueva_expresion +" lo encontre en la linea "+this.line);
+    }
+    public graficar(): any {
+        
+    }
+    public imprimir(): any {
+        
+        console.log("Encontre un vecotr , nombre:"+this.identificador+" con expresion "+this.expresion_1 +this.expresion_2+this.nueva_expresion +" lo encontre en la linea "+this.line);
     
        
         //metodo para guardar la variable
+        
     }
 }

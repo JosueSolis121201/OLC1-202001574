@@ -12,6 +12,18 @@ export class Primitivos extends Instruccion {
     }
 
     public ejecutar():any {
-        console.log(this.valor)
+        
+    }
+    public graficar(): any {
+        let valStr:string = this.valor.obtenerValor().toString();
+        let retornar =this.ID+"[label=\""+" Primitivo: " + valStr.replace('"',' ' ) +"\"] \n";
+
+
+        return retornar;
+
+    }
+    public imprimir(): any {
+        console.log("ENCONTRO UN VALOR DE : "+this.valor)
+        
     }
 }

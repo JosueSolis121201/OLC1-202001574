@@ -22,4 +22,13 @@ export class If_lista extends Instruccion {
 
         
     }
+    public graficar(): any {
+        
+    }
+    public imprimir(): any {
+        for(let elemento of this.lista){
+            console.log(elemento.imprimir())
+        }
+        
+    }
 }

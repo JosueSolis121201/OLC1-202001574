@@ -8,4 +8,11 @@ class Ciclo extends Instruccion {
         console.log("Encontre un ciclo");
         
     }
+    public graficar(): any {
+        
+    }
+
+    public imprimir(): any {
+        
+    }
 }

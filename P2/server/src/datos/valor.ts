@@ -39,5 +39,6 @@ export class Valor {
     }
 
     public obtenerValor():any {
+        return this.valor;
     }
 }

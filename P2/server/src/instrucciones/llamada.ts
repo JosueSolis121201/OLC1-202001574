@@ -12,9 +12,16 @@ export class Llamada extends Instruccion {
 
     public ejecutar():any {
       
-            console.log("Encontre una METODO, nombre:"+this.identificador+this.parametros+" con expresionlo encontre en la linea "+this.line);
+           
         
        
         //metodo para guardar la variable
+    }
+    public graficar(): any {
+        
+    }
+    public imprimir(): any {
+        console.log("Encontre una METODO, nombre:"+this.identificador+this.parametros+" con expresionlo encontre en la linea "+this.line);
+        
     }
 }

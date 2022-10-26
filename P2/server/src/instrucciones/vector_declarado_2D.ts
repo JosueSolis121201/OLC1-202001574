@@ -18,6 +18,12 @@ export class VectorDeclarado_2D extends Instruccion {
     }
 
     public ejecutar():any {
+    }
+    public graficar(): any {
+        
+    }
+    public imprimir(): any {
+        
         if(this.D2_a && this.D2_b != null){
             console.log("Encontre un vecotr , nombre:"+this.tipo+" con expresion "+this.D1_a +this.D1_b +this.D2_a +this.D2_b +this.identificador +this.new_tipo +this.expresionD1 +this.expresionD2 +" lo encontre en la linea "+this.line);
 
@@ -29,5 +35,6 @@ export class VectorDeclarado_2D extends Instruccion {
         
        
         //metodo para guardar la variable
+        
     }
 }

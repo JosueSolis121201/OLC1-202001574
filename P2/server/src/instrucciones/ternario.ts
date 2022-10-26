@@ -13,7 +13,14 @@ export class Ternario extends Instruccion {
     }
 
     public ejecutar():any {
-            console.log("Encontre una ternario, expresion_izquierda:"+this.expresion_boleana+" signo_interrogacion:"+this.signo_interrogacion+" con expresion_si_cumple "+this.expresion_si_cumple+" con expresion_no_cumple "+this.expresion_no_cumple+" lo encontre en la linea "+this.line);
+           
+    }
+    public graficar(): any {
+        
+    }
+    public imprimir(): any {
+        console.log("Encontre una ternario, expresion_izquierda:"+this.expresion_boleana+" signo_interrogacion:"+this.signo_interrogacion+" con expresion_si_cumple "+this.expresion_si_cumple+" con expresion_no_cumple "+this.expresion_no_cumple+" lo encontre en la linea "+this.line);
         //metodo para guardar la variable
+        
     }
 }

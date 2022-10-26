@@ -21,4 +21,14 @@ export class Case_list extends Instruccion {
 
         
     }
+    public graficar(): any {
+        
+    }
+    public imprimir(): any {
+        for(let elemto of this.lista){
+            console.log(elemto.imprimir())
+        }
+        
+        
+    }
 }

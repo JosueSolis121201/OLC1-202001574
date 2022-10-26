@@ -12,19 +12,26 @@ export class Switch extends Instruccion {
     }
 
     public ejecutar():any {
+    }
+    public graficar(): any {
+        
+    }
+    public imprimir(): any {
+        
 
 
        
         if (this.default_switch != null) 
         {
-            console.log("Encontre una IF, tipo:"+this.Operacion_booleana+" nombre:"+this.case_list+" con expresion "+this.default_switch+" lo encontre en la linea "+this.line);
+            console.log("Encontre una SWTCH, tipo:"+this.Operacion_booleana+" nombre:"+this.case_list+" con expresion "+this.default_switch+" lo encontre en la linea "+this.line);
         }
         else 
         {
             console.log("ELSE");
-            console.log("Encontre una IF, tipo:"+this.Operacion_booleana+" nombre:"+this.case_list+" con expresion "+"lo encontre en la linea "+this.line);
+            console.log("Encontre una SWTCH, tipo:"+this.Operacion_booleana+" nombre:"+this.case_list+" con expresion "+"lo encontre en la linea "+this.line);
         }
        
         //metodo para guardar la variable
+        
     }
 }

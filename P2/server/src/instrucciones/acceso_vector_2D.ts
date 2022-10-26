@@ -12,9 +12,17 @@ export class Acceso_2D extends Instruccion {
     }
 
     public ejecutar():any {
-            console.log("Encontre un vecotr , nombre:"+this.identificador+" con expresion "+this.valor_1 +this.valor_2 +" lo encontre en la linea "+this.line);
+           
     
        
         //metodo para guardar la variable
+    }
+    public graficar(): any {
+        
+    }
+
+    public imprimir(): any {
+        console.log("Encontre un vecotr , nombre:"+this.identificador+" con expresion "+this.valor_1 +this.valor_2 +" lo encontre en la linea "+this.line);
+        
     }
 }

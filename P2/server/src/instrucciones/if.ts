@@ -16,6 +16,12 @@ export class If extends Instruccion {
 
 
        
+        
+    }
+    public graficar(): any {
+        
+    }
+    public imprimir(): any {
         if (this.else_if != null) 
         {
             console.log("Encontre una IF, tipo:"+this.Operacion_booleana+" nombre:"+this.instrucciones+" con expresion "+this.elif+this.else_if+" lo encontre en la linea "+this.line);
@@ -27,5 +33,6 @@ export class If extends Instruccion {
         }
        
         //metodo para guardar la variable
+        
     }
 }

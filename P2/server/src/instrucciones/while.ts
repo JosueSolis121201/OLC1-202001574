@@ -11,10 +11,17 @@ export class While extends Instruccion {
     }
 
     public ejecutar():any {
+    }
+    public graficar(): any {
+        
+    }
+    public imprimir(): any {
+        
       
-            console.log("Encontre una WHILE, nombre:"+this.expresion+" con expresion "+this.instruccion+" lo encontre en la linea "+this.line);
+        console.log("Encontre una WHILE, nombre:"+this.expresion+" con expresion "+this.instruccion+" lo encontre en la linea "+this.line);
         
        
         //metodo para guardar la variable
+        
     }
 }

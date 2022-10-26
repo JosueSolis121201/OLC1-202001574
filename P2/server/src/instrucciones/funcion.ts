@@ -16,9 +16,16 @@ export class Funcion extends Instruccion {
 
         
       
-            console.log("Encontre una FUNCION, nombre:"+this.identificador+this.parametros+" con ex"+this.tipo+"presion "+this.instrucciones+" lo encontre en la linea "+this.line);
+           
         
        
         //metodo para guardar la variable
+    }
+    public graficar(): any {
+        
+    }
+    public imprimir(): any {
+        console.log("Encontre una FUNCION, nombre:"+this.identificador+this.parametros+" con ex"+this.tipo+"presion "+this.instrucciones+" lo encontre en la linea "+this.line);
+        
     }
 }

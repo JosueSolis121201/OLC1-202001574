@@ -51,6 +51,9 @@
     const {Run} = require('../instrucciones/run.ts');
     const {RunSinParametros} = require('../instrucciones/run_sin_parametros.ts');
     const {Pop} = require('../instrucciones/pop.ts');
+    const {Valores_list} = require('../instrucciones/lista_valores.ts');
+    const {Instrucciones_list} = require('../instrucciones/lista_instrucciones.ts');
+    const {S1_list} = require('../instrucciones/lista_s1.ts');
 
 %}
 
@@ -439,15 +442,15 @@ S0 :  inicio S0P fin EOF  {console.log("TERMINE DE ANALIZAR EL PROYECTO C:");  {
 
 
 
-S0P : S0P S1 { $1.push($2);  $$= $1;  } 
-        | S1 {$$=[$1]} 
-;
+S0P : S0P S1 { $$= $1;  $1.agregar($2);}
+        | S1 {$$= new S1_list($1,@1.first_line,@1.first_column);} 
+;       
 
 S1 : ESTRUCTURA {$$=$1;}
 ;
 
-INSTRUCCIONES : INSTRUCCIONES ESTRUCTURA { $1.push($2);  $$= $1;  }
-        | ESTRUCTURA {$$=[$1]} 
+INSTRUCCIONES : INSTRUCCIONES ESTRUCTURA { $$= $1;  $1.agregar($2);}
+        | ESTRUCTURA {$$= new Instrucciones_list($1,@1.first_line,@1.first_column); } 
 ;
 
 ESTRUCTURA : DECLARACION {$$=$1;}
@@ -536,8 +539,8 @@ UPPER : toUpper parentesis_A EXPRESION parentesis_B { $$= new ToUpper($3,@1.firs
 LOWER : toLower parentesis_A EXPRESION parentesis_B { $$= new ToLower($3,@1.first_line,@1.first_column);}
 ;
 
-LISTA_VALORES : LISTA_VALORES coma VALORES { $1.push($3);  $$= $1;  }
-        |VALORES {$$=[$1]} 
+LISTA_VALORES : LISTA_VALORES coma VALORES { $$= $1;  $1.agregar($3);}
+        |VALORES {$$= new Valores_list($1,@1.first_line,@1.first_column)} 
         
 ;
 
@@ -710,6 +713,10 @@ TIPO : prchar {$$=$1;}
 
 
 
-IDENTIFICADORES : IDENTIFICADORES coma identificador  { $1.push($3);  $$= $1;  }
-        |identificador {$$=[$1]} 
+IDENTIFICADORES : IDENTIFICADORES coma identificador  { $$= $1;  $1.agregar($3);} 
+        |identificador { $$= new Identificadores_lista($1,@1.first_line,@1.first_column);}
 ;
+
+
+
+

@@ -11,9 +11,16 @@ export class Typeof extends Instruccion {
 
     public ejecutar():any {
       
-            console.log("Encontre una Typeof, nombre:"+this.expresion+" con expresion "+" lo encontre en la linea "+this.line);
+            
         
        
         //metodo para guardar la variable
+    }
+    public graficar(): any {
+        
+    }
+    public imprimir(): any {
+        console.log("Encontre una Typeof, nombre:"+this.expresion+" con expresion "+" lo encontre en la linea "+this.line);
+        
     }
 }

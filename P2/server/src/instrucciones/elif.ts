@@ -11,8 +11,14 @@ export class Elif extends Instruccion {
     }
 
     public ejecutar():any {
-            console.log("Encontre una IF, tipo:"+this.Operacion_booleana+" nombre:"+this.instrucciones+"lo encontre en la linea "+this.line);
+            
         //metodo para guardar la variable
     }
-    
+    public graficar(): any {
+        
+    }
+    public imprimir(): any {
+        console.log("Encontre una IF, tipo:"+this.Operacion_booleana+" nombre:"+this.instrucciones+"lo encontre en la linea "+this.line);
+        
+    }
 }

@@ -2,11 +2,10 @@ import { Instruccion } from "../abstractas/instruccion";
 
 export class Valores_list extends Instruccion {
 
-    public lista: Array<Instruccion>;
-
-    constructor(linea: number, columna:number) {
+    lista: Array<Instruccion>;
+    constructor(valores: Instruccion,linea: number, columna:number) {
         super(linea,columna);
-        this.lista = [];
+        this.lista=[valores];
     }
     
         
@@ -19,5 +18,14 @@ export class Valores_list extends Instruccion {
     }
     public ejecutar():any {
 
+    }
+    public graficar(): any {
+        
+    }
+    public imprimir(): any {
+        for(let elemto of this.lista){
+            console.log(elemto.imprimir())
+        }
+        
     }
 }

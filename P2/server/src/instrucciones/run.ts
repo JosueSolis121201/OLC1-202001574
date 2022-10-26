@@ -12,9 +12,16 @@ export class Run extends Instruccion {
 
     public ejecutar():any {
       
-            console.log("Encontre una RUN, nombre:"+this.identificador+this.valores+" con expresion "+" lo encontre en la linea "+this.line);
+            
         
        
         //metodo para guardar la variable
+    }
+    public graficar(): any {
+        
+    }
+    public imprimir(): any {
+        console.log("Encontre una RUN, nombre:"+this.identificador+this.valores+" con expresion "+" lo encontre en la linea "+this.line);
+        
     }
 }
