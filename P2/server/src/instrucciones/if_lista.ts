@@ -1,5 +1,6 @@
 import { count } from "console";
 import { Instruccion } from "../abstractas/instruccion";
+import { TablaSimbolos } from "../datos/tabla_simbolos";
 
 export class If_lista extends Instruccion {
 
@@ -18,11 +19,23 @@ export class If_lista extends Instruccion {
         }
     //metodo para guardar la variable
     }
-    public ejecutar():any {
+    public ejecutar(tabla:TablaSimbolos):any {
 
         
     }
     public graficar(): any {
+        
+        let padre =this.ID+"[label=\""+" LISTA ELIF "+"\"]\n";
+        let retornar = "";
+        let hijo ="";
+
+        for(let elemto of this.lista){
+            hijo= hijo+elemto.graficar();
+            retornar = retornar + padre +hijo+"\n"
+            retornar = retornar +this.ID +"->"+elemto.ID+"\n"
+        }
+
+        return retornar;
         
     }
     public imprimir(): any {

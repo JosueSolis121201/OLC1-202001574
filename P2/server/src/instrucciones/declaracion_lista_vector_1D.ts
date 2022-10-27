@@ -1,4 +1,5 @@
 import { Instruccion } from "../abstractas/instruccion";
+import { TablaSimbolos } from "../datos/tabla_simbolos";
 
 export class DeclaracionListaVector_1D extends Instruccion {
 
@@ -8,18 +9,28 @@ export class DeclaracionListaVector_1D extends Instruccion {
         public D1_a: string,
         public D1_b: string,
         public identificador: string,
-        public lista_valores: string,
+        public lista_valores: Instruccion,
         linea: number, columna:number) {
         super(linea,columna);
     }
 
-    public ejecutar():any {
+    public ejecutar(tabla:TablaSimbolos):any {
            
     
        
         //metodo para guardar la variable
     }
     public graficar(): any {
+        
+        let padre =this.ID+"[label=\""+" DECLARACION ARRAY 1D "+"\"] \n";
+        let hijo1 = this.ID+"DECLA1D"+"[label=\""+this.tipo+"\"] \n";
+        let hijo2 =this.lista_valores.graficar()+" \n";
+
+        let retorno = padre + hijo1 + hijo2;
+
+        retorno = retorno + this.ID+"->"+this.ID+"DECLA1D"+"\n";
+        retorno = retorno + this.ID+"->"+this.lista_valores.ID+"\n";
+        return retorno;
         
     }
 

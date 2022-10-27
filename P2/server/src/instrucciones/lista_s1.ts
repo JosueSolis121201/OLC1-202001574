@@ -1,4 +1,5 @@
 import { Instruccion } from "../abstractas/instruccion";
+import { TablaSimbolos } from "../datos/tabla_simbolos";
 
 export class S1_list extends Instruccion {
 
@@ -8,7 +9,6 @@ export class S1_list extends Instruccion {
         super(linea,columna);
         this.lista = [s1]
         
-        
     }
     
         
@@ -17,26 +17,27 @@ export class S1_list extends Instruccion {
         
         if (dato_s1!= null){
             this.lista.push(dato_s1);
+            
         }
         
     //metodo para guardar la variable
     }
-    public ejecutar():any {
+    public ejecutar(tabla:TablaSimbolos):any {
     }
     public graficar(): any {
-        console.log("++++++++++++++++++")
-        let string = ""
+            
+        let retornar =this.ID+"[label=\""+" INICIO \"] \n";
+        let string = retornar
         for (let instrucion of this.lista){
-            string = string + instrucion.graficar()
+            string = string + instrucion.graficar()+"\n"
+            string = string +this.ID +"->"+instrucion.ID
         }
-        
-        return(string)
+        console.log(string)
+
+        return string;
         
     }
     public imprimir(): any {
-        for(let elemto of this.lista){
-            console.log(elemto.imprimir())
-        }
         
     }
 }

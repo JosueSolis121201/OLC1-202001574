@@ -1,15 +1,17 @@
+import { IpcSocketConnectOpts } from "net";
 import { Instruccion } from "../abstractas/instruccion";
+import { TablaSimbolos } from "../datos/tabla_simbolos";
 
 export class ToCharArray extends Instruccion {
 
 
     constructor(
-        public expresion: string,
+        public expresion: Instruccion,
         linea: number, columna:number) {
         super(linea,columna);
     }
 
-    public ejecutar():any {
+    public ejecutar(tabla:TablaSimbolos):any {
       
             
         
@@ -17,6 +19,14 @@ export class ToCharArray extends Instruccion {
         //metodo para guardar la variable
     }
     public graficar(): any {
+        
+        let padre =this.ID+"[label=\""+" CharArray "+"\"] \n";
+        let hijo1 =this.expresion.graficar()+" \n";
+
+        let retorno = padre + hijo1;
+
+        retorno = retorno + this.ID+"->"+this.expresion.ID+"\n";
+        return retorno;
         
     }
 

@@ -1,4 +1,5 @@
 import { Instruccion } from "../abstractas/instruccion";
+import { TablaSimbolos } from "../datos/tabla_simbolos";
 
 export class VectorDeclarado_2D extends Instruccion {
 
@@ -9,17 +10,34 @@ export class VectorDeclarado_2D extends Instruccion {
         public D1_b: string,
         public D2_a: string,
         public D2_b: string,
-        public identificador: string,
-        public new_tipo: string,
-        public expresionD1: string,
-        public expresionD2: string,
+        public identificador: Instruccion,
+        public new_tipo: Instruccion,
+        public expresionD1: Instruccion,
+        public expresionD2: Instruccion,
         linea: number, columna:number) {
         super(linea,columna);
     }
 
-    public ejecutar():any {
+    public ejecutar(tabla:TablaSimbolos):any {
     }
     public graficar(): any {
+        
+        
+        let padre =this.ID+"[label=\""+" DECLARAR VECTOR 2D "+"\"] \n";
+        let hijo1 = this.ID+"VEC2"+"[label=\""+this.tipo+"\"] \n";
+        let hijo2 =this.identificador.graficar()+" \n";
+        let hijo3 = this.ID+"VEC22"+"[label=\""+this.new_tipo+"\"] \n";
+        let hijo4 =this.expresionD1.graficar()+" \n";
+        let hijo5 =this.expresionD2.graficar()+" \n";
+
+        let retorno = padre + hijo1 + hijo2+hijo3+hijo4+hijo5;
+
+        retorno = retorno + this.ID+"->"+this.ID+"VEC2"+"\n";
+        retorno = retorno + this.ID+"->"+this.identificador.ID+"\n";
+        retorno = retorno + this.ID+"->"+this.ID+"VEC22"+"\n";
+        retorno = retorno + this.ID+"->"+this.expresionD1.ID+"\n";
+        retorno = retorno + this.ID+"->"+this.expresionD2.ID+"\n";
+        return retorno;
         
     }
     public imprimir(): any {

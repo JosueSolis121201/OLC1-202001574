@@ -1,4 +1,5 @@
 import { Instruccion } from "../abstractas/instruccion";
+import { TablaSimbolos } from "../datos/tabla_simbolos";
 
 export class Valores_list extends Instruccion {
 
@@ -16,10 +17,22 @@ export class Valores_list extends Instruccion {
         }
     //metodo para guardar la variable
     }
-    public ejecutar():any {
+    public ejecutar(tabla:TablaSimbolos):any {
 
     }
     public graficar(): any {
+        
+        
+        let padre =this.ID+"[label=\""+" LIST VALORES"+"\"]\n";
+        let retornar = padre;
+
+        for(let elemto of this.lista){
+           
+            retornar = retornar + padre +elemto.graficar()+"\n"
+            retornar = retornar +this.ID +"->"+elemto.ID+"\n"
+        }
+
+        return retornar;
         
     }
     public imprimir(): any {

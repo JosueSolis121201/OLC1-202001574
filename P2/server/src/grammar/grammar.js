@@ -84,7 +84,7 @@ performAction: function anonymous(yytext, yyleng, yylineno, yy, yystate /* actio
 var $0 = $$.length - 1;
 switch (yystate) {
 case 1:
-console.log("TERMINE DE ANALIZAR EL PROYECTO C:");  {console.log($$[$0-2]+"++++++++++");return $$[$0-2];}
+console.log("TERMINE DE ANALIZAR EL PROYECTO C:");  {return $$[$0-2];}
 break;
 case 2: case 5:
  this.$= $$[$0-1];  $$[$0-1].agregar($$[$0]);
@@ -174,7 +174,7 @@ case 70:
  this.$= new Parametros_list(_$[$0].first_line,_$[$0].first_column);
 break;
 case 71:
- this.$= new Return($$[$0-1],_$[$0-1].first_line,_$[$0-1].first_column);
+ this.$= new Return($$[$0],_$[$0-1].first_line,_$[$0-1].first_column);
 break;
 case 72:
  this.$= new Return($$[$0-1],_$[$0-2].first_line,_$[$0-2].first_column);
@@ -237,7 +237,7 @@ case 94:
  this.$= new VectorModificar_2D($$[$0-9],$$[$0-7],$$[$0-4],$$[$0-1],_$[$0-9].first_line,_$[$0-9].first_column);
 break;
 case 95:
- this.$= new Declaracion($$[$0-2],$$[$0-1],_$[$0-2].first_line,_$[$0-2].first_column);
+ this.$= new Declaracion($$[$0-2],$$[$0-1],$$[$0],_$[$0-2].first_line,_$[$0-2].first_column);
 break;
 case 96:
  this.$= new Declaracion($$[$0-4],$$[$0-3],$$[$0-1],_$[$0-4].first_line,_$[$0-4].first_column);
@@ -264,7 +264,7 @@ case 103: case 104:
  this.$= new Incremento($$[$0-1],$$[$0],_$[$0-1].first_line,_$[$0-1].first_column);
 break;
 case 105:
- this.$= new OperacionBinaria($$[$0-2],$$[$0-1],$$[$0],_$[$0-2].first_line,_$[$0-2].first_column);
+ this.$= new OperacionBinaria($$[$0-2],$$[$0-1],$$[$0],_$[$0-2].first_line,_$[$0-2].first_column);console.log(this.valor+"++++++++++++++++++++");
 break;
 case 122:
  this.$=new Primitivos(new Valor($$[$0],1),_$[$0].first_line,_$[$0].first_column);

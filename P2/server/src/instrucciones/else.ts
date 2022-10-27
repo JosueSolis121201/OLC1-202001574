@@ -1,18 +1,28 @@
 import { Instruccion } from "../abstractas/instruccion";
+import { TablaSimbolos } from "../datos/tabla_simbolos";
 
 export class Else extends Instruccion {
 
 
     constructor(
-        public instrucciones: string,
+        public instrucciones: Instruccion,
         linea: number, columna:number) {
         super(linea,columna);
     }
-    public ejecutar():any {
+    public ejecutar(tabla:TablaSimbolos):any {
            
         //metodo para guardar la variable
     }
     public graficar(): any {
+        
+        
+        let padre =this.ID+"[label=\""+" ELSE "+"\"] \n";
+        let hijo2 =this.instrucciones.graficar()+" \n";
+
+        let retorno = padre  + hijo2;
+
+        retorno = retorno + this.ID+"->"+this.instrucciones.ID+"\n";
+        return retorno;
         
     }
     public imprimir(): any {

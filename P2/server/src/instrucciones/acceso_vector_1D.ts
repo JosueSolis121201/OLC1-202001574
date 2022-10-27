@@ -1,4 +1,5 @@
 import { Instruccion } from "../abstractas/instruccion";
+import { TablaSimbolos } from "../datos/tabla_simbolos";
 
 export class Acceso_1D extends Instruccion {
 
@@ -10,7 +11,7 @@ export class Acceso_1D extends Instruccion {
         super(linea,columna);
     }
 
-    public ejecutar():any {
+    public ejecutar(tabla:TablaSimbolos):any {
             
     
        
@@ -18,6 +19,16 @@ export class Acceso_1D extends Instruccion {
     }
 
     public graficar(): any {
+        
+        let padre =this.ID+"[label=\""+" ACCESO 1D "+"\"] \n";
+        let hijo1 = this.ID+"III"+"[label=\""+this.identificador+"\"] \n";
+        let hijo2 = this.ID+"IIII"+"[label=\""+this.valor+"\"] \n";
+
+        let retorno = padre + hijo1 + hijo2;
+
+        retorno = retorno + this.ID+"->"+this.ID+"III"+"\n";
+        retorno = retorno + this.ID+"->"+this.ID+"IIII"+"\n";
+        return retorno;
         
     }
 

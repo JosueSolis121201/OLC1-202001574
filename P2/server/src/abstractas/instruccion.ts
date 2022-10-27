@@ -1,4 +1,5 @@
 import  GEN  from "../datos/IDS";
+import { TablaSimbolos } from "../datos/tabla_simbolos";
 
 export abstract class Instruccion{
     //atributos
@@ -11,7 +12,7 @@ export abstract class Instruccion{
         this.ID = GEN.Generador.GenerarID();
     }
     
-    public abstract ejecutar():any;
+    public abstract ejecutar(tabla:TablaSimbolos):any;
 
     public abstract graficar():String;
 

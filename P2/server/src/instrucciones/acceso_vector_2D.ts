@@ -1,4 +1,5 @@
 import { Instruccion } from "../abstractas/instruccion";
+import { TablaSimbolos } from "../datos/tabla_simbolos";
 
 export class Acceso_2D extends Instruccion {
 
@@ -11,13 +12,26 @@ export class Acceso_2D extends Instruccion {
         super(linea,columna);
     }
 
-    public ejecutar():any {
+    public ejecutar(tabla:TablaSimbolos):any {
            
     
        
         //metodo para guardar la variable
     }
     public graficar(): any {
+        
+        
+        let padre =this.ID+"[label=\""+" ACCESO 2D "+"\"] \n";
+        let hijo1 = this.ID+"IIIA"+"[label=\""+this.identificador+"\"] \n";
+        let hijo2 = this.ID+"IIIIA"+"[label=\""+this.valor_1+"\"] \n";
+        let hijo3 = this.ID+"IIIIAA"+"[label=\""+this.valor_2+"\"] \n";
+
+        let retorno = padre + hijo1 + hijo2+hijo3;
+
+        retorno = retorno + this.ID+"->"+this.ID+"IIIA"+"\n";
+        retorno = retorno + this.ID+"->"+this.ID+"IIIIA"+"\n";
+        retorno = retorno + this.ID+"->"+this.ID+"IIIIAA"+"\n";
+        return retorno;
         
     }
 

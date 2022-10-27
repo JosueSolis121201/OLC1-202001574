@@ -1,4 +1,5 @@
 import { Instruccion } from "../abstractas/instruccion";
+import { TablaSimbolos } from "../datos/tabla_simbolos";
 
 export class Asignacion extends Instruccion {
 
@@ -10,7 +11,7 @@ export class Asignacion extends Instruccion {
         super(linea,columna);
     }
 
-    public ejecutar():any {
+    public ejecutar(tabla:TablaSimbolos):any {
         //metodo para guardar la variable
     }
     public graficar(): any {
@@ -23,6 +24,8 @@ export class Asignacion extends Instruccion {
 
         retornar =retornar+ this.ID+"->"+this.identificador.ID+"\n"
         retornar = retornar+ this.ID +"->"+this.expresion.ID+"\n"
+
+        retornar= retornar
         
         return retornar;
         

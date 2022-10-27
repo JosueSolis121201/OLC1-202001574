@@ -1,4 +1,6 @@
 inicio
 
-celular = true;
+
+string cad_1 = toLower("hOla MunDo");
+
 fin

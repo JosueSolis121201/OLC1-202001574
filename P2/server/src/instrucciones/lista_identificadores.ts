@@ -1,4 +1,5 @@
 import { Instruccion } from "../abstractas/instruccion";
+import { TablaSimbolos } from "../datos/tabla_simbolos";
 
 export class Identificadores_lista extends Instruccion {
     lista: Array<String>; 
@@ -18,7 +19,7 @@ export class Identificadores_lista extends Instruccion {
             console.log(this.lista)
         }
     }
-    public ejecutar():any {
+    public ejecutar(tabla:TablaSimbolos):any {
 
         
     }
@@ -27,10 +28,13 @@ export class Identificadores_lista extends Instruccion {
         let padre =this.ID+"[label=\""+" Identificadores "+"\"]\n";
         let retornar = "";
         let hijo ="";
+        let contar =9
 
         for(let elemto of this.lista){
-            hijo= this.ID+"[label=\""+elemto+"\"]\n";
-            retornar = retornar + padre +hijo
+            contar = contar +1
+            hijo= hijo+this.ID+"EEE"+contar+"[label=\""+elemto+"\"]\n";
+            retornar = retornar + padre +hijo+"\n"
+            retornar = retornar +this.ID +"->"+this.ID+"EEE"+contar+"\n"
         }
 
         return retornar;

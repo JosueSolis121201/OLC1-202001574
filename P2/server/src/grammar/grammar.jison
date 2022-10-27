@@ -561,7 +561,7 @@ PARAMETROS: PARAMETROS coma TIPO identificador { $$= $1;  $1.agregar( new Parame
 
 
 
-RETURN : return punto_coma { $$= new Return($1,@1.first_line,@1.first_column);}
+RETURN : return punto_coma { $$= new Return($2,@1.first_line,@1.first_column);}
         | return EXPRESION punto_coma { $$= new Return($2,@1.first_line,@1.first_column);}
 ;
 CONTINUE : continue punto_coma { $$= new Continue($1,@1.first_line,@1.first_column);}
@@ -639,10 +639,10 @@ MODIFICAR_VEC : IDENTIFICADORES corchete_A EXPRESION corchete_B igualacion EXPRE
         | IDENTIFICADORES corchete_A EXPRESION corchete_B corchete_A EXPRESION corchete_B igualacion EXPRESION punto_coma { $$= new VectorModificar_2D($1,$3,$6,$9,@1.first_line,@1.first_column);}
 ;
 
-DECLARACION : TIPO IDENTIFICADORES punto_coma { $$= new Declaracion($1,$2,@1.first_line,@1.first_column);}
+DECLARACION : TIPO IDENTIFICADORES punto_coma { $$= new Declaracion($1,$2,$3,@1.first_line,@1.first_column);}
         | TIPO IDENTIFICADORES igualacion EXPRESION punto_coma { $$= new Declaracion($1,$2,$4,@1.first_line,@1.first_column);}
 ;
-
+ 
 DL_VECTORES : TIPO corchete_A corchete_B IDENTIFICADORES igualacion llave_A LISTA_VALORES llave_B punto_coma { $$= new DeclaracionListaVector_1D($1,$2,$3,$4,$7,@1.first_line,@1.first_column);}
         | TIPO corchete_A corchete_B corchete_A corchete_B IDENTIFICADORES igualacion llave_A  llave_A LISTA_VALORES llave_B coma llave_A LISTA_VALORES llave_B llave_B punto_coma { $$= new DeclaracionListaVector_2D($1,$2,$3,$4,$5,$6,$10,$14,@1.first_line,@1.first_column);}
 ;
@@ -668,7 +668,7 @@ DECREMENTOS :  OPERACION decremento   { $$= new Incremento($1,$2,@1.first_line,@
 
 
 
-OPERACION : OPERACION OPERADORES VALORES { $$= new OperacionBinaria($1,$2,$3,@1.first_line,@1.first_column);}
+OPERACION : OPERACION OPERADORES VALORES { $$= new OperacionBinaria($1,$2,$3,@1.first_line,@1.first_column);console.log(this.valor+"++++++++++++++++++++");}
         | VALORES {$$=$1;}
 ;
 

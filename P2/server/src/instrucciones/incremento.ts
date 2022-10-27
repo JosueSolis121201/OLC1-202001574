@@ -1,16 +1,19 @@
+import { isObject } from "util";
 import { Instruccion } from "../abstractas/instruccion";
+import { TablaSimbolos } from "../datos/tabla_simbolos";
+import { Valor } from "../datos/valor";
 
 export class Incremento extends Instruccion {
 
 
     constructor(
-        public operacion: string,
+        public operacion: any,
         public signo: string,
         linea: number, columna:number) {
         super(linea,columna);
     }
 
-    public ejecutar():any {
+    public ejecutar(tabla:TablaSimbolos):any {
       
             
         
@@ -18,6 +21,32 @@ export class Incremento extends Instruccion {
         //metodo para guardar la variable
     }
     public graficar(): any {
+        
+        let padre =this.ID+"[label=\""+" Incremento "+"\"] \n";
+        let hijo1 = this.ID+"Increment"+"[label=\""+this.signo+"\"] \n";
+
+        let retorno =""
+        if(isNaN(this.operacion)){
+            let hijo2 = this.ID+"OPERACION"+"[label=\""+this.operacion+"\"] \n";
+            retorno = retorno +hijo2
+        }else{
+            let hijo2 =this.operacion.graficar()+" \n";
+            retorno=retorno+hijo2
+        }
+       
+
+        retorno = retorno+padre + hijo1;
+
+        retorno = retorno + this.ID+"->"+this.ID+"Increment"+"\n";
+        
+
+        if(isNaN(this.operacion)){
+            retorno = retorno + this.ID+"->"+this.ID+"OPERACION"+"\n";
+           
+        }else{
+            retorno = retorno + this.ID+"->"+this.operacion.ID+"\n";
+        }
+        return retorno;
 
         
     }

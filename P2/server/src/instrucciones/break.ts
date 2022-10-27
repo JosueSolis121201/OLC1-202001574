@@ -1,4 +1,5 @@
 import { Instruccion } from "../abstractas/instruccion";
+import { TablaSimbolos } from "../datos/tabla_simbolos";
 
 export class Break extends Instruccion {
 
@@ -9,7 +10,7 @@ export class Break extends Instruccion {
         super(linea,columna);
     }
 
-    public ejecutar():any {
+    public ejecutar(tabla:TablaSimbolos):any {
       
             
         
@@ -17,6 +18,14 @@ export class Break extends Instruccion {
         //metodo para guardar la variable
     }
     public graficar(): any {
+        
+        let padre =this.ID+"[label=\""+" EXpresion_BREAK "+"\"] \n";
+        let hijo1 = this.ID+"ADI"+"[label=\""+this.expresion+"\"] \n";
+
+        let retorno = padre + hijo1 ;
+
+        retorno = retorno + this.ID+"->"+this.ID+"ADI"+"\n";
+        return retorno;
         
     }
 
