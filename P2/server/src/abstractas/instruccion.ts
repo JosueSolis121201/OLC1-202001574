@@ -22,7 +22,27 @@ export abstract class Instruccion{
         console.log({tipo: typeof(inst), string: JSON.stringify(inst) })
     }
 
+    public esMetodo(){
+        return false;
+    }
+
+    public esFuncion(){
+        return false;
+    }
+
     public  generarId(){
         return this.ID;
+    }
+
+    public EsRetorno(){
+        return false;
+    }
+
+    public EsBreak(){ 
+        return false;
+    }
+
+    public EsContinue(){ 
+        return false;
     }
 }

@@ -1,3 +1,0 @@
-inicio
-mayoria_edadd = edad > 21 ? true : false;
-fin

@@ -1,5 +1,6 @@
 import { Instruccion } from "../abstractas/instruccion";
 import { TablaSimbolos } from "../datos/tabla_simbolos";
+import { Valor } from "../datos/valor";
 
 export class VectorModificar_2D extends Instruccion {
 
@@ -14,7 +15,41 @@ export class VectorModificar_2D extends Instruccion {
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
+        console.log("pasando por modificar vector de una dimension")
+
+        //? identificador = nombre variable
+        //? expresion = pocicion del lista deseada
+        //? nueva_expresion = el nuevo valor que tendra la pocicion buscada anterior
+        
+        // modificar busca en tabla y muestra valor de la lista declarada
+        let lista:[Instruccion] =this.identificador.ejecutar(tabla)
+        // elemento es el nombre de la vairable
+
+        let identidad:any;
+        for(let elemto of lista){
+            identidad=elemto;
+
+            //obteniendo el valor de la pocicion  
+            let iterrador=this.expresion_1.ejecutar(tabla).valor*this.expresion_2.ejecutar(tabla).valor
+            for(let i=0;i<=iterrador;i++){  
+                if(i==iterrador){
+                    let BUSCANDO_USANDO_NOMBRE_COMPUESTO="arreglonero2"+identidad+"s"+(this.expresion_1.ejecutar(tabla).valor-1)+"d"+(this.expresion_2.ejecutar(tabla).valor-1);
+                     // valor y variable                             valor
+                    let valor_variable=tabla.buscarVariable(BUSCANDO_USANDO_NOMBRE_COMPUESTO);
+                    //valor en tabla con pocicion buscada
+                    let valor=valor_variable.valor;
+                    let tipo=valor_variable.tipo;
+                    // se guarda la nueva expresion que es = this.nueva_expreison
+                    let nuevoValor=new Valor(valor,tipo);
+                    tabla.guardarActualizar(this.nueva_expresion.ejecutar(tabla),BUSCANDO_USANDO_NOMBRE_COMPUESTO)
+                }
+            }
+
+        }
+        
     }
+    
+
     public graficar(): any {
         
 

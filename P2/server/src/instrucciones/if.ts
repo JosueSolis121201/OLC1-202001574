@@ -8,7 +8,7 @@ export class If extends Instruccion {
 
     constructor(
         public Operacion_booleana: Instruccion,
-        public instrucciones: Instruccion,
+        public instrucciones: any,
         public elif: If_lista,
         public else_if: Instruccion,
         linea: number, columna:number) {
@@ -17,19 +17,60 @@ export class If extends Instruccion {
 
     public ejecutar(tabla:TablaSimbolos):any {
 
+        //se obtiene operacion booleana para saber si se ejecutar
         let ope:Valor = this.Operacion_booleana.ejecutar(tabla);
+        // si no tipo booleano entra
         if( ope.tipo != 4){
+            // retorna error ya que se necesito un booleano
             console.log({error:"se esparaba bool en el if"})
+            //retorna nada
             return ;
         }
 
+        //si la operacion booleana es true entra
         if(ope.valor){
-            this.instrucciones.ejecutar(tabla);
-        }else{
-            let valorElse = this.elif.ejecutar(tabla);
-            if( !valorElse ){
-                this.else_if.ejecutar(tabla);
+            // se crea un nuevo entorno con contexto tabla if
+            // esto es una lista usar for
+            for(let elemento of this.instrucciones.ejecutar(tabla)){
+            // por elemento de la lista se crea un nuevo entorno
+            //! !!!!!!!!!!!!!
+            // entornos
+            /*
+            int x = 10; entorno: goblal
+            if (20 <50)
+            {
+            x = 2; entorno: tablaif 
             }
+            salida x = 2 ya que se cambio dentro de entorno
+            */
+            //! !!!!!!!!!!!!!
+            // para entrono if
+            let guardar = elemento.ejecutar(new TablaSimbolos("TablaIf",tabla));
+            }
+             
+
+
+        // si no
+        }else{
+            //valor else es el retorno de la tabla de elif
+            // elif es una lista por ende recorrer lista
+            let valorElse = false;
+            let iterador = this.elif.ejecutar(tabla);
+            for (let elemento of iterador){        //tabla el_if??
+                valorElse = elemento.ejecutar(tabla);
+                // valor else(retorno de tabla elif)== false
+                
+            }
+            if( !valorElse ){
+                //else ejecutar su return de tabla     // tabla else???
+                
+                if(this.else_if != null){
+                this.else_if.ejecutar(new TablaSimbolos("TablaIf",tabla));
+                }else{
+                    console.log("no se encontro else: TERMINO IF")
+                }
+            }
+            
         }
        
         

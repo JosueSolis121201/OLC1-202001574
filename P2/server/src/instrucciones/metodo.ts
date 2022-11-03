@@ -1,5 +1,6 @@
 import { Instruccion } from "../abstractas/instruccion";
 import { TablaSimbolos } from "../datos/tabla_simbolos";
+import { Valor } from "../datos/valor";
 
 export class Metodo extends Instruccion {
 
@@ -13,12 +14,32 @@ export class Metodo extends Instruccion {
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
-      
-            
+        //? this.identificador = nombre de la metodo 
+        //? this.parametros = Declaracion en manera de parametros
+        //?  instruccion = instrucciones de la funcion
+
+
+        // crear nuevo entrono
+        let nueva_tabla = new TablaSimbolos("func",tabla)
+        //instruccion es una lista
+        let lista_instruccion:[Instruccion] =this.instrucciones.ejecutar(nueva_tabla)
+        // guarlo en la tabla
+        //recorre la lista
+        for(let elemto of lista_instruccion){
+            // valor y variable                             valor
+            let valor_ejec=elemto.ejecutar(nueva_tabla)
+        }
         
-       
-        //metodo para guardar la variable
+        console.log({info: "FIN METODO"})
     }
+    public iniciarVariables (tabla:TablaSimbolos): any{
+        return this.parametros.ejecutar(tabla)
+    }
+
+    public esMetodo(): boolean {
+        return true
+    }
+
     public graficar(): any {
         
         

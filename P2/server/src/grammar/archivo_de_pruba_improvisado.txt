@@ -2,13 +2,13 @@ int a=0;
 INt A=0;
 
 Boolean mayoria_edad = false;
-mayoria_edadd = edad > 21 ? true : false;
+mayoria_edad = edad > 21 ? true : false;
 
 string curso_ = "organización de compiladores 1 2022";
 char var_111 = 'a';
 celular = true;
 int var1, var2, var3;
-boolean flag_1, flag2_, flag33 = false;
+boolean flag_1, flag2_, flag33 = false; 
 char ch_1, ch_2, ch3, qwert123 = 'M';
 universidad= "usac";
 
@@ -64,6 +64,9 @@ else
 Println("Mayor que 100");
 //Más sentencias
 }
+
+
+
 //Ejemplo de cómo se implementar un ciclo else if
 if (x > 50)
 {
@@ -124,7 +127,7 @@ Print("Menor que 100");
 
 
 for ( int i=0; i<3;i++ ){
-Println("i="+1);                                                          ////////////////////////////ERRROR
+Println("i=");                                                          ////////////////////////////ERRROR Println("i="+1);  
 //más sentencias
 }
 /*RESULTADO
@@ -173,6 +176,6 @@ if (tipo == "metro")
 {
 return pies/3.281;
 }else{
-return 1+1;
+return 1;
 }
 }

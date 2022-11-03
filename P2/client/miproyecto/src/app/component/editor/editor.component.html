@@ -1,2 +1,28 @@
-<p>editor works!</p>
-<input type="text">
+<div class="container-editor">
+    <h1>
+        Ingresar Texto
+    </h1>
+    <textarea [(ngModel)]="str" class="textarea"></textarea>
+    <div class="container-button">
+        <button class="button" id="accion" (click)="Graficar()">Graficar</button>
+        <button class="button" id="set" (click)="Ejecutar()">Ejecutar</button>
+    </div>
+    <h1>
+        AST
+    </h1>
+    <div class="over">
+        <img [src]="this.imagen">
+    </div>
+    <h1>
+        Tabla
+    </h1>
+    <div>
+        {{
+            diccionario
+        }}
+        {{
+            elementos
+        }}
+
+    </div>
+</div>

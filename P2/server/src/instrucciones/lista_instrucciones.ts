@@ -19,7 +19,8 @@ export class Instrucciones_list extends Instruccion {
     //metodo para guardar la variable
     }
     public ejecutar(tabla:TablaSimbolos):any {
-
+        // los que usan Instrucciones esperan retuen de lista de Instrucciones
+        return this.lista;
     }
     public graficar(): any {
         

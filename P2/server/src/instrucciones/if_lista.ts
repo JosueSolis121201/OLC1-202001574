@@ -20,6 +20,8 @@ export class If_lista extends Instruccion {
     //metodo para guardar la variable
     }
     public ejecutar(tabla:TablaSimbolos):any {
+        // if espera retorno de tabla por ende(for en if para ciclar todos los elif)
+        return this.lista;
 
         
     }

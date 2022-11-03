@@ -11,6 +11,7 @@ export class Pop extends Instruccion {
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
+       // tabla.buscarVariable("arreglonero1"+identi+"s"+index)
       
            
         

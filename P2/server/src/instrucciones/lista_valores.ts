@@ -18,7 +18,12 @@ export class Valores_list extends Instruccion {
     //metodo para guardar la variable
     }
     public ejecutar(tabla:TablaSimbolos):any {
+        let lista_nombres:any = []
+        for (let elemento of this.lista){
+            lista_nombres.push(elemento)
 
+        }
+        return lista_nombres
     }
     public graficar(): any {
         
@@ -31,9 +36,7 @@ export class Valores_list extends Instruccion {
             retornar = retornar + padre +elemto.graficar()+"\n"
             retornar = retornar +this.ID +"->"+elemto.ID+"\n"
         }
-
         return retornar;
-        
     }
     public imprimir(): any {
         for(let elemto of this.lista){

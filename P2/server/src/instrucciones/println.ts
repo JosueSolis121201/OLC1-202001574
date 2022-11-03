@@ -12,11 +12,8 @@ export class Println extends Instruccion {
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
-      
-            
-        
-       
-        //metodo para guardar la variable
+        console.log("pasando por PRINTLN")
+        console.log(this.expresion.ejecutar(tabla).valor);
     }
     public graficar(): any {
         

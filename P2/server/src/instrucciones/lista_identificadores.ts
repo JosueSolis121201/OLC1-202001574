@@ -20,8 +20,8 @@ export class Identificadores_lista extends Instruccion {
         }
     }
     public ejecutar(tabla:TablaSimbolos):any {
-
-        
+        // los que usan identificadores esperan retunr de lista de indentificadores
+        return this.lista
     }
     public graficar(): any {
         

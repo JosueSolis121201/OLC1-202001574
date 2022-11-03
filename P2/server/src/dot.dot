@@ -1,0 +1,12 @@
+digraph G {inicio[label=" S0 "] 
+GRA2205[label=" Declaracion "] 
+GRA2205AAA[label="int"] 
+GRA2204[label=" Identificadores "]
+GRA2204EEE10[label="variable"]
+
+GRA2204->GRA2204EEE10
+GRA2205->GRA2205AAA
+GRA2205->GRA2204
+
+inicio->GRA2205
+}

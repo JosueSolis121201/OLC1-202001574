@@ -1,4 +1,3 @@
-import { IpcSocketConnectOpts } from "net";
 import { Instruccion } from "../abstractas/instruccion";
 import { TablaSimbolos } from "../datos/tabla_simbolos";
 
@@ -13,12 +12,12 @@ export class Print extends Instruccion {
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
-      
-           
-        
-       
-        //metodo para guardar la variable
+        console.log("pasando por PRINT")
+        console.log(this.expresion.ejecutar(tabla).valor);
     }
+
+
+    
     public graficar(): any {
         
         let padre =this.ID+"[label=\""+" Print "+"\"] \n";

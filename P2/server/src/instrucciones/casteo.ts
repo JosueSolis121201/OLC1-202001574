@@ -1,22 +1,61 @@
 import { Instruccion } from "../abstractas/instruccion";
 import { TablaSimbolos } from "../datos/tabla_simbolos";
+import { Valor } from "../datos/valor";
 
 export class Casteo extends Instruccion {
 
 
     constructor(
-        public Tipo: Instruccion,
+        public Tipo: any,
         public expresion: Instruccion,
         linea: number, columna:number) {
         super(linea,columna);
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
-      
+        console.log("pasando por casteo")
+        let  tipo_encontrado;
+        let valor_encontrado;
+        switch (this.Tipo.toLowerCase()) { 
+            case "int"://INT
+                tipo_encontrado=1;
+                valor_encontrado =parseInt(this.expresion.ejecutar(tabla).valor)
+                break;
+            case "double": //FLOAT
+                
+                tipo_encontrado=2;
+                valor_encontrado =parseFloat(this.expresion.ejecutar(tabla).valor)
+                break;
+            case "string"://STRING
+                
+                tipo_encontrado=3;
+                valor_encontrado =this.expresion.ejecutar(tabla).valor.toString()
+                break;
+            case "boolean": //BOOL
+            
+                tipo_encontrado=4;
+                if(parseInt(this.expresion.ejecutar(tabla).valor)==1||parseInt(this.expresion.ejecutar(tabla).valor)==1.0){
+                    valor_encontrado =true
+                }else{
+                    valor_encontrado =false
+                }
+                break;
+            case "char"://CHAR
+                tipo_encontrado=5;
+                valor_encontrado =this.expresion.ejecutar(tabla).valor.toString()
+                break;
+            default:
+                console.log({error:"ERROR EN Casteo"})
+                tipo_encontrado=1
+                valor_encontrado =parseInt(this.expresion.ejecutar(tabla).valor)
+                break;
+        }
+
+
+
+        let nuevoVal = new Valor(valor_encontrado,tipo_encontrado)
+        return nuevoVal;
            
-        
-       
-        //metodo para guardar la variable
     }
     public graficar(): any {
         let padre =this.ID+"[label=\""+" Casteo "+"\"] \n";

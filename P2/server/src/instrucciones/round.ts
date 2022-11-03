@@ -1,6 +1,7 @@
 import { IpcSocketConnectOpts } from "net";
 import { Instruccion } from "../abstractas/instruccion";
 import { TablaSimbolos } from "../datos/tabla_simbolos";
+import { Valor } from "../datos/valor";
 
 export class Round extends Instruccion {
 
@@ -11,12 +12,15 @@ export class Round extends Instruccion {
         super(linea,columna);
     }
 
-    public ejecutar(tabla:TablaSimbolos):any {
-      
+    public ejecutar(tabla:TablaSimbolos):any { 
+        //le mandan una expresion de tipo string no le importan de donde sea ni de quien
+        // pasando a float
+        let nuevo_int=Math.round(this.valor.ejecutar(tabla).valor)
+        //TOUPPER pone todo en mayusculas
+        //retornar el nuevo valor
+        let nuevoVal = new Valor(nuevo_int,1)
+        return nuevoVal;
            
-        
-       
-        //metodo para guardar la variable
     }
     public graficar(): any {
         

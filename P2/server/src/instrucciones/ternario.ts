@@ -1,5 +1,6 @@
 import { Instruccion } from "../abstractas/instruccion";
 import { TablaSimbolos } from "../datos/tabla_simbolos";
+import { Valor } from "../datos/valor";
 
 export class Ternario extends Instruccion {
 
@@ -14,8 +15,23 @@ export class Ternario extends Instruccion {
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
+        // el valor que me retorne expresion boleana
+       
+        let exprebol:Valor = this.expresion_boleana.ejecutar(tabla)
+        console.log(exprebol)
+        // condicional si es tru hace signo_interrogacion
+        // condicional si es false hace expresion_no_cumple
+        // soloe s true o false
+        if(exprebol.obtenerValor()==true){
+            return this.expresion_no_cumple.ejecutar(tabla)
+        }else{
+            return this.signo_interrogacion.ejecutar(tabla)  
+        }
            
     }
+
+
+
     public graficar(): any {
         let padre =this.ID+"[label=\""+" Ternario "+"\"] \n";
         let hijo1 = this.expresion_boleana.graficar()+"\n";

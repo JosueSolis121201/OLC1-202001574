@@ -1,5 +1,6 @@
 import { Instruccion } from "../abstractas/instruccion";
 import { TablaSimbolos } from "../datos/tabla_simbolos";
+import { Valor } from "../datos/valor";
 
 export class DeclaracionListaVector_1D extends Instruccion {
 
@@ -8,17 +9,27 @@ export class DeclaracionListaVector_1D extends Instruccion {
         public tipo: string,
         public D1_a: string,
         public D1_b: string,
-        public identificador: string,
+        public identificador: any,
         public lista_valores: Instruccion,
         linea: number, columna:number) {
         super(linea,columna);
     }
 
-    public ejecutar(tabla:TablaSimbolos):any {
-           
-    
-       
-        //metodo para guardar la variable
+    public ejecutar(tabla:TablaSimbolos):any { 
+        // declarar guarda en tabla 
+        let lista:[Valor] =this.lista_valores.ejecutar(tabla)
+        // guarlo en la tabla
+        let index = 0;
+        //identificador
+        let identi;
+        for(let element of this.identificador.ejecutar(tabla)){
+            identi = element
+        }
+        for(let elemto of lista){
+            // valor y variable                             valor
+            tabla.guardarVariable(elemto,"arreglonero1"+identi+"s"+index);
+            index++;
+        }
     }
     public graficar(): any {
         

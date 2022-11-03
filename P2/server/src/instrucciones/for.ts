@@ -1,6 +1,7 @@
 import { IpcSocketConnectOpts } from "net";
 import { Instruccion } from "../abstractas/instruccion";
 import { TablaSimbolos } from "../datos/tabla_simbolos";
+import { Valor } from "../datos/valor";
 
 export class For extends Instruccion {
 
@@ -15,14 +16,33 @@ export class For extends Instruccion {
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
-      
-        /*for (let index = 0; index < array.length; index++) {
-            const element = array[index];
+
+        //for recomendacion trabajarlo como while
+        //condicional 
+        let nueva_tabla  = new TablaSimbolos ("tabla for",tabla)
+
+        this.expresion.ejecutar(nueva_tabla)
+        let boleano =this.condicion.ejecutar(nueva_tabla)
+     
+        //VER TIPOconsole.log({bool:boleano})
+       // mientras la condicionar sea t ru hacer el while
+       while(boleano.valor){
+        // ahcer instruccion de for
+        let instru_while:Array<Instruccion> = this.instrucciones.ejecutar(nueva_tabla);
             
-        }*/
+            for (let inst of  instru_while) {
+                inst.ejecutar(nueva_tabla); 
+            }
+            //incremental
+            console.log("PASANDO++++++++++++++++")
+            
+            this.actualizacion.ejecutar(nueva_tabla)
+            boleano =this.condicion.ejecutar(nueva_tabla)
+       } 
+
+
         
-       
-        //metodo para guardar la variable
+
     }
     public graficar(): any {
         

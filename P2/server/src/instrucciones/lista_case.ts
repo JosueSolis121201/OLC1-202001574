@@ -19,6 +19,7 @@ export class Case_list extends Instruccion {
     //metodo para guardar la variable
     }
     public ejecutar(tabla:TablaSimbolos):any {
+        return this.lista
 
         
     }

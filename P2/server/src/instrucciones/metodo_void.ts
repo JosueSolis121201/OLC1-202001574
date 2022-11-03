@@ -7,17 +7,34 @@ export class MetodoVoid extends Instruccion {
     constructor(
         public identificador: string,
         public parametros: Instruccion,
+        public voidd: string,
         public instrucciones: Instruccion,
         linea: number, columna:number) {
         super(linea,columna);
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
-      
-            
+        //? this.identificador = nombre de la metodo 
+        //? this.parametros = Declaracion en manera de parametros
+        //?  instruccion = instrucciones de la funcion
+
+
+        // crear nuevo entrono
+        let nueva_tabla = new TablaSimbolos("func",tabla)
+        //instruccion es una lista
+        let lista_instruccion:[Instruccion] =this.instrucciones.ejecutar(nueva_tabla)
+        // guarlo en la tabla
+        //recorre la lista
+        for(let elemto of lista_instruccion){
+            // valor y variable                             valor
+            let valor_ejec=elemto.ejecutar(nueva_tabla)
+        }
         
-       
-        //metodo para guardar la variable
+        console.log({info: "FIN METODO"})
+    }
+
+    public esMetodo(): boolean {
+        return true
     }
     public graficar(): any {
         

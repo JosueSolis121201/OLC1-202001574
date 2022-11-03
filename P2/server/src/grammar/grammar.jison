@@ -34,12 +34,12 @@
     const {Continue} = require('../instrucciones/continue.ts');
     const {Return} = require('../instrucciones/return.ts');
     const {Metodo} = require('../instrucciones/metodo.ts');
-    const {MetodoVoid} = require('../instrucciones/metodo_void.ts');
+    const {MetodoVoid} = require('../instrucciones/metodo_void.ts'); 
     const {Funcion} = require('../instrucciones/funcion.ts');
     const {Parametros_list} = require('../instrucciones/lista_parametros.ts');
     const {Parametros} = require('../instrucciones/parametros.ts');
     const {Llamada} = require('../instrucciones/llamada.ts');
-    const {LlamadaSinParamaetros} = require('../instrucciones/llamada_sin_parametros.ts');
+    const {LlamadaSinParametros} = require('../instrucciones/llamada_sin_parametros.ts');
     const {ToLower} = require('../instrucciones/lower.ts');
     const {ToUpper} = require('../instrucciones/upper.ts');
     const {Round} = require('../instrucciones/round.ts');
@@ -54,6 +54,7 @@
     const {Valores_list} = require('../instrucciones/lista_valores.ts');
     const {Instrucciones_list} = require('../instrucciones/lista_instrucciones.ts');
     const {S1_list} = require('../instrucciones/lista_s1.ts');
+    const {Bloque} = require('../instrucciones/bloque.ts');
 
 %}
 
@@ -71,312 +72,248 @@
 "fin"    {return 'fin'}
 
 ","      {
-                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yytext);
         return 'coma';   
 }
 "++"      {
-                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yytext);
         return 'incremento';   
 }
 "--"      {
-                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yytext);
         return 'decremento';   
 }
 
 "int"      {
-                console.log("Reconocio un simbolo int, coma. Con lexema: "+ yytext);
         return 'int';   
 }
 
 "double"      {
-                console.log("Reconocio un simbolo double, coma. Con lexema: "+ yytext);
         return 'double';   
 }
 
 "char"      {
-                console.log("Reconocio un simbolo char, coma. Con lexema: "+ yytext);
         return 'prchar';   
 }
 
 "string"        {
-                console.log("Reconocio un simbolo string, coma. Con lexema: "+ yytext);
         return 'prstring';   
 }
 
 "boolean"        {
-                console.log("Reconocio un simbolo boolean, coma. Con lexema: "+ yytext);
         return 'boolean';   
 }
 
 
 [0-9]+"."[0-9]+ {
-            console.log("Reconocio un palabra, con el decimal : "+ yytext);
             return 'decimal';
 }
 
 [0-9]+  {
-            console.log("Reconocio un palabra, con el entero : "+ yytext);
             return 'numero';
 }
 
 "True"        {
-                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yytext);
         return 'true';   
 }
 
 "False"        {
-                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yytext);
         return 'false';   
 }
 
 (\')([^\']{1}|"\n"|"\t"|"\r"|"\\\\")(\')  {
-            console.log("Reconocio un palabra, con el char : "+ yytext);
             return 'char';
 }
 
 (\")[^\"]*(\")  {
-            console.log("Reconocio un palabra, con el str : "+ yytext);
             return 'string';
 }
 
 "+"        {
-                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yytext);
         return 'mas';   
 }
 
 "-"        {
-                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yytext);
         return 'menos';   
 }
 
 "*"        {
-                console.log("Reconocio un simbolo reservado, coma. Con lexema: "+ yytext);
         return 'por';   
 }
 
 "/"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'division';   
 }
 
 "^"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'potencia';   
 }
 
 "%"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'porcentaje';   
 }
 ">="        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'mayor_igual';   
 }
 
 "<="        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'menor_igual';   
 }
 ">"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'mayor_que';   
 }
 
 "<"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'menor_que';   
 }
 
 "=="        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'igual';   
 }
 
 "!="        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'diferente';   
 }
 "!"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'not';   
 }
 
 "||"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'or';   
 }
 
 "&&"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'and';   
 }
 
 "("        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'parentesis_A';   
 }
 ")"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'parentesis_B';   
 }
 
 "{"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'llave_A';   
 }
 "}"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'llave_B';   
 }
 "["        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'corchete_A';   
 }
 "]"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'corchete_B';   
 }
 
 ";"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'punto_coma';   
 }
 
 "="        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'igualacion';   
 }
 
 "if"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'if';   
 }
 "else"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'else';   
 }
 
 "elif"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'elif';   
 }
 
 "switch"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'switch';   
 }
 
 "case"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'case';   
 }
 
 "default"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'default';   
 }
 
 ":"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'dos_puntos';   
 }
 
 "while"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'while';   
 }
 
 "for"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'for';   
 }
 
 "new"        {
-                console.log("Reconocio un new reservado, coma. Con : "+ yytext);
         return 'new';   
 }
 
 "do"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'do';   
 }
 
 "until"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'until';   
 }
 
 "break"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'break';   
 }
 
 "continue"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'continue';   
 }
 
 "return"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'return';   
 }
 
 "void"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'void';   
 }
 
 "println"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'println';   
 }
 "print"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'print';   
 }
 
 "toLower"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'toLower';   
 }
 
 "toUpper"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'toUpper';   
 }
 
 "length"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'length';   
 }
 
 "typeof"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'typeof';   
 }
 
 "toCharArray"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'toCharArray';   
 }
 
 "push"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'push';   
 }
 
 "pop"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'pop';   
 }
 
 "?"        {
-                console.log("Reconocio un simbolo reservado, coma. Con : "+ yytext);
         return 'interrogacion';   
 }
 
 "."        {
-                console.log("RPUNTO : "+ yytext);
         return 'punto';   
 }
 
@@ -423,6 +360,13 @@
 
 %options case-insensitive
 /lex
+%left 'or'
+%left 'and'
+%left 'not'
+%left 'igual' 'mayor_igual' 'mayor_que' 'menor_igual' 'menor_que' 'diferente'
+%left 'mas' 'menos'
+%left 'por' 'division'
+%left 'potencia'
 
 
 
@@ -436,7 +380,7 @@
 //gramaticas
 
 
-S0 :  inicio S0P fin EOF  {console.log("TERMINE DE ANALIZAR EL PROYECTO C:");  {return $2;}}
+S0 :   S0P  EOF  {console.log("TERMINE DE ANALIZAR EL PROYECTO C:");  {return $1;}}
         
 ;
 
@@ -473,10 +417,14 @@ ESTRUCTURA : DECLARACION {$$=$1;}
         | RETURN {$$=$1;}
         | FUNCION {$$=$1;}
         | METODO {$$=$1;}
-        | PUSH
-        | POP
-        | RUN
+        | PUSH  {$$=$1;}
+        | POP   {$$=$1;}
+        | RUN   {$$=$1;}
         | LLAMADA {$$=$1;}
+        | Bloque {$$=$1;}
+;
+
+Bloque : llave_A S0P llave_B {$$ = new Bloque($2,@1.first_line,@1.first_column);}
 ;
 EXPRESION : OPERACION {$$=$1;}
         | CASTEO {$$=$1;}
@@ -501,11 +449,11 @@ ACCESO_VEC : identificador corchete_A numero corchete_B { $$= new Acceso_1D($1,$
 TERNARIO : OPERACION interrogacion OPERACION dos_puntos OPERACION  { $$= new Ternario($1,$2,$3,$5,@1.first_line,@1.first_column);}
 ;
 
-LLAMADA_MINI : identificador parentesis_A LISTA_VALORES parentesis_B { $$= new Llamada($1,$3,@1.first_line,@1.first_column);}
-        | identificador parentesis_A  parentesis_B { $$= new LlamadaSinParamaetros($1,@1.first_line,@1.first_column);}
+LLAMADA_MINI : identificador parentesis_A LISTA_VALORES parentesis_B { $$= new Llamada($1,$3,@1.first_line,@1.first_column);} 
+        | identificador parentesis_A  parentesis_B { $$= new LlamadaSinParametros($1,@1.first_line,@1.first_column);}
 ;
 
-LLAMADA : identificador parentesis_A LISTA_VALORES parentesis_B punto_coma { $$= new Llamada($1,$3,@1.first_line,@1.first_column);}
+LLAMADA : identificador parentesis_A LISTA_VALORES parentesis_B punto_coma { $$= new Llamada($1,$3,@1.first_line,@1.first_column);console.log("++++++++++++++++********************");}
 ;
 
 RUN : run identificador parentesis_A parentesis_B punto_coma { $$= new RunSinParametros($2,@1.first_line,@1.first_column);}
@@ -541,7 +489,6 @@ LOWER : toLower parentesis_A EXPRESION parentesis_B { $$= new ToLower($3,@1.firs
 
 LISTA_VALORES : LISTA_VALORES coma VALORES { $$= $1;  $1.agregar($3);}
         |VALORES {$$= new Valores_list($1,@1.first_line,@1.first_column)} 
-        
 ;
 
 
@@ -551,17 +498,18 @@ METODO : identificador parentesis_A PARAMETROS parentesis_B dos_puntos void llav
 ;
         
 FUNCION : identificador parentesis_A PARAMETROS parentesis_B dos_puntos TIPO llave_A INSTRUCCIONES llave_B  { $$= new Funcion($1,$3,$6,$8,@1.first_line,@1.first_column);}
+        
 ;
 
-PARAMETROS: PARAMETROS coma TIPO identificador { $$= $1;  $1.agregar( new Parametros($3,$4,@1.first_line,@1.first_column) );  }
-        | TIPO identificador { $$= new Parametros_list(@1.first_line,@1.first_column);} 
-        | { $$= new Parametros_list(@1.first_line,@1.first_column);}
+PARAMETROS: PARAMETROS coma TIPO identificador { $$= $1;  $1.agregar( new Parametros($3,$4,@1.first_line,@1.first_column) );  } // con lista creada se deberia solo agregar los siguientes parametros
+        | TIPO identificador { lista_nueva =new Parametros_list(@1.first_line,@1.first_column);  lista_nueva.agregar(new Parametros($1,$2,@1.first_line,@1.first_column)); $$=lista_nueva; } // se deberia crear el primer parametro y agregar a lista
+        | { $$= new Parametros_list(@1.first_line,@1.first_column);} // se crea la lista de parametros vacia
 ;
 
 
 
 
-RETURN : return punto_coma { $$= new Return($2,@1.first_line,@1.first_column);}
+RETURN : return punto_coma { $$= new Return($2,@1.first_line,@1.first_column);} 
         | return EXPRESION punto_coma { $$= new Return($2,@1.first_line,@1.first_column);}
 ;
 CONTINUE : continue punto_coma { $$= new Continue($1,@1.first_line,@1.first_column);}
@@ -659,16 +607,16 @@ CASTEO : parentesis_A TIPO parentesis_B OPERACION  { $$= new Casteo($2,$4,@1.fir
 
 
 
-INCREMENTOS :  OPERACION incremento   { $$= new Incremento($1,$2,@1.first_line,@1.first_column);} 
+INCREMENTOS :  identificador incremento   { $$= new Incremento($1,$2,@1.first_line,@1.first_column);} 
 ;
 
-DECREMENTOS :  OPERACION decremento   { $$= new Incremento($1,$2,@1.first_line,@1.first_column);}          
+DECREMENTOS :  identificador decremento   { $$= new Incremento($1,$2,@1.first_line,@1.first_column);}          
 ;
 
 
 
 
-OPERACION : OPERACION OPERADORES VALORES { $$= new OperacionBinaria($1,$2,$3,@1.first_line,@1.first_column);console.log(this.valor+"++++++++++++++++++++");}
+OPERACION : OPERACION OPERADORES VALORES { $$= new OperacionBinaria($1,$3,$2,@1.first_line,@1.first_column);}
         | VALORES {$$=$1;}
 ;
 
@@ -691,7 +639,7 @@ OPERADORES : mas {$$=$1;}
 
 VALORES : numero { $$=new Primitivos(new Valor($1,1),@1.first_line,@1.first_column);}
         | decimal { $$=new Primitivos(new Valor($1,2),@1.first_line,@1.first_column);}
-        | identificador {$$=$1;}
+        | identificador { $$=new Primitivos(new Valor($1,6),@1.first_line,@1.first_column);}
         | string { $$=new Primitivos(new Valor($1,3),@1.first_line,@1.first_column);}
         | parentesis_A OPERACION parentesis_B {$$= $2;}
         | corchete_A OPERACION corchete_B {$$=$2;}

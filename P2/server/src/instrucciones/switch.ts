@@ -1,5 +1,7 @@
 import { Instruccion } from "../abstractas/instruccion";
 import { TablaSimbolos } from "../datos/tabla_simbolos";
+import { Valor } from "../datos/valor";
+import { Case } from "./case";
 
 export class Switch extends Instruccion {
 
@@ -13,7 +15,54 @@ export class Switch extends Instruccion {
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
+
+        //se obtiene la expresion que se valuara
+        let ope:Valor = this.Operacion_booleana.ejecutar(tabla);
+        // si no tipo booleano entra
+            //valor else es el retorno de la tabla de elif
+            // elif es una lista por ende recorrer lista
+            let valorElse = false;
+            let iterador:Array<Case> = this.case_list.ejecutar(tabla);
+            
+            for (let elemento of iterador){        //tabla case??
+                if (ope.valor == elemento.Operacion_booleana.ejecutar(tabla).valor){
+                    valorElse = true;
+                    let instru_case:Array<Instruccion> = elemento.instrucciones.ejecutar(tabla);
+                    for (let inst of  instru_case) {
+                        inst.ejecutar(new TablaSimbolos("case",tabla));
+                    }
+
+                }
+            }
+            if( !valorElse ){
+                //else ejecutar su return de tabla     // tabla default???
+                if(this.default_switch != null){
+
+                let instru_default:Array<Instruccion> = this.default_switch.ejecutar(tabla);
+                    for (let inst of  instru_default) {
+                        inst.ejecutar(new TablaSimbolos("DEFAULT",tabla));
+                    }
+                
+                }else{
+                    console.log("no se encontro default: TERMINO switch")
+                }
+            }
+            
+        
+
+     
+       
+        
+    
     }
+
+
+
+
+
+
+
+
     public graficar(): any {
         
         if (this.default_switch != null) 

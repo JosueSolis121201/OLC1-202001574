@@ -12,12 +12,23 @@ export class Primitivos extends Instruccion {
 
     }
 
-    public ejecutar(tabla:TablaSimbolos):any {
-        
+    public ejecutar(tabla:TablaSimbolos):any { 
+        if (this.valor.tipo==6)
+        {
+            let valorvariabl:Valor = tabla.buscarVariable(this.valor.obtenerValor());
+            let nombreVar = valorvariabl.obtenerValor();
+            if(valorvariabl){   
+                return new Valor(nombreVar,valorvariabl.tipo);
+            }
+            else{
+                console.log({error: `Variable ${nombreVar} no encontrada`})
+            }
+           
+        }
+        return new Valor(this.valor.obtenerValor(),this.valor.tipo);
     }
     public graficar(): any {
         let valStr:string = this.valor.obtenerValor().toString();
-        
         
         let retornar =this.ID+"[label=\""+" Primitivo: " + valStr.replace("\"","").replace("\"","") +"\"] \n";
         retornar= retornar 
@@ -26,7 +37,12 @@ export class Primitivos extends Instruccion {
     } 
 
     public imprimir(): any {
-        console.log("ENCONTRO UN VALOR DE : "+this.valor)
+       
+    }
+
+    public valorObtenido(): any {
+        let valStr:Valor = this.valor.obtenerValor().toString();
+        return(valStr)
         
     }
 }

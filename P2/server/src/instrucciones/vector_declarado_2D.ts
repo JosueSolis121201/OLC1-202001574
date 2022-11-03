@@ -1,5 +1,6 @@
 import { Instruccion } from "../abstractas/instruccion";
 import { TablaSimbolos } from "../datos/tabla_simbolos";
+import { Valor } from "../datos/valor";
 
 export class VectorDeclarado_2D extends Instruccion {
 
@@ -19,6 +20,35 @@ export class VectorDeclarado_2D extends Instruccion {
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
+
+        console.log("pasando por vector delcarado de dos dimenciones++")
+        console.log(this.expresionD1)
+        console.log(this.expresionD2.ejecutar(tabla))
+        //? this.identificador es la variable quetendra la lista
+        //? this.tipo es el tipo del vector
+        //? this.new_tipo es el nuevo tipo
+        //? this.expresionD1 el tamañod el vector, pero tendra 0 en cada espacio dependiendo el tamañao
+        
+        // INDEX
+        let index_1D = 0;
+        let index_2D = 0;
+        //identificador
+        let identi;
+        for(let element of this.identificador.ejecutar(tabla)){
+            identi = element
+           
+        }
+        
+        for (let i =0;i<this.expresionD1.ejecutar(tabla).valor;i++){
+             for (let x =0;x<this.expresionD2.ejecutar(tabla).valor;x++){
+
+             let valor = new Valor(0,2);
+             tabla.guardarVariable(valor,"arreglonero2"+identi+"s"+index_2D+"d"+index_1D);
+             index_1D++;
+            }
+            index_1D=0
+            index_2D++;
+        }
     }
     public graficar(): any {
         

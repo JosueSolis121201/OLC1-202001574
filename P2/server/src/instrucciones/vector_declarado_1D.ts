@@ -1,5 +1,6 @@
 import { Instruccion } from "../abstractas/instruccion";
 import { TablaSimbolos } from "../datos/tabla_simbolos";
+import { Valor } from "../datos/valor";
 
 export class VectorDeclarado_1D extends Instruccion {
 
@@ -15,11 +16,29 @@ export class VectorDeclarado_1D extends Instruccion {
         super(linea,columna);
     }
 
+
     public ejecutar(tabla:TablaSimbolos):any {
+        console.log("pasando por vector delcarado++")
+        //? this.identificador es la variable quetendra la lista
+        //? this.tipo es el tipo del vector
+        //? this.new_tipo es el nuevo tipo
+        //? this.expresionD1 el tamañod el vector, pero tendra 0 en cada espacio dependiendo el tamañao
+        
+        // guarlo en la tabla
+        let index = 0;
+        //identificador
+        let identi;
+        for(let element of this.identificador.ejecutar(tabla)){
+            identi = element
            
-    
-       
-        //metodo para guardar la variable
+        }
+        for (let i =0;i<this.expresionD1.ejecutar(tabla).valor;i++){
+             // valor y variable                             valor
+             let valor = new Valor(0,2);
+             tabla.guardarVariable(valor,"arreglonero1"+identi+"s"+index);
+             index++;
+
+        }
     }
     public graficar(): any {
         

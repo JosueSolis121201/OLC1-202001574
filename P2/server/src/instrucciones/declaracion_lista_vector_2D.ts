@@ -1,5 +1,6 @@
 import { Instruccion } from "../abstractas/instruccion";
 import { TablaSimbolos } from "../datos/tabla_simbolos";
+import { Valor } from "../datos/valor";
 
 export class DeclaracionListaVector_2D extends Instruccion {
 
@@ -10,7 +11,7 @@ export class DeclaracionListaVector_2D extends Instruccion {
         public D1_b: string,
         public D2_a: string,
         public D2_b: string,
-        public identificador: string,
+        public identificador: any,
         public lista_valores_1: Instruccion,
         public lista_valores_2: Instruccion,
         linea: number, columna:number) {
@@ -18,11 +19,47 @@ export class DeclaracionListaVector_2D extends Instruccion {
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
+        console.log("pasando por declaracion lista de vector 2 dimencioens")
+
+        // declarar guarda en tabla 
+        let lista:[Valor] =this.lista_valores_1.ejecutar(tabla)
+        // guarlo en la tabla
+        let index = 0;
+        //identificador
+        let identi;
+        for(let element of this.identificador.ejecutar(tabla)){ 
+            identi = element
+        }
+        let tamaño1D=this.lista_valores_1.ejecutar(tabla).length
+        let tamaño2D=this.lista_valores_2.ejecutar(tabla).length    
+        
+
+
+        let elementos_ambas_listas:any =[]
+
+        for(let element of this.lista_valores_1.ejecutar(tabla)){
+            elementos_ambas_listas.push(element.ejecutar(tabla))
+        }
+
+        for(let element of this.lista_valores_2.ejecutar(tabla)){
+            elementos_ambas_listas.push(element.ejecutar(tabla))
+        }
             
-    
-       
-        //metodo para guardar la variable
+        let index_1D = 0;
+        let index_2D = 0;
+        let inedx=0;
+        for (let i =0;i<tamaño1D;i++){
+            for (let x =0;x<tamaño2D;x++){
+
+            tabla.guardarVariable(elementos_ambas_listas[inedx],"arreglonero2"+identi+"s"+index_2D+"d"+index_1D);
+            inedx++;
+            index_1D++;
+        }
+        index_1D=0
+        index_2D++;
+       }
     }
+    
     public graficar(): any {
         
         

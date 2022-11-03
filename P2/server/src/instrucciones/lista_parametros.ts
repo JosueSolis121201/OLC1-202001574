@@ -19,8 +19,19 @@ export class Parametros_list extends Instruccion {
     //metodo para guardar la variable
     }
     public ejecutar(tabla:TablaSimbolos):any {
+        let lista_valores:any = [];
 
+        for(let elemen of this.lista){
+            lista_valores.push(elemen.ejecutar(tabla))
+            
+            
+
+        }
+            //RETORNAR LIST.NOMBRES
+        return lista_valores
     }
+    
+
     public graficar(): any {
         
         

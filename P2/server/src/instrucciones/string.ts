@@ -1,5 +1,6 @@
 import { Instruccion } from "../abstractas/instruccion";
 import { TablaSimbolos } from "../datos/tabla_simbolos";
+import { Valor } from "../datos/valor";
 
 export class ToString extends Instruccion {
 
@@ -10,12 +11,15 @@ export class ToString extends Instruccion {
         super(linea,columna);
     }
 
-    public ejecutar(tabla:TablaSimbolos):any {
-      
-            
-        
-       
-        //metodo para guardar la variable
+    public ejecutar(tabla:TablaSimbolos):any { 
+        //le mandan una expresion de tipo string no le importan de donde sea ni de quien
+        // pasando a string
+        let nuevo_string=this.expresion.ejecutar(tabla).valor.toString()
+        //TOUPPER pone todo en mayusculas
+        //retornar el nuevo valor
+        let nuevoVal = new Valor(nuevo_string,3)
+        return nuevoVal;
+           
     }
     public graficar(): any {
         

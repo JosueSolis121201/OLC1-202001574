@@ -5,14 +5,18 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserService {
-  URL = "http://localhost:8080"
+  URL = "http://localhost:1000"
   constructor(private http:HttpClient) { }
 
-  getdata(){
-    return this.http.get(`${this.URL}/getIncremental`)
+  graficar(texto:string){
+    return this.http.post(`${this.URL}/graficar`,{
+      contenido:texto
+    })
   }
 
-  setdata(json:any){
-    return this.http.post(`${this.URL}/setIncremental`, json)
+  Ejecutar(texto:any){
+    return this.http.post(`${this.URL}/ejecutar`,{
+      contenido:texto
+    })
   }
 }

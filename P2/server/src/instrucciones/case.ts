@@ -1,5 +1,6 @@
 import { Instruccion } from "../abstractas/instruccion";
 import { TablaSimbolos } from "../datos/tabla_simbolos";
+import { Valor } from "../datos/valor";
 
 export class Case extends Instruccion {
 
@@ -7,17 +8,16 @@ export class Case extends Instruccion {
     constructor(
         public Operacion_booleana: Instruccion,
         public instrucciones: Instruccion,
-        linea: number, columna:number) {
+        linea: number, columna:number) { 
         super(linea,columna);
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
-            
-        //metodo para guardar la variable
     }
+
     public graficar(): any {
         
-        let padre =this.ID+"[label=\""+" CASE "+"\"] \n";
+        let padre =this.ID+"[label=\""+" CASE "+"\"] \n"; 
         let hijo1 =this.Operacion_booleana.graficar()+" \n";
         let hijo2 =this.instrucciones.graficar()+" \n";
 

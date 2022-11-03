@@ -17,6 +17,10 @@ export class Continue extends Instruccion {
        
         //metodo para guardar la variable
     }
+
+    public EsContinue(): boolean {
+        return true
+    }
     public graficar(): any {
         
         let padre =this.ID+"[label=\""+" Casteo "+"\"] \n";

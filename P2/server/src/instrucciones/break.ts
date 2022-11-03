@@ -6,16 +6,21 @@ export class Break extends Instruccion {
 
     constructor(
         public expresion: string,
-        linea: number, columna:number) {
+        linea: number, columna:number) { 
         super(linea,columna);
     }
 
-    public ejecutar(tabla:TablaSimbolos):any {
+    public ejecutar(tabla:TablaSimbolos):any { 
       
             
         
        
         //metodo para guardar la variable
+    }
+
+
+    public EsBreak(): boolean {
+        return true;
     }
     public graficar(): any {
         

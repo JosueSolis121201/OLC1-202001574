@@ -1,23 +1,47 @@
 import { Instruccion } from "../abstractas/instruccion";
 import { TablaSimbolos } from "../datos/tabla_simbolos";
+import { Valor } from "../datos/valor";
 
 export class Acceso_1D extends Instruccion {
 
 
     constructor(    
-        public identificador: string,
-        public valor: string,
+        public identificador: Instruccion, 
+        public valor: number, 
         linea: number, columna:number) {
         super(linea,columna);
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
-            
-    
-       
-        //metodo para guardar la variable
-    }
+        console.log("pasando por acceso vector de una dimension")
 
+        //? identificador = nombre variable
+        //? expresion = pocicion del lista deseada
+        //? nueva_expresion = el nuevo valor que tendra la pocicion buscada anterior
+        
+        // modificar busca en tabla y muestra valor de la lista declarada
+        // elemento es el nombre de la vairable
+            for(let i=0;i<=this.valor;i++){ 
+                if(i==this.valor){
+                    let BUSCANDO_USANDO_NOMBRE_COMPUESTO="arreglonero1"+this.identificador+"s"+i;
+                    console.log(BUSCANDO_USANDO_NOMBRE_COMPUESTO)
+                     // valor y variable                             valor
+                    
+                    let valor_variable=tabla.buscarVariable(BUSCANDO_USANDO_NOMBRE_COMPUESTO);
+                    //valor en tabla con pocicion buscada
+                    let valor=valor_variable.valor;
+                    let tipo=valor_variable.tipo;
+                    console.log("BUSCANDO_USANDO_NOMBRE_COMPUESTO+**++*")
+                    console.log(valor)
+                    console.log(tipo)
+                    console.log("BUSCANDO_USANDO_NOMBRE_COMPUESTO+*+*+*+")
+                    // se guarda la nueva expresion que es = this.nueva_expreison
+                    let nuevoValor=new Valor(valor,tipo);
+                    return nuevoValor
+
+                }
+            }
+    }
     public graficar(): any {
         
         let padre =this.ID+"[label=\""+" ACCESO 1D "+"\"] \n";

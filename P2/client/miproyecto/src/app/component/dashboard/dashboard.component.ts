@@ -8,41 +8,9 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private services : UserService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
-  getdata(){
-    //retorna la informacion
-    this.services.getdata().subscribe(
-      (res:any)=>{
-        console.log(res)
-        alert(res.incremental)
-      },
-      (err)=>{
-        console.log(err);
-      }
-    )
-
-    
-
-  }
-
-
-  setdata(){
-    var json ={
-      dato:30
-    }
-    this.services.setdata(json).subscribe(
-      (res)=>{
-        alert("TODO bien")
-        //insertar todo en un frame donde se vea 
-      },(err)=>{
-        console.log(err);
-      }
-    )
-
-    
-
-  }
+  
 }

@@ -11,11 +11,14 @@ export class Return extends Instruccion {
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
+        return this.expresion.ejecutar(tabla)
       
-          
-        
-       
-        //metodo para guardar la variable
+    }
+
+
+
+    public EsRetorno(){
+        return true;
     }
     public graficar(): any {
         

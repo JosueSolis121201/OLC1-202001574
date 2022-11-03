@@ -1,0 +1,275 @@
+
+
+
+S0 :  S0P EOF  
+        
+
+
+
+
+S0P : S0P S1 
+        | S1 
+      
+
+S1 : ESTRUCTURA 
+
+
+INSTRUCCIONES : INSTRUCCIONES ESTRUCTURA 
+        | ESTRUCTURA 
+
+
+ESTRUCTURA : DECLARACION 
+        | ASIGNACION 
+        | D_VECTORES 
+        | DL_VECTORES  
+        | MODIFICAR_VEC  
+        | IF 
+        | PRINT 
+        | PRINTLN 
+        | SWITCH 
+        | WHILE 
+        | INCREMENTO_MINI 
+        | DECREMENTO_MINI 
+        | FOR 
+        | DO_WHILE 
+        | DO_ULTIL 
+        | BREAK 
+        | CONTINUE 
+        | RETURN 
+        | FUNCION 
+        | METODO 
+        | PUSH  
+        | POP   
+        | RUN   
+        | LLAMADA 
+        | Bloque 
+
+Bloque : llave_A S0P llave_B 
+
+EXPRESION : OPERACION 
+        | CASTEO 
+        | INCREMENTOS 
+        | DECREMENTOS 
+        | menos numero 
+        | LOWER 
+        | UPPER 
+        | ROUND 
+        | LENGTH 
+        | TYPEOF
+        | TOSTRING 
+        | TOCHARARRAY 
+        | LLAMADA_MINI 
+        | TERNARIO 
+        | ACCESO_VEC 
+
+ACCESO_VEC : identificador corchete_A numero corchete_B 
+    | identificador corchete_A numero corchete_B corchete_A numero corchete_B  
+
+
+TERNARIO : OPERACION interrogacion OPERACION dos_puntos OPERACION  
+
+
+LLAMADA_MINI : identificador parentesis_A LISTA_VALORES parentesis_B 
+        | identificador parentesis_A  parentesis_B 
+
+
+LLAMADA : identificador parentesis_A LISTA_VALORES parentesis_B punto_coma 
+
+
+RUN : run identificador parentesis_A parentesis_B punto_coma 
+        | run identificador parentesis_A LISTA_VALORES parentesis_B  punto_coma 
+
+
+POP : identificador punto pop parentesis_A parentesis_B punto_coma 
+
+
+PUSH : identificador punto push parentesis_A EXPRESION parentesis_B punto_coma 
+
+
+TOCHARARRAY : toCharArray parentesis_A EXPRESION parentesis_B
+
+
+TOSTRING : tostring parentesis_A EXPRESION parentesis_B 
+
+
+TYPEOF : typeof parentesis_A EXPRESION parentesis_B 
+
+
+LENGTH : length parentesis_A EXPRESION parentesis_B 
+
+
+ROUND : round parentesis_A EXPRESION parentesis_B 
+
+
+UPPER : toUpper parentesis_A EXPRESION parentesis_B 
+
+
+LOWER : toLower parentesis_A EXPRESION parentesis_B 
+
+
+LISTA_VALORES : LISTA_VALORES coma VALORES
+
+
+ 
+METODO : identificador parentesis_A PARAMETROS parentesis_B dos_puntos void llave_A INSTRUCCIONES llave_B 
+        | identificador parentesis_A PARAMETROS parentesis_B llave_A INSTRUCCIONES llave_B 
+
+        
+FUNCION : identificador parentesis_A PARAMETROS parentesis_B dos_puntos TIPO llave_A INSTRUCCIONES llave_B  
+        
+
+
+PARAMETROS: PARAMETROS coma TIPO identificador
+        | TIPO identificador
+        | 
+
+
+
+
+
+RETURN : return punto_coma 
+        | return EXPRESION 
+
+CONTINUE : continue punto_coma 
+
+
+BREAK : break punto_coma 
+
+INCREMENTO_MINI : identificador incremento punto_coma 
+
+
+DECREMENTO_MINI : identificador decremento punto_coma 
+
+
+PRINT : print parentesis_A EXPRESION parentesis_B punto_coma 
+
+
+PRINTLN : println parentesis_A EXPRESION parentesis_B punto_coma 
+
+
+
+DO_ULTIL : do llave_A INSTRUCCIONES llave_B until parentesis_A OPERACION parentesis_B punto_coma  
+
+DO_WHILE : do llave_A INSTRUCCIONES llave_B while parentesis_A OPERACION parentesis_B punto_coma  
+
+
+FOR : for parentesis_A ESTRUCTURA OPERACION punto_coma EXPRESION parentesis_B llave_A INSTRUCCIONES  llave_B   
+
+
+
+
+
+
+
+
+
+IF : if parentesis_A EXPRESION parentesis_B llave_A INSTRUCCIONES  llave_B ELSE_IF ELSE 
+
+
+ELSE :  else llave_A  INSTRUCCIONES llave_B 
+        |   
+
+
+ELSE_IF : ELSE_IF elif parentesis_A EXPRESION parentesis_B llave_A INSTRUCCIONES llave_B 
+        | 
+
+
+SWITCH : switch parentesis_A EXPRESION parentesis_B llave_A CASE DEFAULT llave_B  
+
+
+DEFAULT :  default dos_puntos  INSTRUCCIONES  
+        |   
+
+
+CASE : CASE case  EXPRESION dos_puntos INSTRUCCIONES 
+        | 
+
+
+WHILE : while parentesis_A EXPRESION parentesis_B llave_A INSTRUCCIONES llave_B  
+
+
+MODIFICAR_VEC : IDENTIFICADORES corchete_A EXPRESION corchete_B igualacion EXPRESION punto_coma 
+        | IDENTIFICADORES corchete_A EXPRESION corchete_B corchete_A EXPRESION corchete_B igualacion EXPRESION punto_coma 
+
+
+DECLARACION : TIPO IDENTIFICADORES punto_coma 
+        | TIPO IDENTIFICADORES igualacion EXPRESION punto_coma 
+
+ 
+DL_VECTORES : TIPO corchete_A corchete_B IDENTIFICADORES igualacion llave_A LISTA_VALORES llave_B punto_coma 
+        | TIPO corchete_A corchete_B corchete_A corchete_B IDENTIFICADORES igualacion llave_A  llave_A LISTA_VALORES llave_B coma llave_A LISTA_VALORES llave_B llave_B punto_coma 
+
+
+D_VECTORES : TIPO corchete_A corchete_B IDENTIFICADORES igualacion new TIPO  corchete_A EXPRESION corchete_B punto_coma 
+        | TIPO corchete_A corchete_B corchete_A corchete_B IDENTIFICADORES igualacion new TIPO  corchete_A EXPRESION corchete_B corchete_A EXPRESION corchete_B punto_coma 
+
+
+ASIGNACION : IDENTIFICADORES igualacion EXPRESION punto_coma 
+
+
+CASTEO : parentesis_A TIPO parentesis_B OPERACION 
+
+
+
+
+INCREMENTOS :  identificador incremento   
+
+
+DECREMENTOS :  identificador decremento            
+
+
+
+
+
+OPERACION : OPERACION OPERADORES VALORES 
+        | VALORES 
+
+
+OPERADORES : mas 
+        | menos 
+        | por 
+        | division 
+        | potencia 
+        | porcentaje 
+        | mayor_igual 
+        | menor_igual 
+        | mayor_que 
+        | menor_que 
+        | igual
+        | diferente 
+        | or 
+        | and 
+        | igualacion 
+
+
+VALORES : numero 
+        | decimal 
+        | identificador 
+        | string 
+        | parentesis_A OPERACION parentesis_B
+        | corchete_A OPERACION corchete_B 
+        | llave_A OPERACION llave_B 
+        | true 
+        | false 
+        | char 
+        
+
+
+
+
+TIPO : prchar 
+        | int 
+        | double 
+        | prstring 
+        | boolean 
+
+
+
+
+IDENTIFICADORES : IDENTIFICADORES coma identificador  
+        |identificador 
+
+
+
+
+
