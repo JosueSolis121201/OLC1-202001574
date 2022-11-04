@@ -17,12 +17,34 @@
         Tabla
     </h1>
     <div>
-        {{
-            diccionario
-        }}
-        {{
-            elementos
-        }}
+        <table class="content-table">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Points</th>
+            <th>linea</th>
+            <th>columna</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr class="content-table" *ngFor="let item of this.diccionario | keyvalue">
+                <td>
+                    {{
+                        item.key
+                    }}
+                </td>
+                <td>
+                    <app-fila [llave] = "'valor'" [objetoValor] = "item.value"></app-fila>
+                </td>
+                <td>
+                    <app-fila [llave] = "'tipo'" [objetoValor] = "item.value"></app-fila>
+                </td>
+                
+            </tr>
+        </tbody>
+        
+    </table>
 
     </div>
 </div>

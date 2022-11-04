@@ -1,12 +1,2131 @@
 digraph G {inicio[label=" S0 "] 
-GRA2205[label=" Declaracion "] 
-GRA2205AAA[label="int"] 
-GRA2204[label=" Identificadores "]
-GRA2204EEE10[label="variable"]
+GRA2[label=" Declaracion "] 
+GRA2AAA[label="int"] 
+GRA1[label=" Identificadores "]
+GRA1EEE10[label="varible_1"]
 
-GRA2204->GRA2204EEE10
-GRA2205->GRA2205AAA
-GRA2205->GRA2204
+GRA1->GRA1EEE10
+GRA2->GRA2AAA
+GRA2->GRA1
 
-inicio->GRA2205
+inicio->GRA2
+GRA5[label=" Declaracion "] 
+GRA5AAA[label="double"] 
+GRA4[label=" Identificadores "]
+GRA4EEE10[label="varible_2"]
+
+GRA4->GRA4EEE10
+GRA5->GRA5AAA
+GRA5->GRA4
+
+inicio->GRA5
+GRA7[label=" Declaracion "] 
+GRA7AAA[label="boolean"] 
+GRA6[label=" Identificadores "]
+GRA6EEE10[label="varible_3"]
+
+GRA6->GRA6EEE10
+GRA7->GRA7AAA
+GRA7->GRA6
+
+inicio->GRA7
+GRA9[label=" Declaracion "] 
+GRA9AAA[label="char"] 
+GRA8[label=" Identificadores "]
+GRA8EEE10[label="varible_4"]
+
+GRA8->GRA8EEE10
+GRA9->GRA9AAA
+GRA9->GRA8
+
+inicio->GRA9
+GRA11[label=" Declaracion "] 
+GRA11AAA[label="string"] 
+GRA10[label=" Identificadores "]
+GRA10EEE10[label="varible_5"]
+
+GRA10->GRA10EEE10
+GRA11->GRA11AAA
+GRA11->GRA10
+
+inicio->GRA11
+GRA13[label=" Declaracion "] 
+GRA13AAA[label="int"] 
+GRA12[label=" Identificadores "]
+GRA12EEE10[label="varible_1"]
+
+GRA12->GRA12EEE10
+GRA12[label=" Identificadores "]
+GRA12EEE10[label="varible_1"]
+GRA12EEE11[label="varible_11"]
+
+GRA12->GRA12EEE11
+GRA13->GRA13AAA
+GRA13->GRA12
+
+inicio->GRA13
+GRA15[label=" Declaracion "] 
+GRA15AAA[label="double"] 
+GRA14[label=" Identificadores "]
+GRA14EEE10[label="varible_2"]
+
+GRA14->GRA14EEE10
+GRA14[label=" Identificadores "]
+GRA14EEE10[label="varible_2"]
+GRA14EEE11[label="varible_22"]
+
+GRA14->GRA14EEE11
+GRA15->GRA15AAA
+GRA15->GRA14
+
+inicio->GRA15
+GRA17[label=" Declaracion "] 
+GRA17AAA[label="boolean"] 
+GRA16[label=" Identificadores "]
+GRA16EEE10[label="varible_3"]
+
+GRA16->GRA16EEE10
+GRA16[label=" Identificadores "]
+GRA16EEE10[label="varible_3"]
+GRA16EEE11[label="varible_33"]
+
+GRA16->GRA16EEE11
+GRA17->GRA17AAA
+GRA17->GRA16
+
+inicio->GRA17
+GRA19[label=" Declaracion "] 
+GRA19AAA[label="char"] 
+GRA18[label=" Identificadores "]
+GRA18EEE10[label="varible_4"]
+
+GRA18->GRA18EEE10
+GRA18[label=" Identificadores "]
+GRA18EEE10[label="varible_4"]
+GRA18EEE11[label="varible_44"]
+
+GRA18->GRA18EEE11
+GRA19->GRA19AAA
+GRA19->GRA18
+
+inicio->GRA19
+GRA21[label=" Declaracion "] 
+GRA21AAA[label="string"] 
+GRA20[label=" Identificadores "]
+GRA20EEE10[label="varible_5"]
+
+GRA20->GRA20EEE10
+GRA20[label=" Identificadores "]
+GRA20EEE10[label="varible_5"]
+GRA20EEE11[label="varible_55"]
+
+GRA20->GRA20EEE11
+GRA21->GRA21AAA
+GRA21->GRA20
+
+inicio->GRA21
+GRA24[label=" Declaracion "] 
+GRA24AAA[label="int"] 
+GRA22[label=" Identificadores "]
+GRA22EEE10[label="var_1"]
+
+GRA22->GRA22EEE10
+GRA23[label=" Primitivo: 12"] 
+GRA24->GRA24AAA
+GRA24->GRA22
+GRA24->GRA23
+
+inicio->GRA24
+GRA29[label=" Declaracion "] 
+GRA29AAA[label="int"] 
+GRA25[label=" Identificadores "]
+GRA25EEE10[label="tm1_"]
+
+GRA25->GRA25EEE10
+GRA25[label=" Identificadores "]
+GRA25EEE10[label="tm1_"]
+GRA25EEE11[label="tmp2_"]
+
+GRA25->GRA25EEE11
+GRA25[label=" Identificadores "]
+GRA25EEE10[label="tm1_"]
+GRA25EEE11[label="tmp2_"]
+GRA25EEE12[label="tmp3_"]
+
+GRA25->GRA25EEE12
+GRA25[label=" Identificadores "]
+GRA25EEE10[label="tm1_"]
+GRA25EEE11[label="tmp2_"]
+GRA25EEE12[label="tmp3_"]
+GRA25EEE13[label="tmp4_"]
+
+GRA25->GRA25EEE13
+GRA28[label=" Operadores "] 
+GRA26[label=" Primitivo: 12"] 
+GRA27[label=" Primitivo: 5"] 
+GRA28ACCC[label="+"] 
+GRA28->GRA27
+GRA28->GRA26
+GRA28->GRA28ACCC
+GRA29->GRA29AAA
+GRA29->GRA25
+GRA29->GRA28
+
+inicio->GRA29
+GRA32[label=" Declaracion "] 
+GRA32AAA[label="double"] 
+GRA30[label=" Identificadores "]
+GRA30EEE10[label="var_2"]
+
+GRA30->GRA30EEE10
+GRA31[label=" Primitivo: 15.02"] 
+GRA32->GRA32AAA
+GRA32->GRA30
+GRA32->GRA31
+
+inicio->GRA32
+GRA35[label=" Declaracion "] 
+GRA35AAA[label="double"] 
+GRA33[label=" Identificadores "]
+GRA33EEE10[label="var_2_1"]
+
+GRA33->GRA33EEE10
+GRA34[label=" Primitivo: 2022"] 
+GRA35->GRA35AAA
+GRA35->GRA33
+GRA35->GRA34
+
+inicio->GRA35
+GRA38[label=" Declaracion "] 
+GRA38AAA[label="double"] 
+GRA36[label=" Identificadores "]
+GRA36EEE10[label="var_2_2"]
+
+GRA36->GRA36EEE10
+GRA37[label=" Primitivo: 0.1"] 
+GRA38->GRA38AAA
+GRA38->GRA36
+GRA38->GRA37
+
+inicio->GRA38
+GRA41[label=" Declaracion "] 
+GRA41AAA[label="double"] 
+GRA39[label=" Identificadores "]
+GRA39EEE10[label="var_2_3"]
+
+GRA39->GRA39EEE10
+GRA40[label=" Primitivo: 1"] 
+GRA41->GRA41AAA
+GRA41->GRA39
+GRA41->GRA40
+
+inicio->GRA41
+GRA44[label=" Declaracion "] 
+GRA44AAA[label="double"] 
+GRA42[label=" Identificadores "]
+GRA42EEE10[label="var_2_4"]
+
+GRA42->GRA42EEE10
+GRA43[label=" Primitivo: 51.1589462625459"] 
+GRA44->GRA44AAA
+GRA44->GRA42
+GRA44->GRA43
+
+inicio->GRA44
+GRA47[label=" Declaracion "] 
+GRA47AAA[label="boolean"] 
+GRA45[label=" Identificadores "]
+GRA45EEE10[label="var_3"]
+
+GRA45->GRA45EEE10
+GRA46[label=" Primitivo: true"] 
+GRA47->GRA47AAA
+GRA47->GRA45
+GRA47->GRA46
+
+inicio->GRA47
+GRA50[label=" Declaracion "] 
+GRA50AAA[label="boolean"] 
+GRA48[label=" Identificadores "]
+GRA48EEE10[label="var_3_1"]
+
+GRA48->GRA48EEE10
+GRA49[label=" Primitivo: true"] 
+GRA50->GRA50AAA
+GRA50->GRA48
+GRA50->GRA49
+
+inicio->GRA50
+GRA53[label=" Declaracion "] 
+GRA53AAA[label="char"] 
+GRA51[label=" Identificadores "]
+GRA51EEE10[label="var_4_1"]
+
+GRA51->GRA51EEE10
+GRA52[label=" Primitivo: 'a'"] 
+GRA53->GRA53AAA
+GRA53->GRA51
+GRA53->GRA52
+
+inicio->GRA53
+GRA56[label=" Declaracion "] 
+GRA56AAA[label="char"] 
+GRA54[label=" Identificadores "]
+GRA54EEE10[label="var_4_2"]
+
+GRA54->GRA54EEE10
+GRA55[label=" Primitivo: '2'"] 
+GRA56->GRA56AAA
+GRA56->GRA54
+GRA56->GRA55
+
+inicio->GRA56
+GRA59[label=" Declaracion "] 
+GRA59AAA[label="char"] 
+GRA57[label=" Identificadores "]
+GRA57EEE10[label="var_4_3"]
+
+GRA57->GRA57EEE10
+GRA58[label=" Primitivo: 'W'"] 
+GRA59->GRA59AAA
+GRA59->GRA57
+GRA59->GRA58
+
+inicio->GRA59
+GRA62[label=" Declaracion "] 
+GRA62AAA[label="char"] 
+GRA60[label=" Identificadores "]
+GRA60EEE10[label="var_4_4"]
+
+GRA60->GRA60EEE10
+GRA61[label=" Primitivo: '@'"] 
+GRA62->GRA62AAA
+GRA62->GRA60
+GRA62->GRA61
+
+inicio->GRA62
+GRA65[label=" Declaracion "] 
+GRA65AAA[label="char"] 
+GRA63[label=" Identificadores "]
+GRA63EEE10[label="var_4_5"]
+
+GRA63->GRA63EEE10
+GRA64[label=" Primitivo: '!'"] 
+GRA65->GRA65AAA
+GRA65->GRA63
+GRA65->GRA64
+
+inicio->GRA65
+GRA68[label=" Declaracion "] 
+GRA68AAA[label="char"] 
+GRA66[label=" Identificadores "]
+GRA66EEE10[label="var_4_6"]
+
+GRA66->GRA66EEE10
+GRA67[label=" Primitivo: '%'"] 
+GRA68->GRA68AAA
+GRA68->GRA66
+GRA68->GRA67
+
+inicio->GRA68
+GRA71[label=" Declaracion "] 
+GRA71AAA[label="char"] 
+GRA69[label=" Identificadores "]
+GRA69EEE10[label="var_4_7"]
+
+GRA69->GRA69EEE10
+GRA70[label=" Primitivo: '/'"] 
+GRA71->GRA71AAA
+GRA71->GRA69
+GRA71->GRA70
+
+inicio->GRA71
+GRA74[label=" Declaracion "] 
+GRA74AAA[label="string"] 
+GRA72[label=" Identificadores "]
+GRA72EEE10[label="var_5_1"]
+
+GRA72->GRA72EEE10
+GRA73[label=" Primitivo: Hola"] 
+GRA74->GRA74AAA
+GRA74->GRA72
+GRA74->GRA73
+
+inicio->GRA74
+GRA77[label=" Declaracion "] 
+GRA77AAA[label="string"] 
+GRA75[label=" Identificadores "]
+GRA75EEE10[label="var_5_2"]
+
+GRA75->GRA75EEE10
+GRA76[label=" Primitivo: Mundo"] 
+GRA77->GRA77AAA
+GRA77->GRA75
+GRA77->GRA76
+
+inicio->GRA77
+GRA80[label=" Declaracion "] 
+GRA80AAA[label="string"] 
+GRA78[label=" Identificadores "]
+GRA78EEE10[label="var_5_3"]
+
+GRA78->GRA78EEE10
+GRA79[label=" Primitivo: este es un mensaje @"] 
+GRA80->GRA80AAA
+GRA80->GRA78
+GRA80->GRA79
+
+inicio->GRA80
+GRA83[label=" Declaracion "] 
+GRA83AAA[label="string"] 
+GRA81[label=" Identificadores "]
+GRA81EEE10[label="var_5_4"]
+
+GRA81->GRA81EEE10
+GRA82[label=" Primitivo: Organizacion de lenguajes y compiladores1"] 
+GRA83->GRA83AAA
+GRA83->GRA81
+GRA83->GRA82
+
+inicio->GRA83
+GRA86[label=" Declaracion "] 
+GRA86AAA[label="string"] 
+GRA84[label=" Identificadores "]
+GRA84EEE10[label="var_5_5"]
+
+GRA84->GRA84EEE10
+GRA85[label=" Primitivo: Compiladores\n1"] 
+GRA86->GRA86AAA
+GRA86->GRA84
+GRA86->GRA85
+
+inicio->GRA86
+GRA89[label=" Declaracion "] 
+GRA89AAA[label="string"] 
+GRA87[label=" Identificadores "]
+GRA87EEE10[label="var_5_6"]
+
+GRA87->GRA87EEE10
+GRA88[label=" Primitivo: Compiladores\\1\\"] 
+GRA89->GRA89AAA
+GRA89->GRA87
+GRA89->GRA88
+
+inicio->GRA89
+GRA92[label=" Declaracion "] 
+GRA92AAA[label="string"] 
+GRA90[label=" Identificadores "]
+GRA90EEE10[label="var_5_8"]
+
+GRA90->GRA90EEE10
+GRA91[label=" Primitivo: \tCompiladores 1"] 
+GRA92->GRA92AAA
+GRA92->GRA90
+GRA92->GRA91
+
+inicio->GRA92
+GRA95[label=" Declaracion "] 
+GRA95AAA[label="string"] 
+GRA93[label=" Identificadores "]
+GRA93EEE10[label="var_5_9"]
+
+GRA93->GRA93EEE10
+GRA94[label=" Primitivo: \'compiladores 1\'"] 
+GRA95->GRA95AAA
+GRA95->GRA93
+GRA95->GRA94
+
+inicio->GRA95
+GRA114[label=" Asignacion "] 
+GRA96[label=" Identificadores "]
+GRA96EEE10[label="var_1"]
+
+GRA96->GRA96EEE10
+GRA113[label=" Operadores "] 
+GRA111[label=" Operadores "] 
+GRA109[label=" Operadores "] 
+GRA107[label=" Operadores "] 
+GRA105[label=" Operadores "] 
+GRA103[label=" Operadores "] 
+GRA101[label=" Operadores "] 
+GRA99[label=" Operadores "] 
+GRA97[label=" Primitivo: 1"] 
+GRA98[label=" Primitivo: 2"] 
+GRA99ACCC[label="+"] 
+GRA99->GRA98
+GRA99->GRA97
+GRA99->GRA99ACCC
+GRA100[label=" Primitivo: 3"] 
+GRA101ACCC[label="-"] 
+GRA101->GRA100
+GRA101->GRA99
+GRA101->GRA101ACCC
+GRA102[label=" Primitivo: 4"] 
+GRA103ACCC[label="+"] 
+GRA103->GRA102
+GRA103->GRA101
+GRA103->GRA103ACCC
+GRA104[label=" Primitivo: 5"] 
+GRA105ACCC[label="-"] 
+GRA105->GRA104
+GRA105->GRA103
+GRA105->GRA105ACCC
+GRA106[label=" Primitivo: 6"] 
+GRA107ACCC[label="+"] 
+GRA107->GRA106
+GRA107->GRA105
+GRA107->GRA107ACCC
+GRA108[label=" Primitivo: 7"] 
+GRA109ACCC[label="-"] 
+GRA109->GRA108
+GRA109->GRA107
+GRA109->GRA109ACCC
+GRA110[label=" Primitivo: 8"] 
+GRA111ACCC[label="+"] 
+GRA111->GRA110
+GRA111->GRA109
+GRA111->GRA111ACCC
+GRA112[label=" Primitivo: 9"] 
+GRA113ACCC[label="-"] 
+GRA113->GRA112
+GRA113->GRA111
+GRA113->GRA113ACCC
+
+GRA114->GRA96
+GRA114->GRA113
+
+inicio->GRA114
+GRA133[label=" Asignacion "] 
+GRA115[label=" Identificadores "]
+GRA115EEE10[label="var_1"]
+
+GRA115->GRA115EEE10
+GRA132[label=" Operadores "] 
+GRA122[label=" Operadores "] 
+GRA120[label=" Operadores "] 
+GRA118[label=" Operadores "] 
+GRA116[label=" Primitivo: 1"] 
+GRA117[label=" Primitivo: 2"] 
+GRA118ACCC[label="+"] 
+GRA118->GRA117
+GRA118->GRA116
+GRA118->GRA118ACCC
+GRA119[label=" Primitivo: 3"] 
+GRA120ACCC[label="+"] 
+GRA120->GRA119
+GRA120->GRA118
+GRA120->GRA120ACCC
+GRA121[label=" Primitivo: 4"] 
+GRA122ACCC[label="+"] 
+GRA122->GRA121
+GRA122->GRA120
+GRA122->GRA122ACCC
+GRA131[label=" Operadores "] 
+GRA129[label=" Operadores "] 
+GRA127[label=" Operadores "] 
+GRA125[label=" Operadores "] 
+GRA123[label=" Primitivo: 5"] 
+GRA124[label=" Primitivo: 6"] 
+GRA125ACCC[label="+"] 
+GRA125->GRA124
+GRA125->GRA123
+GRA125->GRA125ACCC
+GRA126[label=" Primitivo: 7"] 
+GRA127ACCC[label="+"] 
+GRA127->GRA126
+GRA127->GRA125
+GRA127->GRA127ACCC
+GRA128[label=" Primitivo: 8"] 
+GRA129ACCC[label="+"] 
+GRA129->GRA128
+GRA129->GRA127
+GRA129->GRA129ACCC
+GRA130[label=" Primitivo: 9"] 
+GRA131ACCC[label="+"] 
+GRA131->GRA130
+GRA131->GRA129
+GRA131->GRA131ACCC
+GRA132ACCC[label="+"] 
+GRA132->GRA131
+GRA132->GRA122
+GRA132->GRA132ACCC
+
+GRA133->GRA115
+GRA133->GRA132
+
+inicio->GRA133
+GRA148[label=" Asignacion "] 
+GRA134[label=" Identificadores "]
+GRA134EEE10[label="var_1"]
+
+GRA134->GRA134EEE10
+GRA147[label=" Operadores "] 
+GRA145[label=" Operadores "] 
+GRA143[label=" Operadores "] 
+GRA141[label=" Operadores "] 
+GRA139[label=" Operadores "] 
+GRA137[label=" Operadores "] 
+GRA135[label=" Primitivo: 1"] 
+GRA136[label=" Primitivo: 2"] 
+GRA137ACCC[label="+"] 
+GRA137->GRA136
+GRA137->GRA135
+GRA137->GRA137ACCC
+GRA138[label=" Primitivo: 3"] 
+GRA139ACCC[label="*"] 
+GRA139->GRA138
+GRA139->GRA137
+GRA139->GRA139ACCC
+GRA140[label=" Primitivo: 4"] 
+GRA141ACCC[label="+"] 
+GRA141->GRA140
+GRA141->GRA139
+GRA141->GRA141ACCC
+GRA142[label=" Primitivo: 8"] 
+GRA143ACCC[label="*"] 
+GRA143->GRA142
+GRA143->GRA141
+GRA143->GRA143ACCC
+GRA144[label=" Primitivo: 8"] 
+GRA145ACCC[label="/"] 
+GRA145->GRA144
+GRA145->GRA143
+GRA145->GRA145ACCC
+GRA146[label=" Primitivo: 5789"] 
+GRA147ACCC[label="%"] 
+GRA147->GRA146
+GRA147->GRA145
+GRA147->GRA147ACCC
+
+GRA148->GRA134
+GRA148->GRA147
+
+inicio->GRA148
+GRA169[label=" Asignacion "] 
+GRA149[label=" Identificadores "]
+GRA149EEE10[label="var_3"]
+
+GRA149->GRA149EEE10
+GRA168[label=" Operadores "] 
+GRA166[label=" Operadores "] 
+GRA164[label=" Operadores "] 
+GRA162[label=" Operadores "] 
+GRA160[label=" Operadores "] 
+GRA158[label=" Operadores "] 
+GRA156[label=" Operadores "] 
+GRA154[label=" Operadores "] 
+GRA152[label=" Operadores "] 
+GRA150[label=" Primitivo: 5"] 
+GRA151[label=" Primitivo: 5"] 
+GRA152ACCC[label="+"] 
+GRA152->GRA151
+GRA152->GRA150
+GRA152->GRA152ACCC
+GRA153[label=" Primitivo: 8"] 
+GRA154ACCC[label="-"] 
+GRA154->GRA153
+GRA154->GRA152
+GRA154->GRA154ACCC
+GRA155[label=" Primitivo: 6"] 
+GRA156ACCC[label="+"] 
+GRA156->GRA155
+GRA156->GRA154
+GRA156->GRA156ACCC
+GRA157[label=" Primitivo: 8"] 
+GRA158ACCC[label="*"] 
+GRA158->GRA157
+GRA158->GRA156
+GRA158->GRA158ACCC
+GRA159[label=" Primitivo: 1"] 
+GRA160ACCC[label="+"] 
+GRA160->GRA159
+GRA160->GRA158
+GRA160->GRA160ACCC
+GRA161[label=" Primitivo: 7"] 
+GRA162ACCC[label="/"] 
+GRA162->GRA161
+GRA162->GRA160
+GRA162->GRA162ACCC
+GRA163[label=" Primitivo: 9"] 
+GRA164ACCC[label="%"] 
+GRA164->GRA163
+GRA164->GRA162
+GRA164->GRA164ACCC
+GRA165[label=" Primitivo: 45"] 
+GRA166ACCC[label="-"] 
+GRA166->GRA165
+GRA166->GRA164
+GRA166->GRA166ACCC
+GRA167[label=" Primitivo: 6"] 
+GRA168ACCC[label=">"] 
+GRA168->GRA167
+GRA168->GRA166
+GRA168->GRA168ACCC
+
+GRA169->GRA149
+GRA169->GRA168
+
+inicio->GRA169
+GRA190[label=" Asignacion "] 
+GRA170[label=" Identificadores "]
+GRA170EEE10[label="var_3"]
+
+GRA170->GRA170EEE10
+GRA189[label=" Operadores "] 
+GRA187[label=" Operadores "] 
+GRA185[label=" Operadores "] 
+GRA183[label=" Operadores "] 
+GRA181[label=" Operadores "] 
+GRA179[label=" Operadores "] 
+GRA177[label=" Operadores "] 
+GRA175[label=" Operadores "] 
+GRA173[label=" Operadores "] 
+GRA171[label=" Primitivo: 6"] 
+GRA172[label=" Primitivo: 4"] 
+GRA173ACCC[label="+"] 
+GRA173->GRA172
+GRA173->GRA171
+GRA173->GRA173ACCC
+GRA174[label=" Primitivo: 7"] 
+GRA175ACCC[label="-"] 
+GRA175->GRA174
+GRA175->GRA173
+GRA175->GRA175ACCC
+GRA176[label=" Primitivo: 9"] 
+GRA177ACCC[label="+"] 
+GRA177->GRA176
+GRA177->GRA175
+GRA177->GRA177ACCC
+GRA178[label=" Primitivo: 8"] 
+GRA179ACCC[label="*"] 
+GRA179->GRA178
+GRA179->GRA177
+GRA179->GRA179ACCC
+GRA180[label=" Primitivo: 9"] 
+GRA181ACCC[label="*"] 
+GRA181->GRA180
+GRA181->GRA179
+GRA181->GRA181ACCC
+GRA182[label=" Primitivo: 7"] 
+GRA183ACCC[label="/"] 
+GRA183->GRA182
+GRA183->GRA181
+GRA183->GRA183ACCC
+GRA184[label=" Primitivo: 9"] 
+GRA185ACCC[label="%"] 
+GRA185->GRA184
+GRA185->GRA183
+GRA185->GRA185ACCC
+GRA186[label=" Primitivo: 45"] 
+GRA187ACCC[label="+"] 
+GRA187->GRA186
+GRA187->GRA185
+GRA187->GRA187ACCC
+GRA188[label=" Primitivo: 6"] 
+GRA189ACCC[label="<"] 
+GRA189->GRA188
+GRA189->GRA187
+GRA189->GRA189ACCC
+
+GRA190->GRA170
+GRA190->GRA189
+
+inicio->GRA190
+GRA211[label=" Asignacion "] 
+GRA191[label=" Identificadores "]
+GRA191EEE10[label="var_3"]
+
+GRA191->GRA191EEE10
+GRA210[label=" Operadores "] 
+GRA208[label=" Operadores "] 
+GRA206[label=" Operadores "] 
+GRA204[label=" Operadores "] 
+GRA202[label=" Operadores "] 
+GRA200[label=" Operadores "] 
+GRA198[label=" Operadores "] 
+GRA196[label=" Operadores "] 
+GRA194[label=" Operadores "] 
+GRA192[label=" Primitivo: 7"] 
+GRA193[label=" Primitivo: 3"] 
+GRA194ACCC[label="+"] 
+GRA194->GRA193
+GRA194->GRA192
+GRA194->GRA194ACCC
+GRA195[label=" Primitivo: 8"] 
+GRA196ACCC[label="-"] 
+GRA196->GRA195
+GRA196->GRA194
+GRA196->GRA196ACCC
+GRA197[label=" Primitivo: 6"] 
+GRA198ACCC[label="+"] 
+GRA198->GRA197
+GRA198->GRA196
+GRA198->GRA198ACCC
+GRA199[label=" Primitivo: 8"] 
+GRA200ACCC[label="*"] 
+GRA200->GRA199
+GRA200->GRA198
+GRA200->GRA200ACCC
+GRA201[label=" Primitivo: 6"] 
+GRA202ACCC[label="+"] 
+GRA202->GRA201
+GRA202->GRA200
+GRA202->GRA202ACCC
+GRA203[label=" Primitivo: 7"] 
+GRA204ACCC[label="/"] 
+GRA204->GRA203
+GRA204->GRA202
+GRA204->GRA204ACCC
+GRA205[label=" Primitivo: 9"] 
+GRA206ACCC[label="%"] 
+GRA206->GRA205
+GRA206->GRA204
+GRA206->GRA206ACCC
+GRA207[label=" Primitivo: 45"] 
+GRA208ACCC[label="-"] 
+GRA208->GRA207
+GRA208->GRA206
+GRA208->GRA208ACCC
+GRA209[label=" Primitivo: 6"] 
+GRA210ACCC[label=">="] 
+GRA210->GRA209
+GRA210->GRA208
+GRA210->GRA210ACCC
+
+GRA211->GRA191
+GRA211->GRA210
+
+inicio->GRA211
+GRA232[label=" Asignacion "] 
+GRA212[label=" Identificadores "]
+GRA212EEE10[label="var_3"]
+
+GRA212->GRA212EEE10
+GRA231[label=" Operadores "] 
+GRA229[label=" Operadores "] 
+GRA227[label=" Operadores "] 
+GRA225[label=" Operadores "] 
+GRA223[label=" Operadores "] 
+GRA221[label=" Operadores "] 
+GRA219[label=" Operadores "] 
+GRA217[label=" Operadores "] 
+GRA215[label=" Operadores "] 
+GRA213[label=" Primitivo: 8"] 
+GRA214[label=" Primitivo: 2"] 
+GRA215ACCC[label="+"] 
+GRA215->GRA214
+GRA215->GRA213
+GRA215->GRA215ACCC
+GRA216[label=" Primitivo: 7"] 
+GRA217ACCC[label="-"] 
+GRA217->GRA216
+GRA217->GRA215
+GRA217->GRA217ACCC
+GRA218[label=" Primitivo: 9"] 
+GRA219ACCC[label="+"] 
+GRA219->GRA218
+GRA219->GRA217
+GRA219->GRA219ACCC
+GRA220[label=" Primitivo: 8"] 
+GRA221ACCC[label="*"] 
+GRA221->GRA220
+GRA221->GRA219
+GRA221->GRA221ACCC
+GRA222[label=" Primitivo: 9"] 
+GRA223ACCC[label="-"] 
+GRA223->GRA222
+GRA223->GRA221
+GRA223->GRA223ACCC
+GRA224[label=" Primitivo: 7"] 
+GRA225ACCC[label="/"] 
+GRA225->GRA224
+GRA225->GRA223
+GRA225->GRA225ACCC
+GRA226[label=" Primitivo: 9"] 
+GRA227ACCC[label="%"] 
+GRA227->GRA226
+GRA227->GRA225
+GRA227->GRA227ACCC
+GRA228[label=" Primitivo: 45"] 
+GRA229ACCC[label="+"] 
+GRA229->GRA228
+GRA229->GRA227
+GRA229->GRA229ACCC
+GRA230[label=" Primitivo: 6"] 
+GRA231ACCC[label="<="] 
+GRA231->GRA230
+GRA231->GRA229
+GRA231->GRA231ACCC
+
+GRA232->GRA212
+GRA232->GRA231
+
+inicio->GRA232
+GRA236[label=" Declaracion "] 
+GRA236AAA[label="int"] 
+GRA233[label=" Identificadores "]
+GRA233EEE10[label="v_5"]
+
+GRA233->GRA233EEE10
+GRA235[label=" Casteo "] 
+GRA235ADD[label="int"] 
+GRA234[label=" Primitivo: hola"] 
+ 
+GRA235->GRA235ADD
+GRA235->GRA234
+GRA236->GRA236AAA
+GRA236->GRA233
+GRA236->GRA235
+
+inicio->GRA236
+GRA242[label=" Declaracion "] 
+GRA242AAA[label="string"] 
+GRA237[label=" Identificadores "]
+GRA237EEE10[label="v_1"]
+
+GRA237->GRA237EEE10
+GRA241[label=" Casteo "] 
+GRA241ADD[label="string"] 
+GRA240[label=" Operadores "] 
+GRA238[label=" Primitivo: 12"] 
+GRA239[label=" Primitivo: 8"] 
+GRA240ACCC[label="%"] 
+GRA240->GRA239
+GRA240->GRA238
+GRA240->GRA240ACCC
+ 
+GRA241->GRA241ADD
+GRA241->GRA240
+GRA242->GRA242AAA
+GRA242->GRA237
+GRA242->GRA241
+
+inicio->GRA242
+GRA246[label=" Declaracion "] 
+GRA246AAA[label="char"] 
+GRA243[label=" Identificadores "]
+GRA243EEE10[label="v_3"]
+
+GRA243->GRA243EEE10
+GRA245[label=" Casteo "] 
+GRA245ADD[label="char"] 
+GRA244[label=" Primitivo: true"] 
+ 
+GRA245->GRA245ADD
+GRA245->GRA244
+GRA246->GRA246AAA
+GRA246->GRA243
+GRA246->GRA245
+
+inicio->GRA246
+GRA250[label=" Declaracion "] 
+GRA250AAA[label="char"] 
+GRA247[label=" Identificadores "]
+GRA247EEE10[label="v_4"]
+
+GRA247->GRA247EEE10
+GRA249[label=" Casteo "] 
+GRA249ADD[label="char"] 
+GRA248[label=" Primitivo: 'A'"] 
+ 
+GRA249->GRA249ADD
+GRA249->GRA248
+GRA250->GRA250AAA
+GRA250->GRA247
+GRA250->GRA249
+
+inicio->GRA250
+GRA313[label=" Funcion "] 
+GRA313FUNC[label="division"] 
+GRA251[label=" LIST PARAMETROS"]
+ 
+GRA313FUNCI[label="string"] 
+GRA258[label=" INSTRUCCIONES"]
+GRA258[label=" INSTRUCCIONES"]
+GRA257[label=" Declaracion "] 
+GRA257AAA[label="string"] 
+GRA252[label=" Identificadores "]
+GRA252EEE10[label="v_2"]
+
+GRA252->GRA252EEE10
+GRA256[label=" Casteo "] 
+GRA256ADD[label="string"] 
+GRA255[label=" Operadores "] 
+GRA253[label=" Primitivo: 12.25"] 
+GRA254[label=" Primitivo: 1.2"] 
+GRA255ACCC[label="+"] 
+GRA255->GRA254
+GRA255->GRA253
+GRA255->GRA255ACCC
+ 
+GRA256->GRA256ADD
+GRA256->GRA255
+GRA257->GRA257AAA
+GRA257->GRA252
+GRA257->GRA256
+
+GRA258->GRA257
+GRA258[label=" INSTRUCCIONES"]
+GRA262[label=" Declaracion "] 
+GRA262AAA[label="string"] 
+GRA259[label=" Identificadores "]
+GRA259EEE10[label="v_3"]
+
+GRA259->GRA259EEE10
+GRA261[label=" Casteo "] 
+GRA261ADD[label="string"] 
+GRA260[label=" Primitivo: true"] 
+ 
+GRA261->GRA261ADD
+GRA261->GRA260
+GRA262->GRA262AAA
+GRA262->GRA259
+GRA262->GRA261
+
+GRA258->GRA262
+GRA258[label=" INSTRUCCIONES"]
+GRA266[label=" Declaracion "] 
+GRA266AAA[label="string"] 
+GRA263[label=" Identificadores "]
+GRA263EEE10[label="v_4"]
+
+GRA263->GRA263EEE10
+GRA265[label=" Casteo "] 
+GRA265ADD[label="string"] 
+GRA264[label=" Primitivo: 'A'"] 
+ 
+GRA265->GRA265ADD
+GRA265->GRA264
+GRA266->GRA266AAA
+GRA266->GRA263
+GRA266->GRA265
+
+GRA258->GRA266
+GRA258[label=" INSTRUCCIONES"]
+GRA268[label=" RETUNR "] 
+GRA267[label=" Primitivo: olc1"] 
+GRA268->GRA267
+
+GRA258->GRA268
+GRA258[label=" INSTRUCCIONES"]
+GRA272[label=" Declaracion "] 
+GRA272AAA[label="boolean"] 
+GRA269[label=" Identificadores "]
+GRA269EEE10[label="v_2"]
+
+GRA269->GRA269EEE10
+GRA271[label=" Casteo "] 
+GRA271ADD[label="boolean"] 
+GRA270[label=" Primitivo: 12.25"] 
+ 
+GRA271->GRA271ADD
+GRA271->GRA270
+GRA272->GRA272AAA
+GRA272->GRA269
+GRA272->GRA271
+
+GRA258->GRA272
+GRA258[label=" INSTRUCCIONES"]
+GRA276[label=" Declaracion "] 
+GRA276AAA[label="string"] 
+GRA273[label=" Identificadores "]
+GRA273EEE10[label="a_1"]
+
+GRA273->GRA273EEE10
+GRA275[label=" TYPEOF "] 
+GRA274[label=" Primitivo: 15"] 
+ 
+GRA275->GRA274
+GRA276->GRA276AAA
+GRA276->GRA273
+GRA276->GRA275
+
+GRA258->GRA276
+GRA258[label=" INSTRUCCIONES"]
+GRA282[label=" Declaracion "] 
+GRA282AAA[label="string"] 
+GRA277[label=" Identificadores "]
+GRA277EEE10[label="a_2"]
+
+GRA277->GRA277EEE10
+GRA281[label=" TYPEOF "] 
+GRA280[label=" Operadores "] 
+GRA278[label=" Primitivo: 15"] 
+GRA279[label=" Primitivo: 6.5"] 
+GRA280ACCC[label="+"] 
+GRA280->GRA279
+GRA280->GRA278
+GRA280->GRA280ACCC
+ 
+GRA281->GRA280
+GRA282->GRA282AAA
+GRA282->GRA277
+GRA282->GRA281
+
+GRA258->GRA282
+GRA258[label=" INSTRUCCIONES"]
+GRA286[label=" Declaracion "] 
+GRA286AAA[label="string"] 
+GRA283[label=" Identificadores "]
+GRA283EEE10[label="a_3"]
+
+GRA283->GRA283EEE10
+GRA285[label=" TYPEOF "] 
+GRA284[label=" Primitivo: 'a'"] 
+ 
+GRA285->GRA284
+GRA286->GRA286AAA
+GRA286->GRA283
+GRA286->GRA285
+
+GRA258->GRA286
+GRA258[label=" INSTRUCCIONES"]
+GRA290[label=" Declaracion "] 
+GRA290AAA[label="string"] 
+GRA287[label=" Identificadores "]
+GRA287EEE10[label="a_4"]
+
+GRA287->GRA287EEE10
+GRA289[label=" TYPEOF "] 
+GRA288[label=" Primitivo: true"] 
+ 
+GRA289->GRA288
+GRA290->GRA290AAA
+GRA290->GRA287
+GRA290->GRA289
+
+GRA258->GRA290
+GRA258[label=" INSTRUCCIONES"]
+GRA294[label=" Declaracion "] 
+GRA294AAA[label="string"] 
+GRA291[label=" Identificadores "]
+GRA291EEE10[label="a_5"]
+
+GRA291->GRA291EEE10
+GRA293[label=" TYPEOF "] 
+GRA292[label=" Primitivo: dsafdsa"] 
+ 
+GRA293->GRA292
+GRA294->GRA294AAA
+GRA294->GRA291
+GRA294->GRA293
+
+GRA258->GRA294
+GRA258[label=" INSTRUCCIONES"]
+GRA298[label=" Declaracion "] 
+GRA298AAA[label="string"] 
+GRA295[label=" Identificadores "]
+GRA295EEE10[label="a_5"]
+
+GRA295->GRA295EEE10
+GRA297[label=" TOSTRING "] 
+GRA296[label=" Primitivo: melmv"] 
+ 
+GRA297->GRA296
+GRA298->GRA298AAA
+GRA298->GRA295
+GRA298->GRA297
+
+GRA258->GRA298
+GRA258[label=" INSTRUCCIONES"]
+GRA302[label=" Declaracion "] 
+GRA302AAA[label="string"] 
+GRA299[label=" Identificadores "]
+GRA299EEE10[label="a_5"]
+
+GRA299->GRA299EEE10
+GRA301[label=" TOSTRING "] 
+GRA300[label=" Primitivo: 15"] 
+ 
+GRA301->GRA300
+GRA302->GRA302AAA
+GRA302->GRA299
+GRA302->GRA301
+
+GRA258->GRA302
+GRA258[label=" INSTRUCCIONES"]
+GRA308[label=" Declaracion "] 
+GRA308AAA[label="string"] 
+GRA303[label=" Identificadores "]
+GRA303EEE10[label="a_5"]
+
+GRA303->GRA303EEE10
+GRA307[label=" TOSTRING "] 
+GRA306[label=" Operadores "] 
+GRA304[label=" Primitivo: 15.23"] 
+GRA305[label=" Primitivo: 9.02"] 
+GRA306ACCC[label="+"] 
+GRA306->GRA305
+GRA306->GRA304
+GRA306->GRA306ACCC
+ 
+GRA307->GRA306
+GRA308->GRA308AAA
+GRA308->GRA303
+GRA308->GRA307
+
+GRA258->GRA308
+GRA258[label=" INSTRUCCIONES"]
+GRA312[label=" Declaracion "] 
+GRA312AAA[label="string"] 
+GRA309[label=" Identificadores "]
+GRA309EEE10[label="a_5"]
+
+GRA309->GRA309EEE10
+GRA311[label=" TOSTRING "] 
+GRA310[label=" Primitivo: true"] 
+ 
+GRA311->GRA310
+GRA312->GRA312AAA
+GRA312->GRA309
+GRA312->GRA311
+
+GRA258->GRA312
+ 
+GRA313->GRA313FUNC
+GRA313->GRA251
+GRA313->GRA313FUNCI
+GRA313->GRA258
+
+inicio->GRA313
+GRA316[label=" Declaracion "] 
+GRA316AAA[label="int"] 
+GRA314[label=" Identificadores "]
+GRA314EEE10[label="algo"]
+
+GRA314->GRA314EEE10
+GRA315[label=" LLAMADA SIN PARAMETROS "] 
+GRA315PARAMETROS[label="division"] 
+GRA315->GRA315PARAMETROS
+GRA316->GRA316AAA
+GRA316->GRA314
+GRA316->GRA315
+
+inicio->GRA316
+GRA319[label=" Declaracion "] 
+GRA319AAA[label="string"] 
+GRA317[label=" Identificadores "]
+GRA317EEE10[label="Universidad"]
+
+GRA317->GRA317EEE10
+GRA318[label=" Primitivo: usac"] 
+GRA319->GRA319AAA
+GRA319->GRA317
+GRA319->GRA318
+
+inicio->GRA319
+GRA322[label=" Declaracion "] 
+GRA322AAA[label="string"] 
+GRA320[label=" Identificadores "]
+GRA320EEE10[label="Universidad"]
+
+GRA320->GRA320EEE10
+GRA321[label=" Primitivo: usac"] 
+GRA322->GRA322AAA
+GRA322->GRA320
+GRA322->GRA321
+
+inicio->GRA322
+GRA425[label=" Funcion "] 
+GRA425FUNC[label="Multiplicacion"] 
+GRA323[label=" LIST PARAMETROS"]
+GRA323[label=" LIST PARAMETROS"]
+GRA324[label=" PARAMETRO "] 
+GRA324PART[label="int"] 
+GRA324PARI[label="numero1"] 
+GRA324->GRA324PART
+GRA324->GRA324PARI
+
+GRA323->GRA324
+GRA323[label=" LIST PARAMETROS"]
+GRA325[label=" PARAMETRO "] 
+GRA325PART[label="int"] 
+GRA325PARI[label="numero2"] 
+GRA325->GRA325PART
+GRA325->GRA325PARI
+
+GRA323->GRA325
+ 
+GRA425FUNCI[label="int"] 
+GRA400[label=" INSTRUCCIONES"]
+GRA400[label=" INSTRUCCIONES"]
+GRA399[label=" IF "] 
+GRA328[label=" Operadores "] 
+GRA326[label=" Primitivo: Universidad"] 
+GRA327[label=" Primitivo: usac"] 
+GRA328ACCC[label="=="] 
+GRA328->GRA327
+GRA328->GRA326
+GRA328->GRA328ACCC
+ 
+GRA344[label=" INSTRUCCIONES"]
+GRA344[label=" INSTRUCCIONES"]
+GRA343[label=" Asignacion "] 
+GRA329[label=" Identificadores "]
+GRA329EEE10[label="var_1"]
+
+GRA329->GRA329EEE10
+GRA342[label=" Operadores "] 
+GRA340[label=" Operadores "] 
+GRA338[label=" Operadores "] 
+GRA336[label=" Operadores "] 
+GRA334[label=" Operadores "] 
+GRA332[label=" Operadores "] 
+GRA330[label=" Primitivo: 1"] 
+GRA331[label=" Primitivo: 2"] 
+GRA332ACCC[label="+"] 
+GRA332->GRA331
+GRA332->GRA330
+GRA332->GRA332ACCC
+GRA333[label=" Primitivo: 3"] 
+GRA334ACCC[label="*"] 
+GRA334->GRA333
+GRA334->GRA332
+GRA334->GRA334ACCC
+GRA335[label=" Primitivo: 4"] 
+GRA336ACCC[label="+"] 
+GRA336->GRA335
+GRA336->GRA334
+GRA336->GRA336ACCC
+GRA337[label=" Primitivo: 8"] 
+GRA338ACCC[label="*"] 
+GRA338->GRA337
+GRA338->GRA336
+GRA338->GRA338ACCC
+GRA339[label=" Primitivo: 8"] 
+GRA340ACCC[label="/"] 
+GRA340->GRA339
+GRA340->GRA338
+GRA340->GRA340ACCC
+GRA341[label=" Primitivo: 2"] 
+GRA342ACCC[label="^"] 
+GRA342->GRA341
+GRA342->GRA340
+GRA342->GRA342ACCC
+
+GRA343->GRA329
+GRA343->GRA342
+
+GRA344->GRA343
+GRA344[label=" INSTRUCCIONES"]
+GRA351[label=" Asignacion "] 
+GRA345[label=" Identificadores "]
+GRA345EEE10[label="var_2"]
+
+GRA345->GRA345EEE10
+GRA350[label=" Operadores "] 
+GRA348[label=" Operadores "] 
+GRA346[label=" Primitivo: 1.2"] 
+GRA347[label=" Primitivo: 78.1"] 
+GRA348ACCC[label="+"] 
+GRA348->GRA347
+GRA348->GRA346
+GRA348->GRA348ACCC
+GRA349[label=" Primitivo: 89"] 
+GRA350ACCC[label="+"] 
+GRA350->GRA349
+GRA350->GRA348
+GRA350->GRA350ACCC
+
+GRA351->GRA345
+GRA351->GRA350
+
+GRA344->GRA351
+GRA344[label=" INSTRUCCIONES"]
+GRA355[label=" Declaracion "] 
+GRA355AAA[label="double"] 
+GRA352[label=" Identificadores "]
+GRA352EEE10[label="val1"]
+
+GRA352->GRA352EEE10
+GRA354[label=" ROUND "] 
+GRA353[label=" Primitivo: 5.8"] 
+ 
+GRA354->GRA353
+GRA355->GRA355AAA
+GRA355->GRA352
+GRA355->GRA354
+
+GRA344->GRA355
+GRA344[label=" INSTRUCCIONES"]
+GRA363[label=" Asignacion "] 
+GRA356[label=" Identificadores "]
+GRA356EEE10[label="val1"]
+
+GRA356->GRA356EEE10
+GRA362[label=" ROUND "] 
+GRA361[label=" Operadores "] 
+GRA359[label=" Operadores "] 
+GRA357[label=" Primitivo: 5.8"] 
+GRA358[label=" Primitivo: 1.2"] 
+GRA359ACCC[label="+"] 
+GRA359->GRA358
+GRA359->GRA357
+GRA359->GRA359ACCC
+GRA360[label=" Primitivo: 0.5"] 
+GRA361ACCC[label="+"] 
+GRA361->GRA360
+GRA361->GRA359
+GRA361->GRA361ACCC
+ 
+GRA362->GRA361
+
+GRA363->GRA356
+GRA363->GRA362
+
+GRA344->GRA363
+GRA344[label=" INSTRUCCIONES"]
+GRA365[label=" Println "] 
+GRA364[label=" Primitivo: tricentenadira"] 
+ 
+GRA365->GRA364
+
+GRA344->GRA365
+GRA344[label=" INSTRUCCIONES"]
+GRA397[label=" IF "] 
+GRA368[label=" Operadores "] 
+GRA366[label=" Primitivo: Universidad"] 
+GRA367[label=" Primitivo: usac"] 
+GRA368ACCC[label="=="] 
+GRA368->GRA367
+GRA368->GRA366
+GRA368->GRA368ACCC
+ 
+GRA371[label=" INSTRUCCIONES"]
+GRA371[label=" INSTRUCCIONES"]
+GRA370[label=" Println "] 
+GRA369[label=" Primitivo: tricentenadira"] 
+ 
+GRA370->GRA369
+
+GRA371->GRA370
+GRA371[label=" INSTRUCCIONES"]
+GRA395[label=" IF "] 
+GRA374[label=" Operadores "] 
+GRA372[label=" Primitivo: Universidad"] 
+GRA373[label=" Primitivo: usac"] 
+GRA374ACCC[label="=="] 
+GRA374->GRA373
+GRA374->GRA372
+GRA374->GRA374ACCC
+ 
+GRA377[label=" INSTRUCCIONES"]
+GRA377[label=" INSTRUCCIONES"]
+GRA376[label=" Println "] 
+GRA375[label=" Primitivo: tricentenadira"] 
+ 
+GRA376->GRA375
+
+GRA377->GRA376
+GRA377[label=" INSTRUCCIONES"]
+GRA393[label=" IF "] 
+GRA380[label=" Operadores "] 
+GRA378[label=" Primitivo: Universidad"] 
+GRA379[label=" Primitivo: usac"] 
+GRA380ACCC[label="=="] 
+GRA380->GRA379
+GRA380->GRA378
+GRA380->GRA380ACCC
+ 
+GRA383[label=" INSTRUCCIONES"]
+GRA383[label=" INSTRUCCIONES"]
+GRA382[label=" Println "] 
+GRA381[label=" Primitivo: tricentenadira"] 
+ 
+GRA382->GRA381
+
+GRA383->GRA382
+GRA383[label=" INSTRUCCIONES"]
+GRA387[label=" Declaracion "] 
+GRA387AAA[label="char"] 
+GRA384[label=" Identificadores "]
+GRA384EEE10[label="v_1"]
+
+GRA384->GRA384EEE10
+GRA386[label=" Casteo "] 
+GRA386ADD[label="char"] 
+GRA385[label=" Primitivo: 12"] 
+ 
+GRA386->GRA386ADD
+GRA386->GRA385
+GRA387->GRA387AAA
+GRA387->GRA384
+GRA387->GRA386
+
+GRA383->GRA387
+GRA383[label=" INSTRUCCIONES"]
+GRA391[label=" Declaracion "] 
+GRA391AAA[label="char"] 
+GRA388[label=" Identificadores "]
+GRA388EEE10[label="v_2"]
+
+GRA388->GRA388EEE10
+GRA390[label=" Casteo "] 
+GRA390ADD[label="char"] 
+GRA389[label=" Primitivo: 12.25"] 
+ 
+GRA390->GRA390ADD
+GRA390->GRA389
+GRA391->GRA391AAA
+GRA391->GRA388
+GRA391->GRA390
+
+GRA383->GRA391
+ 
+ 
+GRA393->GRA380
+GRA393->GRA383
+GRA393->GRA392
+
+GRA377->GRA393
+ 
+ 
+GRA395->GRA374
+GRA395->GRA377
+GRA395->GRA394
+
+GRA371->GRA395
+ 
+ 
+GRA397->GRA368
+GRA397->GRA371
+GRA397->GRA396
+
+GRA344->GRA397
+ 
+ 
+GRA399->GRA328
+GRA399->GRA344
+GRA399->GRA398
+
+GRA400->GRA399
+GRA400[label=" INSTRUCCIONES"]
+GRA405[label=" Declaracion "] 
+GRA405AAA[label="string"] 
+GRA401[label=" Identificadores "]
+GRA401EEE10[label="resultado"]
+
+GRA401->GRA401EEE10
+GRA404[label=" Operadores "] 
+GRA402[label=" Primitivo: numero1"] 
+GRA403[label=" Primitivo: numero2"] 
+GRA404ACCC[label="*"] 
+GRA404->GRA403
+GRA404->GRA402
+GRA404->GRA404ACCC
+GRA405->GRA405AAA
+GRA405->GRA401
+GRA405->GRA404
+
+GRA400->GRA405
+GRA400[label=" INSTRUCCIONES"]
+GRA407[label=" Print "] 
+GRA406[label=" Primitivo: resultado"] 
+ 
+GRA407->GRA406
+
+GRA400->GRA407
+GRA400[label=" INSTRUCCIONES"]
+GRA409[label=" RETUNR "] 
+GRA408[label=" Primitivo: resultado"] 
+GRA409->GRA408
+
+GRA400->GRA409
+GRA400[label=" INSTRUCCIONES"]
+GRA423[label=" RETUNR "] 
+GRA422[label=" Operadores "] 
+GRA420[label=" Operadores "] 
+GRA418[label=" Operadores "] 
+GRA416[label=" Operadores "] 
+GRA414[label=" Operadores "] 
+GRA412[label=" Operadores "] 
+GRA410[label=" Primitivo: 4"] 
+GRA411[label=" Primitivo: 5"] 
+GRA412ACCC[label="+"] 
+GRA412->GRA411
+GRA412->GRA410
+GRA412->GRA412ACCC
+GRA413[label=" Primitivo: 8"] 
+GRA414ACCC[label="*"] 
+GRA414->GRA413
+GRA414->GRA412
+GRA414->GRA414ACCC
+GRA415[label=" Primitivo: 9"] 
+GRA416ACCC[label="/"] 
+GRA416->GRA415
+GRA416->GRA414
+GRA416->GRA416ACCC
+GRA417[label=" Primitivo: 18"] 
+GRA418ACCC[label="-"] 
+GRA418->GRA417
+GRA418->GRA416
+GRA418->GRA418ACCC
+GRA419[label=" Primitivo: 1"] 
+GRA420ACCC[label="/"] 
+GRA420->GRA419
+GRA420->GRA418
+GRA420->GRA420ACCC
+GRA421[label=" Primitivo: 1"] 
+GRA422ACCC[label="+"] 
+GRA422->GRA421
+GRA422->GRA420
+GRA422->GRA422ACCC
+GRA423->GRA422
+
+GRA400->GRA423
+GRA400[label=" INSTRUCCIONES"]
+GRA424[label=" POP "] 
+GRA424POP[label="edades"] 
+GRA424->GRA424POP
+
+GRA400->GRA424
+ 
+GRA425->GRA425FUNC
+GRA425->GRA323
+GRA425->GRA425FUNCI
+GRA425->GRA400
+
+inicio->GRA425
+GRA429[label=" LLAMADA "] 
+GRA429LLAR[label="Multiplicacion"] 
+GRA427[label=" LIST VALORES"]
+GRA427[label=" LIST VALORES"]
+GRA426[label=" Primitivo: 2"] 
+
+GRA427->GRA426
+GRA427[label=" LIST VALORES"]
+GRA428[label=" Primitivo: 3"] 
+
+GRA427->GRA428
+ 
+GRA429->GRA429LLAR
+GRA429->GRA427
+
+inicio->GRA429
+GRA432[label=" Declaracion "] 
+GRA432AAA[label="int"] 
+GRA430[label=" Identificadores "]
+GRA430EEE10[label="anio"]
+
+GRA430->GRA430EEE10
+GRA431[label=" Primitivo: 2022"] 
+GRA432->GRA432AAA
+GRA432->GRA430
+GRA432->GRA431
+
+inicio->GRA432
+GRA435[label=" Declaracion "] 
+GRA435AAA[label="string"] 
+GRA433[label=" Identificadores "]
+GRA433EEE10[label="semestre"]
+
+GRA433->GRA433EEE10
+GRA434[label=" Primitivo: Segundo"] 
+GRA435->GRA435AAA
+GRA435->GRA433
+GRA435->GRA434
+
+inicio->GRA435
+GRA466[label=" IF "] 
+GRA438[label=" Operadores "] 
+GRA436[label=" Primitivo: semestre"] 
+GRA437[label=" Primitivo: Segundo"] 
+GRA438ACCC[label="=="] 
+GRA438->GRA437
+GRA438->GRA436
+GRA438->GRA438ACCC
+ 
+GRA441[label=" INSTRUCCIONES"]
+GRA441[label=" INSTRUCCIONES"]
+GRA440[label=" Println "] 
+GRA439[label=" Primitivo: Usac!!!!"] 
+ 
+GRA440->GRA439
+
+GRA441->GRA440
+GRA441[label=" INSTRUCCIONES"]
+GRA445[label=" Declaracion "] 
+GRA445AAA[label="boolean"] 
+GRA442[label=" Identificadores "]
+GRA442EEE10[label="v_5"]
+
+GRA442->GRA442EEE10
+GRA444[label=" Casteo "] 
+GRA444ADD[label="boolean"] 
+GRA443[label=" Primitivo: hola"] 
+ 
+GRA444->GRA444ADD
+GRA444->GRA443
+GRA445->GRA445AAA
+GRA445->GRA442
+GRA445->GRA444
+
+GRA441->GRA445
+GRA441[label=" INSTRUCCIONES"]
+GRA457[label=" IF "] 
+GRA448[label=" Operadores "] 
+GRA446[label=" Primitivo: var_1"] 
+GRA447[label=" Primitivo: var_2"] 
+GRA448ACCC[label=">="] 
+GRA448->GRA447
+GRA448->GRA446
+GRA448->GRA448ACCC
+ 
+GRA451[label=" INSTRUCCIONES"]
+GRA451[label=" INSTRUCCIONES"]
+GRA450[label=" Println "] 
+GRA449[label=" Primitivo: Usac!!!!"] 
+ 
+GRA450->GRA449
+
+GRA451->GRA450
+GRA451[label=" INSTRUCCIONES"]
+GRA455[label=" Declaracion "] 
+GRA455AAA[label="char"] 
+GRA452[label=" Identificadores "]
+GRA452EEE10[label="v_5"]
+
+GRA452->GRA452EEE10
+GRA454[label=" Casteo "] 
+GRA454ADD[label="char"] 
+GRA453[label=" Primitivo: hola"] 
+ 
+GRA454->GRA454ADD
+GRA454->GRA453
+GRA455->GRA455AAA
+GRA455->GRA452
+GRA455->GRA454
+
+GRA451->GRA455
+ 
+ 
+GRA457->GRA448
+GRA457->GRA451
+GRA457->GRA456
+
+GRA441->GRA457
+ 
+ 
+GRA465[label=" ELSE "] 
+GRA462[label=" INSTRUCCIONES"]
+GRA462[label=" INSTRUCCIONES"]
+GRA461[label=" Asignacion "] 
+GRA459[label=" Identificadores "]
+GRA459EEE10[label="var_1"]
+
+GRA459->GRA459EEE10
+GRA460OPERACION[label="var_1"] 
+GRA460[label=" Incremento "] 
+GRA460Increment[label="++"] 
+GRA460->GRA460Increment
+GRA460->GRA460OPERACION
+
+GRA461->GRA459
+GRA461->GRA460
+
+GRA462->GRA461
+GRA462[label=" INSTRUCCIONES"]
+GRA464[label=" Println "] 
+GRA463[label=" Primitivo: sale en otro semestre :( "] 
+ 
+GRA464->GRA463
+
+GRA462->GRA464
+ 
+GRA465->GRA462
+ 
+GRA466->GRA438
+GRA466->GRA441
+GRA466->GRA458
+GRA466->GRA465
+
+inicio->GRA466
+GRA469[label=" Declaracion "] 
+GRA469AAA[label="int"] 
+GRA467[label=" Identificadores "]
+GRA467EEE10[label="val_1"]
+
+GRA467->GRA467EEE10
+GRA468[label=" Primitivo: 0"] 
+GRA469->GRA469AAA
+GRA469->GRA467
+GRA469->GRA468
+
+inicio->GRA469
+GRA472[label=" Declaracion "] 
+GRA472AAA[label="int"] 
+GRA470[label=" Identificadores "]
+GRA470EEE10[label="edad"]
+
+GRA470->GRA470EEE10
+GRA471[label=" Primitivo: 18"] 
+GRA472->GRA472AAA
+GRA472->GRA470
+GRA472->GRA471
+
+inicio->GRA472
+GRA531[label=" IF "] 
+GRA477[label=" Operadores "] 
+GRA475[label=" Operadores "] 
+GRA473[label=" Primitivo: 45"] 
+GRA474[label=" Primitivo: 56"] 
+GRA475ACCC[label="+"] 
+GRA475->GRA474
+GRA475->GRA473
+GRA475->GRA475ACCC
+GRA476[label=" Primitivo: 12"] 
+GRA477ACCC[label="=="] 
+GRA477->GRA476
+GRA477->GRA475
+GRA477->GRA477ACCC
+ 
+GRA480[label=" INSTRUCCIONES"]
+GRA480[label=" INSTRUCCIONES"]
+GRA479[label=" Println "] 
+GRA478[label=" Primitivo: Esta bien"] 
+ 
+GRA479->GRA478
+
+GRA480->GRA479
+GRA480[label=" INSTRUCCIONES"]
+GRA483[label=" Asignacion "] 
+GRA481[label=" Identificadores "]
+GRA481EEE10[label="var_1"]
+
+GRA481->GRA481EEE10
+GRA482[label=" Primitivo: 5"] 
+
+GRA483->GRA481
+GRA483->GRA482
+
+GRA480->GRA483
+ 
+GRA484[label=" LISTA ELIF "]
+GRA491[label=" ELIF "] 
+GRA487[label=" Operadores "] 
+GRA485[label=" Primitivo: Universidad"] 
+GRA486[label=" Primitivo: usac"] 
+GRA487ACCC[label="=="] 
+GRA487->GRA486
+GRA487->GRA485
+GRA487->GRA487ACCC
+ 
+GRA490[label=" INSTRUCCIONES"]
+GRA490[label=" INSTRUCCIONES"]
+GRA489[label=" Println "] 
+GRA488[label=" Primitivo: Esta es otra suma"] 
+ 
+GRA489->GRA488
+
+GRA490->GRA489
+ 
+GRA491->GRA487
+GRA491->GRA490
+
+GRA484->GRA491
+GRA484[label=" LISTA ELIF "]
+GRA491[label=" ELIF "] 
+GRA487[label=" Operadores "] 
+GRA485[label=" Primitivo: Universidad"] 
+GRA486[label=" Primitivo: usac"] 
+GRA487ACCC[label="=="] 
+GRA487->GRA486
+GRA487->GRA485
+GRA487->GRA487ACCC
+ 
+GRA490[label=" INSTRUCCIONES"]
+GRA490[label=" INSTRUCCIONES"]
+GRA489[label=" Println "] 
+GRA488[label=" Primitivo: Esta es otra suma"] 
+ 
+GRA489->GRA488
+
+GRA490->GRA489
+ 
+GRA491->GRA487
+GRA491->GRA490
+GRA530[label=" ELIF "] 
+GRA496[label=" Operadores "] 
+GRA494[label=" Operadores "] 
+GRA492[label=" Primitivo: 4"] 
+GRA493[label=" Primitivo: 1"] 
+GRA494ACCC[label="+"] 
+GRA494->GRA493
+GRA494->GRA492
+GRA494->GRA494ACCC
+GRA495[label=" Primitivo: 5"] 
+GRA496ACCC[label="=="] 
+GRA496->GRA495
+GRA496->GRA494
+GRA496->GRA496ACCC
+ 
+GRA499[label=" INSTRUCCIONES"]
+GRA499[label=" INSTRUCCIONES"]
+GRA498[label=" Println "] 
+GRA497[label=" Primitivo: Esta es otra suma"] 
+ 
+GRA498->GRA497
+
+GRA499->GRA498
+GRA499[label=" INSTRUCCIONES"]
+GRA529[label=" SWITCH "] 
+GRA529OPBBOL[label="[object Object]"] 
+GRA501[label=" LISTA CASE "]
+GRA501[label=" LISTA CASE "]
+GRA513[label=" CASE "] 
+GRA502[label=" Primitivo: 18"] 
+ 
+GRA505[label=" INSTRUCCIONES"]
+GRA505[label=" INSTRUCCIONES"]
+GRA504[label=" Println "] 
+GRA503[label=" Primitivo: mayoria de eddad en guatemala"] 
+ 
+GRA504->GRA503
+
+GRA505->GRA504
+GRA505[label=" INSTRUCCIONES"]
+GRA511[label=" Declaracion "] 
+GRA511AAA[label="string"] 
+GRA506[label=" Identificadores "]
+GRA506EEE10[label="v_5"]
+
+GRA506->GRA506EEE10
+GRA510[label=" Casteo "] 
+GRA510ADD[label="string"] 
+GRA509[label=" Operadores "] 
+GRA507[label=" Primitivo: hola"] 
+GRA508[label=" Primitivo:  usac"] 
+GRA509ACCC[label="+"] 
+GRA509->GRA508
+GRA509->GRA507
+GRA509->GRA509ACCC
+ 
+GRA510->GRA510ADD
+GRA510->GRA509
+GRA511->GRA511AAA
+GRA511->GRA506
+GRA511->GRA510
+
+GRA505->GRA511
+GRA505[label=" INSTRUCCIONES"]
+GRA512[label=" EXpresion_BREAK "] 
+GRA512ADI[label="break"] 
+GRA512->GRA512ADI
+
+GRA505->GRA512
+ 
+GRA513->GRA502
+GRA513->GRA505
+
+GRA501->GRA513
+GRA501[label=" LISTA CASE "]
+GRA525[label=" CASE "] 
+GRA514[label=" Primitivo: 21"] 
+ 
+GRA517[label=" INSTRUCCIONES"]
+GRA517[label=" INSTRUCCIONES"]
+GRA516[label=" Println "] 
+GRA515[label=" Primitivo: mayoria de edad en us"] 
+ 
+GRA516->GRA515
+
+GRA517->GRA516
+GRA517[label=" INSTRUCCIONES"]
+GRA523[label=" Declaracion "] 
+GRA523AAA[label="int"] 
+GRA518[label=" Identificadores "]
+GRA518EEE10[label="v_1"]
+
+GRA518->GRA518EEE10
+GRA522[label=" Casteo "] 
+GRA522ADD[label="int"] 
+GRA521[label=" Operadores "] 
+GRA519[label=" Primitivo: 12"] 
+GRA520[label=" Primitivo: 1"] 
+GRA521ACCC[label="+"] 
+GRA521->GRA520
+GRA521->GRA519
+GRA521->GRA521ACCC
+ 
+GRA522->GRA522ADD
+GRA522->GRA521
+GRA523->GRA523AAA
+GRA523->GRA518
+GRA523->GRA522
+
+GRA517->GRA523
+GRA517[label=" INSTRUCCIONES"]
+GRA524[label=" EXpresion_BREAK "] 
+GRA524ADI[label="break"] 
+GRA524->GRA524ADI
+
+GRA517->GRA524
+ 
+GRA525->GRA514
+GRA525->GRA517
+
+GRA501->GRA525
+ 
+GRA528[label=" DEFAULT "] 
+GRA527[label=" INSTRUCCIONES"]
+GRA527[label=" INSTRUCCIONES"]
+GRA526[label=" EXpresion_BREAK "] 
+GRA526ADI[label="break"] 
+GRA526->GRA526ADI
+
+GRA527->GRA526
+ 
+GRA528->GRA527
+ 
+GRA529->GRA529OPBBOL
+GRA529->GRA501
+GRA529->GRA528
+
+GRA499->GRA529
+ 
+GRA530->GRA496
+GRA530->GRA499
+
+GRA484->GRA530
+ 
+GRA531->GRA477
+GRA531->GRA480
+GRA531->GRA484
+
+inicio->GRA531
+GRA562[label=" METODO  "] 
+GRA562MVOID[label="saludo"] 
+GRA532[label=" LIST PARAMETROS"]
+GRA532[label=" LIST PARAMETROS"]
+GRA533[label=" PARAMETRO "] 
+GRA533PART[label="int"] 
+GRA533PARI[label="num"] 
+GRA533->GRA533PART
+GRA533->GRA533PARI
+
+GRA532->GRA533
+ 
+GRA542[label=" INSTRUCCIONES"]
+GRA542[label=" INSTRUCCIONES"]
+GRA541[label=" DO WHILE "] 
+GRA535[label=" INSTRUCCIONES"]
+GRA535[label=" INSTRUCCIONES"]
+GRA534OPERACION[label="num"] 
+GRA534[label=" Incremento "] 
+GRA534Increment[label="++"] 
+GRA534->GRA534Increment
+GRA534->GRA534OPERACION
+
+GRA535->GRA534
+GRA535[label=" INSTRUCCIONES"]
+GRA537[label=" Print "] 
+GRA536[label=" Primitivo: num"] 
+ 
+GRA537->GRA536
+
+GRA535->GRA537
+ 
+GRA540[label=" Operadores "] 
+GRA538[label=" Primitivo: num"] 
+GRA539[label=" Primitivo: 2"] 
+GRA540ACCC[label="<="] 
+GRA540->GRA539
+GRA540->GRA538
+GRA540->GRA540ACCC
+ 
+GRA541->GRA535
+GRA541->GRA540
+
+GRA542->GRA541
+GRA542[label=" INSTRUCCIONES"]
+GRA550[label=" DO UNTIL "] 
+GRA544[label=" INSTRUCCIONES"]
+GRA544[label=" INSTRUCCIONES"]
+GRA543OPERACION[label="num"] 
+GRA543[label=" Incremento "] 
+GRA543Increment[label="++"] 
+GRA543->GRA543Increment
+GRA543->GRA543OPERACION
+
+GRA544->GRA543
+GRA544[label=" INSTRUCCIONES"]
+GRA546[label=" Print "] 
+GRA545[label=" Primitivo: num"] 
+ 
+GRA546->GRA545
+
+GRA544->GRA546
+ 
+GRA549[label=" Operadores "] 
+GRA547[label=" Primitivo: num"] 
+GRA548[label=" Primitivo: 2"] 
+GRA549ACCC[label=">="] 
+GRA549->GRA548
+GRA549->GRA547
+GRA549->GRA549ACCC
+ 
+GRA550->GRA544
+GRA550->GRA549
+
+GRA542->GRA550
+GRA542[label=" INSTRUCCIONES"]
+GRA561[label=" FOR "] 
+GRA553[label=" Declaracion "] 
+GRA553AAA[label="int"] 
+GRA551[label=" Identificadores "]
+GRA551EEE10[label="x"]
+
+GRA551->GRA551EEE10
+GRA552[label=" Primitivo: 0"] 
+GRA553->GRA553AAA
+GRA553->GRA551
+GRA553->GRA552
+ 
+GRA556[label=" Operadores "] 
+GRA554[label=" Primitivo: x"] 
+GRA555[label=" Primitivo: 4"] 
+GRA556ACCC[label="<"] 
+GRA556->GRA555
+GRA556->GRA554
+GRA556->GRA556ACCC
+ 
+GRA557OPERACION[label="x"] 
+GRA557[label=" Incremento "] 
+GRA557Increment[label="++"] 
+GRA557->GRA557Increment
+GRA557->GRA557OPERACION
+ 
+GRA560[label=" INSTRUCCIONES"]
+GRA560[label=" INSTRUCCIONES"]
+GRA559[label=" Println "] 
+GRA558[label=" Primitivo: Hola mundo!!!"] 
+ 
+GRA559->GRA558
+
+GRA560->GRA559
+ 
+GRA561->GRA553
+GRA561->GRA556
+GRA561->GRA557
+GRA561->GRA560
+
+GRA542->GRA561
+ 
+GRA562->GRA562MVOID
+GRA562->GRA532
+GRA562->GRA542
+
+inicio->GRA562
+GRA565[label=" LLAMADA "] 
+GRA565LLAR[label="saludo"] 
+GRA564[label=" LIST VALORES"]
+GRA564[label=" LIST VALORES"]
+GRA563[label=" Primitivo: 0"] 
+
+GRA564->GRA563
+ 
+GRA565->GRA565LLAR
+GRA565->GRA564
+
+inicio->GRA565
 }

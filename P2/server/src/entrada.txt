@@ -1,32 +1,7 @@
-inicio
 
 
+saludo(int num){
+   
+}
 
-string Universidad = "usac";
-
-Multiplicacion(int numero1, int numero2):int{
-    if(Universidad=="usac"){
-        var_1= 1+2*3+4*8/8^(2);
-        var_2=1.2+78.1+89.000;
-        double  val1= round(5.800);
-        val1= round(5.800+1.2+0.5);
-        println("tricentenadira");
-        if(Universidad=="usac"){
-            println("tricentenadira");
-            if(Universidad=="usac"){
-                println("tricentenadira");
-                if(Universidad=="usac"){
-                    println("tricentenadira");
-                    char v_1= (char)12;
-                    char v_2= (char)12.25;
-                    }
-                }
-            }
-        }
-    }
-
-Multiplicacion(11,588);
-
-
-fin 
- 
+saludo(0);

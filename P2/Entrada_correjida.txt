@@ -1,4 +1,4 @@
-inicio
+
 
 
 int varible_1;
@@ -46,10 +46,10 @@ var_3= (7+3)-8+6*8+6/7%9-45>=6;                              //ERROR precedencia
 var_3= 8+2-7+9*8-9/7%9+45<=6;                               //ERROR precedencia
 
 //Casteos
-int v_5= (int)"hola";                                                           ///!/!/!/!/!/FASJKLDASJDKLASJDLKASD
-string v_1= (string)12%8;                               ///!/!/!/!/!/FASJKLDASJDKLASJDLKASD
-char v_3= (char)true;       ///!/!/!/!/!/FASJKLDASJDKLASJDLKASD
-char v_4= (char)'A';            ///!/!/!/!/!/FASJKLDASJDKLASJDLKASD
+int v_5= (int)"hola";                                                        
+string v_1= (string)12%8;                              
+char v_3= (char)true;      
+char v_4= (char)'A';            
 
 
 division():string{
@@ -73,6 +73,8 @@ int algo=division();                                //EXTRA
 
 string Universidad = "usac";                    //EXTRA
 
+string Universidad = "usac";                    //EXTRA
+
 Multiplicacion(int numero1, int numero2):int{ 
     if(Universidad=="usac"){
         var_1= 1+2*3+4*8/8^(2);
@@ -92,9 +94,21 @@ Multiplicacion(int numero1, int numero2):int{
                 }
             }
         }
+
+    string resultado=numero1*numero2;
+    print(resultado);                                   //print para ver resultado
+    return resultado;
+    return 4+5*8/9-18/1+1;
+    edades.pop();
+
+
     }
 
-Multiplicacion(11,588);                 //ERROR OPERACION
+
+
+
+Multiplicacion(2,3);                 //ERROR OPERACION
+
 
 
 
@@ -113,5 +127,49 @@ string semestre ="Segundo";
         println("sale en otro semestre :( ");
     }
 
-fin 
+int val_1 = 0;                      //extra
+int edad = 18;                            //extra
+
+    if(45+56==12){       //modificado
+        println("Esta bien");
+        var_1=5;
+    }elif("Universidad"=="usac"){//modificado
+        println("Esta es otra suma");
+    }elif(4+1==5){//modificado
+        println("Esta es otra suma");
+        switch(edad){
+            case 18: 
+                println("mayoria de eddad en guatemala");
+                string v_5= (string)"hola"+" usac";
+                break;
+            case /*Este mensaje no tendria que dar error porque se omite desde el anlaisis lexico*/ 21:
+                // Este es la mayoria de edad en otro pais
+                println("mayoria de edad en us");
+                int v_1= (int)12+1;
+                break;
+            default:
+                //instrucciones si no se da a complir la conidcion
+                break;
+                }
+        }
+
+saludo(int num){
+    do {
+        num++;
+        print(num);
+   } while(num<=2);
+
+    do {
+        num++;
+        print(num);
+   } until(num>=2);
+
+   for (int x=0; x<4;x++){
+        println("Hola mundo!!!");
+                }
+}
+
+saludo(0);
+
+
  

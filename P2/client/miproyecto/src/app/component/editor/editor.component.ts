@@ -51,8 +51,13 @@ export class EditorComponent implements OnInit {
       (res:any)=>{
         this.diccionario = res.tabla.diccionario
         //insertar todo en un frame donde se vea 
-
-
+        for (let key in this.diccionario) {
+          if (this.diccionario.hasOwnProperty(key)) {
+            let value =  this.diccionario[key];
+            console.log(key, value);
+          }
+       }
+        console.log()
         alert("EJECUTAR FIN")
       },(err)=>{
         this.diccionario = null;

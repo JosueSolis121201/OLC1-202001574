@@ -19,17 +19,17 @@ export class Casteo extends Instruccion {
         switch (this.Tipo.toLowerCase()) { 
             case "int"://INT
                 tipo_encontrado=1;
-                valor_encontrado =parseInt(this.expresion.ejecutar(tabla).valor)
+                valor_encontrado =0;
                 break;
             case "double": //FLOAT
                 
                 tipo_encontrado=2;
-                valor_encontrado =parseFloat(this.expresion.ejecutar(tabla).valor)
+                valor_encontrado =0;
                 break;
             case "string"://STRING
                 
                 tipo_encontrado=3;
-                valor_encontrado =this.expresion.ejecutar(tabla).valor.toString()
+                valor_encontrado ="";
                 break;
             case "boolean": //BOOL
             
@@ -42,12 +42,12 @@ export class Casteo extends Instruccion {
                 break;
             case "char"://CHAR
                 tipo_encontrado=5;
-                valor_encontrado =this.expresion.ejecutar(tabla).valor.toString()
+                valor_encontrado ="";
                 break;
             default:
                 console.log({error:"ERROR EN Casteo"})
-                tipo_encontrado=1
-                valor_encontrado =parseInt(this.expresion.ejecutar(tabla).valor)
+                tipo_encontrado=1;
+                valor_encontrado =0;
                 break;
         }
 

@@ -15,7 +15,7 @@ const fs = require("fs");
 try {
     const entrada = fs.readFileSync("src/entrada.txt");
     const ast:S1_list = parser.parse(entrada.toString());
-    const env= new TablaSimbolos("Global",undefined);
+    const env= new TablaSimbolos("Global",undefined); 
     
     const ast_list = ast.lista;
     let padre ="inicio"+"[label=\""+" S0 \"] \n";
@@ -34,45 +34,14 @@ try {
     //Seundo recorrido ejecuta el AST
      for (const instruccion of ast_list) {
         if(!instruccion.esFuncion() && !instruccion.esMetodo()){
-            //instruccion.ejecutar(env)
+            instruccion.ejecutar(env)
         }
         
         string = string +instruccion.graficar()+"\n"
         string = string +"inicio"+"->"+instruccion.ID+"\n"
         
         console.log(__filename)
-        
 
-      
-       
-
-        /*function(1,2)
-
-        function(a,b){
-
-        }
-
-
-        Push(1)
-        Push(2)
-
-
-        function(){
-            pop(2)
-            pop(1)
-        }*/
-
-
-        /*try {
-           instruccion.ejecutar();
-            console.log("ESTE ES EL STRING-------------------------------------------")
-            console.log(instruccion.graficar());
-            console.log("ESTE ES EL Impresion-------------------------------------------")
-            instruccion.imprimir();
-        } catch (error) {
-            console.log(error);
-            
-        }*/
     }
     string = "digraph G {"+string+ "}";
     fs.writeFile(__dirname+'/dot.dot', string, (err:any) => {
@@ -94,15 +63,14 @@ try {
 
     let image_blob:any = fs.readFileSync(__dirname +"/output.png");
     let base64 = Buffer.from(image_blob).toString('base64');
-    /*console.log("----------------TA
-    BLA DE SIMBOLOS------------------------")
+    console.log("----------------TABLA DE SIMBOLOS------------------------")
     console.log(env.diccionario) 
     console.log("----------------FUNCIONES METODOS------------------------")
     console.log(env.diccionario_funcion) 
     console.log("----------------TABLA DE SIMBOLOS------------------------")
    
 
-    console.log("ESTE ES EL STRING FINAAAAAAAAL")*/
+    console.log("ESTE ES EL STRING FINAAAAAAAAL")
     //console.log(string)
     
     
