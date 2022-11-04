@@ -14,15 +14,11 @@ export class Declaracion extends Instruccion {
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
-        console.log("pasando por declaracion")
         // un valor por funcion
         let lista:[string] =this.identificadores.ejecutar(tabla)
         // guarlo en la tabla
         for(let elemto of lista){
             // valor y variable                             valor
-            console.log("-------------------------------------")
-            console.log(this.tipo)
-            console.log(("-------------------------------------"))
             if (this.expresion != ";"){
                 let retorno_tabla =  tabla.guardarVariable(this.expresion.ejecutar(tabla),elemto) 
             }else{
@@ -51,7 +47,7 @@ export class Declaracion extends Instruccion {
                         valor_encontrado ='';
                         break;
                     default:
-                        console.log({error:"ERROR EN Casteo"})
+                        console.log({error:"ERROR EN declaracion"})
                         tipo_encontrado=1
                         valor_encontrado =0
                         break;

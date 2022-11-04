@@ -5,7 +5,6 @@ class Ciclo extends Instruccion {
         super(linea,columna);
     }
     public ejecutar():any {
-        console.log("Encontre un ciclo");
         
     }
     public graficar(): any {

@@ -15,12 +15,10 @@ export class OperacionBinaria extends Instruccion {
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
-        console.log("pasando por operacion binaria")
         // buscar  de en tabla de izuquiedo y derecho
         let izq:Valor = this.izquierdo.ejecutar(tabla);
         let der:Valor = this.derecho.ejecutar(tabla);
 
-        console.log("izquierda : " +izq.obtenerValor()+"----derecha : " +der.obtenerValor() )
         let valDe:number
         switch (this.signo) {
             //SUMA (+)
@@ -568,7 +566,6 @@ export class OperacionBinaria extends Instruccion {
                             }else{
                                 valDe =0
                             }
-                            console.log(valDe)
                                 return new Valor( valDe, 4)
                             case 2://entero Mayor entero = bol
                             if (parseFloat(izq.valor) < parseFloat(der.valor)){

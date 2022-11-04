@@ -57,7 +57,6 @@ export class Llamada extends Instruccion {
         
     }
     public imprimir(): any {
-        console.log("Encontre una METODO, nombre:"+this.identificador+this.argumentos+" con expresionlo encontre en la linea "+this.line);
         
     }
 }

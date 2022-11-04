@@ -31,6 +31,5 @@ export class ToCharArray extends Instruccion {
     }
 
     public imprimir(): any {
-        console.log("Encontre una ToCharArray, nombre:"+this.expresion+" con expresion "+" lo encontre en la linea "+this.line);
     }
 }

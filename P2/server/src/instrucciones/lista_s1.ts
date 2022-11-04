@@ -23,7 +23,6 @@ export class S1_list extends Instruccion {
     //metodo para guardar la variable
     }
     public ejecutar(tabla:TablaSimbolos):any {
-        console.log("pawsando por lsita S0")
         return this.lista
     }
     public graficar(): any {
@@ -34,7 +33,6 @@ export class S1_list extends Instruccion {
             string = string + instrucion.graficar()+"\n"
             string = string +this.ID +"->"+instrucion.ID
         }
-        console.log(string)
 
         return string;
         

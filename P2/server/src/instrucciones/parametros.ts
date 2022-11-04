@@ -13,7 +13,6 @@ export class Parametros extends Instruccion {
     }
 
     public ejecutar(tabla:TablaSimbolos):any { 
-        console.log("pasando por parametro")
         // parametros guardan en tabla  
         //retorno tabla es de tipo valor
         //comprobar el valor

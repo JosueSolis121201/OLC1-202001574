@@ -49,9 +49,6 @@ export class Parametros_list extends Instruccion {
     }
     public imprimir(): any {
 
-        for(let elemto of this.lista){
-            console.log(elemto.imprimir())
-        }
-        
+       
     }
 }

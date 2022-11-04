@@ -13,7 +13,6 @@ export class Casteo extends Instruccion {
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
-        console.log("pasando por casteo")
         let  tipo_encontrado;
         let valor_encontrado;
         switch (this.Tipo.toLowerCase()) { 
@@ -69,6 +68,5 @@ export class Casteo extends Instruccion {
         return retorno;
     }
     public imprimir(): any {
-        console.log("Encontre una casteo, tipo:"+this.Tipo+" con expresion "+this.expresion+" lo encontre en la linea "+this.line);
     }
 }

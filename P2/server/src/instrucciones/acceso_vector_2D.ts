@@ -14,7 +14,6 @@ export class Acceso_2D extends Instruccion {
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
-        console.log("pasando por acceso vector de dos dimensiones")
 
         //? identificador = nombre variable
         //? expresion = pocicion del lista deseada
@@ -26,17 +25,12 @@ export class Acceso_2D extends Instruccion {
             for(let i=0;i<=iterrador;i++){ 
                 if(i==iterrador){
                     let BUSCANDO_USANDO_NOMBRE_COMPUESTO="arreglonero2"+this.identificador+"s"+(this.valor_1-1)+"d"+(this.valor_2-1);
-                    console.log(BUSCANDO_USANDO_NOMBRE_COMPUESTO)
                      // valor y variable                             valor
                     
                     let valor_variable=tabla.buscarVariable(BUSCANDO_USANDO_NOMBRE_COMPUESTO);
                     //valor en tabla con pocicion buscada
                     let valor=valor_variable.valor;
                     let tipo=valor_variable.tipo;
-                    console.log("BUSCANDO_USANDO_NOMBRE_COMPUESTO+**++*")
-                    console.log(valor)
-                    console.log(tipo)
-                    console.log("BUSCANDO_USANDO_NOMBRE_COMPUESTO+*+*+*+")
                     // se guarda la nueva expresion que es = this.nueva_expreison
                     let nuevoValor=new Valor(valor,tipo);
                     return nuevoValor

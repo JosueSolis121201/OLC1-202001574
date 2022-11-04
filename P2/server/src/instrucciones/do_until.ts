@@ -27,7 +27,6 @@ export class DoUntil extends Instruccion {
             return ;
         }
         // operacion boleana true 
-        console.log({valll:ope.valor})
         
         while(!(ope.valor)){
             // Ya hay un entorno para Instruccion while
@@ -57,7 +56,6 @@ export class DoUntil extends Instruccion {
         
     }
     public imprimir(): any {
-        console.log("Encontre un DOUNTIL , nombre:"+this.instruccion+" con expresion "+this.expresion +" lo encontre en la linea "+this.line);
         
     }
 }

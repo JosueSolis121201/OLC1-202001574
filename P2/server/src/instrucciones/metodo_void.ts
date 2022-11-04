@@ -51,7 +51,6 @@ export class MetodoVoid extends Instruccion {
         return retorno;
     }
     public imprimir(): any {
-        console.log("Encontre una METODOVOID, nombre:"+this.identificador+this.parametros+" con expresion "+this.instrucciones+" lo encontre en la linea "+this.line);
         
     }
 }

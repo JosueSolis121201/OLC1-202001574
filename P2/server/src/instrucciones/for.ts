@@ -34,8 +34,6 @@ export class For extends Instruccion {
                 inst.ejecutar(nueva_tabla); 
             }
             //incremental
-            console.log("PASANDO++++++++++++++++")
-            
             this.actualizacion.ejecutar(nueva_tabla)
             boleano =this.condicion.ejecutar(nueva_tabla)
        } 
@@ -62,6 +60,5 @@ export class For extends Instruccion {
         
     }
     public imprimir(): any {
-        console.log("Encontre una FOR, nombre:"+this.expresion+" con expresion "+this.condicion+this.actualizacion+this.instrucciones+" lo encontre en la linea "+this.line);
     }
 }

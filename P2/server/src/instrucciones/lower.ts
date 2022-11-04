@@ -33,7 +33,6 @@ export class ToLower extends Instruccion {
         return retorno;
     }
     public imprimir(): any {
-        console.log("Encontre una LOWER, nombre:"+" con expresion "+this.expresion+" lo encontre en la linea "+this.line);
         
     }
 }

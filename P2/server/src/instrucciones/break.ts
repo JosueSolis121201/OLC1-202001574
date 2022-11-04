@@ -35,6 +35,5 @@ export class Break extends Instruccion {
     }
 
     public imprimir(): any {
-        console.log("Encontre una Return, nombre:"+this.expresion+" con expresion "+" lo encontre en la linea "+this.line);
     }
 }

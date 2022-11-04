@@ -16,8 +16,6 @@ export class Incremento extends Instruccion {
     public ejecutar(tabla:TablaSimbolos):any {
         //incremento o decremento suma el valor de la variable en mas uno dependiendo el signo con que venga(++||--)
         let return_in_tabla=tabla.buscarVariable(this.operacion)
-        console.log({nueva:this.operacion})
-
         if(this.signo=="++"){
             let new_valor = new Valor(return_in_tabla.obtenerValor()+1,return_in_tabla.tipo);
             // valor = su valor y tipo  , nombre = quien es

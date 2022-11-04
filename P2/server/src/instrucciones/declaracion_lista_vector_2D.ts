@@ -19,7 +19,6 @@ export class DeclaracionListaVector_2D extends Instruccion {
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
-        console.log("pasando por declaracion lista de vector 2 dimencioens")
 
         // declarar guarda en tabla 
         let lista:[Valor] =this.lista_valores_1.ejecutar(tabla)
@@ -77,6 +76,5 @@ export class DeclaracionListaVector_2D extends Instruccion {
         
     }
     public imprimir(): any {
-        console.log("Encontre un vecotr , nombre:"+this.tipo+" con expresion "+this.D1_a +this.D1_b +this.D2_a +this.D2_b +this.identificador +this.lista_valores_1 +this.lista_valores_2 +" lo encontre en la linea "+this.line);
     }
 }

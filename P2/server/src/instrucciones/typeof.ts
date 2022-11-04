@@ -14,7 +14,6 @@ export class Typeof extends Instruccion {
     public ejecutar(tabla:TablaSimbolos):any {
         //le mandan una expresion de tipo string no le importan de donde sea ni de quien 
         // pasando a string
-        console.log(this.expresion.ejecutar(tabla))
         let tipo_encontrado;
          switch (this.expresion.ejecutar(tabla).tipo) {
             case 1://INT
@@ -58,7 +57,6 @@ export class Typeof extends Instruccion {
         
     }
     public imprimir(): any {
-        console.log("Encontre una Typeof, nombre:"+this.expresion+" con expresion "+" lo encontre en la linea "+this.line);
         
     }
 }

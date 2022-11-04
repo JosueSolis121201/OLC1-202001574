@@ -21,9 +21,6 @@ export class VectorDeclarado_2D extends Instruccion {
 
     public ejecutar(tabla:TablaSimbolos):any {
 
-        console.log("pasando por vector delcarado de dos dimenciones++")
-        console.log(this.expresionD1)
-        console.log(this.expresionD2.ejecutar(tabla))
         //? this.identificador es la variable quetendra la lista
         //? this.tipo es el tipo del vector
         //? this.new_tipo es el nuevo tipo

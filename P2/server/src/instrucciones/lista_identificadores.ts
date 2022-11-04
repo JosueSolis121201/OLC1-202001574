@@ -16,7 +16,6 @@ export class Identificadores_lista extends Instruccion {
     public agregar( identificador:String):void {
         if (identificador!= null){
             this.lista.push(identificador);
-            console.log(this.lista)
         }
     }
     public ejecutar(tabla:TablaSimbolos):any {
@@ -41,10 +40,7 @@ export class Identificadores_lista extends Instruccion {
         
     }
     public imprimir(): any {
-        console.log("------------------------------")
-        for(let elemento of this.lista){
-            console.log(elemento)
-        }
+       
         
         
     }

@@ -24,7 +24,6 @@ export class While extends Instruccion {
             return ;
         }
         // operacion boleana true 
-        console.log({valll:ope.valor})
         while(ope.valor){
             // Ya hay un entorno para Instruccion while
             let instru_while:Array<Instruccion> = this.instruccion.ejecutar(tabla);

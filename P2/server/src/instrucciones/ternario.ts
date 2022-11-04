@@ -18,7 +18,6 @@ export class Ternario extends Instruccion {
         // el valor que me retorne expresion boleana
        
         let exprebol:Valor = this.expresion_boleana.ejecutar(tabla)
-        console.log(exprebol)
         // condicional si es tru hace signo_interrogacion
         // condicional si es false hace expresion_no_cumple
         // soloe s true o false

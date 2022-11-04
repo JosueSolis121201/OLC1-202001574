@@ -46,6 +46,5 @@ export class DeclaracionListaVector_1D extends Instruccion {
     }
 
     public imprimir(): any {
-        console.log("Encontre un vecotr , nombre:"+this.tipo+" con expresion "+this.D1_a +this.D1_b +this.identificador +this.lista_valores +" lo encontre en la linea "+this.line);
     }
 }

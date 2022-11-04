@@ -29,7 +29,6 @@ export class VectorModificar_1D extends Instruccion {
             identidad=elemto;
             //obteniendo el valor de la pocicion  
             for(let i=0;i<=this.expresion.ejecutar(tabla).valor;i++){  
-                console.log("pasando pocicion : "+i)
                 if(i==this.expresion.ejecutar(tabla).valor){
                     let BUSCANDO_USANDO_NOMBRE_COMPUESTO="arreglonero1"+identidad+"s"+i;
                      // valor y variable                             valor

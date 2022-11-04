@@ -39,9 +39,6 @@ export class Valores_list extends Instruccion {
         return retornar;
     }
     public imprimir(): any {
-        for(let elemto of this.lista){
-            console.log(elemto.imprimir())
-        }
         
     }
 }

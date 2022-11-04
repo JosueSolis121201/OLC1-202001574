@@ -29,7 +29,6 @@ export class Case extends Instruccion {
         
     }
     public imprimir(): any {
-        console.log("Encontre una Case, tipo:"+this.Operacion_booleana+" nombre:"+this.instrucciones+"lo encontre en la linea "+this.line);
     }
     
 }

@@ -15,7 +15,6 @@ export class VectorModificar_2D extends Instruccion {
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
-        console.log("pasando por modificar vector de una dimension")
 
         //? identificador = nombre variable
         //? expresion = pocicion del lista deseada

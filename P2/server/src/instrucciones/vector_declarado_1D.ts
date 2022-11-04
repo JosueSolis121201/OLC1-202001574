@@ -18,7 +18,6 @@ export class VectorDeclarado_1D extends Instruccion {
 
 
     public ejecutar(tabla:TablaSimbolos):any {
-        console.log("pasando por vector delcarado++")
         //? this.identificador es la variable quetendra la lista
         //? this.tipo es el tipo del vector
         //? this.new_tipo es el nuevo tipo

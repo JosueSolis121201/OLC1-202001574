@@ -29,7 +29,6 @@ export class DoWhile extends Instruccion {
             return ;
         }
         // operacion boleana true 
-        console.log({valll:ope.valor})
         
         while(ope.valor){
             // Ya hay un entorno para Instruccion while
@@ -59,7 +58,6 @@ export class DoWhile extends Instruccion {
         
     }
     public imprimir(): any {
-        console.log("Encontre un DOWHILE , nombre:"+this.instruccion+" con expresion "+this.expresion +" lo encontre en la linea "+this.line);
         
     }
 }

@@ -13,7 +13,6 @@ export class Acceso_1D extends Instruccion {
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
-        console.log("pasando por acceso vector de una dimension")
 
         //? identificador = nombre variable
         //? expresion = pocicion del lista deseada
@@ -24,17 +23,12 @@ export class Acceso_1D extends Instruccion {
             for(let i=0;i<=this.valor;i++){ 
                 if(i==this.valor){
                     let BUSCANDO_USANDO_NOMBRE_COMPUESTO="arreglonero1"+this.identificador+"s"+i;
-                    console.log(BUSCANDO_USANDO_NOMBRE_COMPUESTO)
                      // valor y variable                             valor
                     
                     let valor_variable=tabla.buscarVariable(BUSCANDO_USANDO_NOMBRE_COMPUESTO);
                     //valor en tabla con pocicion buscada
                     let valor=valor_variable.valor;
                     let tipo=valor_variable.tipo;
-                    console.log("BUSCANDO_USANDO_NOMBRE_COMPUESTO+**++*")
-                    console.log(valor)
-                    console.log(tipo)
-                    console.log("BUSCANDO_USANDO_NOMBRE_COMPUESTO+*+*+*+")
                     // se guarda la nueva expresion que es = this.nueva_expreison
                     let nuevoValor=new Valor(valor,tipo);
                     return nuevoValor

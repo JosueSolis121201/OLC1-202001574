@@ -13,13 +13,11 @@ export class Asignacion extends Instruccion {
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
-        console.log("pasando por asignacion ")
         //lista de identificadores
         let lista:Array<string> =this.identificadores.ejecutar(tabla) 
         //elemto = identificador
         for(let elemto of lista){
             let val_g = this.expresion.ejecutar(tabla);
-            console.log(val_g.valor)
             let new_valor = new Valor(val_g.obtenerValor(),val_g.tipo);
             tabla.guardarActualizar(new_valor,elemto);
             

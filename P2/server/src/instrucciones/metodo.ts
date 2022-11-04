@@ -57,7 +57,6 @@ export class Metodo extends Instruccion {
         
     }
     public imprimir(): any {
-        console.log("Encontre una METODO, nombre:"+this.identificador+this.parametros+" con expresion "+this.instrucciones+" lo encontre en la linea "+this.line);
         
     }
 }

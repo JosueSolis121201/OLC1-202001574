@@ -29,7 +29,6 @@ export class Default extends Instruccion {
         
     }
     public imprimir(): any {
-        console.log("Encontre una SWITCH, tipo: "+"nombre:"+this.instrucciones+"lo encontre en la linea "+this.line);
         
     }
     

@@ -34,6 +34,5 @@ export class Continue extends Instruccion {
     }
 
     public imprimir(): any {
-        console.log("Encontre una Continue, nombre:"+this.expresion+" con expresion "+" lo encontre en la linea "+this.line);
     }
 }
