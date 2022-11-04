@@ -4,7 +4,8 @@ import { TablaSimbolos } from "../datos/tabla_simbolos";
 import { Valor } from "../datos/valor";
 
 export class OperacionBinaria extends Instruccion {
-
+    linea:any;
+    columna:any;
 
     constructor(
         public izquierdo: any,
@@ -12,6 +13,8 @@ export class OperacionBinaria extends Instruccion {
         public signo: any,
         linea: number, columna:number) {
         super(linea,columna);
+        this.linea = linea
+        this.columna = columna
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
@@ -28,11 +31,11 @@ export class OperacionBinaria extends Instruccion {
                         switch (der.tipo) {
                             case 1://entero mas entero = entero
                             console.log( parseInt(izq.valor) + parseInt(der.valor))
-                                return new Valor( parseInt(izq.valor) + parseInt(der.valor), 1)
+                                return new Valor( parseInt(izq.valor) + parseInt(der.valor), 1,this.linea,this.columna)
                             case 2://entero mas float = float
-                                return new Valor( parseFloat(izq.valor) + parseFloat(der.valor), 2)
+                                return new Valor( parseFloat(izq.valor) + parseFloat(der.valor), 2,this.linea,this.columna)
                             case 3://entero mas String = string
-                                return new Valor( izq.valor.toString() + der.valor.toString(), 3)
+                                return new Valor( izq.valor.toString() + der.valor.toString(), 3,this.linea,this.columna)
                             case 4://entero mas boleano = entero //TODO
                                 //TODO convertir
                                 if (der.valor.toString() == "false"){
@@ -41,9 +44,9 @@ export class OperacionBinaria extends Instruccion {
                                     valDe =1
                                 }
                                 // operar valores
-                                return new Valor(izq.valor +valDe, 1)
+                                return new Valor(izq.valor +valDe, 1,this.linea,this.columna)
                             case 5://entero mas char = entero
-                                return new Valor( izq.valor.toString() + der.valor.toString(), 1)
+                                return new Valor( izq.valor.toString() + der.valor.toString(), 1,this.linea,this.columna)
                             default:
                                 console.log("ERROR EN ENTERO +")
                                 break;
@@ -51,15 +54,15 @@ export class OperacionBinaria extends Instruccion {
                     case 2://float 
                         switch (der.tipo) {
                             case 1://float mas entero = float
-                                return new Valor( parseFloat(izq.valor) + parseFloat(der.valor), 2)
+                                return new Valor( parseFloat(izq.valor) + parseFloat(der.valor), 2,this.linea,this.columna)
                             case 2://float mas float = float
-                                return new Valor( parseFloat(izq.valor) + parseFloat(der.valor), 2)
+                                return new Valor( parseFloat(izq.valor) + parseFloat(der.valor), 2,this.linea,this.columna)
                             case 3://float mas String = string
-                                return new Valor( izq.valor.toString() + der.valor.toString(), 3)
+                                return new Valor( izq.valor.toString() + der.valor.toString(), 3,this.linea,this.columna)
                             case 4://float mas boleano = float
-                                return new Valor( parseFloat(izq.valor) + parseFloat(der.valor), 2)
+                                return new Valor( parseFloat(izq.valor) + parseFloat(der.valor), 2,this.linea,this.columna)
                             case 5://float mas char = float
-                                return new Valor( parseFloat(izq.valor) + parseFloat(der.valor), 2)
+                                return new Valor( parseFloat(izq.valor) + parseFloat(der.valor), 2,this.linea,this.columna)
                             default:
                                 console.log("ERROR EN float +")
                                 break;
@@ -67,15 +70,15 @@ export class OperacionBinaria extends Instruccion {
                     case 3://string 
                         switch (der.tipo) {
                             case 1://string mas entero = string
-                                return new Valor( izq.valor.toString() + der.valor.toString(), 3)
+                                return new Valor( izq.valor.toString() + der.valor.toString(), 3,this.linea,this.columna)
                             case 2://string mas float = string
-                                return new Valor( izq.valor.toString() + der.valor.toString(), 3)
+                                return new Valor( izq.valor.toString() + der.valor.toString(), 3,this.linea,this.columna)
                             case 3://string mas String = string
-                                return new Valor( izq.valor.toString() + der.valor.toString(), 3)
+                                return new Valor( izq.valor.toString() + der.valor.toString(), 3,this.linea,this.columna)
                             case 4://string mas boleano = string
-                                return new Valor( izq.valor.toString() + der.valor.toString(), 3)
+                                return new Valor( izq.valor.toString() + der.valor.toString(), 3,this.linea,this.columna)
                             case 5://string mas char = string
-                                return new Valor( izq.valor.toString() + der.valor.toString(), 3)
+                                return new Valor( izq.valor.toString() + der.valor.toString(), 3,this.linea,this.columna)
                             default:
                                 console.log("ERROR EN string +")
                                 break;
@@ -90,21 +93,21 @@ export class OperacionBinaria extends Instruccion {
                                 }else{
                                     valDe =1
                                 }
-                                return new Valor( parseInt(izq.valor) +valDe, 1)
+                                return new Valor( parseInt(izq.valor) +valDe, 1,this.linea,this.columna)
                             case 2://booleano mas float = float
                                 if (der.valor.toString() == "false"){
                                     valDe = 0
                                 }else{
                                     valDe =1
                                 }
-                                return new Valor(  parseFloat(izq.valor) + valDe, 2)
+                                return new Valor(  parseFloat(izq.valor) + valDe, 2,this.linea,this.columna)
                             case 3://booleano mas String = string
                                 if (der.valor.toString() == "false"){
                                     valDe = 0
                                 }else{
                                     valDe =1
                                 }
-                                return new Valor( (izq.valor + der.valor).toString, 3)
+                                return new Valor( (izq.valor + der.valor).toString, 3,this.linea,this.columna)
                             default:
                                 console.log("ERROR EN booleano +")
                                 break;
@@ -112,13 +115,13 @@ export class OperacionBinaria extends Instruccion {
                     case 5://char 
                         switch (der.tipo) {
                             case 1://char mas entero = entero
-                                return new Valor( parseInt(izq.valor) + parseInt(der.valor), 1)
+                                return new Valor( parseInt(izq.valor) + parseInt(der.valor), 1,this.linea,this.columna)
                             case 2://char mas float = float
-                                return new Valor(parseFloat(izq.valor) + parseFloat(der.valor), 2)
+                                return new Valor(parseFloat(izq.valor) + parseFloat(der.valor), 2,this.linea,this.columna)
                             case 3://char mas String = string
-                                return new Valor( (izq.valor + der.valor).toString, 3)
+                                return new Valor( (izq.valor + der.valor).toString, 3,this.linea,this.columna)
                             case 5://char mas char = string
-                                return new Valor( (izq.valor + der.valor).toString, 3)
+                                return new Valor( (izq.valor + der.valor).toString, 3,this.linea,this.columna)
                             default:
                                 console.log("ERROR EN char +")
                                 break;
@@ -133,18 +136,18 @@ export class OperacionBinaria extends Instruccion {
                     case 1://Entero 
                         switch (der.tipo) {
                             case 1://entero resta entero = entero
-                                return new Valor( parseInt(izq.valor) - parseInt(der.valor), 1)
+                                return new Valor( parseInt(izq.valor) - parseInt(der.valor), 1,this.linea,this.columna)
                             case 2://entero resta float = float
-                                return new Valor( parseFloat(izq.valor) - parseFloat(der.valor), 2)
+                                return new Valor( parseFloat(izq.valor) - parseFloat(der.valor), 2,this.linea,this.columna)
                             case 4://entero resta boleano = entero
                             if (der.valor.toString() == "false"){
                                 valDe = 0
                             }else{
                                 valDe =1
                             }
-                                return new Valor( parseInt(izq.valor) - valDe, 1)
+                                return new Valor( parseInt(izq.valor) - valDe, 1,this.linea,this.columna)
                             case 5://entero resta char = entero
-                                return new Valor( parseInt(izq.valor) - parseInt(der.valor), 1)
+                                return new Valor( parseInt(izq.valor) - parseInt(der.valor), 1,this.linea,this.columna)
                             default:
                                 console.log("ERROR EN ENTERO -")
                                 break;
@@ -152,18 +155,18 @@ export class OperacionBinaria extends Instruccion {
                     case 2://float 
                         switch (der.tipo) {
                             case 1://float resta entero = float
-                                return new Valor( parseFloat(izq.valor) - parseFloat(der.valor), 2)
+                                return new Valor( parseFloat(izq.valor) - parseFloat(der.valor), 2,this.linea,this.columna)
                             case 2://float resta float = float
-                                return new Valor( parseFloat(izq.valor) - parseFloat(der.valor), 2)
+                                return new Valor( parseFloat(izq.valor) - parseFloat(der.valor), 2,this.linea,this.columna)
                             case 4://float resta boleano = float
                                 if (der.valor.toString() == "false"){
                                     valDe = 0
                                 }else{
                                     valDe =1
                                 }
-                                return new Valor( parseFloat(izq.valor) - valDe, 2)
+                                return new Valor( parseFloat(izq.valor) - valDe, 2,this.linea,this.columna)
                             case 5://float resta char = float
-                                return new Valor( parseFloat(izq.valor) - parseFloat(der.valor), 2)
+                                return new Valor( parseFloat(izq.valor) - parseFloat(der.valor), 2,this.linea,this.columna)
                             default:
                                 console.log("ERROR EN float -")
                                 break;
@@ -178,14 +181,14 @@ export class OperacionBinaria extends Instruccion {
                                 }else{
                                     valDe =1
                                 }
-                                return new Valor( parseInt(izq.valor) - valDe, 1)
+                                return new Valor( parseInt(izq.valor) - valDe, 1,this.linea,this.columna)
                             case 2://booleano resta float = float
                                 if (der.valor.toString() == "false"){
                                     valDe = 0
                                 }else{
                                     valDe =1
                                 }
-                                return new Valor( parseFloat(izq.valor) - valDe, 2)
+                                return new Valor( parseFloat(izq.valor) - valDe, 2,this.linea,this.columna)
                             default:
                                 console.log("ERROR EN booleano -")
                                 break;
@@ -193,11 +196,11 @@ export class OperacionBinaria extends Instruccion {
                     case 5://char 
                         switch (der.tipo) {
                             case 1://char resta entero = entero
-                                return new Valor( parseInt(izq.valor) - parseInt(der.valor), 1)
+                                return new Valor( parseInt(izq.valor) - parseInt(der.valor), 1,this.linea,this.columna)
                             case 2://char resta float = float
-                                return new Valor( parseFloat(izq.valor) - parseFloat(der.valor), 2)
+                                return new Valor( parseFloat(izq.valor) - parseFloat(der.valor), 2,this.linea,this.columna)
                             case 5://char resta char = string
-                                return new Valor(parseInt(izq.valor) - parseInt(der.valor), 3)
+                                return new Valor(parseInt(izq.valor) - parseInt(der.valor), 3,this.linea,this.columna)
                             default:
                                 console.log("ERROR EN char -")
                                 break;
@@ -212,18 +215,18 @@ export class OperacionBinaria extends Instruccion {
                         case 1://Entero 
                             switch (der.tipo) {
                                 case 1://entero multiplicar entero = entero
-                                    return new Valor( parseInt(izq.valor) * parseInt(der.valor), 1)
+                                    return new Valor( parseInt(izq.valor) * parseInt(der.valor), 1,this.linea,this.columna)
                                 case 2://entero multiplicar float = float
-                                    return new Valor( parseFloat(izq.valor) *  parseFloat(der.valor), 2)
+                                    return new Valor( parseFloat(izq.valor) *  parseFloat(der.valor), 2,this.linea,this.columna)
                                 case 4://entero multiplicar boleano = entero
                                     if (der.valor.toString() == "false"){
                                         valDe = 0
                                     }else{
                                         valDe =1
                                     }
-                                    return new Valor( parseInt(izq.valor) * valDe, 1)
+                                    return new Valor( parseInt(izq.valor) * valDe, 1,this.linea,this.columna)
                                 case 5://entero multiplicar char = entero
-                                    return new Valor( parseInt(izq.valor) * parseInt(der.valor), 1)
+                                    return new Valor( parseInt(izq.valor) * parseInt(der.valor), 1,this.linea,this.columna)
                                 default:
                                     console.log("ERROR EN ENTERO *")
                                     break;
@@ -233,13 +236,13 @@ export class OperacionBinaria extends Instruccion {
                         case 2://float 
                             switch (der.tipo) {
                                 case 1://float multiplicar entero = float
-                                    return new Valor( parseFloat(izq.valor) * parseFloat(der.valor), 2)
+                                    return new Valor( parseFloat(izq.valor) * parseFloat(der.valor), 2,this.linea,this.columna)
                                 case 2://float multiplicar float = float
-                                    return new Valor(  parseFloat(izq.valor) * parseFloat(der.valor), 2)
+                                    return new Valor(  parseFloat(izq.valor) * parseFloat(der.valor), 2,this.linea,this.columna)
                                 case 4://float multiplicar boleano = float
-                                    return new Valor(  parseFloat(izq.valor) * parseFloat(der.valor), 2)
+                                    return new Valor(  parseFloat(izq.valor) * parseFloat(der.valor), 2,this.linea,this.columna)
                                 case 5://float multiplicar char =  float
-                                    return new Valor( parseFloat(izq.valor) * parseFloat(der.valor), 2)
+                                    return new Valor( parseFloat(izq.valor) * parseFloat(der.valor), 2,this.linea,this.columna)
                                 default:
                                     console.log("ERROR EN float *")
                                     break;
@@ -254,14 +257,14 @@ export class OperacionBinaria extends Instruccion {
                                     }else{
                                         valDe =1
                                     }
-                                    return new Valor(parseInt(izq.valor) * valDe, 1)
+                                    return new Valor(parseInt(izq.valor) * valDe, 1,this.linea,this.columna)
                                 case 2://booleano multiplicar float = float
                                     if (der.valor.toString() == "false"){
                                         valDe = 0
                                     }else{
                                         valDe =1
                                     }
-                                    return new Valor(parseFloat(izq.valor) * valDe, 2)
+                                    return new Valor(parseFloat(izq.valor) * valDe, 2,this.linea,this.columna)
                                 default:
                                     console.log("ERROR EN booleano *")
                                     break;
@@ -271,11 +274,11 @@ export class OperacionBinaria extends Instruccion {
                         case 5://char 
                             switch (der.tipo) {
                                 case 1://char multiplicar entero = entero
-                                    return new Valor( parseInt(izq.valor) * parseInt(der.valor), 1)
+                                    return new Valor( parseInt(izq.valor) * parseInt(der.valor), 1,this.linea,this.columna)
                                 case 2://char multiplicar float = float
-                                    return new Valor(parseFloat(izq.valor) * parseFloat(der.valor), 2)
+                                    return new Valor(parseFloat(izq.valor) * parseFloat(der.valor), 2,this.linea,this.columna)
                                 case 5://char multiplicar char = string
-                                    return new Valor( parseInt(izq.valor) * parseInt(der.valor), 1)
+                                    return new Valor( parseInt(izq.valor) * parseInt(der.valor), 1,this.linea,this.columna)
                                 default:
                                     console.log("ERROR EN char *")
                                     break;
@@ -289,18 +292,18 @@ export class OperacionBinaria extends Instruccion {
                         case 1://Entero 
                             switch (der.tipo) {
                                 case 1://entero dividor entero = entero
-                                    return new Valor(parseFloat(izq.valor) / parseFloat(der.valor), 2)
+                                    return new Valor(parseFloat(izq.valor) / parseFloat(der.valor), 2,this.linea,this.columna)
                                 case 2://entero dividor float = float
-                                    return new Valor( parseFloat(izq.valor) / parseFloat(der.valor), 2)
+                                    return new Valor( parseFloat(izq.valor) / parseFloat(der.valor), 2,this.linea,this.columna)
                                 case 4://entero dividor boleano = entero
                                     if (der.valor.toString() == "false"){
                                     valDe = 0
                                     }else{
                                         valDe =1
                                     }
-                                    return new Valor( parseFloat(izq.valor) / valDe, 2)
+                                    return new Valor( parseFloat(izq.valor) / valDe, 2,this.linea,this.columna)
                                 case 5://entero dividor char = enter
-                                    return new Valor( parseFloat(izq.valor) / parseFloat(der.valor), 2)
+                                    return new Valor( parseFloat(izq.valor) / parseFloat(der.valor), 2,this.linea,this.columna)
                                 default:
                                     console.log("ERROR EN ENTERO /")
                                     break;
@@ -310,18 +313,18 @@ export class OperacionBinaria extends Instruccion {
                         case 2://float 
                             switch (der.tipo) {
                                 case 1://float dividor entero = float
-                                    return new Valor( parseFloat(izq.valor) / parseFloat(der.valor), 2)
+                                    return new Valor( parseFloat(izq.valor) / parseFloat(der.valor), 2,this.linea,this.columna)
                                 case 2://float dividor float = float
-                                    return new Valor( parseFloat(izq.valor) / parseFloat(der.valor), 2)
+                                    return new Valor( parseFloat(izq.valor) / parseFloat(der.valor), 2,this.linea,this.columna)
                                 case 4://float dividor boleano = float
                                     if (der.valor.toString() == "false"){
                                     valDe = 0
                                     }else{
                                         valDe =1
                                     }
-                                    return new Valor( parseFloat(izq.valor) / valDe, 2)
+                                    return new Valor( parseFloat(izq.valor) / valDe, 2,this.linea,this.columna)
                                 case 5://float dividor char = float
-                                    return new Valor( parseFloat(izq.valor) / parseFloat(der.valor), 2)
+                                    return new Valor( parseFloat(izq.valor) / parseFloat(der.valor), 2,this.linea,this.columna)
                                 default:
                                     console.log("ERROR EN float /")
                                     break;
@@ -336,14 +339,14 @@ export class OperacionBinaria extends Instruccion {
                                     }else{
                                         valDe =1
                                     }
-                                    return new Valor( parseFloat(izq.valor) / valDe, 2)
+                                    return new Valor( parseFloat(izq.valor) / valDe, 2,this.linea,this.columna)
                                 case 2://booleano dividor float = float
                                 if (der.valor.toString() == "false"){
                                     valDe = 0
                                     }else{
                                         valDe =1
                                     }
-                                    return new Valor(parseFloat(izq.valor) / valDe, 2)
+                                    return new Valor(parseFloat(izq.valor) / valDe, 2,this.linea,this.columna)
                                 default:
                                     console.log("ERROR EN booleano /")
                                     break;
@@ -353,11 +356,11 @@ export class OperacionBinaria extends Instruccion {
                         case 5://char 
                             switch (der.tipo) {
                                 case 1://char dividor entero = float
-                                    return new Valor(parseInt(izq.valor) / parseInt(der.valor), 2)
+                                    return new Valor(parseInt(izq.valor) / parseInt(der.valor), 2,this.linea,this.columna)
                                 case 2://char dividor float = float
-                                    return new Valor( parseInt(izq.valor) / parseInt(der.valor), 2)
+                                    return new Valor( parseInt(izq.valor) / parseInt(der.valor), 2,this.linea,this.columna)
                                 case 5://char dividor char = float
-                                    return new Valor( parseInt(izq.valor) / parseInt(der.valor), 2)
+                                    return new Valor( parseInt(izq.valor) / parseInt(der.valor), 2,this.linea,this.columna)
                                 default:
                                     console.log("ERROR EN char /")
                                     break;
@@ -371,16 +374,16 @@ export class OperacionBinaria extends Instruccion {
                         case 1://Entero 
                             switch (der.tipo) {
                                 case 1://entero potencia entero = entero
-                                    return new Valor(parseInt(izq.valor) ** parseInt(der.valor), 1)
+                                    return new Valor(parseInt(izq.valor) ** parseInt(der.valor), 1,this.linea,this.columna)
                                 case 2://entero potencia float = float
-                                    return new Valor(  parseFloat(izq.valor) ** parseFloat(der.valor), 2)
+                                    return new Valor(  parseFloat(izq.valor) ** parseFloat(der.valor), 2,this.linea,this.columna)
                                 case 4://entero potencia boleano = entero
                                     if (der.valor.toString() == "false"){
                                     valDe = 0
                                     }else{
                                         valDe =1
                                     }
-                                    return new Valor( parseInt(izq.valor) ** valDe, 1)
+                                    return new Valor( parseInt(izq.valor) ** valDe, 1,this.linea,this.columna)
                                 default:
                                     console.log("ERROR EN ENTERO ^")
                                     break;
@@ -390,16 +393,16 @@ export class OperacionBinaria extends Instruccion {
                         case 2://float 
                             switch (der.tipo) {
                                 case 1://float potencia entero = float
-                                    return new Valor( parseFloat(izq.valor) ** parseFloat(der.valor), 2)
+                                    return new Valor( parseFloat(izq.valor) ** parseFloat(der.valor), 2,this.linea,this.columna)
                                 case 2://float potencia float = float
-                                    return new Valor( parseFloat(izq.valor) ** parseFloat(der.valor), 2)
+                                    return new Valor( parseFloat(izq.valor) ** parseFloat(der.valor), 2,this.linea,this.columna)
                                 case 4://float potencia boleano = float
                                          if (der.valor.toString() == "false"){
                                         valDe = 0
                                         }else{
                                             valDe =1
                                         }
-                                    return new Valor( parseFloat(izq.valor) ** valDe, 2)
+                                    return new Valor( parseFloat(izq.valor) ** valDe, 2,this.linea,this.columna)
                                 default:
                                     console.log("ERROR EN float ^")
                                     break;
@@ -414,21 +417,21 @@ export class OperacionBinaria extends Instruccion {
                                         }else{
                                             valDe =1
                                         }
-                                    return new Valor( parseInt(izq.valor) ** valDe, 1)
+                                    return new Valor( parseInt(izq.valor) ** valDe, 1,this.linea,this.columna)
                                 case 2://booleano potencia float = float
                                          if (der.valor.toString() == "false"){
                                         valDe = 0
                                         }else{
                                             valDe =1
                                         }
-                                    return new Valor(parseFloat(izq.valor) ** valDe, 2)
+                                    return new Valor(parseFloat(izq.valor) ** valDe, 2,this.linea,this.columna)
                                 case 4://booleano potencia boleano = entero
                                     if (der.valor.toString() == "false"){
                                         valDe = 0
                                         }else{
                                             valDe =1
                                         }
-                                    return new Valor( parseInt(izq.valor) ** valDe, 1)
+                                    return new Valor( parseInt(izq.valor) ** valDe, 1,this.linea,this.columna)
                                 default:
                                     console.log("ERROR EN booleano ^")
                                     break;
@@ -441,9 +444,9 @@ export class OperacionBinaria extends Instruccion {
                         case 1://Entero 
                             switch (der.tipo) {
                                 case 1://entero potencia entero = entero
-                                    return new Valor( parseFloat(izq.valor) % parseFloat(der.valor), 2)
+                                    return new Valor( parseFloat(izq.valor) % parseFloat(der.valor), 2,this.linea,this.columna)
                                 case 2://entero potencia float = float
-                                    return new Valor( parseFloat(izq.valor) % parseFloat(der.valor), 2)
+                                    return new Valor( parseFloat(izq.valor) % parseFloat(der.valor), 2,this.linea,this.columna)
                                 default:
                                     console.log("ERROR EN ENTERO %")
                                     break;
@@ -453,9 +456,9 @@ export class OperacionBinaria extends Instruccion {
                         case 2://float 
                             switch (der.tipo) {
                                 case 1://float potencia entero = float
-                                    return new Valor( parseFloat(izq.valor) % parseFloat(der.valor), 2)
+                                    return new Valor( parseFloat(izq.valor) % parseFloat(der.valor), 2,this.linea,this.columna)
                                 case 2://float potencia float = float
-                                    return new Valor( parseFloat(izq.valor) % parseFloat(der.valor), 2)
+                                    return new Valor( parseFloat(izq.valor) % parseFloat(der.valor), 2,this.linea,this.columna)
                                 default:
                                     console.log("ERROR EN float %")
                                     break;
@@ -474,21 +477,21 @@ export class OperacionBinaria extends Instruccion {
                             }else{
                                 valDe =0
                             }
-                                return new Valor( valDe, 4)
+                                return new Valor( valDe, 4,this.linea,this.columna)
                             case 2://entero Mayor entero = bol
                             if (parseFloat(izq.valor) > parseFloat(der.valor)){
                                 valDe = 1
                             }else{
                                 valDe =0
                             }
-                                return new Valor( valDe, 4)
+                                return new Valor( valDe, 4,this.linea,this.columna)
                             case 5://entero Mayor char = entero
                             if (parseInt(izq.valor) > parseInt(der.valor)){
                                 valDe = 1
                             }else{
                                 valDe =0
                             }
-                                return new Valor(valDe, 4)
+                                return new Valor(valDe, 4,this.linea,this.columna)
                             default:
                                 console.log("ERROR EN ENTERO >")
                                 break;
@@ -503,21 +506,21 @@ export class OperacionBinaria extends Instruccion {
                             }else{
                                 valDe =0
                             }
-                                return new Valor( valDe, 4)
+                                return new Valor( valDe, 4,this.linea,this.columna)
                             case 2://entero Mayor entero = bol
                             if (parseFloat(izq.valor) > parseFloat(der.valor)){
                                 valDe = 1
                             }else{
                                 valDe =0
                             }
-                                return new Valor( valDe, 4)
+                                return new Valor( valDe, 4,this.linea,this.columna)
                             case 5://entero Mayor char = entero
                             if (parseInt(izq.valor) > parseInt(der.valor)){
                                 valDe = 1
                             }else{
                                 valDe =0
                             }
-                                return new Valor(valDe, 4)
+                                return new Valor(valDe, 4,this.linea,this.columna)
                             default:
                                 console.log("ERROR EN float >")
                                 break;
@@ -531,21 +534,21 @@ export class OperacionBinaria extends Instruccion {
                             }else{
                                 valDe =0
                             }
-                                return new Valor( valDe, 4)
+                                return new Valor( valDe, 4,this.linea,this.columna)
                             case 2://entero Mayor entero = bol
                             if (parseFloat(izq.valor) > parseFloat(der.valor)){
                                 valDe = 1
                             }else{
                                 valDe =0
                             }
-                                return new Valor( valDe, 4)
+                                return new Valor( valDe, 4,this.linea,this.columna)
                             case 5://entero Mayor char = entero
                             if (parseInt(izq.valor) > parseInt(der.valor)){
                                 valDe = 1
                             }else{
                                 valDe =0
                             }
-                                return new Valor(valDe, 4)
+                                return new Valor(valDe, 4,this.linea,this.columna)
                             default:
                                 console.log("ERROR EN char >")
                                 break;
@@ -566,21 +569,21 @@ export class OperacionBinaria extends Instruccion {
                             }else{
                                 valDe =0
                             }
-                                return new Valor( valDe, 4)
+                                return new Valor( valDe, 4,this.linea,this.columna)
                             case 2://entero Mayor entero = bol
                             if (parseFloat(izq.valor) < parseFloat(der.valor)){
                                 valDe = 1
                             }else{
                                 valDe =0
                             }
-                                return new Valor( valDe, 4)
+                                return new Valor( valDe, 4,this.linea,this.columna)
                             case 5://entero Mayor char = entero
                             if (parseInt(izq.valor) < parseInt(der.valor)){
                                 valDe = 1
                             }else{
                                 valDe =0
                             }
-                                return new Valor(valDe, 4)
+                                return new Valor(valDe, 4,this.linea,this.columna)
                             default:
                                 console.log("ERROR EN ENTERO <")
                                 break;
@@ -595,21 +598,21 @@ export class OperacionBinaria extends Instruccion {
                             }else{
                                 valDe =0
                             }
-                                return new Valor( valDe, 4)
+                                return new Valor( valDe, 4,this.linea,this.columna)
                             case 2://entero Mayor entero = bol
                             if (parseFloat(izq.valor) < parseFloat(der.valor)){
                                 valDe = 1
                             }else{
                                 valDe =0
                             }
-                                return new Valor( valDe, 4)
+                                return new Valor( valDe, 4,this.linea,this.columna)
                             case 5://entero Mayor char = entero
                             if (parseInt(izq.valor) < parseInt(der.valor)){
                                 valDe = 1
                             }else{
                                 valDe =0
                             }
-                                return new Valor(valDe, 4)
+                                return new Valor(valDe, 4,this.linea,this.columna)
                             default:
                                 console.log("ERROR EN floa< ")
                                 break;
@@ -623,21 +626,21 @@ export class OperacionBinaria extends Instruccion {
                             }else{
                                 valDe =0
                             }
-                                return new Valor( valDe, 4)
+                                return new Valor( valDe, 4,this.linea,this.columna)
                             case 2://entero Mayor entero = bol
                             if (parseFloat(izq.valor) < parseFloat(der.valor)){
                                 valDe = 1
                             }else{
                                 valDe =0
                             }
-                                return new Valor( valDe, 4)
+                                return new Valor( valDe, 4,this.linea,this.columna)
                             case 5://entero Mayor char = entero
                             if (parseInt(izq.valor) < parseInt(der.valor)){
                                 valDe = 1
                             }else{
                                 valDe =0
                             }
-                                return new Valor(valDe, 4)
+                                return new Valor(valDe, 4,this.linea,this.columna)
                             default:
                                 console.log("ERROR EN char <")
                                 break;
@@ -659,21 +662,21 @@ export class OperacionBinaria extends Instruccion {
                         }else{
                             valDe =0
                         }
-                            return new Valor( valDe, 4)
+                            return new Valor( valDe, 4,this.linea,this.columna)
                         case 2://entero Mayor entero = bol
                         if (parseFloat(izq.valor) >= parseFloat(der.valor)){
                             valDe = 1
                         }else{
                             valDe =0
                         }
-                            return new Valor( valDe, 4)
+                            return new Valor( valDe, 4,this.linea,this.columna)
                         case 5://entero Mayor char = entero
                         if (parseInt(izq.valor) >= parseInt(der.valor)){
                             valDe = 1
                         }else{
                             valDe =0
                         }
-                            return new Valor(valDe, 4)
+                            return new Valor(valDe, 4,this.linea,this.columna)
                         default:
                             console.log("ERROR EN ENTERO >=")
                             break;
@@ -688,21 +691,21 @@ export class OperacionBinaria extends Instruccion {
                         }else{
                             valDe =0
                         }
-                            return new Valor( valDe, 4)
+                            return new Valor( valDe, 4,this.linea,this.columna)
                         case 2://entero Mayor entero = bol
                         if (parseFloat(izq.valor) >= parseFloat(der.valor)){
                             valDe = 1
                         }else{
                             valDe =0
                         }
-                            return new Valor( valDe, 4)
+                            return new Valor( valDe, 4,this.linea,this.columna)
                         case 5://entero Mayor char = entero
                         if (parseInt(izq.valor) >= parseInt(der.valor)){
                             valDe = 1
                         }else{
                             valDe =0
                         }
-                            return new Valor(valDe, 4)
+                            return new Valor(valDe, 4,this.linea,this.columna)
                         default:
                             console.log("ERROR EN floa >= ")
                             break;
@@ -716,21 +719,21 @@ export class OperacionBinaria extends Instruccion {
                         }else{
                             valDe =0
                         }
-                            return new Valor( valDe, 4)
+                            return new Valor( valDe, 4,this.linea,this.columna)
                         case 2://entero Mayor entero = bol
                         if (parseFloat(izq.valor) >= parseFloat(der.valor)){
                             valDe = 1
                         }else{
                             valDe =0
                         }
-                            return new Valor( valDe, 4)
+                            return new Valor( valDe, 4,this.linea,this.columna)
                         case 5://entero Mayor char = entero
                         if (parseInt(izq.valor) >= parseInt(der.valor)){
                             valDe = 1
                         }else{
                             valDe =0
                         }
-                            return new Valor(valDe, 4)
+                            return new Valor(valDe, 4,this.linea,this.columna)
                         default:
                             console.log("ERROR EN char >=")
                             break;
@@ -753,21 +756,21 @@ export class OperacionBinaria extends Instruccion {
                         }else{
                             valDe =0
                         }
-                            return new Valor( valDe, 4)
+                            return new Valor( valDe, 4,this.linea,this.columna)
                         case 2://entero Mayor entero = bol
                         if (parseFloat(izq.valor) <= parseFloat(der.valor)){
                             valDe = 1
                         }else{
                             valDe =0
                         }
-                            return new Valor( valDe, 4)
+                            return new Valor( valDe, 4,this.linea,this.columna)
                         case 5://entero Mayor char = entero
                         if (parseInt(izq.valor) <= parseInt(der.valor)){
                             valDe = 1
                         }else{
                             valDe =0
                         }
-                            return new Valor(valDe, 4)
+                            return new Valor(valDe, 4,this.linea,this.columna)
                         default:
                             console.log("ERROR EN ENTERO <=")
                             break;
@@ -782,21 +785,21 @@ export class OperacionBinaria extends Instruccion {
                         }else{
                             valDe =0
                         }
-                            return new Valor( valDe, 4)
+                            return new Valor( valDe, 4,this.linea,this.columna)
                         case 2://entero Mayor entero = bol
                         if (parseFloat(izq.valor) <= parseFloat(der.valor)){
                             valDe = 1
                         }else{
                             valDe =0
                         }
-                            return new Valor( valDe, 4)
+                            return new Valor( valDe, 4,this.linea,this.columna)
                         case 5://entero Mayor char = entero
                         if (parseInt(izq.valor) <= parseInt(der.valor)){
                             valDe = 1
                         }else{
                             valDe =0
                         }
-                            return new Valor(valDe, 4)
+                            return new Valor(valDe, 4,this.linea,this.columna)
                         default:
                             console.log("ERROR EN floa <= ")
                             break;
@@ -810,21 +813,21 @@ export class OperacionBinaria extends Instruccion {
                         }else{
                             valDe =0
                         }
-                            return new Valor( valDe, 4)
+                            return new Valor( valDe, 4,this.linea,this.columna)
                         case 2://entero Mayor entero = bol
                         if (parseFloat(izq.valor) <= parseFloat(der.valor)){
                             valDe = 1
                         }else{
                             valDe =0
                         }
-                            return new Valor( valDe, 4)
+                            return new Valor( valDe, 4,this.linea,this.columna)
                         case 5://entero Mayor char = entero
                         if (parseInt(izq.valor) <= parseInt(der.valor)){
                             valDe = 1
                         }else{
                             valDe =0
                         }
-                            return new Valor(valDe, 4)
+                            return new Valor(valDe, 4,this.linea,this.columna)
                         default:
                             console.log("ERROR EN char <=")
                             break;
@@ -846,14 +849,14 @@ export class OperacionBinaria extends Instruccion {
                             }else{
                                 valDe =0
                             }
-                                return new Valor(valDe, 4)
+                                return new Valor(valDe, 4,this.linea,this.columna)
                             case 2://entero igual float = float
                             if (parseInt(izq.valor) == parseInt(der.valor)){
                                 valDe = 1
                             }else{
                                 valDe =0
                             }
-                                return new Valor(valDe, 4)
+                                return new Valor(valDe, 4,this.linea,this.columna)
                             default:
                                 console.log("ERROR EN ENTERO ==")
                                 break;
@@ -868,14 +871,14 @@ export class OperacionBinaria extends Instruccion {
                             }else{
                                 valDe =0
                             }
-                                return new Valor(valDe, 4)
+                                return new Valor(valDe, 4,this.linea,this.columna)
                             case 2://entero igual entero = entero
                             if (parseInt(izq.valor) == parseInt(der.valor)){
                                 valDe = 1
                             }else{
                                 valDe =0
                             }
-                                return new Valor(valDe, 4)
+                                return new Valor(valDe, 4,this.linea,this.columna)
                             default:
                                 console.log("ERROR EN float ==")
                                 break;
@@ -890,14 +893,14 @@ export class OperacionBinaria extends Instruccion {
                             }else{
                                 valDe =0
                             }
-                                return new Valor(valDe, 4)
+                                return new Valor(valDe, 4,this.linea,this.columna)
                             case 5://string igual char = string
                             if (izq.valor.toString == der.valor.toString){
                                 valDe = 1
                             }else{
                                 valDe =0
                             }
-                                return new Valor(valDe, 4)
+                                return new Valor(valDe, 4,this.linea,this.columna)
                             default:
                                 console.log("ERROR EN string ==")
                                 break;
@@ -912,7 +915,7 @@ export class OperacionBinaria extends Instruccion {
                             }else{
                                 valDe =0
                             }
-                                return new Valor(valDe, 4)
+                                return new Valor(valDe, 4,this.linea,this.columna)
                             default:
                                 console.log("ERROR EN booleano ==")
                                 break;
@@ -927,14 +930,14 @@ export class OperacionBinaria extends Instruccion {
                             }else{
                                 valDe =0
                             }
-                                return new Valor(valDe, 4)
+                                return new Valor(valDe, 4,this.linea,this.columna)
                             case 5://string igual char = string
                             if (izq.valor.toString == der.valor.toString){
                                 valDe = 1
                             }else{
                                 valDe =0
                             }
-                                return new Valor(valDe, 4)
+                                return new Valor(valDe, 4,this.linea,this.columna)
                             default:
                                 console.log("ERROR EN char ==")
                                 break;
@@ -957,14 +960,14 @@ export class OperacionBinaria extends Instruccion {
                             }else{
                                 valDe =0
                             }
-                                return new Valor(valDe, 4)
+                                return new Valor(valDe, 4,this.linea,this.columna)
                             case 2://entero igual float = float
                             if (parseInt(izq.valor) != parseInt(der.valor)){
                                 valDe = 1
                             }else{
                                 valDe =0
                             }
-                                return new Valor(valDe, 4)
+                                return new Valor(valDe, 4,this.linea,this.columna)
                             default:
                                 console.log("ERROR EN ENTERO !=")
                                 break;
@@ -979,14 +982,14 @@ export class OperacionBinaria extends Instruccion {
                             }else{
                                 valDe =0
                             }
-                                return new Valor(valDe, 4)
+                                return new Valor(valDe, 4,this.linea,this.columna)
                             case 2://entero igual entero = entero
                             if (parseInt(izq.valor) != parseInt(der.valor)){
                                 valDe = 1
                             }else{
                                 valDe =0
                             }
-                                return new Valor(valDe, 4)
+                                return new Valor(valDe, 4,this.linea,this.columna)
                             default:
                                 console.log("ERROR EN float!=")
                                 break;
@@ -1001,14 +1004,14 @@ export class OperacionBinaria extends Instruccion {
                             }else{
                                 valDe =0
                             }
-                                return new Valor(valDe, 4)
+                                return new Valor(valDe, 4,this.linea,this.columna)
                             case 5://string igual char = string
                             if (izq.valor.toString != der.valor.toString){
                                 valDe = 1
                             }else{
                                 valDe =0
                             }
-                                return new Valor(valDe, 4)
+                                return new Valor(valDe, 4,this.linea,this.columna)
                             default:
                                 console.log("ERROR EN string !=")
                                 break;
@@ -1023,7 +1026,7 @@ export class OperacionBinaria extends Instruccion {
                             }else{
                                 valDe =0
                             }
-                                return new Valor(valDe, 4)
+                                return new Valor(valDe, 4,this.linea,this.columna)
                             default:
                                 console.log("ERROR EN booleano !=")
                                 break;
@@ -1038,14 +1041,14 @@ export class OperacionBinaria extends Instruccion {
                             }else{
                                 valDe =0
                             }
-                                return new Valor(valDe, 4)
+                                return new Valor(valDe, 4,this.linea,this.columna)
                             case 5://string igual char = string
                             if (izq.valor.toString != der.valor.toString){
                                 valDe = 1
                             }else{
                                 valDe =0
                             }
-                                return new Valor(valDe, 4)
+                                return new Valor(valDe, 4,this.linea,this.columna)
                             default:
                                 console.log("ERROR EN char !=")
                                 break;

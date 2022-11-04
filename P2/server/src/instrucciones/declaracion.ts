@@ -3,7 +3,8 @@ import { TablaSimbolos } from "../datos/tabla_simbolos";
 import { Valor } from "../datos/valor";
 
 export class Declaracion extends Instruccion {
-
+    linea:any
+    columna:any
 
     constructor(
         public tipo: any,
@@ -11,6 +12,8 @@ export class Declaracion extends Instruccion {
         public expresion: any,
         linea: number, columna:number) {
         super(linea,columna);
+        this.linea = linea
+        this.columna = columna
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
@@ -55,7 +58,7 @@ export class Declaracion extends Instruccion {
 
 
 
-                let valor= new Valor(valor_encontrado,tipo_encontrado)
+                let valor= new Valor(valor_encontrado,tipo_encontrado,this.linea,this.columna)
                 let retorno_tabla =  tabla.guardarVariable(valor,elemto) 
             }
 

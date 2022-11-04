@@ -4,24 +4,27 @@ import { TablaSimbolos } from "../datos/tabla_simbolos";
 import { Valor } from "../datos/valor";
 
 export class Incremento extends Instruccion {
-
+    linea:any;
+    columna:any;
 
     constructor(
         public operacion: any,
         public signo: string,
         linea: number, columna:number) {
         super(linea,columna);
+        this.linea = linea
+        this.columna = columna
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
         //incremento o decremento suma el valor de la variable en mas uno dependiendo el signo con que venga(++||--)
         let return_in_tabla=tabla.buscarVariable(this.operacion)
         if(this.signo=="++"){
-            let new_valor = new Valor(return_in_tabla.obtenerValor()+1,return_in_tabla.tipo);
+            let new_valor = new Valor(return_in_tabla.obtenerValor()+1,return_in_tabla.tipo,this.linea,this.columna);
             // valor = su valor y tipo  , nombre = quien es
             tabla.guardarActualizar(new_valor,this.operacion);
         }else{
-            let new_valor = new Valor(return_in_tabla.obtenerValor()-1,return_in_tabla.tipo);
+            let new_valor = new Valor(return_in_tabla.obtenerValor()-1,return_in_tabla.tipo,this.linea,this.columna);
             // valor = su valor y tipo  , nombre = quien es
             tabla.guardarActualizar(new_valor,this.operacion);
         }

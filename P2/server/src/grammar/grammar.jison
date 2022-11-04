@@ -637,16 +637,16 @@ OPERADORES : mas {$$=$1;}
         | igualacion {$$=$1;}
 ;
 
-VALORES : numero { $$=new Primitivos(new Valor($1,1),@1.first_line,@1.first_column);}
-        | decimal { $$=new Primitivos(new Valor($1,2),@1.first_line,@1.first_column);}
-        | identificador { $$=new Primitivos(new Valor($1,6),@1.first_line,@1.first_column);}
-        | string { $$=new Primitivos(new Valor($1,3),@1.first_line,@1.first_column);}
+VALORES : numero { $$=new Primitivos(new Valor($1,1,@1.first_line,@1.first_column),@1.first_line,@1.first_column);}
+        | decimal { $$=new Primitivos(new Valor($1,2,@1.first_line,@1.first_column),@1.first_line,@1.first_column);}
+        | identificador { $$=new Primitivos(new Valor($1,6,@1.first_line,@1.first_column),@1.first_line,@1.first_column);}
+        | string { $$=new Primitivos(new Valor($1,3,@1.first_line,@1.first_column),@1.first_line,@1.first_column);}
         | parentesis_A OPERACION parentesis_B {$$= $2;}
         | corchete_A OPERACION corchete_B {$$=$2;}
         | llave_A OPERACION llave_B {$$=$2;}
-        | true { $$=new Primitivos(new Valor($1,4),@1.first_line,@1.first_column);}
-        | false { $$=new Primitivos(new Valor($1,4),@1.first_line,@1.first_column);}
-        | char { $$=new Primitivos(new Valor($1,5),@1.first_line,@1.first_column);}
+        | true { $$=new Primitivos(new Valor($1,4,@1.first_line,@1.first_column),@1.first_line,@1.first_column);}
+        | false { $$=new Primitivos(new Valor($1,4,@1.first_line,@1.first_column),@1.first_line,@1.first_column);}
+        | char { $$=new Primitivos(new Valor($1,5,@1.first_line,@1.first_column),@1.first_line,@1.first_column);}
         
 ;
 

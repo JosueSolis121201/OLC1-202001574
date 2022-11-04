@@ -4,7 +4,8 @@ import { Valor } from "../datos/valor";
 
 export class VectorDeclarado_1D extends Instruccion {
 
-
+    linea:any
+    columna:any
     constructor(
         public tipo: string,
         public D1_a: string,
@@ -14,6 +15,8 @@ export class VectorDeclarado_1D extends Instruccion {
         public expresionD1: Instruccion,
         linea: number, columna:number) {
         super(linea,columna);
+        this.linea=linea
+        this.columna=columna
     }
 
 
@@ -33,7 +36,7 @@ export class VectorDeclarado_1D extends Instruccion {
         }
         for (let i =0;i<this.expresionD1.ejecutar(tabla).valor;i++){
              // valor y variable                             valor
-             let valor = new Valor(0,2);
+             let valor = new Valor(0,2,this.linea,this.columna);
              tabla.guardarVariable(valor,"arreglonero1"+identi+"s"+index);
              index++;
 

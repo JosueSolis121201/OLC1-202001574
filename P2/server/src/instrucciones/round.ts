@@ -5,11 +5,14 @@ import { Valor } from "../datos/valor";
 
 export class Round extends Instruccion {
 
-
+    linea:any
+    columna :any
     constructor(
         public valor: Instruccion,
         linea: number, columna:number) {
         super(linea,columna);
+        this.linea=linea
+        this.columna=columna
     }
 
     public ejecutar(tabla:TablaSimbolos):any { 
@@ -18,7 +21,7 @@ export class Round extends Instruccion {
         let nuevo_int=Math.round(this.valor.ejecutar(tabla).valor)
         //TOUPPER pone todo en mayusculas
         //retornar el nuevo valor
-        let nuevoVal = new Valor(nuevo_int,1)
+        let nuevoVal = new Valor(nuevo_int,1,this.columna,this.linea)
         return nuevoVal;
            
     }

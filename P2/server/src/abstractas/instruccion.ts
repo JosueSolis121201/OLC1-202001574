@@ -12,7 +12,7 @@ export abstract class Instruccion{
         this.ID = GEN.Generador.GenerarID();
     }
     
-    public abstract ejecutar(tabla:TablaSimbolos):any;
+    public abstract ejecutar(tabla:TablaSimbolos):any; 
 
     public abstract graficar():String;
 

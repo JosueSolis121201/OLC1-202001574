@@ -3,14 +3,20 @@ import { Instruccion } from "../abstractas/instruccion";
 export class Valor {
     valor: string;
     tipo: number;
+    linea:any;
+    columna:any;
 
     constructor(
         valor: any,
-        tipo: number) {
+        tipo: number,
+        linea:any,
+        columna:any) {
 
         
         this.valor = this.convertirValor(tipo,valor);
         this.tipo = tipo;
+        this.linea = linea;
+        this.columna = columna;
     }
 
     public convertirValor(tipo:number, valor:string):any{ 

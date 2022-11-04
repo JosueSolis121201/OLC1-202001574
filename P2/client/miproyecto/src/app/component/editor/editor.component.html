@@ -20,11 +20,11 @@
         <table class="content-table">
         <thead>
           <tr>
-            <th>Rank</th>
-            <th>Name</th>
-            <th>Points</th>
+            <th>nombre</th>
+            <th>valor</th>
+            <th>tipo</th>
             <th>linea</th>
-            <th>columna</th>
+            <th>columna</th> 
           </tr>
         </thead>
         <tbody>
@@ -39,6 +39,12 @@
                 </td>
                 <td>
                     <app-fila [llave] = "'tipo'" [objetoValor] = "item.value"></app-fila>
+                </td>
+                <td>
+                    <app-fila [llave] = "'linea'" [objetoValor] = "item.value"></app-fila>
+                </td>
+                <td>
+                    <app-fila [llave] = "'columna'" [objetoValor] = "item.value"></app-fila>
                 </td>
                 
             </tr>

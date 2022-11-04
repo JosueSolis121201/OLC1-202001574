@@ -4,11 +4,14 @@ import { Valor } from "../datos/valor";
 
 export class ToUpper extends Instruccion {
 
-
+    linea:any
+    columna:any
     constructor(
         public expresion: Instruccion,
         linea: number, columna:number) {
         super(linea,columna);
+        this.linea=linea
+        this.columna=columna
     }
 
     public ejecutar(tabla:TablaSimbolos):any { 
@@ -17,7 +20,7 @@ export class ToUpper extends Instruccion {
         let nuevo_string=this.expresion.ejecutar(tabla).valor.toUpperCase()
         //TOUPPER pone todo en mayusculas
         //retornar el nuevo valor
-        let nuevoVal = new Valor(nuevo_string,3)
+        let nuevoVal = new Valor(nuevo_string,3,this.linea,this.columna)
         return nuevoVal;
            
     }

@@ -4,12 +4,15 @@ import { Valor } from "../datos/valor";
 import { ToUpper } from "./upper";
 
 export class ToLower extends Instruccion {
-
+    linea:any
+    columna:any
 
     constructor(
         public expresion: any,
         linea: number, columna:number) {
         super(linea,columna);
+        this.linea = linea
+        this.columna = columna
     }
 
     public ejecutar(tabla:TablaSimbolos):any { 
@@ -18,7 +21,7 @@ export class ToLower extends Instruccion {
         let nuevo_string=this.expresion.ejecutar(tabla).valor.toLowerCase()
         //TOLOWER pone todo en minusculas
         //retornar el nuevo valor
-        let nuevoVal = new Valor(nuevo_string,3)
+        let nuevoVal = new Valor(nuevo_string,3,this.linea,this.columna)
         return nuevoVal;
            
     }

@@ -54,7 +54,7 @@ export class EditorComponent implements OnInit {
         for (let key in this.diccionario) {
           if (this.diccionario.hasOwnProperty(key)) {
             let value =  this.diccionario[key];
-            console.log(key, value);
+            console.log(key, value); 
           }
        }
         console.log()

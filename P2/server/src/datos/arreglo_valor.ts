@@ -1,6 +1,6 @@
 import { Valor } from "./valor";
 
-export class ArregloValor {
+export class ArregloValor { 
     lista_valores: any;
     tipo: number;
     diccionario: any;

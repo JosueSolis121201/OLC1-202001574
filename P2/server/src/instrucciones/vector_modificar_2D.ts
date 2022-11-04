@@ -3,7 +3,8 @@ import { TablaSimbolos } from "../datos/tabla_simbolos";
 import { Valor } from "../datos/valor";
 
 export class VectorModificar_2D extends Instruccion {
-
+    linea:any
+    columna:any
 
     constructor(    
         public identificador: Instruccion,
@@ -12,6 +13,8 @@ export class VectorModificar_2D extends Instruccion {
         public nueva_expresion: Instruccion,
         linea: number, columna:number) {
         super(linea,columna);
+        this.linea=linea
+        this.columna=columna
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
@@ -39,7 +42,7 @@ export class VectorModificar_2D extends Instruccion {
                     let valor=valor_variable.valor;
                     let tipo=valor_variable.tipo;
                     // se guarda la nueva expresion que es = this.nueva_expreison
-                    let nuevoValor=new Valor(valor,tipo);
+                    let nuevoValor=new Valor(valor,tipo,this.linea,this.columna);
                     tabla.guardarActualizar(this.nueva_expresion.ejecutar(tabla),BUSCANDO_USANDO_NOMBRE_COMPUESTO)
                 }
             }

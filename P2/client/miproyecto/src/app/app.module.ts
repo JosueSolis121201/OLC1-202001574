@@ -22,6 +22,6 @@ import { FilaComponent } from './component/fila/fila.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent] 
 })
 export class AppModule { }

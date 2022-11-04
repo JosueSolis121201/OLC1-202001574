@@ -270,16 +270,16 @@ case 107:
  this.$= new OperacionBinaria($$[$0-2],$$[$0],$$[$0-1],_$[$0-2].first_line,_$[$0-2].first_column);
 break;
 case 124:
- this.$=new Primitivos(new Valor($$[$0],1),_$[$0].first_line,_$[$0].first_column);
+ this.$=new Primitivos(new Valor($$[$0],1,_$[$0].first_line,_$[$0].first_column),_$[$0].first_line,_$[$0].first_column);
 break;
 case 125:
- this.$=new Primitivos(new Valor($$[$0],2),_$[$0].first_line,_$[$0].first_column);
+ this.$=new Primitivos(new Valor($$[$0],2,_$[$0].first_line,_$[$0].first_column),_$[$0].first_line,_$[$0].first_column);
 break;
 case 126:
- this.$=new Primitivos(new Valor($$[$0],6),_$[$0].first_line,_$[$0].first_column);
+ this.$=new Primitivos(new Valor($$[$0],6,_$[$0].first_line,_$[$0].first_column),_$[$0].first_line,_$[$0].first_column);
 break;
 case 127:
- this.$=new Primitivos(new Valor($$[$0],3),_$[$0].first_line,_$[$0].first_column);
+ this.$=new Primitivos(new Valor($$[$0],3,_$[$0].first_line,_$[$0].first_column),_$[$0].first_line,_$[$0].first_column);
 break;
 case 128:
 this.$= $$[$0-1];
@@ -288,10 +288,10 @@ case 129: case 130:
 this.$=$$[$0-1];
 break;
 case 131: case 132:
- this.$=new Primitivos(new Valor($$[$0],4),_$[$0].first_line,_$[$0].first_column);
+ this.$=new Primitivos(new Valor($$[$0],4,_$[$0].first_line,_$[$0].first_column),_$[$0].first_line,_$[$0].first_column);
 break;
 case 133:
- this.$=new Primitivos(new Valor($$[$0],5),_$[$0].first_line,_$[$0].first_column);
+ this.$=new Primitivos(new Valor($$[$0],5,_$[$0].first_line,_$[$0].first_column),_$[$0].first_line,_$[$0].first_column);
 break;
 case 140:
  this.$= new Identificadores_lista($$[$0],_$[$0].first_line,_$[$0].first_column);

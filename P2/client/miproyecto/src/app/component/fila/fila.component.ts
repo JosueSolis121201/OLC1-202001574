@@ -11,7 +11,7 @@ export class FilaComponent implements OnInit {
   @Input() objetoValor:any;
 
 
-  constructor() { }
+  constructor() { } 
 
   ngOnInit(): void {
   }

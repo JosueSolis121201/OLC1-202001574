@@ -4,12 +4,15 @@ import { Valor } from "../datos/valor";
 
 export class Casteo extends Instruccion {
 
-
+    linea:any
+    columna:any
     constructor(
         public Tipo: any,
         public expresion: Instruccion,
         linea: number, columna:number) {
         super(linea,columna);
+        this.linea = linea
+        this.columna = columna
     }
 
     public ejecutar(tabla:TablaSimbolos):any {
@@ -52,7 +55,7 @@ export class Casteo extends Instruccion {
 
 
 
-        let nuevoVal = new Valor(valor_encontrado,tipo_encontrado)
+        let nuevoVal = new Valor(valor_encontrado,tipo_encontrado,this.linea,this.columna)
         return nuevoVal;
            
     }

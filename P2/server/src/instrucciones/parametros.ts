@@ -3,13 +3,16 @@ import { TablaSimbolos } from "../datos/tabla_simbolos";
 import { Valor } from "../datos/valor";
 
 export class Parametros extends Instruccion {
-
+    linea:any
+    columna:any
 
     constructor(
         public tipo: string,
         public identificador: string,
         linea: number, columna:number) {
         super(linea,columna);
+        this.linea=linea
+        this.columna=columna
     }
 
     public ejecutar(tabla:TablaSimbolos):any { 
@@ -49,7 +52,7 @@ export class Parametros extends Instruccion {
                 break;
         }
 
-        tabla.guardarVariable(new Valor(valor_encontrado,tipo_encontrado),this.identificador)  
+        tabla.guardarVariable(new Valor(valor_encontrado,tipo_encontrado,this.linea,this.columna),this.identificador)  
         return this.identificador      
     }
 
